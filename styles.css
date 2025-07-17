@@ -1,0 +1,534 @@
+h1, h2 {
+    font-family: Arial;
+}
+
+h3 {
+    padding: 10px 0px 0px 10px;
+}
+
+body {
+  background-color: #d2d9e0;
+  max-width:900px; 
+  margin-left:auto;
+  margin-right:auto;
+  border-style:none;
+}
+
+.main { 
+  padding: 0px 10px 10px 10px;
+  background-color:white;
+  max-width:900px; 
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 13px;
+}
+
+
+#container1 {
+    float:left;
+    /*background-color: antiquewhite;*/
+    width: 100%;
+}
+#col1 {
+    float:left;
+    width:70%;
+    /*background-color: antiquewhite;*/
+    padding: 0% 2% 0% 2%;
+    word-break: normal; 
+    word-wrap: break-word;
+    /*height: 440px;*/
+}
+#col2 {
+    float:left;
+    width:22%;
+    padding: 2%;
+}
+#col3 {
+    float:left;
+    width:60%;
+}
+#col4 {
+    float:left;
+    width:40%;
+}
+
+#col5 {
+    float:right;
+    width:10%;
+}
+
+button.abstract {
+    color:firebrick;
+    font-style: oblique
+}
+
+a.button_abstract {
+    color:firebrick;
+    display:inline-block;
+    font-style: oblique;
+    font-size: 15px;
+    margin:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:5px;
+    padding-right:5px;
+    border: 1px solid;
+    border-color: black;
+    border-radius:5px;
+}
+
+
+button.join {
+    border-radius: 5px; 
+    border: 1px solid #000980;
+}
+
+button#join2 {
+    border-radius: 5px; 
+    border: 1px solid #E5E4E2;
+}
+
+button#imag {
+    border-radius: 5px; 
+    border: 1px solid #000980;
+}
+
+.roundrect {
+border-radius: 5px;
+border: 1px solid #000980;
+}
+
+.thin {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.rounded {
+width:100%;
+border-radius: 5px;    
+border: 1px solid #000980;
+box-shadow: 2px 5px 5px #000000;
+/*zoom: 2;*/  
+display: block;
+margin: auto;
+
+height: auto;
+max-height: 100%;
+
+width: auto;
+max-width: 100%;    
+}
+
+img.roundc {
+width:100%;
+border-radius: 5px;    
+border: 1px solid #000980;
+box-shadow: 2px 5px 5px #000000;
+display: block;   
+width:100%;
+height:100%;
+    margin: auto;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%; 
+}
+
+img.metapost {
+width:auto;
+border-radius: 5px;    
+border: 1px solid #000980;
+box-shadow: 2px 5px 5px #000000;
+display: block;   
+max-height:100px;
+}
+
+
+#sidebar {
+	 position: absolute;
+	 top:0;
+	 bottom:0;
+	 right:0;
+    width: 80px;
+    height: auto;
+}
+
+
+#container {
+ margin: auto;
+ position:relative;
+ right:auto;
+ left:auto;
+}
+
+
+
+.box {
+visibility: hidden;
+display: none;
+border: 2px solid silver;
+margin:0px;
+font-size:14px;
+}
+ 
+.boxopen {
+visibility: visible;
+display: none;
+border: 2px solid silver;
+margin:0px;
+font-size:14px;
+}
+
+.boxgrand {
+visibility: hidden;
+display: none;
+border: 2px solid silver;
+margin:10px;
+font-size:16px;
+color:darkslategray;
+}
+
+.boxgauche {
+visibility: hidden;
+display: none;
+border-left: 2px solid silver;
+margin:10px;
+font-size:14px;
+}
+
+.decal {
+margin:10px;
+text-align: justify;
+}
+
+.bibtex {
+margin:10px;
+text-align: justify;
+font-size:8pt;
+}
+
+
+.nopuce {
+list-style-type:none;
+}
+
+a.gray {
+ color: gray;
+ } 
+ 
+under {
+text-decoration: underline
+} 
+
+p {
+  margin-top: 0em;
+  margin-bottom: 1em;
+  text-align:justify;
+}
+
+div.ex {
+   margin-left: 10px; 
+   margin-bottom: 7px;
+   background-color:#dae7f1;
+   border-radius:10px;
+   padding: 7px;       
+} 
+
+p#ex {
+   margin-left: 10px; 
+   margin-bottom: 0em;
+} 
+p#title {
+   margin: 20px; 
+} 
+
+div#textsc{
+    text-transform:capitalize;
+    font-variant:small-caps;
+    font-weight:bold;
+}
+
+hr.vertical
+{
+   width: 0px;
+   height: 100%; /* or height in PX */
+} 
+
+#ongoing {
+    float: none;
+    display: inline-block;
+    padding: 0% 2% 0 2%;
+} 
+
+#ongoing ul {
+    display: inline-block;
+    text-align: center;
+}
+
+#ongoing ul li {
+    vertical-align:top;
+    /*float: left;*/
+    display: inline-block;
+    width: 20%;
+    padding: 5px;
+}
+
+
+#ongoing ul li p {
+    text-align:center;
+}
+
+#ongoing ul li img {
+    float:left;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 10px;
+}
+
+#ongoing ul li img:hover {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-color: cornflowerblue;
+}
+
+
+#talks {
+    float:none;
+    margin-top:0px;
+    border-radius: 10px;
+    /*background-color: antiquewhite;*/
+    padding: 2%;
+}
+
+.head_pics {
+    /*background-color:antiquewhite;*/
+    border-radius:10px;
+    text-align: center;
+    padding: 3px;
+    margin: 5px 0 5px 0;
+}
+
+#head_pics ul {
+    list-style-type: none;
+}
+
+#head_pics ul li {
+    display: inline-block;
+    width: 9%;
+}
+
+#head_pics ul li img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+header {
+    /*background-color: antiquewhite;*/
+    border-radius: 0px;
+    margin:-10px;
+}
+
+header h1 {
+    text-align: center;
+    /*font-size: 40px*/;
+}
+
+header nav {
+    padding-top: 1px;
+    background-color: #4682b4;
+    border-bottom:1px;
+}
+
+header nav ul {
+    text-align: center;
+    margin:3px;
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    font-size: 18px;
+    padding-left:3%;
+    padding-right:3%;
+}
+
+#presentation {
+    /*margin-top: 0px;*/
+}
+
+#imlist {
+    
+    /*background-color: antiquewhite;*/
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 2% 2% 0 2%;
+} 
+
+#imlist ul {
+    list-style:none;
+    display: inline-block;
+    text-align: center;
+}
+
+#imlist ul li {
+    float: left;
+    display: inline;
+    width: 27%;
+    padding: 10px;
+}
+
+
+#imlist ul li p {
+    text-align:center;
+}
+
+#imlist ul li img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.but {
+    float:left;
+    background-color:#4682b4;
+    color:white;
+    padding:3px;
+    text-decoration:none;
+    border-radius:4px;
+    font-variant:small-caps;
+    border-style:solid;
+    border-color:#4682b4;
+    border-width:1px;
+
+}
+
+.but:hover {
+    float:left;
+    background-color:white;
+    color: #4682b4;
+    border-style:solid;
+    border-color:#4682b4;
+    border-width:1px;    
+}
+
+.but2 {
+    display:inline-block;
+    background-color:#4682b4;
+    color:white;
+    padding:3px;
+    text-decoration:none;
+    border-radius:3px;
+    border-style:solid;
+    border-color:#4682b4;
+    border-width:1px;
+}
+
+.but2:hover {
+    display:inline-block;
+    background-color:white;
+    color: #4682b4;
+    border-style:solid;
+    border-color:#4682b4;
+    border-width:1px;    
+}
+
+
+#numerics td:first-child + td {
+    padding-left: 15px;
+}
+
+#header {background:url(header_my.jpg) 0 0 no-repeat;height:90px;border-bottom:1px solid #A6A6A6;border-radius: 10px 10px 0px 0px}
+
+
+div.problem {
+    background-color:#FFB6A7;
+    padding:5px;
+    border-radius:5px;
+    margin-bottom:10px;
+}
+
+.square {
+    height: 10vw;
+    width: 10vw;
+}
+
+div.siamsol {
+    background-color:antiquewhite;
+    padding:5px;
+    border-radius:5px;
+    margin-bottom:10px;
+    
+}
+
+.hidden {
+     display:none;
+}
+
+
+
+#metapost ul {
+    display: inline-block;
+    text-align: center;
+}
+
+#metapost ul li {
+    /*vertical-align:top;*/
+    /*float: left;*/
+    display: inline-block;
+    height: 15%;
+    padding: 5px;
+}
+
+
+#metapost ul li p {
+    text-align:center;
+}
+
+#metapost ul li img {
+    /*float: left;*/
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 10px;
+}
+
+#metapost ul li img:hover {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-color: cornflowerblue;
+}
+
+div.course {
+    margin:5px;
+    padding:10px;
+    background-color:#dae7f1;
+    border-radius:10px;
+}
+
+div.publist {
+  counter-reset: listNumber;
+}
+/** Note that we can use counter-increment in :before psuedo element **/
+div.pubitem:before {
+  counter-increment: listNumber -1;
+  content: "["counter(listNumber)"]";
+}
+
+div.pubitem {
+   margin-left: 10px; 
+   margin-bottom: 7px;
+   background-color:#dae7f1;
+   border-radius:10px;
+   padding: 7px;       
+} 
