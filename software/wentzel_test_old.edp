@@ -1,0 +1,96 @@
+// actual shape is introduced in radial parametrization
+// using a Fourier decomposition for the radius
+// you can use, however, any other method for
+// defining the boundary of the domain given in C
+// the rest of the algorithm should work with no problems
+
+int i,n = 10;
+real t;
+real[int] as(n);
+real beta = 0;      
+real[int] vec(2*n+1);
+int M = 300;
+
+vec = [1,0.1, 0,    0,0,0.1,   0,0,0,0,0,
+         0,   0.1,  0,0,-0.1,  0,0,0,0,0];
+
+//vec  = [0.9719,    0.0155,   -0.0083,   -0.0298,    0.0415,
+//   -0.0199,    0.0168,   -0.0001,   -0.0003,    0.0000,   -0.0001,
+//    0.0165,   -0.0036,   -0.0299,    0.0414,   -0.0202,    0.0174,
+//   -0.0006,    0.0008,   -0.0007,    0.0005];    
+
+as = vec(1:n) ;
+real[int] bs(n); 
+bs =  vec(n+1:2*n);
+real a0 =vec(0);
+border C(t=0,2* pi){x=cos(t)*(a0+as[0]*cos(t)+
+                                as[1]*cos(2*t)+
+                                as[2]*cos(3*t)+
+                                as[3]*cos(4*t)+
+                                as[4]*cos(5*t)+
+                                as[5]*cos(6*t)+
+                                as[6]*cos(7*t)+
+                                as[7]*cos(8*t)+
+                                as[8]*cos(9*t)+
+                                as[9]*cos(10*t)+
+                                bs[0]*sin(t)+
+                                bs[1]*sin(2*t)+
+                                bs[2]*sin(3*t)+
+                                bs[3]*sin(4*t)+
+                                bs[4]*sin(5*t)+
+                                bs[5]*sin(6*t)+
+                                bs[6]*sin(7*t)+
+                                bs[7]*sin(8*t)+
+                                bs[8]*sin(9*t)+
+                                bs[9]*sin(10*t)                                 ); 
+                    y=sin(t)*(a0+as[0]*cos(t)+
+                                as[1]*cos(2*t)+
+                                as[2]*cos(3*t)+
+                                as[3]*cos(4*t)+
+                                as[4]*cos(5*t)+
+                                as[5]*cos(6*t)+
+                                as[6]*cos(7*t)+
+                                as[7]*cos(8*t)+
+                                as[8]*cos(9*t)+
+                                as[9]*cos(10*t)+
+                                bs[0]*sin(t)+
+                                bs[1]*sin(2*t)+
+                                bs[2]*sin(3*t)+
+                                bs[3]*sin(4*t)+
+                                bs[4]*sin(5*t)+
+                                bs[5]*sin(6*t)+
+                                bs[6]*sin(7*t)+
+                                bs[7]*sin(8*t)+
+                                bs[8]*sin(9*t)+
+                                bs[9]*sin(10*t));
+                    }
+mesh Th = buildmesh (C(M));
+fespace Vh(Th,P1);
+Vh uh,vh;
+// weak form of the Wentzell problem
+varf va(uh, vh) = int2d(Th)( dx(uh)*dx(vh)+dy(uh)*dy(vh))+
+                  int1d(Th,1)( beta*(dx(uh)*dx(vh)-
+       dx(uh)*N.x*(N.x*dx(vh)+N.y*dy(vh))-
+       dx(vh)*N.x*(N.x*dx(uh)+N.y*dy(uh))+
+       N.x*(dx(vh)*N.x+dy(vh)*N.y)*N.x*(dx(uh)*N.x+dy(uh)*N.y)+
+       dy(uh)*dy(vh)-
+       dy(uh)*N.y*(dx(vh)*N.x+dy(vh)*N.y)-
+       dy(vh)*N.y*(dx(uh)*N.x+dy(uh)*N.y)+
+       (N.y)^2*(dx(vh)*N.x+dy(vh)*N.y)*(dx(uh)*N.x+dy(uh)*N.y)));
+varf vb(uh, vh) = int1d(Th,1)( uh * vh);// definition of a called f function
+matrix A = va(Vh, Vh ,solver = sparsesolver); // Matrix A on left hand side
+matrix B = vb(Vh, Vh);
+real cpu=clock();
+// get the clock in second
+int eigCount = 11; // the number of eigenvalues to compute
+// Get first Eigenvalues
+real[int] ev(eigCount); // Holds Eigenfunctions
+Vh[int] eV(eigCount);
+// Holds Eigenfunctions
+// Solve Ax=lBx
+int numEigs = EigenValue(A,B,sym=true,sigma=0,value=ev,vector=eV);
+for(int i=0;i<eigCount;i++) // Plot the spectrum
+plot(eV[i],fill=true,value=true,cmm= ev[i]);
+cout << " CPU time = " << clock()-cpu << endl;
+for(i = 0;i<eigCount;i++)
+cout << ev[i] << endl;

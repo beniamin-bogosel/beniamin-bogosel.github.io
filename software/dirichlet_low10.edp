@@ -1,0 +1,351 @@
+// this is not very polished but it works well enough
+// for a mesh based method
+// for high eigenvalues, the multiplicities become higher
+// and higher and the steepest descent algorithm implemented here
+// is not capable to go beyond some local minima
+// choosing different starting points may help
+
+// the eigenvalue computation is made using an adaptation
+// of the code from the FreeFem++ manual
+
+func ffff = 1;
+
+func real[int] f(int kk, real[int] VV,int meshpar){
+  real[int] vec = VV;
+
+  int i;
+  real t;
+
+real beta = 2;      
+int m = vec.n;
+int n = (m-1)/2;
+//vec  = [0.9719,    0.0155,   -0.0083,   -0.0298,    0.0415,
+//   -0.0199,    0.0168,   -0.0001,   -0.0003,    0.0000,   -0.0001,
+//    0.0165,   -0.0036,   -0.0299,    0.0414,   -0.0202,    0.0174,
+//   -0.0006,    0.0008,   -0.0007,    0.0005];    
+//cout << n << endl;
+real[int] as = vec(1:n) ;
+//cout << as << endl;
+//as.resize(50);
+//as(n:49)=0;
+real[int] bs = vec(n+1:2*n);
+//bs.resize(50);
+//bs(n:49)=0;
+real a0 =vec(0);
+border C(t=0,2* pi){x=cos(t)*(a0+as[0]*cos(t)+
+                                as[1]*cos(2*t)+
+                                as[2]*cos(3*t)+
+                                as[3]*cos(4*t)+
+                                as[4]*cos(5*t)+
+                                as[5]*cos(6*t)+
+                                as[6]*cos(7*t)+
+                                as[7]*cos(8*t)+
+                                as[8]*cos(9*t)+
+                                as[9]*cos(10*t)+
+                                as[10]*cos(11*t)+
+                                as[11]*cos(12*t)+
+                                as[12]*cos(13*t)+
+                                as[13]*cos(14*t)+
+                                as[14]*cos(15*t)+
+                                as[15]*cos(16*t)+
+                                as[16]*cos(17*t)+
+                                as[17]*cos(18*t)+
+                                as[18]*cos(19*t)+
+                                as[19]*cos(20*t)+ 
+                                bs[0]*sin(t)+
+                                bs[1]*sin(2*t)+
+                                bs[2]*sin(3*t)+
+                                bs[3]*sin(4*t)+
+                                bs[4]*sin(5*t)+
+                                bs[5]*sin(6*t)+
+                                bs[6]*sin(7*t)+
+                                bs[7]*sin(8*t)+
+                                bs[8]*sin(9*t)+
+                                bs[9]*sin(10*t)+
+                                bs[10]*sin(11*t)+
+                                bs[11]*sin(12*t)+
+                                bs[12]*sin(13*t)+
+                                bs[13]*sin(14*t)+
+                                bs[14]*sin(15*t)+
+                                bs[15]*sin(16*t)+
+                                bs[16]*sin(17*t)+
+                                bs[17]*sin(18*t)+
+                                bs[18]*sin(19*t)+
+                                bs[19]*sin(20*t));
+                    y=sin(t)*(a0+as[0]*cos(t)+
+                                as[1]*cos(2*t)+
+                                as[2]*cos(3*t)+
+                                as[3]*cos(4*t)+
+                                as[4]*cos(5*t)+
+                                as[5]*cos(6*t)+
+                                as[6]*cos(7*t)+
+                                as[7]*cos(8*t)+
+                                as[8]*cos(9*t)+
+                                as[9]*cos(10*t)+
+                                as[10]*cos(11*t)+
+                                as[11]*cos(12*t)+
+                                as[12]*cos(13*t)+
+                                as[13]*cos(14*t)+
+                                as[14]*cos(15*t)+
+                                as[15]*cos(16*t)+
+                                as[16]*cos(17*t)+
+                                as[17]*cos(18*t)+
+                                as[18]*cos(19*t)+
+                                as[19]*cos(20*t)+ 
+                                bs[0]*sin(t)+
+                                bs[1]*sin(2*t)+
+                                bs[2]*sin(3*t)+
+                                bs[3]*sin(4*t)+
+                                bs[4]*sin(5*t)+
+                                bs[5]*sin(6*t)+
+                                bs[6]*sin(7*t)+
+                                bs[7]*sin(8*t)+
+                                bs[8]*sin(9*t)+
+                                bs[9]*sin(10*t)+
+                                bs[10]*sin(11*t)+
+                                bs[11]*sin(12*t)+
+                                bs[12]*sin(13*t)+
+                                bs[13]*sin(14*t)+
+                                bs[14]*sin(15*t)+
+                                bs[15]*sin(16*t)+
+                                bs[16]*sin(17*t)+
+                                bs[17]*sin(18*t)+
+                                bs[18]*sin(19*t)+
+                                bs[19]*sin(20*t));}
+mesh Th = buildmesh (C(meshpar));
+Th= adaptmesh(Th,1./30,IsMetric=1,nbvx=10000);
+//plot(Th); 
+
+
+fespace Vh(Th,P1);
+Vh u1,u2;
+
+
+real sigma = 00;  // value of the shift 
+
+varf  a(u1,u2)= int2d(Th)
+( dx(u1)*dx(u2) + dy(u1)*dy(u2) - sigma* u1*u2 )
+                    +  on(1,u1=0) ;  // Boundary condition
+                   
+varf b([u1],[u2]) = int2d(Th)(  u1*u2 ) ; // no  Boundary condition
+
+matrix A= a(Vh,Vh,solver=Crout,factorize=1); 
+matrix B= b(Vh,Vh,solver=CG,eps=1e-20); 
+
+// important remark:
+// the boundary condition is make with exact penalisation:
+//     we put 1e30=tgv  on the diagonal term of the lock degre of freedom.
+//  So take dirichlet boundary condition just on $a$ variationnal form
+// and not on  $b$ variationnanl form.
+// because we solve
+//  $$ w=A^-1*B*v $$
+
+int nev=kk;  // number of computed eigen valeu close to sigma
+
+real[int] ev(nev); // to store nev eigein value
+Vh[int] eV(nev);   // to store nev eigen vector
+
+int k=EigenValue(A,B,sym=true,sigma=sigma,value=ev,vector=eV,tol=1e-10,
+                            maxit=0,ncv=0);
+//   tol= the tolerace
+//   maxit= the maximal iteration see arpack doc.
+//   ncv   see arpack doc.
+//  the return value is number of converged eigen value.
+k=min(k,nev); //  some time the number of converged eigen value 
+              // can be greater than nev;
+//for (int i=0;i<k; i++){
+//plot(eV[i],fill=1);
+//cout << " ---- " << i+1<< " " << ev[i]<< endl;
+//}
+cout << ev << endl;
+//int[int] m = find(abs(ev-ev[kk-1])<0.001);
+//cout << m << endl;
+Vh uu = eV[kk-1];
+plot(uu,fill=true);
+real l2norm = int2d(Th)(uu^2);
+//cout << l2norm << endl;
+//uu = uu/sqrt(l2norm);
+// compute area
+Vh ww=1;
+real ar = int2d(Th)(ww);
+// compute gradients
+// cos coeffs
+real[int] gradt(41);
+//first coeff
+gradt(0) = -int1d(Th)((dx(uu)*N.x+dy(uu)*N.y)^2*(x*N.x+y*N.y)/sqrt(x^2+y^2));
+//cout << "First grad: " << gradt(0) << endl;
+
+for (int i=1;i<21;i++)
+{
+gradt(i) = -int1d(Th)((dx(uu)*N.x+dy(uu)*N.y)^2*(x*N.x+y*N.y)*
+   cos(i*atan(y,x))/sqrt(x^2+y^2));
+}
+for (int i=1;i<21;i++)
+{
+gradt(i+20) = -int1d(Th)((dx(uu)*N.x+dy(uu)*N.y)^2*(x*N.x+y*N.y)*
+   sin(i*atan(y,x))/sqrt(x^2+y^2));
+}
+
+//////////////////
+
+real eigen = ev[k-1];
+real[int] res = [ar,eigen,gradt];
+return res;
+}
+func real fatan2(real a, real b)
+{
+real ang = atan2(a,b);
+
+if (ang<0)
+{  ang = ang+2*pi;};
+return ang;
+}
+
+//// area and gradient
+func real[int] farea(real[int] VV){
+real[int] v = VV;
+real[int] u = v.*v;
+int k = u.n; 
+real[int] ue = u(1:k-1);
+real arr = 2*pi*(u(0)/2+ue.sum/4);
+real[int] gradt = VV;
+gradt(0) = 2*pi*v(0);
+gradt(1:gradt.n-1) = pi*v(1:v.n-1);
+real[int] result = [arr,gradt];
+return result;
+}
+real[int] vect;
+int st = 1;
+cout << st==1 << endl;
+if (st==1)
+{
+vect = [1,        0,
+                  0,
+                  0,
+                  0.01*(2*randreal1()-1),
+                  -0.01*(2*randreal1()-1),
+                  0,//.01*(2*randreal1()-1),
+                  0,//.01*(2*randreal1()-1),
+                  0,//.01*(2*randreal1()-1),
+                  0.01*(2*randreal1()-1),
+                  0,//.01*(2*randreal1()-1),
+                   0,//.01*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//*(2*randreal1()-1),
+                  0,//,.2*randreal1()-1,
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.01*randreal1(),
+                  0,//.1*randreal1(),
+                  0,//.1*randreal1(),
+                  0,//.1*randreal1(),
+                  0,//.1*randreal1(),
+                  0,//.1*randreal1(),
+                  0,//.1*randreal1(),
+                  0,//.1*randreal1(),
+                  0.1*randreal1(),
+                  0,
+                  0];//.1*randreal1()];
+} 
+else {
+ vect = [2.032508584,
+	-0.00923069389,
+	-0.003552213311,
+	-0.2986660407,
+	0.001438118425,
+	0.01986849408,
+	0.004542959393,
+	-0.003431503125,
+	0.01107482988,
+	0.00506883319,
+	-0.0005231057714,
+	0.03086584873,
+	-0.001336079332,	
+    0.1336420655,
+	-0.006104464235,
+	0.02019252598,
+	0.004576060814,
+	0.003748146484,
+	0.00485402523,
+	-0.005379623359,
+	0.003052424409];	
+}
+
+
+cout << vect << endl;
+
+
+
+real alpha = 0.0001;
+int meshref = 200;
+int ke      = 6;
+
+real[int] ggg = f(ke,vect,meshref);
+real[int] far = farea(vect);
+
+
+//cout << ggg << endl;
+real val = ggg(1);
+real arr = ggg(0);
+arr = far(0);
+cout << "Function value: " << val*arr << "   " << endl;
+real[int] gradt = arr*ggg(2:ggg.n-1)+val*far(1:far.n-1); 
+
+real pval = val*arr;
+
+
+
+// optimization loop
+
+int i = 0;
+while(alpha>1e-12){
+i=i+1;
+//real ar = far(0);
+//cout<< ar<< endl;
+
+//// gradient descent /////
+real[int] tvect = vect-alpha*gradt;
+
+
+real[int] ggg = f(ke,tvect,meshref);
+real[int] far = farea(tvect);
+
+
+//cout << ggg << endl;
+real val = ggg(1);
+real arr = ggg(0);
+arr = far(0);
+cout << "Iteration " << i<<  " Function value: " << val*arr << " previous " <<  pval << 
+ " alpha " << alpha <<endl;
+real[int] tgradt = arr*ggg(2:ggg.n-1)+val*far(1:far.n-1); 
+
+if (val*arr < pval) {
+   pval = val*arr;
+   vect   = tvect;
+   alpha  = alpha*1.1;
+   gradt  = tgradt;
+}
+else { 
+   alpha = alpha/1.1;
+   if (alpha<1e-12) break;
+}
+
+}
+
+real[int] final = f(ke,vect,meshref);
+cout << "Optimal computed value: " << final(1)*final(0) << endl; 
+cout << "Shape: "<< vect << endl;
+

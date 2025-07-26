@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+   <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+   <link rel="stylesheet" href="styles.css">
+   <link rel="icon" href="favicon.ico" type="image/x-icon" />      
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <script async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script> 
+
+
+    <title>Software</title>
+    
+  </head>
+  <body >
+    <div class="main">         
+    <?php include("header2.html");?>
+
+   <h3>Software</h3>
+        
+        
+        
+        
+        
+   
+   <p style="text-align:justify"> Below you can find a few algorithms I implemented.  If you find some of the codes below useful and you use them in your research, please
+   give credit by citing a related publication.</p>
+        
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+        <strong>Computing Blaschke Santalo diagrams using Centroidal Voronoi Tessellations</strong>: <a href="https://github.com/bbogo/BlaschkeSantalo">Github repository</a>. The codes correspond to the following <a href="pdfs/22BBO_v1.pdf">paper</a>.
+        </div>
+        
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+        <strong>Numerical Shape Optimization among Convex Sets</strong>: <a href="https://github.com/bbogo/ConvexSets">Github repository</a>. The codes correspond to the following <a href="pdfs/DiscreteConvex.pdf">paper</a>.
+        </div>
+        
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+        <strong>Longest Minimal Length Partitions</strong>: <a href="https://github.com/bbogo/LongestShortestPartitions">Github repository</a>. The codes correspond to the following <a href="pdfs/max_rel_per.pdf">paper</a>.
+        </div>
+
+   <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+   <strong>Computation of the Steklov/Wentzell Spectrum using FreeFem</strong>
+
+   <p style="text-align:justify">The following program computes the first few eigenvalues of the Steklov/Wentzell operator for a two
+   dimensional shape. The current shape is quite particular, but it can be changed by using
+    any of the methods available in FreeFem for defining boundaries. This code was used in 
+    <a href="pdfs/fsol_article.pdf">my article</a>
+    concerning the computation of the Wentzell spectrum with fundamental solutions in order
+    to compare my results to the ones obtained with a mesh-based method. You can download the FreeFem program 
+    here: <a href="software/wentzel_test.edp">wentzel_test.edp</a>
+    (right click, Save as).</p>
+    </div>    
+    
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+    <strong> The Steklov/Wentzell Spectrum using fundamental solutions in Matlab</strong>
+    
+    <p style="text-align:justify">The following algorithm uses fundamental solutions in order to solve certain spectral problems.
+    The method was inspired by Alves and Antunes and it is presented in detail in 
+    <a href="pdfs/fsol_article.pdf">this publication</a>. You can get the program here: 
+    <a href="software/wentzell_test.m">wentzell_test.m</a> (right click, Save as) You could
+    check out the huge speed difference between this fundamental solution formulation and 
+    the FreeFem code.
+    </p>
+    </div>    
+    
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+    <strong> Dirichlet eigenvalue optimization in 2D with FreeFem </strong>
+    
+    <table><tr><td style="width:80%;text-align:justify"> The following algorithm is an example of eigenvalue shape optimization problem under area constraint in two dimensions.
+    It uses finite element computations in FreeFem. This type of numerical computations were initially performed by E. Oudet
+    and recently by P. Antunes and P. Freitas. I revisited them using Mpspack in my <a href="pdfs/PHD_thesis.pdf">phd thesis</a>. 
+    The following program works rather well for the first 10 eigenvalues. Sometimes different initial conditions
+    should be used to get close to the minimizer. You can get the program here: 
+    <a href="software/dirichlet_low10.edp">dirichlet_low10.edp</a> (right click, Save as).</td>
+    <td style="width:20%"><img  src="pics/lam5freefem.png" style="width:100%" alt=""></td></tr></table>
+    </div>
+    
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+    <strong> Maximization of the fundamental eigenvalue in domains with holes - FreeFem code</strong>
+    
+    <table><tr><td style="width:80%;text-align:justify"> We want to find the position of some circular holes in a two dimensional domain
+    which maximize the first Dirichlet Laplace eigenvalue. More details about the problem and the results 
+    you can obtain using the algorithm can be found <a href="max_dirichlhet_holes.html">here</a>. 
+    The FreeFem code is available here: 
+    <a href="software/optimal_holes.edp">optimal_holes.edp</a> (right click, Save as). </td>
+     <td style="width:20%"><img  src="pics/holes10_0199.png" style="width:100%" alt=""></td></tr></table>
+     </div>
+     
+     <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+    <strong> Numerical study of Polya's conjecture with FreeFem </strong>
+    
+    <table><tr><td style="width:80%;text-align:justify"> The following script starts from a polygon and evolves using the gradient flow
+    given by the derivative of the first Dirichlet eigenvalue under area constraint. We can see that the algorithm
+    converges towards a regular polygon, which is to be expected, since Polya's conjecture suggests that
+    regular polygons minimize the first Dirichlet Laplace eigenvalue under area constraint.
+    More details about the problem and the algorithm can be found <a href="faber_krahn_polygons.html">here</a>. 
+    The FreeFem code is available here: 
+    <a href="software/Polya_flow.edp">Polya_flow.edp</a> (right click, Save as). </td>
+     <td style="width:20%"><img  src="spectral_polygons/Polya_flow.png" style="width:100%" alt=""></td></tr></table>     
+    </div> 
+    
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+    <strong> Computation of Cheeger sets for polygons - Matlab</strong>
+    
+        <table><tr><td style="width:70%;text-align:justify"> <p>This algorithm combines a <a href="http://msp.org/pjm/2006/225-1/pjm-v225-n1-p06-p.pdf">well known result</a> of Kawohl and Lachand-Robert which characterizes the Cheeger sets for convex domains and the toolbox <a href="http://www.angusj.com/delphi/clipper.php">Clipper</a>, a very good implementation of polygon offset computation by  Agnus Johnson. For the algorithm to work you'll need to install the toolbox <a href="https://fr.mathworks.com/matlabcentral/fileexchange/61329-new-polygon-clipping-and-offsetting">New Polygon Clipping and Offsetting</a> by Erik Johnson. Once you've installed it, things should run smoothly. Check out the examples to find how the algorithm works. </p>
+            
+        <p>This algorithm was implemented to test the performance of a relaxation by $\Gamma$-convergence proposed in a recent article in collaboration with Dorin Bucur and Ilaria Fragala. Details can be found <a href="cheeger.html">here</a>. The algorithm together with the $\Gamma$-convergence variant can be found at the following GitHub repository: <a href="https://github.com/bbogo/Cheeger_patch">Cheeger_patch</a>.</p> 
+        </td>
+     <td style="width:25%"><img  src="cheeger/cheeger_reuleaux.png" style = "padding:5px;width:100%" alt=""></td></tr></table>     
+    </div> 
+        
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">
+    <strong> Accurate computation of eigenvalues for spherical triangles and application to the study of 3D random walks</strong>
+    
+        
+     <table>
+      <tr>         
+      <td>
+          <p>Please refer <a href="RandomWalks.html">to this page</a> for codes and details regarding the paper <a href=pdfs/3DWalks.pdf>3D positive lattice walks and spherical triangles</a>.</p>
+          
+          <p>The numerical codes contain the following:</p>
+          <ul>
+          <li>
+            a method for computing eigenvalues for spherical triangles using finite elements. The classical finite elements method has convergence of order 2. Using an extrapolation procedure we observe a rate of convergence of at least 6 and we are able to get close to machine precision for cases which interest us.  
+              </li>
+            <li>
+              Other codes deal with the study of critical exponents for some random walks. The search for these exponents has a few steps: search for the global minimum of an inventory function using a Newton method, finding the associated spherical triangle and computing its eigenvalue.
+              </li>
+          </ul>
+          </td>    
+
+     <td style="width:25%"><img  src="3DRandomWalks/GF17_partTr.png" style = "padding:5px;width:100%" alt=""></td></tr></table> 
+    </div>    
+        
+    <div style="background-color:#dae7f1; color:black; margin:5px; padding:5px;">      
+    
+    <strong>Make $\LaTeX$ like drawings with Metapost</strong>
+        
+        
+        
+      
+     <table>
+      <tr>         
+      <td>
+          <p>If you are use to typewriting in $\LaTeX$ then you may find working in Metapost a pleasant experience. It allows you to code an image and to obtain a vectorized result (that is, something that is still sharp even when zooming). You may find nice tutorials on the internet, for example <a href="http://tex.loria.fr/prod-graph/zoonekynd/metapost/metapost.html">here</a> and <a href="http://www.tlhiv.org/">here</a>. </p>
+          
+          <p>What I find most useful is to start from an example and slowly build my figure. That's why I share on this page some of my figures and the code used to generate them.</p>
+          
+          <p>In order to compile metapost you can either use the command <strong>mptopdf</strong> in linux or use the online compiler by Troy Henderson. The examples on the web are png and are not lossless. If you use mptopdf you will obtain vectorized pdfs which can be then included in Latex documents.</p>
+          
+          
+          </td>    
+
+     <td style="width:25%"><img  src="Metapost/logo-0.png-1.png" style = "padding:5px;width:100%" alt=""></td></tr></table>    
+    </div>     
+    
+    <p><strong>Disclaimer</strong>: these software programs are provided "as is", without any warranty of any kind... The 
+    author cannot be held responsible for any misuse of these programs or any damage that may come from using them. </p>
+    
+   <strong>Useful computing software</strong>   
+   
+   <p>Here are some Matlab toolboxes I use a 
+   lot:
+  <ul style="text-align:justify"><li><a href="http://www.cs.toronto.edu/~liam/software.shtml">LBFGS</a> 
+  by Liam Stewart: a nice implementation
+  of the LBFGS optimization algorithm. It allows
+  bounds on every variable and the use of
+  callback functions.</li>
+  <li><a href="http://www.cs.ubc.ca/~schmidtm/Software/minFunc.html">minFunc</a> by Mark Schmidt.   
+  Minfunc allows the use of many types of
+  optimization algorithms like steepest descent
+  lbfgs, etc.</li> 
+  <li> <a href="https://www.cs.ubc.ca/~schmidtm/Software/minConf.html">minConf</a> by Mark Schmidt. It is a variant of minFunc where you can also put constraints. Way faster than Matlab's fmincon, even faster than the LBFGS wrapper by Lian Stewart linked above (at least for the test cases I tried).
+      </li>      
+  <li><a href="http://www.cs.nyu.edu/overton/software/hanso/">HANSO</a>: BGFS 
+  optimization implementation.  </li> 
+  <li> <a href="https://code.google.com/p/mpspack/">MpsPack</a>. A Matlab 
+  toolbox which solves all sorts of problems from PDE to eigenvalue problems. It
+  uses methods based on particular solutions. It is rather fast and very precise.</ul>   
+   
+   <p style="text-align:justify"> Although I'm not a specialist, I find <a href="http://www.freefem.org/ff++/">FreeFem++</a> to be really useful
+   in the study of PDEs. It has all you need to get you started, and all the
+   dirty work regarding meshes is done automatically once you give it the right
+   commands. There's a really nice visual editor for FreeFem++, which makes the installation and use of FreeFem programs very
+   easy. You can find it here: <a href="http://www.ann.jussieu.fr/~lehyaric/ffcs/index.htm">freefem++cs</a>
+   </p>    
+   
+ <h3>Project Euler stats</h3>
+<img  src="https://projecteuler.net/profile/beni22sof.png" alt="">
+   
+<hr>
+ <p style = "font-size:13px">Created Jun 2015. Last modified: Apr 2017</p>
+    </div>
+  </body>
+</html>

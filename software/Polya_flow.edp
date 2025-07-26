@@ -1,0 +1,172 @@
+func real[int] rand(int h){
+  real[int] vec(h);
+  for(int i = 0;i<h;i++){
+     vec(i) = randreal1();
+  }
+  return vec;
+}
+
+int n = 5;
+int k = 0;
+real epst  = 0.1;
+
+real tresh = 0.03;
+
+//real[int] xx = [0, 0.2,  0.5,   1  ,1.1, 2,  2,  1.2,0];
+//real[int] yy = [0,-0.7, -0.9,  -0.8,0  ,0.3,1  ,1.5,1];
+real[int] th = rand(n);
+//th.sort;
+//cout << "Angles " << th << endl;
+real[int] reg = 1:n;
+reg = 2*pi/n*reg;
+reg = reg+0.5*th;
+
+real[int] xx(n);
+real[int] yy(n);
+
+th = 2*pi*th;
+xx = cos(reg);
+yy = sin(reg);
+
+
+real[int] lengths;
+
+int[int] one(n);
+one = 1;
+verbosity = 0;
+
+int[int] NC=20*one;  
+
+
+int[int] ind1 = 0:1:n-1;
+int[int] ind2 = ind1;
+int[int] ind3 = ind1;
+ind2(1:n-1) = 0:1:n-2;
+ind2(0) = n-1;
+ind3(n-1) = 0;
+ind3(0:n-2) = 1:n-1;
+
+real alpha = 0.001;
+real minv = 100000;
+int count = 1;
+
+
+while(alpha>1e-10){
+
+
+border poly(t=0,1; i){
+    x=(1-t)*xx[i]+t*xx[ind3(i)]; 
+    y=(1-t)*yy[i]+t*yy[ind3(i)];
+    label=i;
+}
+
+
+mesh Th = buildmesh (poly(NC));
+//Th= adaptmesh(Th,1./50,IsMetric=1);
+
+//plot(Th);
+fespace Vh(Th,P1);
+// variables on the mesh
+Vh u1,u2;
+
+int[int] BC = 0:1:n-1; // label indexes for each disk
+                           // used for the boundary condition
+
+// Define the problem in weak form
+varf a(u1,u2) = int2d(Th)
+(dx(u1)*dx(u2) + dy(u1)*dy(u2))+on(1,u1=0)//on(C1,C2,C3,C4,u1=1)
+                               +on(BC,u1=0);     
+varf b([u1],[u2]) = int2d(Th)(  u1*u2 ) ; 
+// define matrices for the eigenvalue problem
+matrix A= a(Vh,Vh,solver=Crout,factorize=1); 
+matrix B= b(Vh,Vh,solver=CG,eps=1e-20); 
+
+// we are interested only in the first eigenvalue
+int eigCount = k+1;
+real[int] ev(eigCount); // Holds eigenvalues
+Vh[int] eV(eigCount);   // holds eigenfunctions
+// Solve Ax=lBx
+int numEigs = EigenValue(A,B,sym=true,sigma=0,value=ev,vector=eV);
+
+if(int2d(Th)(eV[k])<0){
+  eV[k] = -eV[k];
+}
+
+real[int] derx(n);
+real[int] dery(n);
+real[int] ax(n);
+real[int] ay(n);
+mesh Eh = emptymesh(Th);
+fespace Wh(Eh,P1);
+real l1,l2;
+
+Wh av,ap;
+real val1,val2;  
+Vh ff = 1;
+real ar = int2d(Th)(ff);
+real[int] diffs(n);
+real[int] dots(n);
+
+for(int i=0;i<n;i++){
+l1 = sqrt((xx[i]-xx[ind3(i)])^2+(yy[i]-yy[ind3(i)])^2);
+l2 = sqrt((xx[i]-xx[ind2(i)])^2+(yy[i]-yy[ind2(i)])^2);
+diffs[i] = abs(l1-l2);
+dots[i] = (xx[i]-xx[ind3(i)])*(xx[i]-xx[ind2(i)])+
+          (yy[i]-yy[ind3(i)])*(yy[i]-yy[ind2(i)]);
+//cout << ind2(i) << " " << ind3(i) << endl;
+//cout  <<  l1 << "  " << l2 << endl;
+
+av = (l2- (sqrt((xx[i]-x)^2+(yy[i]-y)^2)))/l2;
+//plot(av,fill=true,value=true);
+ 
+ap = (l1 - (sqrt((xx[i]-x)^2+(yy[i]-y)^2)))/l1;
+//plot(ap,fill=true,value=true);
+ 
+//val1 = int1d(Th,i)(ap);
+//cout << "Integral " << val1 << endl;
+//val2 = int1d(Th,ind2(i))(av);
+//cout << "Integral " << val2 << endl;
+
+derx[i] = -int1d(Th,i)(ap*(dx(eV[k])*N.x+dy(eV[k])*N.y)^2*N.x)-
+      int1d(Th,ind2(i))(av*(dx(eV[k])*N.x+dy(eV[k])*N.y)^2*N.x);
+
+dery[i] = -int1d(Th,i)(ap*(dx(eV[k])*N.x+dy(eV[k])*N.y)^2*N.y)-
+      int1d(Th,ind2(i))(av*(dx(eV[k])*N.x+dy(eV[k])*N.y)^2*N.y);
+
+ax[i] = int1d(Th,i)(ap*N.x)+
+      int1d(Th,ind2(i))(av*N.x);
+
+ay[i] = int1d(Th,i)(ap*N.y)+
+      int1d(Th,ind2(i))(av*N.y);
+
+}
+real maxdif = diffs.max;
+real amax   = dots.max;
+real amin   = dots.min;
+
+derx = derx+ax;
+dery = dery+ay;
+real[int] integrals(n);
+//for(int i=0;i<n;i++)
+//integrals[i] = int1d(Th,i)((dx(eV[k])*N.x+dy(eV[k])*N.y)^2);
+//cout << "Integrals " << integrals << endl;
+
+xx = xx-epst*derx;
+yy = yy-epst*dery;
+
+//if(maxdif<tresh){
+ // epst= epst/5;
+ // tresh = tresh/5;
+//}
+if(count%200 == 0){
+epst = epst/10;
+}
+
+count++;
+plot(eV[k],fill=true,ShowAxes = 0);
+cout << count << " " << ev[0]+ar << " " << epst << " " << maxdif << 
+" " << amax-amin << endl;
+if(count>1000)
+break;
+}
+
