@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link type="text/css" rel="stylesheet" href="styles.css">
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+   <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script> 
+    <title>Computing Exponents for 3D Random Walks</title>
+    <meta content="Beni Bogosel" name="author">
+    
+    
+    
+  </head>
+  <body>
+    <div class = "main">
+    <?php include("header2.html");?>
+     <h2 style="padding:10pt;margin-top:5pt">3D positive lattice walks and spherical triangles</h2>
+     
+     <p>in collaboration with <a href="http://www.lmpt.univ-tours.fr/~perrollaz/">Vincent Perrollaz</a>, <a href="http://www.lmpt.univ-tours.fr/~raschel/">Kilian Raschel</a> and Amelie Trotignon</p>    
+        
+        <p>For details and complete description of this work, take a look at our paper <a href="pdfs/3DWalks.pdf">3D positive lattice walks and spherical triangles.</a></p>    
+    
+    <strong>Contents</strong>
+    <ol>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#results">Presentation of the results</a></li>
+        <li><a href="#numeric">Numerical tools</a></li>
+        </ol>    
+        
+        
+    <h3 id="intro">Introduction</h3>
+        
+    <p>We consider 3D random walk models with steps in a family $\mathcal S \subset \{(x,y,z): x,y,z \in \{-1,0,1\}\}\setminus\{0,0,0\}$. For non degenerate models where $\mathcal S$ is not included in a half-space the critical exponent of each model can be linked to the fundamental eigenvalue of a spherical triangle.
+    </p>    
+        
+    <p> Our results deal with the following aspects: </p>
+    <ul>
+    <li>
+          Investigate links between the properties of the model, like the associated combinatorial group, and the associated spherical triangle. 
+    </li>    
+    <li>
+        Provide a way to compute numerically, and even analytically, when possible, the critical exponents with the aid of the eigenvalues of spherical triangles.     
+    </li>    
+    </ul>    
+        
+    <h3 id="results">Presentation of the results</h3>
+        
+   <div class="siamsol">
+        <p> <strong>Theorem 17.</strong> (from our article)  Among all infinite group 3D models we have the following classification in terms of angles:</p>
+    
+    <ul>
+    <li> exactly one right angle 
+        <ul>
+            <li><a href="3DRandomWalks/ListG6_nra1.csv">$200$ models in $G_6$</a></li>
+            <li><a href="3DRandomWalks/ListG4_nra1.csv">$837$ in $G_4$</a></li>
+            <li><a href="3DRandomWalks/ListG2_nra1.csv">$77667$ in $G_2$</a></li>
+            <li><a href="3DRandomWalks/">$31005$ in $G_1$</a>
+            </li>
+        </ul>
+    </li>    
+    <li>exactly two right angles 
+        <ul>
+            <li><a href="3DRandomWalks/ListG3_nra2.csv">$57935$ models in $G_3$</a>
+            </li>
+            <li><a href="3DRandomWalks/ListG2_nra2.csv">$1552$ in $G_2$</a></li>
+            <li><a href="3DRandomWalks/ListG1_nra2.csv">$28893$ in $G_1$</a>
+            </li>
+        </ul>     
+    </li>
+    <li>three right angles  
+        <ul><li><a href="3DRandomWalks/ListG3_nra3.csv">$40$ models in $G_3$</a>
+            </li>
+            
+            <li><a href="3DRandomWalks/ListG1_nra3.csv">$563$ in $G_1$</a>
+            </li>
+       </ul>        
+    </li>
+    <li> three angles equal to $2\pi/3$ (Tetrahedral partition)
+        <ul>
+            <li><a href="3DRandomWalks/ListG4_nKrew3.csv">$2$ models in $G_4$</a> </li>
+            <li><a href="3DRandomWalks/ListG1_nKrew3.csv">$3$ models in $G_1$</a>
+            </li>
+        </ul>   
+    </li>    
+    <li> triangles with three angles $\arccos(1/3) = 0.3918265520\pi$ (polar triangle of the equilateral triangle with angles $2\pi/3$)
+        <ul>
+        <li>
+            <a href="3DRandomWalks/ListG1_polarKrew.csv">$5$ triangles in $G_1$</a>
+            </li>
+        </ul>
+        </li>    
+    </ul>    
+        
+    </div>   
+        
+    <div>
+      <ul style="display:inline-block;text-align: center">
+        <li style="display:inline-block;width:40%">
+          <img class="roundc"  src="3DRandomWalks/3ra_part_nonTr.png">
+          </li>
+        <li style="display:inline-block;;width:40%">
+          <img class="roundc" src="3DRandomWalks/Kreweras_nonTr.png">
+          </li>  
+        </ul>   
+    <p style="text-align: center">Partitions associated to the equilateral triangles with angles $\pi/2$ and $3\pi/2$</p>    
+    </div>    
+        
+    <div class="siamsol">
+    <strong>Particular examples</strong>
+    <ul>
+    <li>
+        Model in $G_1$ corresponding to three right angles with "no drift" (sum of steps equal to the zero vector): critical point for the inventory $(1,1,1)$
+        
+        $$M = \begin{pmatrix}
+         -1  &  -1 &   -1&    -1 &   -1 &    0 &    0 &    1 &    1 &    1  &   1 &    1\\
+         -1 &   -1 &    0 &    1 &    1 &   -1 &    1 &   -1&     0  &   0 &    0 &    1\\
+         -1 &    0 &    0  &   0 &    1 &    0 &    0 &    1 &   -1 &    0 &    1 &   -1
+        \end{pmatrix}$$
+        </li>  
+        
+    <li>
+        Model in $G_1$ with triangle with three right angles and drift in each direction (sum of steps has all components non-zero): critical point for the inventory $(1.6180,1.6180,1.6180)$
+        $$ M = \begin{pmatrix}
+        -1&    -1&    -1&    -1&    -1&     0&     0&     0&     1&     1\\
+        -1&    -1&    -1&     0&     1&    -1&     0&     1&    -1&     0\\
+        -1&     0&     1&    -1&    -1&    -1&     1&     0&    -1&     0
+         \end{pmatrix}
+        $$
+        </li> 
+        
+    <li>
+        Model in $G_1$ with triangle with three right angles and drift in each direction (sum of steps has all components non-zero): critical point for the inventory $(0.6180,0.6180,0.6180)$
+        $$ M = \begin{pmatrix}
+        -1&    -1&     0&     0&     0&     1&     1&     1&     1&     1\\
+        -1&     0&    -1&     0&     1&    -1&    -1&    -1&     0&     1\\
+         1&     0&     1&    -1&     0&    -1&     0&     1&     1&     1
+         \end{pmatrix}
+        $$
+        </li>    
+        
+    <li>
+        <p>
+        There are $1394$ equilateral triangles corresponding to models in $G_1$. A full list can be found in the <a href="3DRandomWalks/ListG1_equilateral.csv">following document</a>.</p>
+        
+        <p>The list of angles with tolerance $10^{-8}$ can be found in the following file: <a href="3DRandomWalks/angles_equiG1.csv">angles_equiG1.csv</a>. In some case, explicit algebraic expressions can be found using symbolic computations. There are Matlab codes in the Numeric section below which can be run on the list of equilateral triangles given above in order to find the precise algebraic expression for these angles.</p>
+        
+        <p>
+        Of course, among these there are triangles with other angles than $\pi/2$ or $2\pi/3$. In particular, the equilateral triangle with angles $\arccos(1/3) = 0.3918265520\pi$ is <strong>the polar to the Kreweras triangle</strong> with three angles $2\pi/3$. There are five such triangles in $G_1$. Two examples are given below:
+        
+        $$M = \begin{pmatrix}
+        -1&    -1&     0&     0&     1&     1\\
+        -1&     0&    -1&     1&     0&     1\\
+         1&     0&     1&    -1&     1&     1
+        \end{pmatrix}
+        $$
+        $$M = \begin{pmatrix}
+         -1&    -1&     0&     0&     1&     1\\
+         -1&     0&    -1&     1&     1&     1\\
+          1&     0&     1&    -1&    -1&     0
+        \end{pmatrix}
+        $$
+        </p>
+        </li>    
+        </ul>    
+        </div>    
+    
+    <h3 id="numeric">Numerical tools</h3>    
+    
+    <p> If you use any of the tools provided in this section in your work, please give credid by citing the associated article.</p>    
+        
+    <p>In this section we present some numerical tools used in our work. These tools can confirm some of the results presented in the paper.</p>    
+        
+    <ol>
+     <li>Computing the eigenvalue of a spherical triangle coupled with an extrapolation procedure in order to accelerate the convergence.
+        <ul>
+         <li>Construct mesh: <a href="3DRandomWalks/codes/sph_triangle_mesh_Pts.m">sph_triangle_mesh_Pts.m</a></li>
+         <li>Assemble Laplace-Beltrami finite elements: <a href="3DRandomWalks/codes/beltrami_KM.m">beltrami_KM.m</a> </li>
+         <li>Compute Dirichlet eigenvalues given a mesh: <a href="3DRandomWalks/codes/sph_tri_eigs_Run.m">sph_tri_eigs_Run.m</a></li> 
+         <li>
+          Extrapolation procedure for higher accuracy: <a href="3DRandomWalks/codes/accurate_bel_Silent.m">accurate_bel_Silent.m</a>      
+         </li>    
+         
+         </ul>
+        
+        </li>  
+        
+     <li>Testing if a model is included in a halfspace
+        <ul>
+         <li>
+            <a href="3DRandomWalks/codes/test_halfspace3_v3.m">test_halfspace3_v3.m</a>
+            </li>
+         </ul>
+        </li>
+        
+     <li>Compute the associated triangle to a 3D walk model 
+       <ul>
+         <li>
+           Numerical approximation (precision between 1e-12 and 1e-16) <a href="3DRandomWalks/codes/test_Contents_Saved.m">test_Contents_Saved.m</a>
+           </li>
+          <li>
+           Symbolic computations (uses Matlab Symbolic Toolbox; does not always work)
+              <a href="3DRandomWalks/codes/test_Contents_Symbolic.m">test_Contents_Symbolic.m</a>
+           </li>   
+         </ul>
+     </li> 
+        
+     <li>Compute critical exponent given a 3D model: Matlab implementation with numerical computation of the triangle and the eigenvalue: <a href="3DRandomWalks/codes/readDB_inf_mat.m">readDB_inf_mat.m</a></li>
+        
+     <li>Testing if the combinatorial group is a subgroup of the group of the symmetries of the triangle (with machine precision)
+        <ul>
+         <li>
+            <a href="3DRandomWalks/codes/testing_sphsymm.m">testing_sphsymm.m</a>
+            </li>
+         <li>also needs the following: <a href="3DRandomWalks/codes/DrawSymSphTri0.m">DrawSymSphTri0</a>, <a href="3DRandomWalks/codes/arc_sphere.m">arc_sphere.m</a>, <a href="3DRandomWalks/codes/rota.m">rota.m</a></li>    
+         </ul>
+        
+        </li>
+        
+     <li>Some numerical results (containing matrices which can be directly imported into Matlab)
+        <ul>
+         <li>Results for finite groups</li>
+            <ul>
+             <li><a href="3DRandomWalks/codes/Results/reducedFiniteGroups.csv">reducedFiniteGroups.csv</a></li>
+             <li><a href="3DRandomWalks/codes/Results/ResultsFiniteGroups.mat">ResultsFiniteGroups.mat</a></li>    
+            </ul>
+         <li>Some results for infinite groups</li>
+            <ul>
+              <li>The steps for all except $G_1$:
+                <a href="3DRandomWalks/codes/Results/reducedG2.csv">reducedG2.csv</a>,  
+                <a href="3DRandomWalks/codes/Results/reducedG3.csv">reducedG3.csv</a>,
+                <a href="3DRandomWalks/codes/Results/reducedG4.csv">reducedG4.csv</a>,
+                <a href="3DRandomWalks/codes/Results/reducedG5.csv">reducedG5.csv</a>,
+                  <a href="3DRandomWalks/codes/Results/reducedG6.csv">reducedG6.csv</a>,
+                  <a href="3DRandomWalks/codes/Results/reducedG7.csv">reducedG7.csv</a>,
+                  <a href="3DRandomWalks/codes/Results/reducedG8.csv">reducedG8.csv</a>,
+                  <a href="3DRandomWalks/codes/Results/reducedG9.csv">reducedG9.csv</a>,
+                  <a href="3DRandomWalks/codes/Results/reducedG10.csv">reducedG10.csv</a>,
+                  <a href="3DRandomWalks/codes/Results/reducedG11.csv">reducedG11.csv</a>,
+                  <a href="3DRandomWalks/codes/Results/reducedG12.csv">reducedG12.csv</a>
+                </li>
+             <li>Results in Matlab .mat files. Lines which are zero correspond to models which are included in a halfspace. <a href="3DRandomWalks/codes/Results/Result_infG2.mat">G2</a>, <a href="3DRandomWalks/codes/Results/Result_infG3.mat">G3</a>, <a href="3DRandomWalks/codes/Results/Result_infG4.mat">G4</a>, <a href="3DRandomWalks/codes/Results/Result_infG5.mat">G5</a>, <a href="3DRandomWalks/codes/Results/Result_infG6.mat">G6</a>, <a href="3DRandomWalks/codes/Results/Result_infG7.mat">G7</a>, <a href="3DRandomWalks/codes/Results/Result_infG8.mat">G8</a>, <a href="3DRandomWalks/codes/Results/Result_infG9.mat">G9</a>, <a href="3DRandomWalks/codes/Results/Result_infG10.mat">G10</a>, <a href="3DRandomWalks/codes/Results/Result_infG11.mat">G11</a>, <a href="3DRandomWalks/codes/Results/Result_infG12.mat">G12</a> </li>    
+            </ul>
+         </ul>
+        </li>
+         
+    </ol>    
+        
+    <hr>
+    <p style = "font-size:8px"> Created: Mar 2018, Last modified: Mar 2018</p>
+   </div>
+  </body>
+</html>
