@@ -120,5 +120,217 @@
     "doi": "https://doi.org/10.1007/s00158-020-02551-1",
     "abstract": "Supports are often required to safely complete the building of complicated structures by additive manufacturing technologies. In particular, supports are used as scaffoldings to reinforce overhanging regions of the structure and/or are necessary to mitigate the ther- mal deformations and residual stresses created by the intense heat flux produced by the source term (typically a laser beam). However, including supports increase the fabrica- tion cost and their removal is not an easy matter. Therefore, it is crucial to minimize their volume while maintaining their efficiency. Based on earlier works, we propose here some new optimization criteria. First, simple geometric criteria are considered like the projected area and the volume of supports required for overhangs: they are minimized by varying the structure orientation with respect to the baseplate. In addition, an accessibility crite- rion is suggested for the removal of supports, which can be used to forbid some parts of the structure to be supported. Second, shape and topology optimization of supports for compliance minimization is performed. The novelty comes from the applied surface loads which are coming either from pseudo gravity loads on overhanging parts or from equiva- lent thermal loads arising from the layer by layer building process. Here, only the supports are optimized, with a given non-optimizable structure, but of course many generalizations are possible, including optimizing both the structure and its supports. Our optimization algorithm relies on the level set method and shape derivatives computed by the Hadamard method. Numerical examples are given in 2-d and 3-d. ",
     "hal": "02468684"
+  },
+  {
+    "author": "A. Al Sayed, B. Bogosel, A. Henrot and F. Nacry",
+    "title": "Maximization of the Steklov eigenvalues with a diameter constraint",
+    "journal": "SIAM Journal on Mathematical Analysis",
+    "year": "2021",
+    "doi": "https://doi.org/10.1137/20M1335042",
+    "abstract": "In this paper, we address the problem of maximizing the Steklov eigenvalues with a diameter constraint. We provide an estimate of the Steklov eigenvalues for a convex domain in terms of its diameter and volume and we show the existence of an optimal convex domain. We establish that balls are never maximizers, even for the first non-trivial eigenvalue that contrasts with the case of volume or perimeter constraints. Under an additional regularity assumption, we are able to prove that the Steklov eigenvalue is multiple for the optimal domain. We illustrate our theoretical results by giving some optimal domains in the plane thanks to a numerical algorithm. ",
+    "arxiv": "2004.14142"
+  },
+  {
+    "author": "B. Bogosel, T. Giletti and A. Tellini",
+    "title": "Propagation for KPP bulk-surface systems in a general cylindrical domain",
+    "journal": "Nonlinear Analysis",
+    "year": "2021",
+    "doi": "https://doi.org/10.1016/j.na.2021.112528",
+    "abstract": "In this paper, we investigate propagation phenomena for KPP bulk-surface systems in a cylindrical domain with general section and heterogeneous coefficients. As for the scalar KPP equation, we show that the asymptotic spreading speed of solutions can be computed in terms of the principal eigenvalues of a family of self-adjoint elliptic operators. \n Using this characterization, we analyze the dependence of the spreading speed on various parameters, including diffusion rates and the size and shape of the section of the domain. In particular, we provide new theoretical results on several asymptotic regimes like small and high diffusion rates and sections with small and large sizes. These results generalize earlier ones which were available in the radial homogeneous case. \n Finally, we numerically investigate the issue of shape optimization of the spreading speed. By computing its shape derivative, we observe, in the case of homogeneous coefficients, that a disk either maximizes or minimizes the speed, depending on the parameters of the problem, both with or without constraints. We also show the results of numerical shape optimization with non homogeneous coefficients, when the disk is no longer an optimizer.",
+    "arxiv": "2006.14224"
+  },
+  {
+    "author": "G. Allaire, B. Bogosel and M. Godoy",
+    "title": "Shape optimization of an imperfect interface: steady-state heat diffusion",
+    "journal": "Journal of Optimization Theory and Applications",
+    "year": "2021",
+    "doi": "https://doi.org/10.1007/s10957-021-01928-6",
+    "abstract": "In the context of a diffusion equation, this work is devoted to a two-phase optimal design problem where the interface, separating the phases, is imperfect, meaning that the solution is discontinuous while the normal flux is continuous and proportional to the jump of the solution. The shape derivative of an objective function with respect to the interface position is computed by the adjoint method. Numerical experiments are performed with the level set method and an exact remeshing algorithm so that the interface is captured by the mesh at each optimization iteration. Comparisons with a perfect interface are discussed in the setting of optimal design or inverse problems.",
+    "hal": "03102760"
+  },
+  {
+    "author": "B. Bogosel and E. Oudet",
+    "title": "Longest minimal length partitions",
+    "journal": "Interfaces and Free Boundaries",
+    "year": "2022",
+    "doi": "https://doi.org/10.4171/ifb/468",
+    "abstract": "This article provides numerical evidence that under volume constraint the ball is the set which maximizes the perimeter of the least-perimeter partition into cells with prescribed areas. We introduce a numerical maximization algorithm which performs multiple optimizations steps at each iteration to approximate minimal partitions. Using these partitions we compute perturbations of the domain which increase the minimal perimeter. The initialization of the optimal partitioning algorithm uses capacity-constrained Voronoi diagrams. A new algorithm is proposed to identify such diagrams, by computing the gradients of areas and perimeters for the Voronoi cells with respect to the Voronoi points.",
+    "hal": "03132237",
+    "arxiv": "2102.02891"
+  },
+  {
+    "author": "P. R. S. Antunes and B. Bogosel",
+    "title": "Parametric shape optimization using the support function",
+    "journal": "Computational Optimization and Applications ",
+    "year": "2022",
+    "doi": "https://doi.org/10.1007/s10589-022-00360-4",
+    "abstract": "The optimization of shape functionals under convexity, diameter or constant width constraints shows numerical challenges. The support function can be used in order to approximate solutions to such problems by finite dimensional optimization problems under various constraints. We propose a numerical framework in dimensions two and three and we present applications from the field of convex geometry. We consider the optimization of functionals depending on the volume, perimeter and Dirichlet Laplace eigenvalues under the aforementioned constraints. In particular we confirm numerically Meissner’s conjecture, regarding three dimensional bodies of constant width with minimal volume.",
+    "arxiv": "1809.00254"
+  },
+  {
+    "author": "M. Bihr, G. Allaire, X. Betbeder-Lauque, B. Bogosel, F. Bordeu and J. Querois",
+    "title": "Part and supports optimization in metal powder bed additive manufacturing using simplified process simulation",
+    "journal": "Computer Methods in Applied Mechanics and Engineering",
+    "year": "2022",
+    "doi": "https://doi.org/10.1016/j.cma.2022.114975",
+    "abstract": "This paper is concerned with shape and topology optimization of parts and their supports, taking into account constraints coming from the metal powder bed additive manufacturing process. Despite the high complexity of this process, it is represented by the simple inherent strain model, which has the advantage of being computationally cheap. Three optimization criteria, evaluated with this model, are proposed to minimize defects caused by additive manufacturing: vertical displacements, residual stresses and deflection of the part after baseplate separation. Combining these criteria with a constraint on the compliance for the final use of the part leads to optimization problems which deliver optimized manufacturable shapes with only a slight loss on the final use performance. The numerical results are assessed by manufacturing some optimized and reference geometries. These experimental results are also used to calibrate the inherent strain model by an inverse analysis. The same type of optimization is applied to supports in the case of a fixed non-optimizable part. For our 3-d numerical tests we rely on the level set method, the notion of shape derivatives and an augmented Lagrangian algorithm for optimization.",
+    "hal": "03507990"
+  },
+  {
+    "author": "G. Allaire, B. Bogosel and M. Godoy",
+    "title": "Topology optimization of supports with imperfect bonding in additive manufacturing",
+    "journal": "Structural and Multidisciplinary Optimization",
+    "year": "2022",
+    "doi": "https://doi.org/10.1007/s00158-022-03284-z",
+    "abstract": "Supports are an important ingredient of the building process of structures by additive manufacturing technologies. They are used to reinforce overhanging regions of the desired structure and/or to facilitate the mitigation of residual thermal stresses due to the extreme heat flux produced by the source term (laser beam). Very often, supports are, on purpose, weakly connected to the built structure for easing their removal. In this work, we consider an imperfect interface model for which the interaction between supports and the built structure is not ideal, meaning that the displacement is discontinuous at the interface while the normal stress is continuous and proportional to the jump of the displacement. The optimization process is based on the level set method, body-fitted meshes and the notion of shape derivative using the adjoint method. We provide 2-d and 3-d numerical examples, as well as a comparison with the usual perfect interface model. Completely different designs of supports are obtained with perfect or imperfect interfaces.",
+    "hal": "03538224"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Numerical Shape Optimization Among Convex Sets",
+    "journal": "Applied Mathematics and Optimization",
+    "year": "2022",
+    "doi": "https://doi.org/10.1007/s00245-022-09920-w",
+    "abstract": "This article proposes a new discrete framework for approximating solutions to two dimensional shape optimization problems under convexity constraints. The numerical method, based on the support function or the gauge function, is guaranteed to generate discrete convex shapes and is easily implementable using standard optimization software. The framework can handle various objective functions ranging from geometric quantities to functionals depending on partial differential equations. Width or diameter constraints are handled using the support function. Functionals depending on a convex body and its polar body can be handled using a unified framework.",
+    "hal": "03607776",
+    "arxiv": "2203.06981"
+  },
+  {
+    "author": "G. Allaire, M. Bihr, B. Bogosel and M. Godoy",
+    "title": "Accessibility constraints in structural optimization via distance functions",
+    "journal": "Journal of Computational Physics",
+    "year": "2023",
+    "doi": "https://doi.org/10.1016/j.jcp.2023.112083",
+    "abstract": "This paper is concerned with a geometric constraint, the so-called accessibility constraint, for shape and topology optimization of structures built by additive manufacturing. The motivation comes from the use of sacrificial supports to maintain a structure, submitted to intense thermal residual stresses during its building process. Once the building stage is finished, the supports are no longer useful and should be removed. However, such a removal can be very difficult or even impossible if the supports are hidden deep inside the complex geometry of the structure. A rule of thumb for evaluating the ease of support removal is to ask that the contact zone between the structure and its supports can be accessed from the exterior by a straight line which does not cross another part of the structure. It mimicks the possibility to cut the head of the supports attached to the structure with some cutting tool. The present work gives a new mathematical way to evaluate such an accessibility constraint, which is based on distance functions, solutions of eikonal equations. The main advantage is the possibility of computing shape derivatives of such a criterion with respect to both the structure and the support. We numerically demonstrate in 2D and 3D that, in the context of the level-set method for topology optimization, such an approach allows us to optimize simultaneously the mechanical performance of a structure and the accessibility of its building supports, guaranteeing its manufacturability.",
+    "hal": "03864841"
+  },
+  {
+    "author": "B. Bogosel, G. Buttazzo and E. Oudet",
+    "title": "On the numerical approximation of Blaschke–Santaló diagrams using Centroidal Voronoi Tessellations",
+    "journal": "ESAIM: Mathematical Modelling and Numerical Analysis",
+    "year": "2024",
+    "doi": "https://doi.org/10.1051/m2an/2023092",
+    "abstract": "Blaschke–Santaló diagrams are images of maps defined on a set of parameters, taking values into an Euclidean space. Typically, the dimension of the source space is high, possibly infinite, while the target space is two or three dimensional. These diagrams help characterize geometrically various inequalities and are of particular interest in the field of shape optimization. We propose a numerical method, based on Centroidal Voronoi Tessellations, which produces sample points in the parameter space that have uniformly distributed images in the Blaschle–Santaló diagram, therefore providing an accurate description of the latter. Compared with the classical Monte Carlo methods, which simply use a large number of images corresponding to random parameters, the method proposed is computationally efficient and precise. Simulations for two and three dimensional diagrams are presented involving examples in algebra and shape optimization.",
+    "hal": "03966754"
+  },
+  {
+    "author": "B. Bogosel, D. Bucur and I. Fragalà",
+    "title": "The nonlocal isoperimetric problem for polygons: Hardy–Littlewood and Riesz inequalities",
+    "journal": "Mathematische Annalen",
+    "year": "2024",
+    "doi": "https://doi.org/10.1007/s00208-023-02683-x",
+    "abstract": "Given a non-increasing and radially symmetric kernel we investigate counterparts of the classical Hardy–Littlewood and Riesz inequalities when the class of admissible domains is the family of polygons with given area and N sides. The latter corresponds to study the polygonal isoperimetric problem in nonlocal version. We prove that the regular N-gon is optimal for Hardy–Littlewood inequality. Things go differently for Riesz inequality: while for triangles and quadrilaterals it is known that the regular triangle and the square are optimal, for more sides we prove that symmetry or symmetry breaking may occur (i.e. the regular N-gon may be optimal or not), depending on the value of N and on the choice of the kernel.",
+    "hal": "04001501"
+  },
+  {
+    "author": "B. Bogosel and D. Bucur",
+    "title": "On the polygonal Faber-Krahn inequality",
+    "journal": "Journal de l’École polytechnique — Mathématiques",
+    "year": "2024",
+    "doi": "https://doi.org/10.5802/jep.250",
+    "abstract": "It has been conjectured by Pólya and Szegö seventy years ago that the planar set which minimizes the first eigenvalue of the Dirichlet-Laplace operator among polygons with fixed number of sides and fixed area is the regular polygon. Despite its apparent simplicity, this result has only been proved for triangles and quadrilaterals. In this paper we prove that for pentagons and above the proof of the conjecture can be reduced to a finite number of certified numerical computations. Moreover, the local minimality of the regular polygon can be reduced to a single numerical computation. From pentagons to octogons we perform this computation and certify the numerical approximation by finite elements, up to machine errors.",
+    "hal": "03625471",
+    "arxiv": "2203.16409"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Volume Computation for Meissner Polyhedra and Applications",
+    "journal": "Discrete & Computational Geometry",
+    "year": "2024",
+    "doi": "https://doi.org/10.1007/s00454-024-00688-0",
+    "abstract": "The volume of a Meissner polyhedron is computed in terms of the lengths of its dual edges. This allows to reformulate the Meissner conjecture regarding constant width bodies with minimal volume as a series of explicit finite dimensional problems. A direct consequence is the minimality of the volume of Meissner tetrahedras among Meissner pyramids.",
+    "hal": "04258055",
+    "arxiv": "2310.17672"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Mixed volumes and the Blaschke–Lebesgue theorem",
+    "journal": "Acta Mathematica Hungarica",
+    "year": "2024",
+    "doi": "https://doi.org/10.1007/s10474-024-01435-w",
+    "abstract": "The mixed area of a Reuleaux polygon and its symmetric with respect to the origin is expressed in terms of the mixed area of two explicit polygons. This gives a geometric explanation of a classical proof due to Chakerian. Mixed areas and volumes are also used to reformulate the minimization of the volume under constant width constraint as isoperimetric problems. In the two dimensional case, the equivalent formulation is solved, providing another proof of the Blaschke-Lebesgue theorem. In the three dimensional case the proposed relaxed formulation involves the mean width, the area and inclusion constraints.",
+    "hal": "04306123",
+    "arxiv": "2311.14618"
+  },
+  {
+    "author": "B. Bogosel, A. Henrot and M. Michetti",
+    "title": "Optimization of Neumann Eigenvalues Under Convexity and Geometric Constraints",
+    "journal": "SIAM Journal on Mathematical Analysis",
+    "year": "2024",
+    "doi": "https://doi.org/10.1137/24M1641099",
+    "abstract": "In this paper we study optimization problems for Neumann eigenvalues among convex domains with a constraint on the diameter or the perimeter. We work mainly in the plane, though some results are stated in higher dimension. We study the existence of an optimal domain in all considered cases. We also consider the case of the unit disk, giving values of the index for which it can or cannot be extremal. We give some numerical examples for small values of eigenvalue indices that lead us to state some conjectures.",
+    "arxiv": "2402.04117"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "A reverse isoperimetric inequality for convex shapes with inclusion constraint",
+    "journal": "Journal of Mathematical Analysis and Applications",
+    "year": "2024",
+    "doi": "https://doi.org/10.1016/j.jmaa.2024.128636",
+    "abstract": "The convex shape contained in a disk having prescribed area and maximal perimeter is completely characterized in terms of the area fraction. The solution is always a polygon having all but one sides equal. The lengths of the sides are characterized through explicit equations. The case of more general containing shapes is also discussed from both theoretical and numerical perspectives.",
+    "arxiv": "2402.05648"
+  },
+  {
+    "author": "S. Amstutz and B. Bogosel",
+    "title": "Nonlocal approximation of the anisotropic perimeter and application to topology optimization",
+    "journal": "ESAIM: Control, Optimisation and Calculus of Variations",
+    "year": "2024",
+    "doi": "https://doi.org/10.1051/cocv/2024071",
+    "abstract": "We present a Γ−convergence approximation of a class of anisotropic perimeter functionals. In contrast to other works on the topic, the construction relies on the solution of possibly nonlinear elliptic boundary value problems. We discuss theoretical and algorithmic aspects. We also show various applications in topology optimization, including multiphase partitioning and overhang penalization in a mechanical framework related to additive manufacturing.",
+    "hal": "04332547"
+  },
+  {
+    "author": "P. R. Antunes and B. Bogosel",
+    "title": "Optimization of the Steklov-Lamé eigenvalues with respect to the domain",
+    "journal": "Journal of Differential Equations",
+    "year": "2025",
+    "doi": "https://doi.org/10.1016/j.jde.2025.01.043",
+    "abstract": "This work deals with theoretical and numerical aspects related to the behavior of the Steklov-Lamé eigenvalues on variable domains. After establishing the eigenstructure for the disk, we prove that for a certain class of Lamé parameters, the disk maximizes the first non-zero eigenvalue under area or perimeter constraints in dimension two. Upper bounds for these eigenvalues can be found in terms of the scalar Steklov eigenvalues, involving various geometric quantities. We prove that the Steklov-Lamé eigenvalues are upper semicontinuous for the complementary Hausdorff convergence of ε-cone domains and, as a consequence, there exist shapes maximizing these eigenvalues under convexity and volume constraints. A numerical method based on fundamental solutions is proposed for computing the Steklov-Lamé eigenvalues, allowing to study numerically the shapes maximizing the first ten non-zero eigenvalues.",
+    "hal": "03676230",
+    "arxiv": "2205.11364"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Optimal Finsler–Hadwiger Inequalities",
+    "journal": "Results in Mathematics",
+    "year": "2025",
+    "doi": "https://doi.org/10.1007/s00025-025-02405-6",
+    "abstract": "Various inequalities exist between the area of a triangle, the perimeter squared $(a+b+c)^2$ and the isoperimetric deficit $Q = (a-b)^2+(b-c)^2+(c-a)^2$. The direct and reverse Finsler–Hadwiger inequalities correspond to the best linear inequalities between the three quantities mentioned above. In this paper, the sharpest inequalities between these three quantities are found explicitly. The techniques used involve Blaschke-Santaló diagrams and constrained optimization problems.",
+    "hal": "03676230",
+    "arxiv": "2205.11364"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "New variational arguments regarding the Blaschke–Lebesgue theorem",
+    "journal": "Expositiones Mathematicae",
+    "year": "2025",
+    "doi": "https://doi.org/10.1016/j.exmath.2025.125700",
+    "abstract": "Various inequalities exist between the area of a triangle, the perimeter squared $(a+b+c)^2$ and the isoperimetric deficit $Q = (a-b)^2+(b-c)^2+(c-a)^2$. The direct and reverse Finsler–Hadwiger inequalities correspond to the best linear inequalities between the three quantities mentioned above. In this paper, the sharpest inequalities between these three quantities are found explicitly. The techniques used involve Blaschke-Santaló diagrams and constrained optimization problems.",
+    "arxiv": "2412.13808"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "A geometric proof of the Blaschke–Lebesgue theorem for the Cheeger constant",
+    "journal": "Annales de l'Institut Fourier",
+    "year": "2025",
+    "doi": "https://doi.org/10.5802/aif.3728",
+    "abstract": "The goal of this paper is to provide a qualitative analysis of the optimisation of space-time periodic principal eigenvalues. Namely, considering a fixed time horizon $T$ and the $d$-dimensional torus, let, for any $m\\in L^\\infty((0:T)\\times\\Omega)$, $\\lambda(m)$ be the principal eigenvalue of the operator $\\partial_t-\\Delta-m$ endowed with (time-space) periodic boundary conditions. The main question we set out to answer is the following: how to choose $c$ so as to minimise $\\lambda(m)$? This question stems from  population dynamics. We prove that in several cases it is always beneficial to rearrange $m$ with respect to time in a symmetric way, which is the first comparison result for the rearrangement in time of parabolic equations. Our results are illustrated by several numerical simulations.",
+    "arxiv": "2303.15559"
+  },
+  {
+    "author": "B. Bogosel, I. Mazari and G. Nadin",
+    "title": "Optimization of space-time periodic eigenvalues",
+    "journal": "to appear in Annali della Scuola Normale Superiore di Pisa",
+    "year": "2025",
+    "abstract": "The goal of this paper is to provide a qualitative analysis of the optimisation of space-time periodic principal eigenvalues. Namely, considering a fixed time horizon $T$ and the $d$-dimensional torus, let, for any $m\\in L^\\infty((0:T)\\times\\Omega)$, $\\lambda(m)$ be the principal eigenvalue of the operator $\\partial_t-\\Delta-m$ endowed with (time-space) periodic boundary conditions. The main question we set out to answer is the following: how to choose $c$ so as to minimise $\\lambda(m)$? This question stems from  population dynamics. We prove that in several cases it is always beneficial to rearrange $m$ with respect to time in a symmetric way, which is the first comparison result for the rearrangement in time of parabolic equations. Our results are illustrated by several numerical simulations.",
+    "arxiv": "2501.02900"
+  },
+  {
+    "author": "B. Bogosel, D. Bucur",
+    "title": "Polygonal Faber-Krahn inequality: Local minimality via validated computing",
+    "journal": "submitted",
+    "year": "2024",
+    "abstract": "The main result of the paper shows that the regular n-gon is a local minimizer for the first Dirichlet-Laplace eigenvalue among n-gons having fixed area for n∈{5,6}. The eigenvalue is seen as a function of the coordinates of the vertices in $\\Bbb{R}^{2n}$. Relying on fine regularity results of the first eigenfunction in a convex polygon, an explicit a priori estimate is given for the eigenvalues of the Hessian matrix associated to the discrete problem, whose coefficients involve the solutions of some Poisson equations with singular right hand sides. The a priori estimates, in conjunction with certified finite element approximations of these singular PDEs imply the local minimality for n∈{5,6}. All computations, including the finite element computations, are realized using interval arithmetic.",
+    "arxiv": "2406.11575"
   }
 ]
