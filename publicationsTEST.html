@@ -58,15 +58,16 @@ MathJax.Hub.Config({
           const div = document.createElement('div');
           const abstractId = `abstract-${index}`;
           div.classList.add("pubitemnew")
-          var ArxivStr = pub.arxiv ? (` (<a href="https://arxiv.org/`+pub.arxiv+`">`+"arxiv:"+pub.arxiv+`</a>)`) : "";
+          var ArxivStr = pub.arxiv ? (` (<a href="https://arxiv.org/abs/`+pub.arxiv+`">`+"arxiv:"+pub.arxiv+`</a>)`) : "";
+          var HalStr = pub.hal ? (` (<a href="https://hal.science/hal-`+pub.hal+`">`+"hal-"+pub.hal+`</a>)`) : "";
           var Journal  = pub.journal ? pub.journal : "";
           div.innerHTML = `
             [${counter}] <strong>${pub.title}</strong><br> 
-            <em>${pub.author}, </em>`+
+            <em>${pub.author}, </em><br>`+
             Journal+", "+pub.year+
             `<br>(<a href="${pub.doi}" target="_blank">Journal Link</a>)`
-            +ArxivStr+
-            `<br>
+            +ArxivStr+HalStr+
+            `
             <a class="button_abstract" onclick="toggleAbstract('${abstractId}', this)">Show abstract</a>
             <div id="${abstractId}" class="boxgrand">
                 <div class="decal">

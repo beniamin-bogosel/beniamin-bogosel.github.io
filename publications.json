@@ -31,5 +31,94 @@
     "year": "2016",
     "doi": "https://doi.org/10.1016/j.cam.2016.04.008",
     "abstract": "We develop methods based on fundamental solutions to compute the Steklov, Wentzell and Laplace-Beltrami eigenvalues. In the class of smooth simply connected two dimensional domains, the numerical method is accurate and fast. A theoretical error bound is given along with comparisons with mesh-based methods. We illustrate the use of this method in the study of a wide class of shape optimization problems in two dimensions. We extend the method to the computation of the Laplace-Beltrami eigenvalues on surfaces and we investigate some spectral optimal partitioning problems."
+  },
+  {
+    "author": "B. Bogosel, D. Bucur, A. Giacomini",
+    "title": "Optimal Shapes Maximizing the Steklov Eigenvalues",
+    "journal": "SIAM Journal on Mathematical Analysis",
+    "year": "2017",
+    "doi": "https://doi.org/10.1137/16M1075260",
+    "abstract": "In this paper we consider the problem of maximizing the k-th Steklov eigenvalue of the Laplacian (or a more general spectral functional), among all sets of prescribed volume. We prove existence of an optimal set and get some qualitative properties of the solutions in a relaxed setting. In particular, in dimension two, we prove that the optimal set consists in the union of at most k disjoint Jordan domains with finite perimeter. A key point of our analysis is played by an isodiametric control of the Stelkov spectrum. We also perform some numerical experiments and exhibit the optimal shapes maximizing the k-th eigenvalues under area constraint in dimension two for the first 10 eigenvalues."
+  },
+  {
+    "author": "B. Bogosel, E. Oudet",
+    "title": "Partitions of Mimimal Length on Manifolds",
+    "journal": "Experimental Mathematics",
+    "year": "2017",
+    "doi": "https://doi.org/10.1080/10586458.2016.1223570",
+    "abstract": "We study partitions on three dimensional manifolds which minimize the total geodesic perimeter. We propose a relaxed framework based on a Γ-convergence result and we show some numerical results. We compare our results to those already present in the literature in the case of the sphere. For general surfaces we provide an optimization algorithm on meshes which can give a good approximation of the optimal cost, starting from the results obtained using the relaxed formulation. ",
+    "arxiv": "1606.02873"
+  },
+  {
+    "author": "B. Bogosel, V. Bonnaillie-Noël",
+    "title": "Minimal Partitions for p-norms of Eigenvalues",
+    "journal": "Interfaces and Free Boundaries",
+    "year": "2018",
+    "doi": "https://doi.org/10.4171/ifb/399",
+    "abstract": "In this article we are interested in studying partitions of the square, the disk and the equilateral triangle which minimize a p-norm of eigenvalues of the Dirichlet-Laplace operator. The extremal case of the infinity norm, where we minimize the largest fundamental eigenvalue of each cell, is one of our main interests. We propose three numerical algorithms which approximate the optimal configurations and we obtain tight upper bounds for the energy, which are better than the ones given by theoretical results. A thorough comparison of the results obtained by the three methods is given. We also investigate the behavior of the minimal partitions with respect to p. This allows us to see when partitions minimizing the 1-norm and the infinity-norm are different. ",
+    "arxiv": "1612.07296"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Efficient algorithm for optimizing spectral partitions",
+    "journal": "Applied Mathematics and Computation",
+    "year": "2018",
+    "doi": "https://doi.org/10.1016/j.amc.2018.03.087",
+    "abstract": "We present an amelioration of current known algorithms for optimal spectral partitioning problems. The idea is to use the advantage of a representation using density functions while decreasing the computational time. This is done by restricting the computation to neighbourhoods of regions where the associated densities are above a certain threshold. The algorithm extends and improves known methods in the plane and on surfaces in dimension 3. It also makes possible to make some of the first computations of volumic 3D spectral partitions on sufficiently large discretizations. ",
+    "arxiv": "1705.08739"
+  },
+  {
+    "author": "B. Bogosel, A. Henrot and I. Lucardesi",
+    "title": "Minimization of the eigenvalues of the Dirichlet-Laplacian with a diameter constraint",
+    "journal": "SIAM Journal on Mathematical Analysis",
+    "year": "2018",
+    "doi": "https://doi.org/10.1137/17M1162147",
+    "abstract": "In this paper we look for the domains minimizing the eigenvalues of the Dirichlet-Laplacian with a constraint on the diameter. Existence of an optimal domain is easily obtained, and is attained at a constant width body. In the case of a simple eigenvalue, we provide non standard (i.e., non local) optimality conditions. Then we address the question whether or not the disk is an optimal domain in the plane, and we give the precise list of the 17 eigenvalues for which the disk is a local minimum. We conclude by some numerical simulations showing the 20 first optimal domains in the plane. ",
+    "arxiv": "1801.01417"
+  },
+  {
+    "author": "G. Allaire and B. Bogosel",
+    "title": "Optimizing supports for additive manufacturing",
+    "journal": "Structural and Multidisciplinary Optimization",
+    "year": "2018",
+    "doi": "https://doi.org/10.1007/s00158-018-2125-x",
+    "abstract": "In additive manufacturing process support structures are often required to ensure the quality of the final built part. In this article we present mathematical models and their numerical implementations in an optimization loop, which allow us to design optimal support structures. Our models are derived with the requirement that they should be as simple as possible, computationally cheap and yet based on a realistic physical modeling. Supports are optimized with respect to two different physical properties. First, they must support overhanging regions of the structure for improving the stiffness of the supported structure during the building process. Second, supports can help in channeling the heat flux produced by the source term (typically a laser beam) and thus improving the cooling down of the structure during the fabrication process. Our optimization algorithm is based on the level set method and on the computation of shape derivatives by the Hadamard method. In a first approach, only the shape and topology of the supports are optimized, for a given and fixed structure. In second and more elaborated strategy, both the supports and the structure are optimized, which amounts to a specific multiphase optimization problem. Numerical examples are given in 2-d and 3-d. ",
+    "hal": "01769324"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Regularity result for a shape optimization problem under perimeter constraint",
+    "journal": "Communications in Analysis and Geometry",
+    "year": "2019",
+    "doi": "10.4310/CAG.2019.v27.n7.a3",
+    "abstract": "We study the problem of optimizing the eigenvalues of the Dirichlet Laplace operator under perimeter constraint. We prove that optimal sets are smooth by writing a general optimality condition in the case the optimal eigenvalue is multiple. As a consequence we find that the optimal k-th eigenvalue is strictly smaller than the optimal k+1-th eigenvalue. We also provide an elliptic regularity result for sets with positive and bounded weak curvature. ",
+    "arxiv": "1606.05878"
+  },
+  {
+    "author": "B. Bogosel, D. Bucur, I. Fragala",
+    "title": "Phase field approach to optimal packing problems and related Cheeger clusters",
+    "journal": "Applied Mathematics and Optimization",
+    "year": "2020",
+    "doi": "https://doi.org/10.1007/s00245-018-9476-y",
+    "abstract": "In a fixed domain we study the asymptotic behaviour of optimal clusters associated to α-Cheeger constants and natural energies like the sum or maximum: we prove that, as the parameter α converges to the critical value (N−1/N), optimal Cheeger clusters converge to solutions of different packing problems for balls, depending on the energy under consideration. As well, we propose an efficient phase field approach based on a multiphase Gamma convergence result of Modica-Mortola type, in order to compute α-Cheeger constants, optimal clusters and, as a consequence of the asymptotic result, optimal packings. Numerical experiments are carried over in two and three space dimensions. ",
+    "arxiv": "1706.05506"
+  },
+  {
+    "author": "B. Bogosel, V. Perrollaz, K. Raschel and A. Trotignon",
+    "title": "3D positive lattice walks and spherical triangles",
+    "journal": "Journal of Combinatorial Theory, Series A",
+    "year": "2020",
+    "doi": "https://doi.org/10.1016/j.jcta.2019.105189",
+    "abstract": "In this paper we explore the asymptotic enumeration of three-dimensional excursions confined to the positive octant. As shown in [29], both the exponential growth and the critical exponent admit universal formulas, respectively in terms of the inventory of the step set and of the principal Dirichlet eigenvalue of a certain spherical triangle, itself being characterized by the steps of the model. We focus on the critical exponent, and our main objective is to relate combinatorial properties of the step set (structure of the so-called group of the walk, existence of a Hadamard decomposition, existence of differential equations satisfied by the generating functions) to geometric or analytic properties of the associated spherical triangle (remarkable angles, tiling properties, existence of an exceptional closed-form formula for the principal eigenvalue). As in general the eigenvalues of the Dirichlet problem on a spherical triangle are not known in closed form, we also develop a finite-elements method to compute approximate values, typically with ten digits of precision.",
+    "arxiv": "1804.06245"
+  },
+  {
+    "author": "G. Allaire, M. Bihr and B. Bogosel",
+    "title": "Support optimization in additive manufacturing for geometric and thermo-mechanical constraints",
+    "journal": "Structural and Multidisciplinary Optimization",
+    "year": "2020",
+    "doi": "https://doi.org/10.1007/s00158-020-02551-1",
+    "abstract": "Supports are often required to safely complete the building of complicated structures by additive manufacturing technologies. In particular, supports are used as scaffoldings to reinforce overhanging regions of the structure and/or are necessary to mitigate the ther- mal deformations and residual stresses created by the intense heat flux produced by the source term (typically a laser beam). However, including supports increase the fabrica- tion cost and their removal is not an easy matter. Therefore, it is crucial to minimize their volume while maintaining their efficiency. Based on earlier works, we propose here some new optimization criteria. First, simple geometric criteria are considered like the projected area and the volume of supports required for overhangs: they are minimized by varying the structure orientation with respect to the baseplate. In addition, an accessibility crite- rion is suggested for the removal of supports, which can be used to forbid some parts of the structure to be supported. Second, shape and topology optimization of supports for compliance minimization is performed. The novelty comes from the applied surface loads which are coming either from pseudo gravity loads on overhanging parts or from equiva- lent thermal loads arising from the layer by layer building process. Here, only the supports are optimized, with a given non-optimizable structure, but of course many generalizations are possible, including optimizing both the structure and its supports. Our optimization algorithm relies on the level set method and shape derivatives computed by the Hadamard method. Numerical examples are given in 2-d and 3-d. ",
+    "hal": "02468684"
   }
 ]
