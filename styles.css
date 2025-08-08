@@ -180,7 +180,6 @@ font-size:14px;
 }
 
 .boxgrand {
-visibility: hidden;
 display: none;
 border: 2px solid silver;
 margin:10px;
@@ -526,6 +525,14 @@ div.pubitem:before {
 }
 
 div.pubitem {
+   margin-left: 10px; 
+   margin-bottom: 7px;
+   background-color:#dae7f1;
+   border-radius:10px;
+   padding: 7px;       
+} 
+
+div.pubitemnew {
    margin-left: 10px; 
    margin-bottom: 7px;
    background-color:#dae7f1;
