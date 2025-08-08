@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />  
+    <script>
+   function bascule(elem)
+    {    etat=document.getElementById(elem).style.visibility;
+     if(etat=="hidden"){document.getElementById(elem).style.visibility="visible";
+     document.getElementById(elem).style.display='block';}
+     else{document.getElementById(elem).style.visibility="hidden";
+     document.getElementById(elem).style.display='none';}
+    }   
+   </script> 
+    
+    <script async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+    </script> 
+
+    <style>
+    .abstract-box {
+      display: none;
+      background-color: #f9f9f9;
+      border-left: 3px solid #ccc;
+    }
+
+    .toggle-btn {
+      margin-top: 0.3em;
+      padding: 2px 6px;
+      font-size: 0.9em;
+    }
+  </style>
+
+    <script>
+    // Toggle function
+    function toggleAbstract(id, btn) {
+      const box = document.getElementById(id);
+      const isVisible = box.style.display === 'block';
+      box.style.display = isVisible ? 'none' : 'block';
+      btn.textContent = isVisible ? 'Show abstract' : 'Hide abstract';
+    }
+
+
+    fetch('publications.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('pub-list');
+        data.reverse();
+        let counter = data.length;
+        data.forEach((pub, index) => {
+          const div = document.createElement('div');
+          const abstractId = `abstract-${index}`;
+          div.classList.add("pubitemnew")
+          var ArxivStr = pub.arxiv ? (` (<a href="https://arxiv.org/`+pub.arxiv+`">`+"arxiv:"+pub.arxiv+`</a>)`) : "";
+          var Journal  = pub.journal ? pub.journal : "";
+          div.innerHTML = `
+            [${counter}] <strong>${pub.title}</strong><br> 
+            <em>${pub.author}, </em>`+
+            Journal+", "+pub.year+
+            `<br>(<a href="${pub.doi}" target="_blank">Journal Link</a>)`
+            +ArxivStr+
+            `<br>
+            <a class="button_abstract" onclick="toggleAbstract('${abstractId}', this)">Show abstract</a>
+            <div id="${abstractId}" class="boxgrand">
+                <div class="decal">
+                    ${pub.abstract}
+                </div>
+            </div>
+            `;
+          container.appendChild(div);
+          counter--;
+        });
+      });
+  </script>
+
+
+    <title>Publications</title>    
+  </head>
+  <body>
+    <div class = "main">     
+    
+   <header> 
+      <div id="header">     
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL </h1>
+      <!--<span style="margin-left:20px;color:white;border-style:solid;border-width:1px 0px 0px 0px"></span>-->
+      </div>    
+      <nav>
+      <ul>
+        <li><a class="but" href="index.html">Home</a> </li>
+        <li><a class = "but" href="research.html">Numerics</a></li>
+        <li> <a class = "but" href="about.html">CV</a> </li>  
+        <li> <a class = "but" href="publications.html">Publications</a></li>
+      <li> <a class = "but" href="software.html">Software</a></li>    
+      <li> <a class = "but" href="enseignement.html">Teaching</a></li>      
+      </ul>
+      </nav>    
+    </header>     
+
+     
+    <h3>Publications</h3>
+        
+ 
+    <div id="pub-list"></div>
+
+  </div>
+ </body>
+</html>

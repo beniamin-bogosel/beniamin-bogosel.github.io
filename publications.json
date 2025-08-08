@@ -1,0 +1,35 @@
+[
+  {
+    "author": "B. Bogosel, B. Velichkov",
+    "title": "A multiphase shape optimization problem for eigenvalues: qualitative study and numerical results",
+    "journal": "SIAM Journal on Numerical Analysis",
+    "year": 2016,
+    "doi": "http://epubs.siam.org/doi/abs/10.1137/140976406",
+    "abstract": "We consider the multiphase shape optimization problems involving Dirichlet Laplace eigenvalues of cells in a multiphase configuration and a volume term for the void phase. We give some new results concerning the qualitative  properties of the optimal sets and the regularity of the corresponding eigenfunctions. We also provide numerical results for the optimal partitions.",
+    "arxiv": "1606.02513"
+  },
+  {
+    "author": "B. Bogosel, E. Oudet",
+    "title": "Qualitative and Numerical Analysis of a Spectral Problem with Perimeter Constraint",
+    "journal": "SIAM Journal on Control and Optimization",
+    "year": "2016",
+    "doi": "https://doi.org/10.1137/140999530",
+    "abstract": "We consider the problem of optimizing the k-th eigenvalue of Dirichlet Laplace operator under perimeter constraint. We provide a new method based on a Γ-convergence result for approximating the corresponding optimal shapes. We also give new optimality conditions in the case of multiple eigenvalues. We deduce from previous conditions the fact that optimal shapes never contain flat parts in their boundaries. "
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "The Steklov spectrum on moving domains",
+    "journal": "Applied Mathematics and Optimization",
+    "year": "2015",
+    "doi": "https://doi.org/10.1007/s00245-015-9321-5",
+    "abstract": "We study the continuity of the Steklov spectrum on variable domains with respect to the Hausdorff convergence. A key point of the article is understanding the behaviour of the traces of Sobolev functions on moving boundaries of sets satisfying an uniform geometric condition. As a consequence, we are able to prove existence results for shape optimization problems regarding the Steklov spectrum in the family of sets satisfying a ε-cone condition and in the family of convex sets."
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "The method of fundamental solutions applied to boundary eigenvalue problems",
+    "journal": "Journal of Computational and Applied Mathematics",
+    "year": "2016",
+    "doi": "https://doi.org/10.1016/j.cam.2016.04.008",
+    "abstract": "We develop methods based on fundamental solutions to compute the Steklov, Wentzell and Laplace-Beltrami eigenvalues. In the class of smooth simply connected two dimensional domains, the numerical method is accurate and fast. A theoretical error bound is given along with comparisons with mesh-based methods. We illustrate the use of this method in the study of a wide class of shape optimization problems in two dimensions. We extend the method to the computation of the Laplace-Beltrami eigenvalues on surfaces and we investigate some spectral optimal partitioning problems."
+  }
+]
