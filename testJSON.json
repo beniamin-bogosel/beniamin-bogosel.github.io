@@ -1,0 +1,15 @@
+[
+  {
+    "author": "John Doe",
+    "title": "Understanding AI",
+    "doi": "https://doi.org/10.1234/ai1",
+    "abstract": "This paper explores the foundations of AI."
+  },
+  {
+    "author": "Jane Smith",
+    "title": "Quantum Mechanics Basics",
+    "doi": "https://doi.org/10.1234/qm1",
+    "abstract": "A brief overview of quantum mechanics.",
+    "arxiv": "2501.02900"
+  }
+]
