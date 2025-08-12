@@ -296,8 +296,7 @@
     "year": "2025",
     "doi": "https://doi.org/10.1007/s00025-025-02405-6",
     "abstract": "Various inequalities exist between the area of a triangle, the perimeter squared $(a+b+c)^2$ and the isoperimetric deficit $Q = (a-b)^2+(b-c)^2+(c-a)^2$. The direct and reverse Finsler–Hadwiger inequalities correspond to the best linear inequalities between the three quantities mentioned above. In this paper, the sharpest inequalities between these three quantities are found explicitly. The techniques used involve Blaschke-Santaló diagrams and constrained optimization problems.",
-    "hal": "03676230",
-    "arxiv": "2205.11364"
+    "arxiv": "2508.06285"
   },
   {
     "author": "B. Bogosel",
