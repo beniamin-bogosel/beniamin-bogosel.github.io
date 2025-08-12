@@ -331,5 +331,13 @@
     "year": "2024",
     "abstract": "The main result of the paper shows that the regular n-gon is a local minimizer for the first Dirichlet-Laplace eigenvalue among n-gons having fixed area for n∈{5,6}. The eigenvalue is seen as a function of the coordinates of the vertices in $\\Bbb{R}^{2n}$. Relying on fine regularity results of the first eigenfunction in a convex polygon, an explicit a priori estimate is given for the eigenvalues of the Hessian matrix associated to the discrete problem, whose coefficients involve the solutions of some Poisson equations with singular right hand sides. The a priori estimates, in conjunction with certified finite element approximations of these singular PDEs imply the local minimality for n∈{5,6}. All computations, including the finite element computations, are realized using interval arithmetic.",
     "arxiv": "2406.11575"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Shape optimization under width constraint: the Cheeger constant and the torsional rigidity",
+    "journal": "submitted",
+    "year": "2025",
+    "abstract": "In this article it is shown that the equilateral triangle maximizes the Cheeger constant and minimizes the torsional rigidity among shapes having a fixed minimal width. The proof techniques use direct comparisons with simpler shapes, consisting of disks with three disjoint caps. Comparison results for harmonic functions help establish that in non-equilateral configurations the shape derivative has an appropriate sign, contradicting optimality. ",
+    "arxiv": "2506.07708"
   }
 ]
