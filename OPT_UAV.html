@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">   
+   <link rel="icon" href="favicon.png" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47560351-1', 'univ-savoie.fr');
+  ga('send', 'pageview');
+
+  </script>
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script> 
+
+    <title>Tehnici de Optimizare UAV</title>
+   
+  
+    
+    
+  </head>
+    
+    
+   
+  <body style="   max-width:900px; margin-left:auto ;margin-right:auto;">
+      
+    <div class="main">   
+    <?php include("header2.html");?>
+      
+   <h2> Optimization Techniques</h2>    
+        
+    <h3>Aurel Vlaicu University, Arad</h3>    
+    <p>The course will explore various optimization problems and their associated numerical implementation. The contents are as follows:
+    </p>    
+    <ol>
+    <li>Discrete Optimization: basic notions, Optimal Assignment, minimal weight paths in graphs.
+    </li>
+    <li>Derivative-free algorithms in 1D</li>
+    <li>Algorithms using derivatives in 1D</li>
+    <li>Gradient descent in 1D</li>
+    <li>Gradient descent in higher dimensions</li>
+    <li>Newton and quasi-Newton methods</li>
+    <li>Stochastic gradient methods</li>
+    <li>Algorithms used in machine learning</li>
+    <li>Genetic algorithms</li>
+    </ol>    
+    
+        <hr>
+    
+    <p> <strong>Idei pentru proiecte</strong>: <a href="OPT_UAV/Idei_Proiecte.pdf">fisier pdf</a></p>    
+        
+    <hr>
+        <p>Course materials will be given: slides, pdfs for exercises, Python codes for the lab. It is recommended to install the Jupyter Notebook framework for running the Python codes. Installation instructions can be found online and will be discussed during the first labs.</p>    
+
+    
+    <h4>Course materials</h4>    
+          
+    <ol>
+    <li>First part: discrete optimization
+    <ul>
+        <li>Course slides: <a href="OPT_UAV/Courses/Course1_Discrete.pdf">pdf</a> </li>   
+        <li>Code Intro: <a href="OPT_UAV/Labs/TP_Intro_0.ipynb">Jupyter Notebook file</a> (right click, save as)</li>
+        <li>Code Opt Assignment: <a href="OPT_UAV/Labs/TP_Discrete_1_Student.ipynb">Jupyter Notebook file</a> </li>
+        <li>Code Dijkstra: <a href="OPT_UAV/Labs/TP_Discrete_2.ipynb">Jupyter Notebook file</a> </li>
+        <li>Note Curs: <a href="OPT_UAV/Courses/Curs_2_OPT.pdf">Curs 2</a></li>
+        <li>Note Curs: <a href="OPT_UAV/Courses/Curs_3_OPT.pdf">Curs 3</a></li>
+     </ul>    
+    </li>    
+        <li>Part 2: optimization in 1D
+        <ul>
+        <li>
+          Course slides: <a href="OPT_UAV/Courses/Course2.pdf">pdf</a>  
+            </li>
+        <li> Notebook: <a href="OPT_UAV/Labs/Trisection.ipynb">Trisection algorithm</a></li>
+        <li> Notebook (for Lab): <a href="OPT_UAV/Labs/Fibonacci_Start.ipynb">Fibonacci search</a></li>
+        <li> Notebook (for Lab): <a href="OPT_UAV/Labs/Golden_search_Start.ipynb">Golden search</a></li>
+        <li>Note Curs: <a href="OPT_UAV/Courses/Curs_4_OPT.pdf">Curs 4</a></li>
+        </ul>
+    <li>Genetic Optimization</li>
+        <ul>
+        <li>
+             Course slides: <a href="OPT_UAV/Courses/Course2_Genetic1D.pdf">pdf</a> 
+            </li>
+            <li> Notebook Exemplu genetic 1D: <a href="OPT_UAV/Labs/TP3.ipynb">Genetic Algorithm</a>
+            </li>
+        </ul>
+    <li>Aproximare folosind parabole (Newton, Secanta)</li>  
+        <ul>
+            <li>Slides: vezi cursul 2</li>
+            <li>Exercitii laborator:<a href="OPT_UAV/Labs/Session2_Correction_2024.pdf">Exercitii</a> </li>
+            <li>Notebook: Implementare Metoda Newton: 
+            <a href = "OPT_UAV/Labs/Illustration_Newton.ipynb">Notebook Newton</a>
+            </li>
+            <li>Notebook: Implementare Goldstein Price:
+            <a href = "OPT_UAV/Labs/GD1D_GP.ipynb">Notebook Goldstein Price</a>    
+            </li>    
+            </ul>
+      <li>
+        Metoda Gradientului, dimensiune 1, dimensiune N
+        <ul>
+          <li>Slides: <a href="OPT_UAV/Courses/Course3.pdf">pdf</a></li>
+          <li>Notebook: <a href="OPT_UAV/Labs/Gradient_Descent_Optimal.ipynb">Notebook Python</a></li>
+          <li>Exercitii: <a href="OPT_UAV/Labs/Session4_Correction_2024.pdf">pdf</a></li>
+        </ul>
+      </li>  
+      <li>
+        Metoda Gauss-Newton: minimizarea unei sume de patrate
+        <ul>
+          <li>Slides: vezi cursul precedent</li>
+          <li>Notebook Gauss Newton (triangulatie, aplicatii): <a href="OPT_UAV/Labs/GaussNewton_Applications.ipynb">Notebook Python</a></li>
+          <li>Notebook Population: <a href="OPT_UAV/Labs/GaussNewton_Population.ipynb">Notebook Python</a></li>
+        </ul>
+      </li>
+      <li>
+        Metode quasi-Newton, gradient conjugat 
+        <ul>
+          <li>Slides: <a href="OPT_UAV/Courses/Course4.pdf">pdf</a></li>
+          <li>Notebook: utilizarea metodelor din Scipy optimize: <a href="OPT_UAV/Labs/Scipy_Minimize.ipynb">notebook</a></li>
+        </ul>
+      </li>
+    </ol>  
+    
+    <p>Note de curs</p>
+    <ol>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_2_OPT.pdf">Curs 2</a>
+    </li>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_3_OPT.pdf">Curs 3</a>
+    </li>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_4_OPT.pdf">Curs 4</a>
+    </li>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_5_OPT.pdf">Curs 5</a>
+    </li>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_7_OPT.pdf">Curs 7</a>
+    </li>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_8_OPT.pdf">Curs 8</a>
+    </li>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_9_OPT.pdf">Curs 9</a>
+    </li>
+    <li>
+      <a href="OPT_UAV/Courses/Curs_10_OPT.pdf">Curs 10</a>
+    </li>
+    </ol>
+
+      </div>
+  </body>
+
+</html>
