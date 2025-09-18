@@ -439,6 +439,29 @@ header nav ul li {
     border-width:1px;    
 }
 
+.but3 {
+    display:inline-block;
+    background-color:#4682b4;
+    color:white;
+    padding:3px;
+    text-decoration:none;
+    border-radius:3px;
+    border-style:solid;
+    border-color:#4682b4;
+    border-width:1px;
+    margin:2px;
+}
+
+.but3:hover {
+    display:inline-block;
+    background-color:white;
+    color: #4682b4;
+    border-style:solid;
+    border-color:#4682b4;
+    border-width:1px;
+    margin:2px;    
+}
+
 
 #numerics td:first-child + td {
     padding-left: 15px;
