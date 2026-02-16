@@ -321,6 +321,7 @@
     "title": "Optimization of space-time periodic eigenvalues",
     "journal": "to appear in Annali della Scuola Normale Superiore di Pisa",
     "year": "2025",
+    "doi": "https://doi.org/10.2422/2036-2145.202501_012", 
     "abstract": "The goal of this paper is to provide a qualitative analysis of the optimisation of space-time periodic principal eigenvalues. Namely, considering a fixed time horizon $T$ and the $d$-dimensional torus, let, for any $m\\in L^\\infty((0:T)\\times\\Omega)$, $\\lambda(m)$ be the principal eigenvalue of the operator $\\partial_t-\\Delta-m$ endowed with (time-space) periodic boundary conditions. The main question we set out to answer is the following: how to choose $c$ so as to minimise $\\lambda(m)$? This question stems from  population dynamics. We prove that in several cases it is always beneficial to rearrange $m$ with respect to time in a symmetric way, which is the first comparison result for the rearrangement in time of parabolic equations. Our results are illustrated by several numerical simulations.",
     "arxiv": "2501.02900"
   },
