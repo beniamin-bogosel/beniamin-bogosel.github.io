@@ -340,5 +340,13 @@
     "year": "2025",
     "abstract": "In this article it is shown that the equilateral triangle maximizes the Cheeger constant and minimizes the torsional rigidity among shapes having a fixed minimal width. The proof techniques use direct comparisons with simpler shapes, consisting of disks with three disjoint caps. Comparison results for harmonic functions help establish that in non-equilateral configurations the shape derivative has an appropriate sign, contradicting optimality. ",
     "arxiv": "2506.07708"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Dangling points in area-minimizing Meissner polyhedra",
+    "journal": "submitted",
+    "year": "2026",
+    "abstract": "Meissner polyhedra are constant-width bodies obtained from extremal finite sets of unit diameter. Such a generating set may contain dangling points, namely points having exactly two diametric neighbors. This article studies whether these points can play an essential role in surface-area minimization. Given an extremal set we show that the smallest surface area among the Meissner polyhedra based on it cannot increase by deleting a dangling point. Adding a dangling point cannot decrease the smallest achievable surface area. This reduces the search for area-minimizing Meissner polyhedra to generating sets without dangling points.",
+    "arxiv": "2608.19747"
   }
 ]
