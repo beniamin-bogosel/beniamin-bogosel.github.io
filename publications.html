@@ -1,5 +1,6 @@
 ---
 nav_section: publications
+mathjax: true
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -15,16 +16,8 @@ nav_section: publications
     }
    </script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-    </script>
     <script defer src="{{ '/assets/js/publications.js' | relative_url }}"></script>
     <script defer src="{{ '/assets/js/talks.js' | relative_url }}"></script>
-    <script async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
 
 
     <title>Publications</title>
@@ -32,13 +25,41 @@ MathJax.Hub.Config({
   <body>
     <div class = "main">
     {% include site-header.html %}
-    {% raw %}
-
 <h3>Publications</h3>
 
-
-    <div id="pub-list" data-publications-list="all">
-      <p class="publication-status">Loading publications…</p>
+    <div id="pub-list" data-publications-list="all" data-publication-total="{{ site.data.publications | size }}">
+      <div class="publication-filters">
+        <p class="publication-filter-label">Filter by topic:</p>
+        <div class="publication-filter-buttons" role="group" aria-label="Filter publications by topic">
+          <button type="button" class="but3 publication-filter-button" data-publication-filter="all" aria-pressed="true">All publications ({{ site.data.publications | size }})</button>
+          {% for topic in site.data.publication_tags %}
+            {% assign topic_count = 0 %}
+            {% for publication in site.data.publications %}
+              {% if publication.tags contains topic %}{% assign topic_count = topic_count | plus: 1 %}{% endif %}
+            {% endfor %}
+            <button type="button" class="but3 publication-filter-button" data-publication-filter="{{ topic | downcase | escape }}" aria-pressed="false">{{ topic | capitalize }} ({{ topic_count }})</button>
+          {% endfor %}
+        </div>
+        <p class="publication-filter-summary" aria-live="polite">Showing all {{ site.data.publications | size }} publications.</p>
+      </div>
+      <div class="publication-year-groups">
+        {% assign publication_groups = site.data.publications | group_by: 'year' | sort: 'name' | reverse %}
+        {% assign publication_total = site.data.publications | size %}
+        {% assign displayed_publications = 0 %}
+        {% for group in publication_groups %}
+          <section class="publication-year-section" data-publication-year-section aria-labelledby="publication-year-{{ group.name }}">
+            <h4 class="publication-year" id="publication-year-{{ group.name }}"><span>{{ group.name }}</span></h4>
+            {% assign year_publications = group.items | reverse %}
+            {% for publication in year_publications %}
+              {% assign publication_number = publication_total | minus: displayed_publications %}
+              {% assign abstract_id = 'publication-abstract-full-' | append: publication_number %}
+              {% include publication-card.html publication=publication number=publication_number abstract_id=abstract_id show_tags=true show_year=false %}
+              {% assign displayed_publications = displayed_publications | plus: 1 %}
+            {% endfor %}
+          </section>
+        {% endfor %}
+        <p class="publication-status publication-no-results" hidden>No publications match the selected topics.</p>
+      </div>
     </div>
 
     <h3>Expository mathematics</h3>
@@ -61,7 +82,7 @@ MathJax.Hub.Config({
 <div class="bibtex">
 <pre>
 @unpublished{bogosel:hal-04273400,
-  TITLE = {{A Geometric proof for the Polygonal Isoperimetric Inequality}},
+  TITLE = &#123;&#123;A Geometric proof for the Polygonal Isoperimetric Inequality&#125;&#125;,
   AUTHOR = {Bogosel, Beniamin},
   URL = {https://hal.science/hal-04273400},
   NOTE = {working paper or preprint},
@@ -374,7 +395,6 @@ geometric perturbations, we develop methods based on fundamental solutions in or
    </section>
 
   </div>
-    {% endraw %}
     {% include site-footer.html %}
   </body>
 </html>

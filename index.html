@@ -1,20 +1,13 @@
 ---
 nav_section: home
+mathjax: true
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     {% include site-head.html %}
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-    </script>
     <script defer src="{{ '/assets/js/publications.js' | relative_url }}"></script>
     <script defer src="{{ '/assets/js/talks.js' | relative_url }}"></script>
-    <script async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
 
     <title>Beniamin Bogosel</title>
   </head>
@@ -27,8 +20,6 @@ MathJax.Hub.Config({
       w3IncludeHTML();
       </script>-->
     {% include site-header.html %}
-    {% raw %}
-
 <section>
     <div id="container1">
     <div id="col1">
@@ -129,13 +120,16 @@ MathJax.Hub.Config({
  <section id="ongoing">
      <h3> Recent results and ongoing work </h3>
      <div id="latest-publications" data-publications-list="latest" data-publications-limit="5">
-       <p class="publication-status">Loading latest publications…</p>
+       {% assign latest_publications = site.data.publications | reverse %}
+       {% for publication in latest_publications limit: 5 %}
+         {% assign abstract_id = 'publication-abstract-latest-' | append: forloop.index %}
+         {% include publication-card.html publication=publication abstract_id=abstract_id latest=true show_tags=false show_year=true %}
+       {% endfor %}
      </div>
 
  </section>
 
     </div>
-    {% endraw %}
     {% include site-footer.html %}
   </body>
 </html>

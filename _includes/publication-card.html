@@ -1,0 +1,53 @@
+{% assign publication = include.publication %}
+{% assign publication_url = '' %}
+{% if publication.doi %}
+  {% if publication.doi contains '://' %}
+    {% assign publication_url = publication.doi %}
+  {% else %}
+    {% assign publication_url = 'https://doi.org/' | append: publication.doi %}
+  {% endif %}
+{% elsif publication.arxiv %}
+  {% assign publication_url = 'https://arxiv.org/abs/' | append: publication.arxiv %}
+{% elsif publication.hal %}
+  {% if publication.hal contains '://' %}
+    {% assign publication_url = publication.hal %}
+  {% else %}
+    {% assign hal_id = publication.hal | remove_first: 'hal-' %}
+    {% assign publication_url = 'https://hal.science/hal-' | append: hal_id %}
+  {% endif %}
+{% endif %}
+{% assign publication_tag_data = publication.tags | join: '|' | downcase %}
+
+<article class="{% if include.latest %}ex publication-card publication-card-latest{% else %}pubitemnew publication-card{% endif %}"
+  data-publication-card data-publication-tags="{{ publication_tag_data | escape }}">
+  <div class="publication-title">
+    {% if include.number %}<span class="publication-number">[{{ include.number }}] </span>{% endif %}
+    <strong>{% if include.latest and publication_url != '' %}<a href="{{ publication_url | escape }}">{{ publication.title | escape }}</a>{% else %}{{ publication.title | escape }}{% endif %}</strong>
+  </div>
+  <div class="publication-authors"><em>{{ publication.author | escape }}</em></div>
+  <div class="publication-metadata">
+    {% if publication.journal %}{{ publication.journal | escape }}{% endif %}{% if publication.journal and include.show_year %}, {% endif %}{% if include.show_year %}{{ publication.year }}{% endif %}
+  </div>
+  {% if publication.doi or publication.arxiv or publication.hal %}
+    <div class="publication-links">
+      {% if publication.doi %}<a href="{% if publication.doi contains '://' %}{{ publication.doi | escape }}{% else %}https://doi.org/{{ publication.doi | escape }}{% endif %}">Journal</a>{% endif %}
+      {% if publication.arxiv %}{% if publication.doi %} · {% endif %}<a href="https://arxiv.org/abs/{{ publication.arxiv | escape }}">arXiv:{{ publication.arxiv | escape }}</a>{% endif %}
+      {% if publication.hal %}{% if publication.doi or publication.arxiv %} · {% endif %}<a href="{% if publication.hal contains '://' %}{{ publication.hal | escape }}{% else %}https://hal.science/hal-{{ publication.hal | remove_first: 'hal-' | escape }}{% endif %}">HAL:{{ publication.hal | escape }}</a>{% endif %}
+    </div>
+  {% endif %}
+  {% if include.show_tags and publication.tags %}
+    <div class="publication-tags" aria-label="Topics">
+      {% for tag in publication.tags %}<span class="publication-tag">{{ tag | escape }}</span>{% endfor %}
+    </div>
+  {% endif %}
+  {% if publication.abstract %}
+    <div class="publication-abstract-wrapper">
+      <button type="button" class="publication-toggle" id="{{ include.abstract_id }}-toggle"
+        aria-controls="{{ include.abstract_id }}" aria-expanded="false">Show abstract</button>
+      <div class="publication-abstract" id="{{ include.abstract_id }}" role="region"
+        aria-labelledby="{{ include.abstract_id }}-toggle" hidden>
+        <p>{{ publication.abstract | escape }}</p>
+      </div>
+    </div>
+  {% endif %}
+</article>

@@ -4,7 +4,7 @@
     "title": "A multiphase shape optimization problem for eigenvalues: qualitative study and numerical results",
     "tags": ["numerical shape optimization"],
     "journal": "SIAM Journal on Numerical Analysis",
-    "year": 2016,
+    "year": "2016",
     "doi": "http://epubs.siam.org/doi/abs/10.1137/140976406",
     "abstract": "We consider the multiphase shape optimization problems involving Dirichlet Laplace eigenvalues of cells in a multiphase configuration and a volume term for the void phase. We give some new results concerning the qualitative  properties of the optimal sets and the regularity of the corresponding eigenfunctions. We also provide numerical results for the optimal partitions.",
     "arxiv": "1606.02513"
