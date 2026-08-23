@@ -24,21 +24,21 @@ nav_section: numerics
       We were presented with the a problem dealing with the automated measurement of carbon nanotubes present in images obtained by a electron microscope. Carbon nanotubes have many interesting applications, but to test the quality of the production results one has to know the quality of the results. Namely, the number of layers of graphene of the tubes is an important factor in the applications. As it turns out, these layers seem to have a constant width, so knowing the width of the walls can show us how many layers of graphene we have in our tubes.
       </p>
 
-      <p><img src="carbon_nano/wiki2.jpg" width = 30% alt=" " align="right">  So the goal is that starting from an image like the one in the right we should be able to measure some of the tubes present in the image and measure the diameter of the walls. Using integration along lines one could find the diameters if we had a tube aligned with the boundaries of a rectangular box. So our objectives were to detect a tube (isolated if possible) and find its orientation so that we could put it in a nicely oriented box. There are some difficulties in tackling the problem:
+      <p><img loading="lazy" src="carbon_nano/wiki2.jpg" width = 30% alt=" " align="right">  So the goal is that starting from an image like the one in the right we should be able to measure some of the tubes present in the image and measure the diameter of the walls. Using integration along lines one could find the diameters if we had a tube aligned with the boundaries of a rectangular box. So our objectives were to detect a tube (isolated if possible) and find its orientation so that we could put it in a nicely oriented box. There are some difficulties in tackling the problem:
           <ul>
            <li> The images are noisy and the noise is not gaussian so we can't eliminate it efficiently. </li>
            <li> The color intensities vary along the image (some parts are brighter than others) so we can't just look for specific color ranges.</li>
            <li> The nanotubes are not isolated so some parts of the image are crowded with overlapping tubes. Detecting tubes in these parts is hard and such tubes are not easy to measure.</li>
          </ul>
 
-      <p> <img src="carbon_nano/acad_tube_s.jpg" width = 30% alt="" align="right"> So here our work begins. I concentrated on a rather simple approach which is to look at slices of the images and try to see a pattern corresponding to the tubes. Here's a simple (handmade) example of what nano-tubes might look like: two horizontal bands with the same color, another color inside and the outside section. Taking a vertical slice of this image shows that the signal given by the colors in that slice makes a W near the tube. Therefore one could look for such W-shaped signals in order to try and locate the tube. It turns out that Matlab has a nice function 'normxcorr2' which does exactly that. The fact that it is a normalized correlation computation makes it detect flatter or deformed W shapes as long as they are indeed in a W form. The result of the detection procedure is shown below for these 'academic' images. </p>
+      <p> <img loading="lazy" src="carbon_nano/acad_tube_s.jpg" width = 30% alt="" align="right"> So here our work begins. I concentrated on a rather simple approach which is to look at slices of the images and try to see a pattern corresponding to the tubes. Here's a simple (handmade) example of what nano-tubes might look like: two horizontal bands with the same color, another color inside and the outside section. Taking a vertical slice of this image shows that the signal given by the colors in that slice makes a W near the tube. Therefore one could look for such W-shaped signals in order to try and locate the tube. It turns out that Matlab has a nice function 'normxcorr2' which does exactly that. The fact that it is a normalized correlation computation makes it detect flatter or deformed W shapes as long as they are indeed in a W form. The result of the detection procedure is shown below for these 'academic' images. </p>
 
      <center>
 <table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
-<tr><td><img src="carbon_nano/acad_sect4_s.jpg" width="100%"  alt=""></td>
-    <td><img src="carbon_nano/acad_box1_s.jpg" width="100%"  alt=""> </td>
+<tr><td><img loading="lazy" src="carbon_nano/acad_sect4_s.jpg" width="100%"  alt=""></td>
+    <td><img loading="lazy" src="carbon_nano/acad_box1_s.jpg" width="100%"  alt=""> </td>
 
-    <td><img src="carbon_nano/acad_box2_s.jpg" width="100%"  alt=""></td>
+    <td><img loading="lazy" src="carbon_nano/acad_box2_s.jpg" width="100%"  alt=""></td>
 <tr >
     <td align="center"> Signal on a slice</td>
     <td align="center"> Box detection using W signal </td>
@@ -52,9 +52,9 @@ nav_section: numerics
 
       <center>
 <table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
-<tr> <td><img src="carbon_nano/detect_IM12_100_s.jpg" width="100%"  alt=""> </td>
+<tr> <td><img loading="lazy" src="carbon_nano/detect_IM12_100_s.jpg" width="100%"  alt=""> </td>
 
-    <td><img src="carbon_nano/detect_IM12_100_box_s.jpg" width="100%"  alt=""></td>
+    <td><img loading="lazy" src="carbon_nano/detect_IM12_100_box_s.jpg" width="100%"  alt=""></td>
 <tr >
     <td align="center"> Box detection using W signal </td>
     <td align="center"> Location of the box in image </td>
@@ -67,10 +67,10 @@ nav_section: numerics
 
      <center>
 <table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "100%" border="2" >
-<tr><td><img src="carbon_nano/all_detect_IM12_100_s.jpg" width="100%"  alt=""></td>
-    <td><img src="carbon_nano/all_detect_IM14_100_s.jpg" width="100%"  alt=""> </td>
+<tr><td><img loading="lazy" src="carbon_nano/all_detect_IM12_100_s.jpg" width="100%"  alt=""></td>
+    <td><img loading="lazy" src="carbon_nano/all_detect_IM14_100_s.jpg" width="100%"  alt=""> </td>
 
-    <td><img src="carbon_nano/all_detect_IM14r45_100_s.jpg" width="100%"  alt=""></td>
+    <td><img loading="lazy" src="carbon_nano/all_detect_IM14r45_100_s.jpg" width="100%"  alt=""></td>
 <tr >
     <td align="center"> Sweep - 100 pixel band </td>
     <td align="center"> Sweep - 100 pixel band </td>
@@ -78,9 +78,9 @@ nav_section: numerics
 
 </tr>
 
-<tr><td><img src="carbon_nano/all_detect_IM30_100_s.jpg" width="100%"  alt=""> </td>
-    <td><img src="carbon_nano/all_detect_wiki1_s.jpg" width="100%"  alt=""></td>
-    <td><img src="carbon_nano/all_detect_wiki3_s.jpg" width="100%"  alt=""></td>
+<tr><td><img loading="lazy" src="carbon_nano/all_detect_IM30_100_s.jpg" width="100%"  alt=""> </td>
+    <td><img loading="lazy" src="carbon_nano/all_detect_wiki1_s.jpg" width="100%"  alt=""></td>
+    <td><img loading="lazy" src="carbon_nano/all_detect_wiki3_s.jpg" width="100%"  alt=""></td>
 <tr >
     <td align="center"> Sweep - 100 pixel band </td>
     <td align="center"> Test on a <a href="https://en.wikipedia.org/wiki/Carbon_nanotube">Wikipedia picture</a> </td>

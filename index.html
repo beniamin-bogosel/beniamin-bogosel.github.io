@@ -11,7 +11,7 @@ mathjax: true
 
     <title>Beniamin Bogosel</title>
   </head>
-  <body>
+  <body class="home-page">
 
 
     <div class="main">
@@ -20,11 +20,11 @@ mathjax: true
       w3IncludeHTML();
       </script>-->
     {% include site-header.html %}
-<section>
+<section class="home-section home-introduction">
     <div id="container1">
     <div id="col1">
-     <h3 style="margin-bottom: 15px;padding-left: 0px">Associate Professor</h3>
-    <p style="margin-left: 10px"> <a href="https://stiinteexacte.uav.ro/en/cadre-didactice/departament">Faculty of Exact Sciences</a> <br> Aurel Vlaicu University of Arad
+     <h3>Associate Professor</h3>
+    <p> <a href="https://stiinteexacte.uav.ro/en/cadre-didactice/departament">Faculty of Exact Sciences</a> <br> Aurel Vlaicu University of Arad
     <br>
     Arad, Romania </p>
     <p> <strong>Contact</strong><br>
@@ -52,12 +52,12 @@ mathjax: true
     </ul>
 
      </div>
-   <div id="col2" style="text-align: center;">
-     <img src="beni.jpg" alt="my picture" style="width:100%;max-width:200px;margin:10px 0px 0px 0px">
+   <div id="col2">
+     <img class="home-portrait" src="beni.jpg" alt="my picture">
 
 
-    <div style="text-align:center;margin-bottom:0px;margin-top:10px">
-    <h3 style="text-align: center; font-weight: bold;border:0px;margin:0px">Links</h3>
+    <div class="home-links">
+    <h3>Links</h3>
     <hr>
     <a class = "but2" href="https://scholar.google.com/citations?user=rWM3vFoAAAAJ&hl=en" target="_blank">
   <img src="scholar.svg"
@@ -96,14 +96,14 @@ mathjax: true
     <hr>
     <a class="but2" href="https://mathproblems123.wordpress.com/">Visit my blog</a>
     <hr>
-    <p style="text-align:center;margin-bottom:0px"><a class="but2" style="font-variant:normal" href="metapost.html">Metapost</a></p>
+    <p class="home-links-last"><a class="but2" style="font-variant:normal" href="metapost.html">Metapost</a></p>
     </div>
     <hr>
     </div>
     </div>
   </section>
 
-<section>
+<section class="home-section">
 <h3> Habilitation thesis: mathematics </h3>
 
 <p>Defended on 30 May 2024 at École Polytechnique</p>
@@ -117,7 +117,7 @@ mathjax: true
 
 </section>
 
- <section id="ongoing">
+ <section id="ongoing" class="home-section">
      <h3> Recent results and ongoing work </h3>
      <div id="latest-publications" data-publications-list="latest" data-publications-limit="5">
        {% assign latest_publications = site.data.publications | reverse %}

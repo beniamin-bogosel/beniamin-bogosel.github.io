@@ -23,6 +23,10 @@ class References(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.references: list[tuple[str, str]] = []
         self.ids: list[str] = []
+        self.link_depth = 0
+        self.images_without_alt = 0
+        self.linked_images_without_text = 0
+        self.images_without_loading = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
@@ -32,6 +36,19 @@ class References(HTMLParser):
                 self.references.append((attribute, value))
         if values.get("id"):
             self.ids.append(values["id"] or "")
+        if tag == "a":
+            self.link_depth += 1
+        if tag == "img":
+            if "alt" not in values:
+                self.images_without_alt += 1
+            elif self.link_depth and values.get("alt") == "":
+                self.linked_images_without_text += 1
+            if values.get("loading") != "lazy":
+                self.images_without_loading += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "a" and self.link_depth:
+            self.link_depth -= 1
 
 
 def load_array(path: Path, errors: list[str]) -> list[object]:
@@ -129,6 +146,16 @@ def validate_rendered_site(site: Path, publication_count: int, errors: list[str]
         duplicate_ids = sorted(identifier for identifier, count in Counter(parser.ids).items() if count > 1)
         if duplicate_ids:
             errors.append(f"{relative_page}: duplicate IDs: {', '.join(duplicate_ids)}")
+        if parser.images_without_alt:
+            errors.append(f"{relative_page}: {parser.images_without_alt} images are missing alt attributes")
+        if parser.linked_images_without_text:
+            errors.append(
+                f"{relative_page}: {parser.linked_images_without_text} linked images have empty alt text"
+            )
+        if relative_page.name not in {"index.html", "about.html"} and parser.images_without_loading:
+            errors.append(
+                f"{relative_page}: {parser.images_without_loading} images are missing loading=\"lazy\""
+            )
 
         for attribute, reference in parser.references:
             target = local_target(site, page, reference)
