@@ -680,6 +680,13 @@ div.pubitemnew {
     margin-right: 5px;
 }
 
+.publications-page .publication-card,
+.publications-page div.pubitem,
+.publications-page div.ex {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 .publication-filters {
     margin: 0 10px 14px;
     padding: 8px;
