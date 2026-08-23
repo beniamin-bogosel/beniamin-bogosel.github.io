@@ -38,6 +38,30 @@
     return doiUrl(publication.doi) || arxivUrl(publication.arxiv) || halUrl(publication.hal);
   }
 
+  function publicationTags(publication) {
+    const values = [];
+    [publication.tags, publication.tag].forEach((field) => {
+      if (Array.isArray(field)) {
+        values.push(...field);
+      } else if (field) {
+        values.push(field);
+      }
+    });
+
+    const unique = new Map();
+    values.forEach((tag) => {
+      const value = String(tag).trim();
+      if (value) {
+        unique.set(value.toLocaleLowerCase(), value);
+      }
+    });
+    return Array.from(unique.values());
+  }
+
+  function tagLabel(tag) {
+    return tag.charAt(0).toLocaleUpperCase() + tag.slice(1);
+  }
+
   function appendLink(container, label, url) {
     if (!url) {
       return;
@@ -128,7 +152,10 @@
 
     const metadata = document.createElement("div");
     metadata.className = "publication-metadata";
-    metadata.textContent = [publication.journal, publication.year].filter(Boolean).join(", ");
+    metadata.textContent = [
+      publication.journal,
+      options.showYear === false ? null : publication.year,
+    ].filter(Boolean).join(", ");
 
     const links = document.createElement("div");
     links.className = "publication-links";
@@ -140,31 +167,188 @@
     if (links.childNodes.length > 0) {
       card.append(links);
     }
+    if (options.showTags) {
+      const tags = publicationTags(publication);
+      if (tags.length > 0) {
+        const tagList = document.createElement("div");
+        tagList.className = "publication-tags";
+        tagList.setAttribute("aria-label", "Topics");
+        tags.forEach((tag) => {
+          const badge = document.createElement("span");
+          badge.className = "publication-tag";
+          badge.textContent = tag;
+          tagList.append(badge);
+        });
+        card.append(tagList);
+      }
+    }
     if (publication.abstract) {
       card.append(createAbstract(publication, options.abstractId));
     }
     return card;
   }
 
-  function renderContainer(container, data, containerIndex) {
-    const mode = container.dataset.publicationsList;
-    const latest = mode === "latest";
+  function renderLatest(container, data, containerIndex) {
     const limit = Number.parseInt(container.dataset.publicationsLimit || "5", 10);
-    const publications = latest
-      ? data.slice(-limit).reverse()
-      : data.slice().reverse();
+    const publications = data.slice(-limit).reverse();
     const fragment = document.createDocumentFragment();
 
     publications.forEach((publication, index) => {
       fragment.append(
         createPublication(publication, {
-          latest,
-          number: latest ? null : data.length - index,
+          latest: true,
+          number: null,
           abstractId: `publication-abstract-${containerIndex}-${index}`,
+          showTags: false,
+          showYear: true,
         })
       );
     });
     container.replaceChildren(fragment);
+  }
+
+  function renderFullList(container, data, containerIndex) {
+    const records = data.map((publication, index) => ({
+      publication,
+      index,
+      tags: publicationTags(publication),
+    }));
+    const tagCounts = new Map();
+    records.forEach((record) => {
+      record.tags.forEach((tag) => {
+        tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+      });
+    });
+    const availableTags = Array.from(tagCounts.keys()).sort((a, b) => a.localeCompare(b));
+    const activeTags = new Set();
+
+    const controls = document.createElement("div");
+    controls.className = "publication-filters";
+
+    const label = document.createElement("p");
+    label.className = "publication-filter-label";
+    label.textContent = "Filter by topic:";
+
+    const buttonGroup = document.createElement("div");
+    buttonGroup.className = "publication-filter-buttons";
+    buttonGroup.setAttribute("role", "group");
+    buttonGroup.setAttribute("aria-label", "Filter publications by topic");
+
+    const allButton = document.createElement("button");
+    allButton.type = "button";
+    allButton.className = "but3 publication-filter-button";
+    allButton.textContent = `All publications (${data.length})`;
+    allButton.setAttribute("aria-pressed", "true");
+    buttonGroup.append(allButton);
+
+    const tagButtons = new Map();
+    availableTags.forEach((tag) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "but3 publication-filter-button";
+      button.textContent = `${tagLabel(tag)} (${tagCounts.get(tag)})`;
+      button.setAttribute("aria-pressed", "false");
+      tagButtons.set(tag, button);
+      buttonGroup.append(button);
+    });
+
+    const summary = document.createElement("p");
+    summary.className = "publication-filter-summary";
+    summary.setAttribute("aria-live", "polite");
+
+    const results = document.createElement("div");
+    results.className = "publication-year-groups";
+
+    controls.append(label, buttonGroup, summary);
+    container.replaceChildren(controls, results);
+
+    function renderResults() {
+      const filtered = activeTags.size === 0
+        ? records
+        : records.filter((record) => record.tags.some((tag) => activeTags.has(tag)));
+      const groups = new Map();
+      filtered.forEach((record) => {
+        const year = String(record.publication.year || "Other");
+        if (!groups.has(year)) {
+          groups.set(year, []);
+        }
+        groups.get(year).push(record);
+      });
+
+      const years = Array.from(groups.keys()).sort((a, b) => {
+        const numericDifference = Number(b) - Number(a);
+        return Number.isNaN(numericDifference) ? b.localeCompare(a) : numericDifference;
+      });
+      const fragment = document.createDocumentFragment();
+
+      years.forEach((year) => {
+        const section = document.createElement("section");
+        section.className = "publication-year-section";
+
+        const heading = document.createElement("h4");
+        heading.className = "publication-year";
+        heading.id = `publication-year-${containerIndex}-${year.replace(/[^a-z0-9]+/gi, "-")}`;
+        const yearText = document.createElement("span");
+        yearText.textContent = year;
+        heading.append(yearText);
+        section.setAttribute("aria-labelledby", heading.id);
+        section.append(heading);
+
+        groups.get(year).slice().reverse().forEach((record) => {
+          section.append(
+            createPublication(record.publication, {
+              latest: false,
+              number: record.index + 1,
+              abstractId: `publication-abstract-${containerIndex}-${record.index}`,
+              showTags: true,
+              showYear: false,
+            })
+          );
+        });
+        fragment.append(section);
+      });
+
+      if (filtered.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "publication-status";
+        empty.textContent = "No publications match the selected topics.";
+        fragment.append(empty);
+      }
+
+      results.replaceChildren(fragment);
+      summary.textContent = activeTags.size === 0
+        ? `Showing all ${data.length} publications.`
+        : `Showing ${filtered.length} of ${data.length} publications.`;
+      allButton.setAttribute("aria-pressed", String(activeTags.size === 0));
+      tagButtons.forEach((button, tag) => {
+        button.setAttribute("aria-pressed", String(activeTags.has(tag)));
+      });
+    }
+
+    allButton.addEventListener("click", () => {
+      activeTags.clear();
+      renderResults();
+    });
+    tagButtons.forEach((button, tag) => {
+      button.addEventListener("click", () => {
+        if (activeTags.has(tag)) {
+          activeTags.delete(tag);
+        } else {
+          activeTags.add(tag);
+        }
+        renderResults();
+      });
+    });
+
+    renderResults();
+  }
+
+  function renderContainer(container, data, containerIndex) {
+    if (container.dataset.publicationsList === "latest") {
+      renderLatest(container, data, containerIndex);
+    } else {
+      renderFullList(container, data, containerIndex);
+    }
   }
 
   fetch(source)

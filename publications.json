@@ -2,6 +2,7 @@
   {
     "author": "B. Bogosel, B. Velichkov",
     "title": "A multiphase shape optimization problem for eigenvalues: qualitative study and numerical results",
+    "tags": ["numerical shape optimization"],
     "journal": "SIAM Journal on Numerical Analysis",
     "year": 2016,
     "doi": "http://epubs.siam.org/doi/abs/10.1137/140976406",
@@ -11,6 +12,7 @@
   {
     "author": "B. Bogosel, E. Oudet",
     "title": "Qualitative and Numerical Analysis of a Spectral Problem with Perimeter Constraint",
+    "tags": ["numerical shape optimization"],
     "journal": "SIAM Journal on Control and Optimization",
     "year": "2016",
     "doi": "https://doi.org/10.1137/140999530",
@@ -27,6 +29,7 @@
   {
     "author": "B. Bogosel",
     "title": "The method of fundamental solutions applied to boundary eigenvalue problems",
+    "tags": ["numerical shape optimization"],
     "journal": "Journal of Computational and Applied Mathematics",
     "year": "2016",
     "doi": "https://doi.org/10.1016/j.cam.2016.04.008",
@@ -52,6 +55,7 @@
   {
     "author": "B. Bogosel, V. Bonnaillie-Noël",
     "title": "Minimal Partitions for p-norms of Eigenvalues",
+    "tags": ["numerical shape optimization"],
     "journal": "Interfaces and Free Boundaries",
     "year": "2018",
     "doi": "https://doi.org/10.4171/ifb/399",
@@ -61,6 +65,7 @@
   {
     "author": "B. Bogosel",
     "title": "Efficient algorithm for optimizing spectral partitions",
+    "tags": ["numerical shape optimization"],
     "journal": "Applied Mathematics and Computation",
     "year": "2018",
     "doi": "https://doi.org/10.1016/j.amc.2018.03.087",
@@ -70,6 +75,7 @@
   {
     "author": "B. Bogosel, A. Henrot and I. Lucardesi",
     "title": "Minimization of the eigenvalues of the Dirichlet-Laplacian with a diameter constraint",
+    "tags": ["width constraints", "numerical shape optimization", "convex shapes"],
     "journal": "SIAM Journal on Mathematical Analysis",
     "year": "2018",
     "doi": "https://doi.org/10.1137/17M1162147",
@@ -79,6 +85,7 @@
   {
     "author": "G. Allaire and B. Bogosel",
     "title": "Optimizing supports for additive manufacturing",
+    "tags": ["additive manufacturing", "numerical shape optimization"],
     "journal": "Structural and Multidisciplinary Optimization",
     "year": "2018",
     "doi": "https://doi.org/10.1007/s00158-018-2125-x",
@@ -97,6 +104,7 @@
   {
     "author": "B. Bogosel, D. Bucur, I. Fragala",
     "title": "Phase field approach to optimal packing problems and related Cheeger clusters",
+    "tags": ["numerical shape optimization"],
     "journal": "Applied Mathematics and Optimization",
     "year": "2020",
     "doi": "https://doi.org/10.1007/s00245-018-9476-y",
@@ -115,6 +123,7 @@
   {
     "author": "G. Allaire, M. Bihr and B. Bogosel",
     "title": "Support optimization in additive manufacturing for geometric and thermo-mechanical constraints",
+    "tags": ["additive manufacturing", "numerical shape optimization"],
     "journal": "Structural and Multidisciplinary Optimization",
     "year": "2020",
     "doi": "https://doi.org/10.1007/s00158-020-02551-1",
@@ -124,6 +133,7 @@
   {
     "author": "A. Al Sayed, B. Bogosel, A. Henrot and F. Nacry",
     "title": "Maximization of the Steklov eigenvalues with a diameter constraint",
+    "tags": ["convex shapes"],
     "journal": "SIAM Journal on Mathematical Analysis",
     "year": "2021",
     "doi": "https://doi.org/10.1137/20M1335042",
@@ -142,6 +152,7 @@
   {
     "author": "G. Allaire, B. Bogosel and M. Godoy",
     "title": "Shape optimization of an imperfect interface: steady-state heat diffusion",
+    "tags": ["numerical shape optimization"],
     "journal": "Journal of Optimization Theory and Applications",
     "year": "2021",
     "doi": "https://doi.org/10.1007/s10957-021-01928-6",
@@ -161,6 +172,7 @@
   {
     "author": "P. R. S. Antunes and B. Bogosel",
     "title": "Parametric shape optimization using the support function",
+    "tags": ["width constraints", "numerical shape optimization", "convex shapes"],
     "journal": "Computational Optimization and Applications ",
     "year": "2022",
     "doi": "https://doi.org/10.1007/s10589-022-00360-4",
@@ -170,6 +182,7 @@
   {
     "author": "M. Bihr, G. Allaire, X. Betbeder-Lauque, B. Bogosel, F. Bordeu and J. Querois",
     "title": "Part and supports optimization in metal powder bed additive manufacturing using simplified process simulation",
+    "tags": ["additive manufacturing", "numerical shape optimization"],
     "journal": "Computer Methods in Applied Mechanics and Engineering",
     "year": "2022",
     "doi": "https://doi.org/10.1016/j.cma.2022.114975",
@@ -179,6 +192,7 @@
   {
     "author": "G. Allaire, B. Bogosel and M. Godoy",
     "title": "Topology optimization of supports with imperfect bonding in additive manufacturing",
+    "tags": ["additive manufacturing", "numerical shape optimization"],
     "journal": "Structural and Multidisciplinary Optimization",
     "year": "2022",
     "doi": "https://doi.org/10.1007/s00158-022-03284-z",
@@ -188,6 +202,7 @@
   {
     "author": "B. Bogosel",
     "title": "Numerical Shape Optimization Among Convex Sets",
+    "tags": ["width constraints", "numerical shape optimization", "convex shapes"],
     "journal": "Applied Mathematics and Optimization",
     "year": "2022",
     "doi": "https://doi.org/10.1007/s00245-022-09920-w",
@@ -198,6 +213,7 @@
   {
     "author": "G. Allaire, M. Bihr, B. Bogosel and M. Godoy",
     "title": "Accessibility constraints in structural optimization via distance functions",
+    "tags": ["additive manufacturing", "numerical shape optimization"],
     "journal": "Journal of Computational Physics",
     "year": "2023",
     "doi": "https://doi.org/10.1016/j.jcp.2023.112083",
@@ -207,6 +223,7 @@
   {
     "author": "B. Bogosel, G. Buttazzo and E. Oudet",
     "title": "On the numerical approximation of Blaschke–Santaló diagrams using Centroidal Voronoi Tessellations",
+    "tags": ["numerical shape optimization", "convex shapes"],
     "journal": "ESAIM: Mathematical Modelling and Numerical Analysis",
     "year": "2024",
     "doi": "https://doi.org/10.1051/m2an/2023092",
@@ -216,6 +233,7 @@
   {
     "author": "B. Bogosel, D. Bucur and I. Fragalà",
     "title": "The nonlocal isoperimetric problem for polygons: Hardy–Littlewood and Riesz inequalities",
+    "tags": ["polygonal problems", "convex shapes"],
     "journal": "Mathematische Annalen",
     "year": "2024",
     "doi": "https://doi.org/10.1007/s00208-023-02683-x",
@@ -225,6 +243,7 @@
   {
     "author": "B. Bogosel and D. Bucur",
     "title": "On the polygonal Faber-Krahn inequality",
+    "tags": ["polygonal problems", "numerical shape optimization", "convex shapes"],
     "journal": "Journal de l’École polytechnique — Mathématiques",
     "year": "2024",
     "doi": "https://doi.org/10.5802/jep.250",
@@ -235,6 +254,7 @@
   {
     "author": "B. Bogosel",
     "title": "Volume Computation for Meissner Polyhedra and Applications",
+    "tags": ["width constraints", "convex shapes"],
     "journal": "Discrete & Computational Geometry",
     "year": "2024",
     "doi": "https://doi.org/10.1007/s00454-024-00688-0",
@@ -245,6 +265,7 @@
   {
     "author": "B. Bogosel",
     "title": "Mixed volumes and the Blaschke–Lebesgue theorem",
+    "tags": ["width constraints", "convex shapes"],
     "journal": "Acta Mathematica Hungarica",
     "year": "2024",
     "doi": "https://doi.org/10.1007/s10474-024-01435-w",
@@ -255,6 +276,7 @@
   {
     "author": "B. Bogosel, A. Henrot and M. Michetti",
     "title": "Optimization of Neumann Eigenvalues Under Convexity and Geometric Constraints",
+    "tags": ["numerical shape optimization", "convex shapes"],
     "journal": "SIAM Journal on Mathematical Analysis",
     "year": "2024",
     "doi": "https://doi.org/10.1137/24M1641099",
@@ -264,6 +286,7 @@
   {
     "author": "B. Bogosel",
     "title": "A reverse isoperimetric inequality for convex shapes with inclusion constraint",
+    "tags": ["polygonal problems", "numerical shape optimization", "convex shapes"],
     "journal": "Journal of Mathematical Analysis and Applications",
     "year": "2024",
     "doi": "https://doi.org/10.1016/j.jmaa.2024.128636",
@@ -273,6 +296,7 @@
   {
     "author": "S. Amstutz and B. Bogosel",
     "title": "Nonlocal approximation of the anisotropic perimeter and application to topology optimization",
+    "tags": ["additive manufacturing", "numerical shape optimization"],
     "journal": "ESAIM: Control, Optimisation and Calculus of Variations",
     "year": "2024",
     "doi": "https://doi.org/10.1051/cocv/2024071",
@@ -282,6 +306,7 @@
   {
     "author": "P. R. Antunes and B. Bogosel",
     "title": "Optimization of the Steklov-Lamé eigenvalues with respect to the domain",
+    "tags": ["numerical shape optimization"],
     "journal": "Journal of Differential Equations",
     "year": "2025",
     "doi": "https://doi.org/10.1016/j.jde.2025.01.043",
@@ -292,6 +317,7 @@
   {
     "author": "B. Bogosel",
     "title": "Optimal Finsler–Hadwiger Inequalities",
+    "tags": ["polygonal problems", "convex shapes"],
     "journal": "Results in Mathematics",
     "year": "2025",
     "doi": "https://doi.org/10.1007/s00025-025-02405-6",
@@ -301,6 +327,7 @@
   {
     "author": "B. Bogosel",
     "title": "New variational arguments regarding the Blaschke–Lebesgue theorem",
+    "tags": ["polygonal problems", "width constraints", "convex shapes"],
     "journal": "Expositiones Mathematicae",
     "year": "2025",
     "doi": "https://doi.org/10.1016/j.exmath.2025.125700",
@@ -310,6 +337,7 @@
   {
     "author": "B. Bogosel",
     "title": "A geometric proof of the Blaschke–Lebesgue theorem for the Cheeger constant",
+    "tags": ["width constraints", "convex shapes"],
     "journal": "Annales de l'Institut Fourier",
     "year": "2025",
     "doi": "https://doi.org/10.5802/aif.3728",
@@ -328,6 +356,7 @@
   {
     "author": "B. Bogosel, D. Bucur",
     "title": "Polygonal Faber-Krahn inequality: Local minimality via validated computing",
+    "tags": ["polygonal problems", "numerical shape optimization", "convex shapes"],
     "journal": "to appear in Communications in Contemporary Mathematics",
     "year": "2024",
     "abstract": "The main result of the paper shows that the regular n-gon is a local minimizer for the first Dirichlet-Laplace eigenvalue among n-gons having fixed area for n∈{5,6}. The eigenvalue is seen as a function of the coordinates of the vertices in $\\Bbb{R}^{2n}$. Relying on fine regularity results of the first eigenfunction in a convex polygon, an explicit a priori estimate is given for the eigenvalues of the Hessian matrix associated to the discrete problem, whose coefficients involve the solutions of some Poisson equations with singular right hand sides. The a priori estimates, in conjunction with certified finite element approximations of these singular PDEs imply the local minimality for n∈{5,6}. All computations, including the finite element computations, are realized using interval arithmetic.",
@@ -336,6 +365,7 @@
   {
     "author": "B. Bogosel",
     "title": "Shape optimization under width constraint: the Cheeger constant and the torsional rigidity",
+    "tags": ["width constraints", "convex shapes"],
     "journal": "submitted",
     "year": "2025",
     "abstract": "In this article it is shown that the equilateral triangle maximizes the Cheeger constant and minimizes the torsional rigidity among shapes having a fixed minimal width. The proof techniques use direct comparisons with simpler shapes, consisting of disks with three disjoint caps. Comparison results for harmonic functions help establish that in non-equilateral configurations the shape derivative has an appropriate sign, contradicting optimality. ",
@@ -344,6 +374,7 @@
   {
     "author": "B. Bogosel",
     "title": "Dangling points in area-minimizing Meissner polyhedra",
+    "tags": ["width constraints", "convex shapes"],
     "journal": "submitted",
     "year": "2026",
     "abstract": "Meissner polyhedra are constant-width bodies obtained from extremal finite sets of unit diameter. Such a generating set may contain dangling points, namely points having exactly two diametric neighbors. This article studies whether these points can play an essential role in surface-area minimization. Given an extremal set we show that the smallest surface area among the Meissner polyhedra based on it cannot increase by deleting a dangling point. Adding a dangling point cannot decrease the smallest achievable surface area. This reduces the search for area-minimizing Meissner polyhedra to generating sets without dangling points.",
