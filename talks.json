@@ -1,0 +1,312 @@
+[
+  {
+    "event": "Shape Optimization & Spectral Minimal Partitions",
+    "place": "Aveiro, Portugal",
+    "date": "June 2026",
+    "event_url": "https://sites.google.com/view/so-smp-workshop/homepage"
+  },
+  {
+    "event": "AI in Spectral Geometry, perspectives and directions",
+    "place": "Isaac Newton Institute, Cambridge, UK",
+    "date": "April 2026",
+    "event_url": "https://www.newton.ac.uk/event/gstw07/",
+    "slides": "pdfs/PolyaSzego_INI_2026.pdf"
+  },
+  {
+    "event": "Computational Mathematics Seminar",
+    "place": "Emory University, Atlanta, Georgia, USA",
+    "date": "March 2026",
+    "slides": "pdfs/PolyaSzego_2026.pdf"
+  },
+  {
+    "event": "ANR Stoiques Meeting",
+    "place": "Panthéon-Sorbonne University",
+    "date": "November 2025",
+    "slides": "https://drive.google.com/file/d/1TMbP7j0Jxws0ChRkwZhym3CzoQZo_KND/view?usp=drive_link"
+  },
+  {
+    "event": "NANMAT 2025",
+    "place": "Tiberiu Popovici Institute, Cluj-Napoca, Romania (online)",
+    "date": "3–6 November 2025",
+    "event_url": "https://ictp.acad.ro/nanmat/",
+    "slides": "https://drive.google.com/file/d/1DGkoBnbFTFm_vbXNSAWEvSVu8Rb7LuL_/view?usp=drive_link"
+  },
+  {
+    "event": "Phase field and mobile interfaces seminar",
+    "place": "École Nationale Supérieure des Mines de Paris",
+    "date": "December 2024"
+  },
+  {
+    "event": "NANMAT 2024",
+    "place": "Tiberiu Popovici Institute, Cluj-Napoca, Romania",
+    "date": "4–7 November 2024",
+    "event_url": "https://ictp.acad.ro/nanmat/nanmat-2024/"
+  },
+  {
+    "event": "Aurel Vlaicu University seminar",
+    "place": "Arad, Romania",
+    "date": "July 2024"
+  },
+  {
+    "event": "Seminar Paris 1",
+    "place": "Paris, France",
+    "date": "May 2024"
+  },
+  {
+    "event": "Seminar Avignon",
+    "place": "Avignon, France",
+    "date": "May 2024"
+  },
+  {
+    "event": "M4S workshop",
+    "place": "École Polytechnique",
+    "date": "March 2024"
+  },
+  {
+    "event": "NANMAT 2023",
+    "place": "Tiberiu Popovici Institute, Cluj-Napoca, Romania",
+    "date": "6–9 November 2023",
+    "event_url": "https://ictp.acad.ro/nanmat/"
+  },
+  {
+    "event": "ANR SHAPO meeting",
+    "date": "April 2023"
+  },
+  {
+    "event": "Maths en herbe seminar for third-year students",
+    "place": "IHES, Bures-sur-Yvette, France",
+    "date": "2023"
+  },
+  {
+    "event": "Groupe de travail CalVa seminar",
+    "place": "Paris, France",
+    "date": "October 2022"
+  },
+  {
+    "event": "QuamProcs ANR meeting",
+    "place": "Bordeaux, France",
+    "date": "October 2022"
+  },
+  {
+    "event": "CMAP opening day",
+    "date": "September 2022"
+  },
+  {
+    "event": "International Conference on Difference Equations and Applications",
+    "date": "July 2022"
+  },
+  {
+    "event": "Minisymposium “Geometric Variational Problems and Their Applications”, SIAM Annual Meeting",
+    "date": "July 2022"
+  },
+  {
+    "event": "Shape optimization, related topics and applications",
+    "place": "Roscoff, France",
+    "date": "June 2022"
+  },
+  {
+    "event": "SFB Seminar",
+    "place": "University of Bonn, Germany",
+    "date": "May 2022"
+  },
+  {
+    "event": "Spectral Geometry in the Clouds",
+    "date": "May 2022"
+  },
+  {
+    "event": "IP Paris Optimization meeting",
+    "date": "April 2022"
+  },
+  {
+    "event": "SHAPO ANR meeting",
+    "place": "Autrans, France",
+    "date": "April 2022"
+  },
+  {
+    "event": "SHAPO ANR project seminar",
+    "date": "June 2021"
+  },
+  {
+    "event": "FreeFEM days",
+    "place": "Paris, France",
+    "date": "2020"
+  },
+  {
+    "event": "Geometric and Computational Spectral Theory, Canadian Mathematical Society Winter Meeting",
+    "date": "December 2020"
+  },
+  {
+    "event": "Workshop Additive Manufacturing — Arkema Chair",
+    "place": "École Polytechnique",
+    "date": "November 2020"
+  },
+  {
+    "event": "Séminaire Parisien d'Optimisation",
+    "place": "Institut Henri Poincaré, Paris, France",
+    "date": "February 2020"
+  },
+  {
+    "event": "Séminaire Fabrication Additive Paris-Saclay",
+    "date": "February 2020"
+  },
+  {
+    "event": "Asymptotic analysis and Spectral theory",
+    "place": "Orsay, France",
+    "date": "October 2019"
+  },
+  {
+    "event": "Workshop: New trends and challenges in the mathematics of optimal design",
+    "place": "Isaac Newton Institute, Cambridge, UK",
+    "date": "10–14 June 2019"
+  },
+  {
+    "event": "Rencontres Normandes sur les aspects théoriques et numériques des EDP",
+    "date": "November 2018"
+  },
+  {
+    "event": "Computational and Data Science seminar",
+    "place": "University of Luxembourg",
+    "date": "11 July 2018"
+  },
+  {
+    "event": "Seminar CMAP",
+    "place": "École Polytechnique",
+    "date": "26 June 2018"
+  },
+  {
+    "event": "European Conference on Computational Mechanics",
+    "place": "Glasgow, UK",
+    "date": "11–15 June 2018"
+  },
+  {
+    "event": "Journées Optimisation de Formes et Applications",
+    "place": "Pau, France",
+    "date": "7–8 June 2018",
+    "event_url": "https://indico.math.cnrs.fr/event/3199/page/0"
+  },
+  {
+    "event": "CANUM 2018",
+    "date": "28 May–1 June 2018",
+    "event_url": "http://smai.emath.fr/canum2018/index.php"
+  },
+  {
+    "event": "Séminaire de Mathématiques et de leurs Applications",
+    "place": "Pau, France",
+    "date": "January 2018"
+  },
+  {
+    "event": "Seminar Isaac Newton Institute",
+    "place": "Cambridge, UK",
+    "date": "November 2017"
+  },
+  {
+    "event": "ICDEA",
+    "place": "Timișoara, Romania",
+    "date": "July 2017"
+  },
+  {
+    "event": "Congrès SMAI",
+    "date": "June 2017"
+  },
+  {
+    "event": "Seminar University of Tours",
+    "date": "30 March 2017"
+  },
+  {
+    "event": "Seminar Nancy",
+    "date": "21 March 2017",
+    "event_url": "http://www.iecl.univ-lorraine.fr/Les-Seminaires/EDP-Nancy/"
+  },
+  {
+    "event": "Seminar Poitiers",
+    "date": "9 March 2017",
+    "event_url": "http://rech-math.sp2mi.univ-poitiers.fr/spip.php?article6"
+  },
+  {
+    "event": "Seminar Lille",
+    "date": "2 March 2017",
+    "event_url": "http://math.univ-lille1.fr/d7/sanedp"
+  },
+  {
+    "event": "Seminar Orsay",
+    "date": "28 February 2017",
+    "event_url": "https://spectraltheory.wordpress.com/"
+  },
+  {
+    "event": "Groupe de Travail CalVa",
+    "place": "LJLL Paris 6",
+    "date": "20 February 2017",
+    "event_url": "https://www.ljll.math.upmc.fr/fr/seminaires/article/gdt-calcul-des-variations"
+  },
+  {
+    "title": "Partitions of minimal length on surfaces",
+    "event": "PICOF",
+    "date": "June 2016"
+  },
+  {
+    "title": "Spectral optimization on variable domains",
+    "event": "Operator Theory Conference",
+    "place": "Timișoara, Romania",
+    "date": "June 2016"
+  },
+  {
+    "title": "Optimal partitions on surfaces — Numerical aspects",
+    "event": "Meeting ANR Optiform-Geometrya",
+    "date": "March 2016"
+  },
+  {
+    "title": "Optimization of spectral quantities under perimeter constraint",
+    "event": "Journées Jeunes EDPistes Français",
+    "date": "March 2016"
+  },
+  {
+    "event": "Réunion ANR Optiform-Geometrya",
+    "place": "Paris, France",
+    "date": "March 2016"
+  },
+  {
+    "event": "JERAA",
+    "date": "November 2015"
+  },
+  {
+    "event": "Discussion group EDPs LAMA",
+    "date": "November 2015"
+  },
+  {
+    "event": "Workshop on Calculus of Variations",
+    "date": "September 2015"
+  },
+  {
+    "event": "Réunion ANR Optiform",
+    "place": "Paris, France",
+    "date": "June 2015"
+  },
+  {
+    "event": "Réunion ANR Optiform",
+    "place": "Rennes, France",
+    "date": "January 2015"
+  },
+  {
+    "event": "Colloque InterActions",
+    "place": "Grenoble, France",
+    "date": "2015"
+  },
+  {
+    "event": "Seminar Optimization team",
+    "place": "Avignon, France",
+    "date": "2015"
+  },
+  {
+    "event": "Discussion group EDPs LAMA",
+    "date": "May 2014"
+  },
+  {
+    "event": "Seminar EDPs team LAMA",
+    "place": "Université de Savoie",
+    "date": "July 2013"
+  },
+  {
+    "event": "Online workshop on Numerical Methods in Bifurcation Theory",
+    "place": "Madrid University (online)"
+  }
+]

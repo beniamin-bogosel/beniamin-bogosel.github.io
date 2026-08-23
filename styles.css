@@ -746,6 +746,29 @@ div.pubitemnew {
     color: #8b0000;
 }
 
+.talk-list {
+    margin-top: 4px;
+    padding-left: 30px;
+}
+
+.talk-item {
+    margin-bottom: 7px;
+    line-height: 1.35;
+}
+
+.talk-item time {
+    color: #33495d;
+    white-space: nowrap;
+}
+
+.talk-status {
+    margin-left: 10px;
+}
+
+.talk-status-error {
+    color: #8b0000;
+}
+
 .research-detail img {
     max-width: 100%;
     height: auto;
