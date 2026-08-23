@@ -304,7 +304,7 @@
     "journal": "Expositiones Mathematicae",
     "year": "2025",
     "doi": "https://doi.org/10.1016/j.exmath.2025.125700",
-    "abstract": "Various inequalities exist between the area of a triangle, the perimeter squared $(a+b+c)^2$ and the isoperimetric deficit $Q = (a-b)^2+(b-c)^2+(c-a)^2$. The direct and reverse Finsler–Hadwiger inequalities correspond to the best linear inequalities between the three quantities mentioned above. In this paper, the sharpest inequalities between these three quantities are found explicitly. The techniques used involve Blaschke-Santaló diagrams and constrained optimization problems.",
+    "abstract": "The sensitivity of the areas of Reuleaux polygons and disk polygons is computed with respect to vertex perturbations. Computations are completed for both constrained and Lagrangian formulations and they imply that the only critical Reuleaux polygons for the area functional are the regular ones. As a consequence, new variational proofs for the Blaschke-Lebesgue and Firey-Sallee theorems are found.",
     "arxiv": "2412.13808"
   },
   {
@@ -313,7 +313,7 @@
     "journal": "Annales de l'Institut Fourier",
     "year": "2025",
     "doi": "https://doi.org/10.5802/aif.3728",
-    "abstract": "The goal of this paper is to provide a qualitative analysis of the optimisation of space-time periodic principal eigenvalues. Namely, considering a fixed time horizon $T$ and the $d$-dimensional torus, let, for any $m\\in L^\\infty((0:T)\\times\\Omega)$, $\\lambda(m)$ be the principal eigenvalue of the operator $\\partial_t-\\Delta-m$ endowed with (time-space) periodic boundary conditions. The main question we set out to answer is the following: how to choose $c$ so as to minimise $\\lambda(m)$? This question stems from  population dynamics. We prove that in several cases it is always beneficial to rearrange $m$ with respect to time in a symmetric way, which is the first comparison result for the rearrangement in time of parabolic equations. Our results are illustrated by several numerical simulations.",
+    "abstract": "The first main result presented in the paper shows that the perimeters of inner parallel sets of planar shapes having a given constant width are minimal for the Reuleaux triangles. This implies that the areas of inner parallel sets and, consequently, the inverse of the Cheeger constant are also minimal for the Reuleaux triangles. Proofs use elementary geometry arguments and are based on direct comparisons between general constant width shapes and the Reuleaux triangle.",
     "arxiv": "2303.15559"
   },
   {

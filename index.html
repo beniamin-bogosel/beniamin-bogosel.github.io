@@ -5,33 +5,15 @@ nav_section: home
 <html lang="en">
   <head>
     {% include site-head.html %}
-<script async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
     <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
-</script>
- <script>
-   function bascule(elem)
-    {    etat=document.getElementById(elem).style.visibility;
-     if(etat=="hidden"){document.getElementById(elem).style.visibility="visible";
-     document.getElementById(elem).style.display='block';}
-     else{document.getElementById(elem).style.visibility="hidden";
-     document.getElementById(elem).style.display='none';}
-    }
-   </script>
-   <script>
-      function toggleDiv(divId) {
-        $("#"+divId).toggle();
-      }
     </script>
-      <script>
-       function openList1() {
-        $("div").toggle();
-       }
-</script>
+    <script defer src="{{ '/assets/js/publications.js' | relative_url }}"></script>
+    <script async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 
     <title>Beniamin Bogosel</title>
   </head>
@@ -149,47 +131,8 @@ MathJax.Hub.Config({
 
  <section id="ongoing">
      <h3> Recent results and ongoing work </h3>
-
-     <div class="ex">
-     <strong>New preprint:</strong> in collaboration with D. Bucur, <a href="pdfs/Polya_MinLoc_v4.pdf">Polygonal Faber-Krahn inequality: Local minimality via validated computing.</a>, 2024 <br>
-         (submitted) (<a href=" https://hal.science/hal-04613443">hal-04613443</a>)
-      <br>
-      <a  onclick="bascule('box_34')" class="button_abstract">
-     Abstract</a>
-
-        <div id="box_34" class="boxgrand" style="visibility: hidden;display: none">
-<div class="decal">
-   <p>The main result of the paper shows that the regular $n$-gon is a local minimizer for the first Dirichlet-Laplace eigenvalue among $n$-gons having fixed area for $n \in \{5,6\}$. The eigenvalue is seen as a function of the coordinates of the vertices in $\R^{2n}$. Relying on fine regularity results of the first eigenfunction in a convex polygon, an explicit a priori estimate is given for the eigenvalues of the Hessian matrix associated to the discrete problem, whose coefficients involve the solutions of some  Poisson equations with singular right hand sides. The a priori estimates, in conjunction with certified finite element approximations of these singular PDEs imply the local minimality for $n \in \{5,6\}$. All computations, including the finite element computations, are realized using interval arithmetic.</p>
-</div>
-</div>
-     </div>
-
-     <div class="ex">
-     <strong>New preprint:</strong> <a href="pdfs/Volume_Meissner.pdf">Volume computation for Meissner polyhedra and applications</a>, 2023 <br>
-         (submitted) (<a href=" https://hal.science/hal-04258055">hal-04258055</a>)
-      <br>
-      <a  onclick="bascule('box_31')" class="button_abstract">
-     Abstract</a>
-
-        <div id="box_31" class="boxgrand" style="visibility: hidden;display: none">
-<div class="decal">
-   <p>The volume of a Meissner polyhedron is computed in terms of the lengths of its dual edges. This allows to reformulate the Meissner conjecture regarding constant width bodies with minimal volume as a series of explicit finite dimensional problems. A direct consequence is the minimality of the volume of Meissner tetrahedras among Meissner pyramids. </p>
-</div>
-</div>
-     </div>
-
-     <div class="ex">
-     <strong>New preprint:</strong> <a href="pdfs/Cheeger_BL.pdf">On the Blaschke-Lebesgue theorem for the Cheeger constant via areas and perimeters of inner parallel sets</a>, 2023 <br>
-         (submitted) (<a href=" https://hal.science/hal-04045140">hal-04045140</a>)
-      <br>
-      <a  onclick="bascule('box_30')" class="button_abstract">
-     Abstract</a>
-
-        <div id="box_30" class="boxgrand" style="visibility: hidden;display: none">
-<div class="decal">
-   <p>The first main result presented in the paper shows that the perimeters of inner parallel sets of planar shapes having a given constant width are minimal for the Reuleaux triangles. This implies that the areas of inner parallel sets and, consequently, the inverse of the Cheeger constant are also minimal for the Reuleaux triangles. Proofs use elementary geometry arguments and are based on direct comparisons between general constant width shapes and the Reuleaux triangle.</p>
-</div>
-</div>
+     <div id="latest-publications" data-publications-list="latest" data-publications-limit="5">
+       <p class="publication-status">Loading latest publications…</p>
      </div>
 
  </section>
