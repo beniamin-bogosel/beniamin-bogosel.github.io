@@ -265,7 +265,9 @@
     function renderResults() {
       const filtered = activeTags.size === 0
         ? records
-        : records.filter((record) => record.tags.some((tag) => activeTags.has(tag)));
+        : records.filter((record) =>
+          Array.from(activeTags).every((tag) => record.tags.includes(tag))
+        );
       const groups = new Map();
       filtered.forEach((record) => {
         const year = String(record.publication.year || "Other");

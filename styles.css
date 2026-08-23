@@ -625,15 +625,25 @@ div.pubitemnew {
     gap: 4px;
 }
 
-.publication-filter-button {
+.but3.publication-filter-button,
+.but3.publication-filter-button:hover,
+.but3.publication-filter-button:focus-visible {
+    box-sizing: border-box;
     margin: 0;
     cursor: pointer;
     font: inherit;
 }
 
 .publication-filter-button:hover,
-.publication-filter-button:focus-visible,
-.publication-filter-button[aria-pressed="true"] {
+.publication-filter-button:focus-visible {
+    color: white;
+    background-color: #3b719e;
+    border-color: #4682b4;
+}
+
+.publication-filter-button[aria-pressed="true"],
+.publication-filter-button[aria-pressed="true"]:hover,
+.publication-filter-button[aria-pressed="true"]:focus-visible {
     color: #4682b4;
     background-color: white;
     border-color: #4682b4;
