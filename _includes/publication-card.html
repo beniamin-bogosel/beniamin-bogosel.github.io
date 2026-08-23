@@ -20,10 +20,10 @@
 
 <article class="{% if include.latest %}ex publication-card publication-card-latest{% else %}pubitemnew publication-card{% endif %}"
   data-publication-card data-publication-tags="{{ publication_tag_data | escape }}">
-  <div class="publication-title">
+  {% if include.latest %}<h3 class="publication-title">{% else %}<h4 class="publication-title">{% endif %}
     {% if include.number %}<span class="publication-number">[{{ include.number }}] </span>{% endif %}
     <strong>{% if include.latest and publication_url != '' %}<a href="{{ publication_url | escape }}">{{ publication.title | escape }}</a>{% else %}{{ publication.title | escape }}{% endif %}</strong>
-  </div>
+  {% if include.latest %}</h3>{% else %}</h4>{% endif %}
   <div class="publication-authors"><em>{{ publication.author | escape }}</em></div>
   <div class="publication-metadata">
     {% if publication.journal %}{{ publication.journal | escape }}{% endif %}{% if publication.journal and include.show_year %}, {% endif %}{% if include.show_year %}{{ publication.year }}{% endif %}
@@ -36,7 +36,7 @@
     </div>
   {% endif %}
   {% if include.show_tags and publication.tags %}
-    <div class="publication-tags" aria-label="Topics">
+    <div class="publication-tags" role="group" aria-label="Topics">
       {% for tag in publication.tags %}<span class="publication-tag">{{ tag | escape }}</span>{% endfor %}
     </div>
   {% endif %}

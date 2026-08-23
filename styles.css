@@ -6,6 +6,14 @@ h3 {
     padding: 10px 0px 0px 10px;
 }
 
+/* Page titles were historically h3 elements; preserve their appearance at the correct h2 level. */
+h2.page-heading {
+    margin: 1em 0;
+    padding: 10px 0 0 10px;
+    font-family: inherit;
+    font-size: 1.17em;
+}
+
 body {
   background-color: #d2d9e0;
   max-width:900px; 
@@ -71,9 +79,11 @@ body {
     padding-left: var(--home-gutter);
 }
 
-.home-page .home-section h3 {
+.home-page .home-section h2 {
     margin: 20px 0 12px;
     padding: 0;
+    font-family: inherit;
+    font-size: 1.17em;
 }
 
 .home-page #container1 {
@@ -107,7 +117,7 @@ body {
     text-align: center;
 }
 
-.home-page .home-links h3 {
+.home-page .home-links h2 {
     margin: 0;
     border: 0;
     text-align: center;
@@ -745,6 +755,7 @@ div.pubitemnew {
     align-items: center;
     gap: 10px;
     margin: 18px 10px 10px;
+    padding: 0;
     color: #33495d;
     font-size: 1.05em;
     text-align: center;
@@ -775,11 +786,18 @@ div.pubitemnew {
     font-size: 0.78em;
 }
 
-.publication-title,
 .publication-authors,
 .publication-metadata,
 .publication-links {
     margin-bottom: 4px;
+}
+
+.publication-title {
+    margin: 0 0 4px;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 .publication-links {

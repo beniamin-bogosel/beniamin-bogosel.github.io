@@ -27,6 +27,10 @@ class References(HTMLParser):
         self.images_without_alt = 0
         self.linked_images_without_text = 0
         self.images_without_loading = 0
+        self.headings: list[tuple[int, int]] = []
+        self.article_stack: list[dict[str, int | bool]] = []
+        self.articles_without_headings: list[int] = []
+        self.div_aria_labels_without_role: list[int] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
@@ -36,6 +40,14 @@ class References(HTMLParser):
                 self.references.append((attribute, value))
         if values.get("id"):
             self.ids.append(values["id"] or "")
+        if re.fullmatch(r"h[1-6]", tag):
+            self.headings.append((int(tag[1]), self.getpos()[0]))
+            for article in self.article_stack:
+                article["has_heading"] = True
+        if tag == "article":
+            self.article_stack.append({"line": self.getpos()[0], "has_heading": False})
+        if tag == "div" and values.get("aria-label") and not values.get("role"):
+            self.div_aria_labels_without_role.append(self.getpos()[0])
         if tag == "a":
             self.link_depth += 1
         if tag == "img":
@@ -49,6 +61,10 @@ class References(HTMLParser):
     def handle_endtag(self, tag: str) -> None:
         if tag == "a" and self.link_depth:
             self.link_depth -= 1
+        if tag == "article" and self.article_stack:
+            article = self.article_stack.pop()
+            if not article["has_heading"]:
+                self.articles_without_headings.append(int(article["line"]))
 
 
 def load_array(path: Path, errors: list[str]) -> list[object]:
@@ -152,6 +168,20 @@ def validate_rendered_site(site: Path, publication_count: int, errors: list[str]
             errors.append(
                 f"{relative_page}: {parser.linked_images_without_text} linked images have empty alt text"
             )
+        previous_heading: tuple[int, int] | None = None
+        for level, line in parser.headings:
+            if previous_heading and level > previous_heading[0] + 1:
+                errors.append(
+                    f"{relative_page}:{line}: h{level} skips a level after "
+                    f"h{previous_heading[0]} on line {previous_heading[1]}"
+                )
+            previous_heading = (level, line)
+        if parser.articles_without_headings:
+            lines = ", ".join(str(line) for line in parser.articles_without_headings)
+            errors.append(f"{relative_page}: article elements lack headings on lines {lines}")
+        if parser.div_aria_labels_without_role:
+            lines = ", ".join(str(line) for line in parser.div_aria_labels_without_role)
+            errors.append(f"{relative_page}: aria-label on generic div elements without roles on lines {lines}")
         if relative_page.name not in {"index.html", "about.html"} and parser.images_without_loading:
             errors.append(
                 f"{relative_page}: {parser.images_without_loading} images are missing loading=\"lazy\""

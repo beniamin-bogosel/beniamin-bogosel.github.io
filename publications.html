@@ -25,7 +25,7 @@ mathjax: true
   <body class="publications-page">
     <div class = "main">
     {% include site-header.html %}
-<h3>Publications</h3>
+<h2 class="page-heading">Publications</h2>
 
     <div id="pub-list" data-publications-list="all" data-publication-total="{{ site.data.publications | size }}">
       <div class="publication-filters">
@@ -48,7 +48,7 @@ mathjax: true
         {% assign displayed_publications = 0 %}
         {% for group in publication_groups %}
           <section class="publication-year-section" data-publication-year-section aria-labelledby="publication-year-{{ group.name }}">
-            <h4 class="publication-year" id="publication-year-{{ group.name }}"><span>{{ group.name }}</span></h4>
+            <h3 class="publication-year" id="publication-year-{{ group.name }}"><span>{{ group.name }}</span></h3>
             {% assign year_publications = group.items | reverse %}
             {% for publication in year_publications %}
               {% assign publication_number = publication_total | minus: displayed_publications %}
