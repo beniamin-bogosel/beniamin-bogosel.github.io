@@ -23,14 +23,14 @@ MathJax.Hub.Config({
 
 <h3>Maximization of the first eigenvalue - domains with holes</h3>
 
-      <p>This problem has been studied before by B. Maury and G. Billotey. You can find some infos
+      <p>This problem has been studied before by B. Maury and G. Billotey. You can find some information
       <a href="http://www.math.u-psud.fr/~maury/#Optimisation_sous_contraintes">here</a>.
       I present briefly the problem below together with a FreeFem implementation.</p>
 
      <p> Suppose we have a square and a number of circular holes in it. We wish to maximize the
      first eigenvalue of the Laplace operator with Dirichlet boundary conditions in terms of the position
      of the holes. As stated in the above reference, this corresponds to finding the optimal positions
-     for a set of coolers such that a the cooling process is optimized. </p>
+     for a set of coolers such that the cooling process is optimized. </p>
 
      <p> Since we want to optimize the position of the holes, we wish to know the gradient of the first eigenvalue
      with respect to the coordinates of the centers of the holes. This can be done right away if we recall the
@@ -50,7 +50,7 @@ MathJax.Hub.Config({
      in the course of the optimization). Below you can see some of the simulations made with FreeFem.
      </p>
 
-     <p>Below you can see the optimal configurations we obtained for circles of radii $r=0.05$ in a square of sidelength $2$. You
+     <p>Below you can see the optimal configurations we obtained for circles of radii $r=0.05$ in a square of side length $2$. You
      can also visualize the evolution of the optimization algorithm in the corresponding movies. The FreeFem code for
      the algorithm is available here: <a href="https://drive.google.com/file/d/18Vj-0_Allh5ithV66T5xOtN5H68BCjhk/view?usp=drive_link">optimal_holes.edp</a>.</p>
 
