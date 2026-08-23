@@ -57,6 +57,79 @@ body {
     width:10%;
 }
 
+/* Homepage spacing: one horizontal gutter for every content section. */
+.home-page .main {
+    --home-gutter: 10px;
+}
+
+.home-page .home-section {
+    box-sizing: border-box;
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding-right: var(--home-gutter);
+    padding-left: var(--home-gutter);
+}
+
+.home-page .home-section h3 {
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.home-page #container1 {
+    float: none;
+}
+
+.home-page #container1::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.home-page #col1 {
+    padding-right: 2%;
+    padding-left: 0;
+}
+
+.home-page #col2 {
+    padding-right: 0;
+    text-align: center;
+}
+
+.home-page .home-portrait {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px 0 0;
+}
+
+.home-page .home-links {
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+.home-page .home-links h3 {
+    margin: 0;
+    border: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.home-page .home-links-last {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.home-page #ongoing {
+    display: block;
+    padding-right: var(--home-gutter);
+    padding-left: var(--home-gutter);
+}
+
+.home-page #latest-publications .publication-card {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 button.abstract {
     color:firebrick;
     font-style: oblique
