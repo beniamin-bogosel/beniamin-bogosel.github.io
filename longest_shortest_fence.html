@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Longest minimal length partitions</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class = "main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+
+
+
+     <h3>Longest minimal length partitions</h3>
+
+     <p>This page is related to the following <a href="https://drive.google.com/file/d/1XIyxrvIQPObnaVWqwaSBfiAZOFEAfodw/view?usp=drive_link">paper</a> written in collaboration with Edouard Oudet. This work was motivated by the following <a href="http://images.math.cnrs.fr/Dans-quelle-forme-la-plus-petite-paroi-enfermant-un-volume-donne-est-elle-la.html">article</a> on the CNRS Images des Mathematiques website. This note mentions <a href="https://arxiv.org/abs/1011.6248">an article</a> that shows that in dimension two the convex shape that maximizes the length of an area bisecting curve is the disk. Many questions can be asked regarding this problem:</p>
+     <ul><li>the fact that the curve bisects the shape is really essential, or other volume ratios work just as well</li>
+     <li>Is the result valid in higher dimensions?</li>
+     <li>What if we consider minimal length partitions instead, can we state something similar?</li>
+     </ul>
+
+     <p>In the meantime Frank Morgan contacted us, indicating that this problems dates to <a href="https://sites.williams.edu/Morgan/2010/07/03/convex-body-isoperimetric-conjecture/">some older post on his blog</a> from 2010. In 2017 a <a href="https://scholar.rose-hulman.edu/cgi/viewcontent.cgi?article=1361&context=rhumj">nice paper</a> was published which sloves the problem in dimension two for small areas. The <a href="https://arxiv.org/abs/2104.04954">following paper</a> solves the conjecture in dimension two for domains symmetric with respect to both coordinate axes and perturbations of the disk</p>
+
+     <p>First, let's recall that given a Lipschitz open domain with finite volume $\Omega \subset \Bbb{R}^d$ with $|\Omega|=v_d$ and $c \in (0,1)$ there exist subsets $\omega \subset \Omega$ with volume $|\omega|=c|\Omega|$ such that the relative perimeter $\operatorname{Per}_\Omega(\omega)$ is minimal. Denote by $L(\Omega,c)$ the minimal perimeter obtained for one of these sets. It turns out that there exist convex sets $\Omega$ with fixed volume such that $L(\Omega,c)$ is maxima. The objective of this work is to investigate numerically how the optimal shape $\Omega$ changes for $c\in (0,1)$.</p>
+
+     <p>An analogue problem can be formulated in the case of minimal length partition. For $n\geq 2$ and $c_i>0$ with $\sum_{i=1}^n c_i=1$, it is possible to find partitions $(\omega_i)$ of $\Omega$ that verify the volume constraints $|\omega_i|=c_i|\Omega|$ and have a minimal total relative perimeter. Again, the problem of maximizing this minimal relative perimeter of a partition makes sense, since in the paper we prove that a maximizing set exists among covnex sets.</p>
+
+     <p>The numerical approximation of minimal perimeter partitions is done using a $\Gamma$-convergence relaxation of the perimeter based on the Modica-Mortola theorem. You can check out what I wrote on <a href="gamma-convergence.html">this page</a>. In the paper we describe how to implement this using the Finite Elements method. Once the optimal partition is computed, we find a perturbation of the domain increasing the minimal relative perimeter using techniques based on the shape derivative concept.</p>
+
+     <p>The numerical results of our paper suggest that the disk is indeed minimizer when maximizing the minimal relative perimeter with respect to any volume ratio $c \in (0,1)$. Moreover, this results seems to extend in dimension three and to the case of minimal length partitions. Below you can find some illustration of the maximizing sets we obtained together with the associated minimal relative perimeter sets and partitions. For more information regarding the optimization algorithms and the interpretation of the results, see the contents of the article.</p>
+
+     <p>Examples of codes used in our article can be found in the following <a href="https://github.com/bbogo/LongestShortestPartitions">Github repository</a>.</p>
+
+     <p>Below you can see illustrations of the gradient flow algorithm for maximizing the minimal relative perimeter of a partition. The cost function for the Modica-Mortola functional at the current iteration is shown.</p>
+
+     <center>
+     <table class = "thin" style = "font-size:15px" width = "70%" border="2" >
+<tr><td><img src="MaxRelPer/GFlow001.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow006.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow013.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow020.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow070.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow150.png" width="100%"
+ alt=""></td></tr>
+<tr align = "center">
+    <td>Iter 1: 3.314</td>
+    <td>Iter 6: 3.381</td>
+    <td>Iter 13: 3.391</td>
+    <td>Iter 20: 3.426</td>
+    <td>Iter 70: 3.446</td>
+    <td>Iter 150: 3.451</td>     </tr>
+<tr><td><img src="MaxRelPer/GFlow001_10.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow006_10.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow013_10.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow020_10.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow070_10.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/GFlow150_10.png" width="100%"
+ alt=""></td></tr>
+<tr align = "center">
+    <td>Iter 1: 4.663</td>
+    <td>Iter 6: 4.795</td>
+    <td>Iter 13: 4.794</td>
+    <td>Iter 20: 4.863</td>
+    <td>Iter 70: 4.892</td>
+    <td>Iter 150: 4.902</td>
+</tr>
+</table>
+</center>
+
+<p>Here are some maximization results for the minimal perimeter of one phase and different volume ratios. The final result is always the disk or the ball.</p>
+
+  <center>
+     <table class = "thin" style = "font-size:15px" width = "70%" border="2" >
+<tr><td><img src="MaxRelPer/OnePhase2D_1.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/OnePhase2D_2.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/OnePhase2D_3.png" width="100%"
+ alt=""></td>
+   </tr>
+<tr align = "center">
+    <td> Vol frac=0.5</td>
+    <td> Vol frac=0.4</td>
+    <td> Vol frac=0.25</td>
+     </tr>
+<tr><td><img src="MaxRelPer/OnePhase3D_1.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/OnePhase3D_2.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/OnePhase3D_3.png" width="100%"
+ alt=""></td>
+    </tr>
+<tr align = "center">
+    <td>Vol frac=0.25</td>
+    <td>Vol frac=0.5</td>
+    <td>Vol frac=0.4</td>
+</tr>
+</table>
+</center>
+
+<p>Below are some maximization results for the case of partitions into equal or non-equal volumes. In this case also, the final result is always the disk or the ball.</p>
+
+  <center>
+     <table class = "thin" style = "font-size:15px" width = "70%" border="2" >
+<tr><td><img src="MaxRelPer/Part2DEqual4.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part2DEqual7.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part2DEqual10.png" width="100%"
+ alt=""></td>
+   </tr>
+<tr><td><img src="MaxRelPer/Part2DDiff3.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part2DDiff4_1_2.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part2DDiff4_1_5.png" width="100%"
+ alt=""></td>
+</tr>
+</table>
+<table class = "thin" style = "font-size:15px" width = "90%" border="2">
+      <tr><td><img src="MaxRelPer/Part3D_3.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part3D_4.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part3D_4diff.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part3D_3diff.png" width="100%"
+ alt=""></td>
+</tr>
+<tr><td><img src="MaxRelPer/Part3D_6cells.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part3D_6cells_expand.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part3D_13cells.png" width="100%"
+ alt=""></td>
+    <td><img src="MaxRelPer/Part3D_13cells_expand.png" width="100%"
+ alt=""></td>
+</tr>
+</table>
+</center>
+
+<p>Similar results hold when maximizing the minimal geodesic perimeter of a partition under surface-area constraints.</p>
+
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:8px"> Created: Feb 2021</p>
+    </div>
+  </body>
+</html>

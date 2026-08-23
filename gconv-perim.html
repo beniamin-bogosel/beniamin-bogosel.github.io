@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--<style> table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>-->
+   <link type="text/css" rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Spectral Optimization under Perimeter Constraint - Gamma convergence</title>
+    <meta content="Beni Bogosel" name="author">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+        <div class="main">
+  <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+     <h3>A $\Gamma$-
+     convergence method for the study of $\Omega \mapsto \lambda_k
+     (\Omega)+Per(\Omega)$</h3>
+
+     <p style="text-align: left;"> The numerical optimizers for the problem
+     $\lambda_k(\Omega)+Per(\Omega)$ presented <a href="spectral_perim.html">here</a>
+     are obtained using a Fourier boundary parametrization method. Here I will present
+     a new method which is suitable to finding the optimizers for the considered
+     problem. Noting that we can approximate the perimeter by $\Gamma$-convergence, we
+     can ask whether we can find a similar approximation for $\lambda_k+Per$</p>
+
+     <p style="text-align: left;"> This work was motivated by two previous results. The
+     first one, due to <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/">
+     E. Oudet</a>, presents an approximation by $\Gamma$-convergence of the sum of the
+     perimeters of a partition. In this way, he is able to obtain in two dimensions
+     the honeycomb tiling and in three dimensions, he obtains the configuration of
+     Weaire and Phelan. This last configuration disproves Kelvin's conjectures about
+     optimal partitions with respect to surface area in three dimensions. For more details
+     see the following webpages: <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet
+     /research/Kelvin/optimal_cutting_n.html">link1</a>,
+     <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Kelvin/kelvin_n.
+     php">link2</a>.  A second result, by <a href="http://www.lama.univ-savoie.fr
+     /~bucur/">D. Bucur</a>, <a href="https://www.math.lsu.edu/~bourdin/">B. Bourdin
+     </a> and <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/index.html">
+     E. Oudet</a> was the numerical study of a partitions which minimize the sum of
+     the $k$-th eigenvalues of the Dirichlet Laplacian calculated on each set in the
+     partition. </p>
+
+     <p style="text-align: left;"> Our idea was to combine these two results in order to
+     obtain a $\Gamma$-approximation for $\lambda_k+Per$. Using this $\Gamma$-convergence
+     result, we perform numerical computations, which provide results which are
+     very close to the Fourier boundary parametrizing method. Furthermore, this method
+     can be immediately generalized in three dimensions. For more details you can consult
+     the following article: Qualitative and numerical analysis of a spectral problem
+     with perimeter constraint.</p>
+
+     <p style="text-align: left;">In two dimensions, our method gives the same optimal
+     shapes as the Fourier boundary parametrization method
+      presented <a href="spectral_perim.html">here</a>. In order to compare the quality of our
+      results, we extracted the $0.5$ level set of the solutions we obtained with the
+      $\Gamma$-convergence method, we found the corresponding Fourier boundary parametrization
+      and we computed the value of the eigenvalue using Mpspack. We compared the values with the
+      ones obtained by the Fourier parametrization method and we noticed that they are very close.
+      They are presented in the table below.</p>
+
+     <div style="text-align: center">
+     <table class="thin" border="2" align="center">
+<tr style="text-align: center">
+<td>$k$</td>
+<td>mult.</td>
+<td>$\Gamma$-conv</td>
+<td>Fourier</td>
+</tr>
+<tr>
+<td>$1$</td>
+<td>$1$</td>
+<td>$11.55$</td>
+<td>$11.55$</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>$1$</td>
+<td>$15.28$</td>
+<td>$15.28$</td>
+</tr>
+<tr>
+<td>$3$</td>
+<td>$2$</td>
+<td>$15.75$</td>
+<td>$15.73$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$2$</td>
+<td>$18.35$</td>
+<td>$18.35$</td>
+</tr>
+<tr>
+<td>$5$</td>
+<td>$2$</td>
+<td>$19.11$</td>
+<td>$19.11$</td>
+</tr>
+<tr>
+<td>$6$</td>
+<td>$1$</td>
+<td>$20.09$</td>
+<td>$20.09$</td>
+</tr>
+<tr>
+<td>$7$</td>
+<td>$2$</td>
+<td>$21.50$</td>
+<td>$21.50$</td>
+</tr>
+<tr>
+<td>$8$</td>
+<td>$2$</td>
+<td>$22.07$</td>
+<td>$22.02$</td>
+</tr>
+<tr>
+<td>$9$</td>
+<td>$1$</td>
+<td>$23.21$</td>
+<td>$23.21$</td>
+</tr>
+<tr>
+<td>$10$</td>
+<td>$2$</td>
+<td>$23.58$</td>
+<td>$23.55$</td>
+</tr>
+<tr>
+<td>$11$</td>
+<td>$2$</td>
+<td>$24.62$</td>
+<td>$24.60$</td>
+</tr>
+<tr>
+<td>$12$</td>
+<td>$3$</td>
+<td>$24.76$</td>
+<td>$24.74$</td>
+</tr>
+<tr>
+<td>$13$</td>
+<td>$1$</td>
+<td>$25.98$</td>
+<td>$25.98$</td>
+</tr>
+<tr>
+<td>$14$</td>
+<td>$2$</td>
+<td>$26.46$</td>
+<td>$26.43$</td>
+</tr>
+<tr>
+<td>$15$</td>
+<td>$1$</td>
+<td>$26.91$</td>
+<td>$26.91$</td>
+</tr>
+<tr>
+<td>$16$</td>
+<td>$3$</td>
+<td>$27.25$</td>
+<td>$27.27$</td>
+</tr>
+<tr>
+<td>$17$</td>
+<td>$3$</td>
+<td>$27.36$</td>
+<td>$27.37$</td>
+</tr>
+<tr>
+<td>$18$</td>
+<td>$3$</td>
+<td>$28.63$</td>
+<td>$28.66$</td>
+</tr>
+<tr>
+<td>$19$</td>
+<td>$2$</td>
+<td>$29.07$</td>
+<td>$29.09$</td>
+</tr>
+<tr>
+<td>$20$</td>
+<td>$3$</td>
+<td>$29.51$</td>
+<td>$29.54$</td>
+</tr>
+</table> </div>
+
+
+     <p style="text-align: left;"> Below we present the results obtained in three dimensions
+     using the $\Gamma$-convergence method. Red shapes have non-convex parts, while cyan
+     shapes seem to be convex. Under each figure, a value of the scale invariant quantity
+     $\lambda_k(\Omega)Per(\Omega)$ is calculated using a finite element method. Hold your
+     mouse over the picture to see an animated view (it may take a while to
+     load).</p>
+    <center>
+    <table style = "font-size:15px" width = "70%" class="thin" >
+<tr><td class="thin"><img src="perim2Dpics/lam2_3D.png" onmouseover="this.src='perim3Danim/lam2.gif';"
+     onmouseout="this.src='perim2Dpics/lam2_3D.png';" width="100%"> </td>
+    <td class="thin"><img src="perim2Dpics/lam3_3D.png" onmouseover="this.src='perim3Danim/lam3.gif';"
+     onmouseout="this.src='perim2Dpics/lam3_3D.png';" width="100%"></td>
+    <td class="thin"><img src="perim2Dpics/lam4_3D.png" onmouseover="this.src='perim3Danim/lam4.gif';"
+     onmouseout="this.src='perim2Dpics/lam4_3D.png';" width="100%"></td></tr>
+<tr align = "center">
+    <td class="thin"><p>$\lambda_2(\Omega)Per(\Omega) = 223.63$</p>
+    <p>multiplicity $1$</p></td>
+    <td class="thin"><p>$\lambda_3(\Omega)Per(\Omega) = 252.48$</p>
+    <p>multiplicity $2$</p></td>
+    <td class="thin"><p>$\lambda_4(\Omega)Per(\Omega) = 255.56$</p>
+    <p>multiplicity $3$</p></td>
+</tr>
+<tr><td class="thin"><img src="perim2Dpics/lam5_3D.png" onmouseover="this.src='perim3Danim/lam5.gif';"
+     onmouseout="this.src='perim2Dpics/lam5_3D.png';" width="100%"> </td>
+    <td class="thin"><img src="perim2Dpics/lam6_3D.png" onmouseover="this.src='perim3Danim/lam6.gif';"
+     onmouseout="this.src='perim2Dpics/lam6_3D.png';" width="100%"></td>
+    <td class="thin"><img src="perim2Dpics/lam7_3D.png" onmouseover="this.src='perim3Danim/lam7.gif';"
+     onmouseout="this.src='perim2Dpics/lam7_3D.png';" width="100%"></td></tr>
+<tr align = "center">
+    <td class="thin"><p>$\lambda_5(\Omega)Per(\Omega) = 343.75$</p>
+    <p>multiplicity $2$</p></td>
+    <td class="thin"><p>$\lambda_6(\Omega)Per(\Omega) = 394.77$</p>
+    <p>multiplicity $2$</p></td>
+    <td class="thin"><p>$\lambda_7(\Omega)Per(\Omega) = 412.20$</p>
+    <p>multiplicity $2$</p></td>
+</tr>
+<tr><td class="thin"><img src="perim2Dpics/lam8_3D.png" onmouseover="this.src='perim3Danim/lam8.gif';"
+     onmouseout="this.src='perim2Dpics/lam8_3D.png';" width="100%"> </td>
+    <td class="thin"><img src="perim2Dpics/lam9_3D.png" onmouseover="this.src='perim3Danim/lam9.gif';"
+     onmouseout="this.src='perim2Dpics/lam9_3D.png';" width="100%"></td>
+    <td class="thin"><img src="perim2Dpics/lam10_3D.png" onmouseover="this.src='perim3Danim/lam10.gif';"
+     onmouseout="this.src='perim2Dpics/lam10_3D.png';" width="100%"></td></tr>
+<tr align = "center">
+    <td class="thin"><p>$\lambda_{8} =439.80$</p>
+    <p>multiplicity $3$</p></td>
+    <td class="thin"><p>$\lambda_{9} =446.58$</p>
+    <p>multiplicity $3$</p></td>
+    <td v><p>$\lambda_{10} =510.00$</p>
+    <p>multiplicity $1$</p></td>
+</tr>
+</table>
+</center>
+
+      <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+    <hr>
+    <p style = "font-size:8px"> Created: Dec 2014, Last modified: 10 Feb 2015</p>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--<style> table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>-->
+   <link type="text/css" rel="stylesheet" href="styles.css">
+   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+    <title>Optimization of Supports in Additive Manufacturing</title>
+    <meta content="Beni Bogosel" name="author">
+
+  </head>
+  <body class="research-detail" >
+        <div class="main">
+  <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+    <p class="download-note"><strong>Numerical data:</strong> The mesh, solution, and MAT files linked on this page are collected in one verified archive. <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">Download the numerical data archive</a>.</p>
+
+
+     <h3>Optimization of Supports in Additive Manufacturing</h3>
+
+            <p> This work is in collaboration with <a href="http://www.cmap.polytechnique.fr/~allaire/">Grégoire Allaire</a> and Martin Bihr.</p>
+    <p>This is a companion webpage for the article: <span style="font-style: italic">Support optimization in additive manufacturing for geometric and thermo-mechanical constraints</span>.</p>
+
+    <p>Below you will find a recap of the results shown in the paper together with most of the data required to redo the computations. For the geometric methods a triangulation of the surface of $\partial \omega$ is given. For the results of the topology optimization algorithms the mesh, parameters, initialization and final results are shown. </p>
+
+
+
+    <h3>Geometric methods</h3>
+
+    <p>Below are the files used in the optimization of the orientation using geometric criteria. These are Matlab .mat files containing a structure with fields (among others):    </p>
+        <ul><li>"points": containing the coordinates of the points
+        </li>
+        <li>"t": containing the triangulation as indices in the points array</li>    </ul>
+    <ul>
+    <li>
+        <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh of the torus</a>
+        </li>
+    <li>
+        <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh of a bolt</a>
+        </li>
+    <li>
+        <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh of a bunny</a>
+    </li>
+    <li>
+        <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh of the U-tube</a>
+        </li>
+    </ul>
+
+
+    <h3>Shape and Topology Optimization</h3>
+
+            <p>The images below are created with the software <strong>xd3d</strong> by François Jouve.</p>
+
+    <h4>U-shaped Tube</h4>
+
+    <table>
+    <tr>
+    <td style="width:40%">
+        <img  src="Supports2019Data/UTube/Result_Good1/BasicSuppMesh.png" width="45%">
+        <img  src="Supports2019Data/UTube/Result_Good1/BasicSupp.png" width="45%">
+    </td>
+    <td style="text-align: left">
+        The support may touch the shape $\omega$
+        <ul>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh file</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">initialization</a>
+        </li>
+            <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">final result</a>
+        </li>
+        </ul>
+    </td>
+    </tr>
+    <tr>
+    <td style="width:40%">
+        <img  src="Supports2019Data/UTube/Result_NoContact_Good/NoContactMesh.png" width="45%">
+        <img  src="Supports2019Data/UTube/Result_NoContact_Good/NoContact.png" width="45%">
+    </td>
+    <td style="text-align: left">
+        Remove all Dirichlet conditions from $\partial\omega$: the support may still touch the shape
+        <ul>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh file</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">initialization</a>
+        </li>
+            <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">final result</a>
+        </li>
+        </ul>
+    </td>
+    </tr>
+     <tr>
+    <td style="width:40%">
+        <img  src="Supports2019Data/UTube/Result_NoContact_PenGood01/SuppNoContactPenMesh.png" width="45%">
+        <img  src="Supports2019Data/UTube/Result_NoContact_PenGood01/SuppNoContactPen.png" width="45%">
+    </td>
+    <td style="text-align: left">
+        Remove all Dirichlet conditions from $\partial\omega$ and add penalization term. The support does not touch the part!
+        <ul>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh file</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">initialization</a>
+        </li>
+            <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">final result</a>
+        </li>
+        </ul>
+    </td>
+    </tr>
+    </table>
+
+    <h4>Three half U-tubes</h4>
+    <p>The objective here is to obtain common supports for the same shape, repeated three times.</p>
+
+    <table>
+           <tr>
+    <td style="width:40%">
+        <img  src="Supports2019Data/ThreeTubes/Result_Good_Glue1/ThreeTubesMesh.png" width="45%">
+        <img  src="Supports2019Data/ThreeTubes/Result_Good_Glue1/ThreeTubes.png" width="45%">
+    </td>
+    <td style="text-align: left">
+        The support may touch the shape
+        <ul>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh file</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">initialization</a>
+        </li>
+            <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">final result</a>
+        </li>
+        </ul>
+    </td>
+    </tr>
+          <tr>
+    <td style="width:40%">
+        <img  src="Supports2019Data/ThreeTubes/Result_NoContact_Init1/ThreeTubesNoContactMesh.png" width="45%">
+        <img  src="Supports2019Data/ThreeTubes/Result_NoContact_Init1/ThreeTubesNoContact.png" width="45%">
+    </td>
+    <td style="text-align: left">
+Remove all Dirichlet conditions from $\partial\omega$: the support may still touch the shape        <ul>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">mesh file</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">initialization</a>
+        </li>
+            <li>
+            <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">final result</a>
+        </li>
+        </ul>
+    </td>
+    </tr>
+    </table>
+    <hr>
+    <p style = "font-size:8px"> Created: Sept 2019, Last modified: Sept 2019</p>
+      </div>
+  </body>
+</html>

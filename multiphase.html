@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>A multiphase eigenvalue problem - numerical computations</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class = "main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+
+
+
+     <h3>A multiphase eigenvalue problem - numerical computations</h3>
+
+     <p style="text-align: left;"> This work was inspired from the article <a href="http://www.lama.univ-savoie.fr/~bucur/mubv.pdf">Multiphase
+     shape optimization problems</a> by D. Bucur and B. Velichkov. The authors
+     consider the optimization of multiphase functionals for eigenvalue
+     problems. One particular case is the problem
+     $$  \min \left(\sum_{i=1}^h \lambda_1(\Omega_h)+m|\Omega_h|\right), \hspace{2cm} (M)$$
+     where $\Omega_i$ are disjoint and contained in a bounded open set $D$.
+     The case $m=0$ was studied in a <a href="http://www-ljk.imag.fr/membres
+     /Edouard.Oudet/research/Eigs_honeycomb/html/index_n.html">previous work</a>
+      of D. Bucur, B. Bourdin and
+     E. Oudet. If $m=0$ then $(\Omega_i)$ form a partition of $D$. The numerical
+     computations suggest that, asymptotically, the optimal configuration consists of a regular
+     hexagon tiling.</p>
+
+     <p style="text-align: left;"> In the case $m>0$ the authors give some
+     interesting qualitative results concerning the optimal configuration, among
+     which they prove that there are no triple junction points, i.e $\partial \Omega_i \cap
+     \partial \Omega_j \cap \partial \Omega_k =\emptyset$ for different $
+     i,j,k$. This motivated us to try and see if we could reproduce numerically
+     this phenomenon. Below I present some results obtained for different
+     values of $m$ in the non-periodic case. It turns out that non only there
+     do not exist triple points corresponding to the phases, but the same
+     behavior happens near the boundary. This motivated us to search for a proof
+     of this fact, and this can be found in my joint article with B. Velichkov,
+         which can be found <a href="http://cvgmt.sns.it/paper/2303/">here</a>. </p>
+     <div style="background-color:#FAEBD7; color:black; margin:5px; padding:5px;">
+     Let $D\subset\Bbb{R}^2$ be a bounded open set with Lipschitz boundary
+     $\partial D$. Let $(\Omega_1,\dots,\Omega_h)$ be optimal for
+     the multiphase problem $(M)$. Then for any pair of distinct indexes
+     $i,j\in\{1,\dots,h\}$, we have that $\partial\Omega_i\cap\partial
+     \Omega_j\cap\partial D=\emptyset$.
+     </div>
+
+
+     <center>
+     <table class="thin" style = "font-size:15px" width = "70%" border="2" >
+<tr><td><img src="multiphasepics/nperiodic3-1.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/nperiodic3-2.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/nperiodic3-1.png" width="100%"
+ alt=""></td></tr>
+<tr align = "center">
+    <td>$3$ phases, $m=170$</td>
+    <td>$3$ phases, $m=100$</td>
+    <td>$3$ phases, $m=80$</td></tr>
+<tr><td><img src="multiphasepics/nperiodic4-3.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/nperiodic4-5.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/nperiodic4-6.png" width="100%"
+ alt=""></td></tr>
+<tr align = "center">
+    <td>$4$ phases, $m=250$</td>
+    <td>$4$ phases, $m=150$</td>
+    <td>$4$ phases, $m=100$</td>
+</tr>
+</table>
+</center>
+
+
+<p style="text-align: left;"> In the non-periodic case, we can see a resemblance
+with the case $m=0$. For small values of $m$, the configuration resembles
+a hexagonal partition with small holes near triple points. As $m$ increases,
+the cells tend to distribute uniformly, as can be seen in the picture with
+the pentagonal configuration.</p>
+     <center>
+     <table class="thin" style = "font-size:15px" width = "70%" border="2" >
+<tr><td><img src="multiphasepics/periodic8-penta.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/periodic8-hexa.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/lambda_2.png" width="100%"
+ alt=""></td></tr>
+<tr align = "center">
+    <td>$8$ phases, $m=500$</td>
+    <td>$8$ phases, $m=580$</td>
+    <td>$8$ phases, $k=2$, $m=270$</td></tr>
+    </table>
+    </center>
+
+We noticed an interesting behavior in the periodic case. If we consider a domain
+which can be partitioned in regular hexagons, and we look for various values of
+the parameter $m$, we notice that the shapes in the optimal configuration
+seem to be congruent and monotonically decreasing with respect to $m$. This
+fact suggests that the multiphase problem we consider seems to connect
+the well known circle packing problem with the unsolved conjecture that the spectral
+optimal tiling of the plane is made of regular hexagons. In the figures below you
+can notice this monotonic behavior with respect to $m$.
+
+      <center>
+     <table class="thin" style = "font-size:15px" width = "70%" border="2">
+<tr><td><img src="multiphasepics/monotonic150.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/monotonic200.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/monotonic250.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/monotonic300.png" width="100%"
+ alt=""></td></tr>
+    </table>
+
+     <table class="thin" style = "font-size:15px" width = "70%" border="2">
+<tr><td><img src="multiphasepics/mpequi3_10.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/mpequi3_25.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/mpequi3_50.png" width="100%"
+ alt=""></td></tr>
+    </table>
+    </center>
+
+We were able to extend the numerical framework to three dimensional surfaces, using
+the same methods presented <a href="spherical_spectral.html">here</a>. We notice
+the same monotonic behavior. Below you can see optimal configurations on the sphere
+for various values of the parameter $m$. If the monotonicity property is true
+then this would lead to an answer to some open problems concerning the
+spectral optimal partitions on the sphere in the cases corresponding to regular
+polyhedra.
+
+    <center>
+     <table class="thin" style = "font-size:15px" width = "70%" border="2">
+<tr><td><img src="multiphasepics/sph_mult4.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/sph_mult4_2.png" width="100%"
+ alt=""></td>
+    <td><img src="multiphasepics/sph_mult4_3.png" width="100%"
+ alt=""></td></tr>
+    </table>
+    </center>
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:8px"> Created: Dec 2014</p>
+    </div>
+  </body>
+</html>

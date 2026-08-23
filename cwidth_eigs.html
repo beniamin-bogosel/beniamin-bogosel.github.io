@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Optimization of eigenvalues - constant width constraint</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail" >
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Optimization of eigenvalues - constant width constraint</h3>
+
+      <p>Collaboration with Antoine Henrot and Ilaria Lucardesi. Preprint available <a href="https://drive.google.com/file/d/1Wyp2WTYDUxLEgzwBgw-SX994E70jLKRt/view?usp=drive_link">here</a>. In addition to the numerical algorithm presented below, in the preprint you can find information on when is the disk a local minimizer when optimizing the eigenvalues under constant width constraint.</p>
+
+      <p> When optimizing the eigenvalues of the Dirichlet Laplace operator different constraints are used (like area/volume or perimeter). Certain theoretical and numerical studies have been performed in these cases. I mention my numerical experiments for the perimeter constraint (<a href="gconv-perim.html">method 1</a>, <a href="spectral_perim.html">method 2</a>) and the area constraint in 2D (<a href="spectral_volume.html">method 1</a>, <a href="software.html">FreeFem</a>). There is another constraint which can be imposed: that the variable shape has <strong>constant width</strong> (that is the distance between any two parallel tangent planes which bound the figure is constant). </p>
+
+     <p style="text-align: left;">The constant width constraint poses problems from both theoretical and numerical aspects. When studying variations of shapes of constant width we must pay attention to the fact that if we perturb a part of the boundary then this has long range effects, since any points which have diameters touching this part of the boundary must also be perturbed. This aspect also translates to numerical computations.</p>
+
+      <p> There are quite a few questions regarding the optimization of the eigenvaues in the class of bodies of constant width.</p>
+      <ol>
+      <li> It can be proved that the first eigenvalue $\lambda_1(\Omega)$ is minimized by the ball when $\Omega$ has constant width.
+      </li>
+      <li> Is it true that in 2D the Reuleaux triangle maximizes $\lambda_1$?</li>
+      <li> The disk seems to be a likely candidate as a minimizer even for $k \geq 2$. Is it true that $\lambda_k(\Omega)$ is always minimized by the disk?</li>
+      </ol>
+
+     <p> I will try to present below a numerical method which tries to give some hints on the answers to these questions. Even if perturbations of shapes of constant width are not easy to work with, there is a way to parametrize the shapes of constant width in 2D which eliminates this difficulty. If we use the parametrization of convex sets with the help of the support function then the constant width condition becomes simple to implement.
+     </p>
+
+      <p> For an introduction to the support function you can check out the <a href="https://en.wikipedia.org/wiki/Support_function">Wikipedia page</a> or the following articles: <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/articles/spheroforms.pdf.gz"> Lachand-Robert and Oudet</a>, <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/articles/parametrization_1.pdf.gz" >Bayen, Lachand-Robert and Oudet</a>, <a href="http://hal.archives-ouvertes.fr/hal-00495031">Bayen and Henrion</a>. The <a href="http://dx.doi.org/10.1088/0266-5611/32/11/115003">recent article</a> of Pedro Antunes inspired the method used below.</p>
+
+      <p> The idea is to parametrize the support function $p$, which is a $2\pi$ periodic function, into a Fourier series. Then we make the problem discrete by truncating the Fourier series $p(\theta) = a_0+\sum_{i=1}^n a_i \cos(i\theta)+\sum_{i=1}^n b_i \sin(i\theta)$. It is possible to express the coordinates of boundary points in terms of $\theta$:
+       $$ \begin{cases} x(\theta) = p(\theta) \cos \theta-p'(\theta)\sin \theta \\
+          y(\theta) = p(\theta)\sin\theta +p'(\theta)\cos \theta.\end{cases}$$
+      Thus computing the tangent and normal vectors is straightforward: $T(\theta) = (p+p'')(-\sin \theta,\cos \theta)$ and $N(\theta) = (p+p'')(\cos \theta,\sin \theta)$. Thus the convexity of the shape can be characterized in terms of the support function: $p+p''\geq 0$. Bayen and Henrion propose a setting which incorporates directly this constraint. Although it is useful, it requires special numerical tools and may not adapt to the case when the functional to optimize is more complicated than the area functional. Antunes, on the other hand, proposes to impose the convexity constraint by requiring that $p+p''$ is non-negative on a discretization of $[0,2\pi]$. This is quite natural and not too difficult to implement as a constraint optimization problem with 'fmincon' in Matlab.</p>
+
+      <p> The constant width condition may be expressed as $p(\theta)+p(\pi+\theta) = \text{const.}$ which in the end requires simply that the coefficients with even index need to be zero.</p>
+
+      <p> The eigenvalues of the Dirichlet Laplace operator are computed using MpsPack and the optimization is done using a gradient based approach: we compute the gradient with respect to every Fourier coefficient. We present below some of the results obtained.</p>
+
+      <p> This is still a work in progress so some of the results below may change over time... The first table contains the best shapes obtained numerically. The second table contains the values corresponding to these shapes. Note that we always consider shapes of width $2$. In order to compare, we also put the values of the eigenvalues for the disk of radius $1$ and the Reuleaux triangle of diameter $2$.</p>
+
+      <p> Values will be completed in the tables in a short while...</p>
+
+      <p> <strong>Remarks:</strong> We note that for $k \in \{6,15\}$ we find minimizers which have lower eigenvalue than the disk. I guess it is not a coincidence that these $k$ correspond to eigenvalues which are simple on the disk. One may try to prove that in these cases the disk is not optimal. The next such eigenvalue corresponds for $k=30$. Here the numerical algorithm also finds a shape with a lower eigenvalue than the disk; additional computations will be made to make sure this is the case.</p>
+
+      <p>Concerning the maximizers, we did not obtain any shape which gives a higher $k$-th eigenvalue than the Reuleaux triangle. On the other hand studying the maximizers numerically becomes more challenging since we necessarily have singularities (points with very large curvature) which do not behave well numerically.</p>
+     <center>
+<table class="thin" style ="table-layout: fixed; text-align: center; display: inline-block" "font-size:5px" width = "50%" border="2" >
+    <tr><td>$k$</td><td width="35%">minimizer</td><td width="35%">maximizer</td></tr>
+
+<tr><td>$\{1,2,3,4,5\}$ $\{7,8,...,14\}$</td>
+    <td><img src="cwidth/diam_min_1.png" width="100%"  alt=""> </td>
+
+    <td><img src="cwidth/diam_max_1.png" width="100%"  alt=""></td></tr>
+
+<tr><td>6 </td>
+    <td><img src="cwidth/cw_min_6.png" width="100%"  alt=""></td>
+    <td></td></tr>
+<tr><td>9 </td>
+    <td><img src="cwidth/cw_min_9.png" width="100%"  alt=""></td>
+    <td></td></tr>
+<tr><td>10 </td>
+    <td><img src="cwidth/cw_min_10.png" width="100%"  alt=""></td>
+    <td></td></tr>
+
+<tr><td>13 </td>
+    <td><img src="cwidth/cw_min_13.png" width="100%"  alt=""></td>
+    <td></td></tr>
+<tr><td>14 </td>
+    <td><img src="cwidth/cw_min_14.png" width="100%"  alt=""></td>
+    <td></td></tr>
+
+<tr >
+    <td>15 </td>
+    <td><img src="cwidth/cw_min_15.png" width="100%"  alt=""></td>
+    <td></td>
+
+</tr>
+</table>
+
+<table class="thin" style ="table-layout: fixed; text-align: center; display: inline-block;vertical-align:top" "font-size:5px" border="2">
+<tr> <td> $k$</td>  <td>min eig. </td> <td> disk eig. </td><td style="border-width: 1px 1px 1px 2px">max eig.</td><td> Reuleaux eig.</td></tr>
+<tr> <td>$1$</td>   <td> $5.783$  </td> <td> $5.7831$  </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$2$</td>   <td> $14.682$ </td> <td> $14.6819$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$3$</td>   <td> $14.682$ </td> <td> $14.6819$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$4$</td>   <td> $26.375$ </td> <td> $26.3746$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$5$</td>   <td> $26.375$ </td> <td> $26.3746$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$6$</td>   <td style="color:red"> $30.453$ </td> <td> $30.4713$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$7$</td>   <td> $40.706$ </td> <td> $40.7065$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$8$</td>   <td >   $40.706$     </td> <td> $40.7065$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$9$</td>   <td style="color:red"> $49.080$  </td> <td> $49.2184$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$10$</td>  <td style="color:red"> $49.084$         </td> <td> $49.2184$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$11$</td>  <td> $57.583$    </td> <td> $57.5829$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$12$</td>  <td> $57.583$    </td> <td> $57.5829$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$13$</td>  <td style="color:red"> $70.222$         </td> <td> $70.8499$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$14$</td>  <td style="color:red"> $70.244$     </td> <td> $70.8499$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+<tr> <td>$15$</td>  <td style="color:red"> $73.589$ </td> <td> $74.8868$ </td> <td style="border-width: 1px 1px 1px 2px"> </td> <td> </td></tr>
+         </table>
+     </center>
+
+       <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+    <hr>
+    <p style = "font-size:10px"> Created: Nov 2016</p>
+    </div>
+  </body>
+</html>

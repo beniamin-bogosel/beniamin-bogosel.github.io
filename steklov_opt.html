@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Optimization of the Steklov spectrum</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+    <h3>Optimization of the Steklov spectrum</h3>
+
+    <p style="text-align: left;"> Some introductory stuff on the Steklov spectrum are presented
+    <a href="steklov_numeric.html">here</a>. Below I present the main idea of the computation method for smooth 2D domains
+    and some numerical results concerning various optimization problems of the Steklov
+    eigenvalues. </p>
+
+    <p>
+    The idea of using fundamental solutions came from some papers of Alves and Antunes
+    (like <a href="http://msvlab.hre.ntou.edu.tw/cite/CMC-Alves-2005.pdf">this one</a>).
+    The Steklov case is, in a way, nicer since fundamental solutions, which are harmonic functions
+    do not depend on the eigenvalue, like in the case of the Laplace eigenvalues. The main idea is
+    to search for eigenfunctions $u$ which are of the form $$u = \alpha_1 \phi_1+...+\alpha_n \phi_n $$
+    where $\phi_i$ are harmonic radial functions with singularities outside $\Omega$. Thus $u$
+    satisfies the PDE analytically in the interior of the set and it only remains to impose the boundary
+    eigenvalue conditions. This we can only do in a finite number of points $(x_i)$ distributed
+    on $\partial \Omega$. The points $(x_i)$ are chosen uniformly on $\partial \Omega$ and the points
+    $(y_i)$, the singularities of $\phi_i$ are chosen each on the normal to the corresponding $(x_i)$.
+    In this way, imposing the boundary conditions at $(x_i)$ we obtain a generalized eigenvalue problem
+    the solutions of which are the Steklov eigenfunctions. </p>
+
+    <p>
+    If we place ourselves in the case where the shape $\Omega$ is star shaped we notice that
+    $\Omega$ can be well parametrized by a radial function $\rho : [0,2*\pi) \to \Bbb{R}_+$.
+    This radial function can be in turn approximated by a truncation of its Fourier series
+    to a finite number of terms:
+
+    $$ \rho(\theta) \approx a_0+ \sum_{i=k}^m a_k \cos (k\theta)+b_k\sin(k\theta)$$
+
+     With the aid of the shape derivative formulas provided in
+    (article wentzel) we can find the derivatives with respect to every Fourier coefficient:
+
+    $$\frac{\partial \sigma_k}{\partial a_i} = \int_0^{2\pi} \left(|\nabla_\tau u_k|^2 -|\partial_n u_k|^2
+    -\lambda\mathcal{H}|u_k|^2 \right)\rho(\theta)
+    \cos(i\theta) d\theta $$
+
+    $$\frac{\partial \sigma_k}{\partial b_i} = \int_0^{2\pi} \left(|\nabla_\tau u_k|^2 -|\partial_n u_k|^2
+    -\lambda\mathcal{H}|u_k|^2 \right)\rho(\theta)
+    \sin(i\theta) d\theta $$
+
+    In this way we obtain an approximation of the Steklov eigenvalues with a function depending
+    on a finite number of parameters. We can optimize this function using gradient descent algorithms. </p>
+
+    <ul>
+<li> $\displaystyle \min \frac{1}{\sigma_1}+...+\frac{1}{\sigma_n}$ is realized by the disk - perimeter and area constraints;
+</li>
+<li>  $\max \sigma_1, \max \sigma_1\sigma_2$ are realized by disks - perimeter and area constraints.
+</li>
+<li> (Conjecture) the maximizers of $\sigma_k$, $k=2,...,10$ with area constraint are connected.
+The numerical results can be seen below. We observe the following behaviour: optimal eigenvalue
+are multiple and multiplicity clusters begin at the eigenvalue index. The optimal shapes
+seem to have dihedral symmetry.
+</li>
+<li> (Conjecture) the product $\sigma_1\sigma_2...\sigma_n$ is maximized by the disk (both constraints). This is known
+to be true for $n=2$ (Hersch-Payne).
+</li>
+<li> (Conjecture) We say that $A \subset \{0,1,2,3,...\}$ has the property $(P)$ if $1 \in A$ and
+$2k \in A \Rightarrow 2k-1 \in A$. If $A$ has the property $(P)$ then $\displaystyle \sum_{k \in A}\frac{1}{\sigma_k}$
+is minimized by the disk in the case of a volume constraint. For example $\displaystyle \frac{1}{\sigma_1}+\frac{1}{\sigma_3}+\frac{1}{\sigma_4}$ is minimized by the disk in the case of the volume constraint and the perimeter constraint. This was verified for various $A$ with property $(P)$ with $A \subset \{0,1,...,15\}$.
+</li>
+<li> (Conjecture; appears in the article of Hersch-Payne-Schiffer) $\displaystyle \sum_{k=1}^n \frac{1}{\sigma_{2k-1}\sigma_{2k}}$ is minimized by the disk. This was checked numerically in the case of both constraints.
+</li>
+</ul>
+
+<p>Pictures below are numerical optimal domains which maximize the corresponding Steklov eigenvalue
+under area constraint.</p>
+
+ <center>
+<table  align="center" width ="70%">
+<tr>
+<td width = "30%"><img src="stekpics/stek_param2.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_param3.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_param4.png" width="100%" alt=""></td>
+</tr>
+<tr>
+<td>$\sigma_2 = 2.91$</td>
+<td>$\sigma_3 = 4.14$</td>
+<td>$\sigma_4 = 5.28$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_param5.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_param6.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_param7.png" width="100%" alt=""></td>
+</tr>
+<tr>
+<td>$\sigma_5 = 6.49$</td>
+<td>$\sigma_6 = 7.64$</td>
+<td>$\sigma_7 = 8.84$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_param8.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_param9.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_param10.png" width="100%" alt=""></td>
+</tr>
+<tr>
+<td>$\sigma_8 = 10.00$</td>
+<td>$\sigma_9 = 11.19$</td>
+<td>$\sigma_{10} = 12.35$</td>
+</tr>
+</table>
+</center>
+
+<p>Pictures below are numerical optimal domains which maximize the corresponding Steklov eigenvalue
+under area and convexity constraint.</p>
+<center>
+<table  align="center" width ="70%">
+<tr>
+<td width = "30%"><img src="stekpics/stek_convex2.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_convex3.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_convex4.png" width="100%" alt=""></td>
+</tr>
+<tr>
+<td>$\sigma_2 = 2.87$</td>
+<td>$\sigma_3 = 3.86$</td>
+<td>$\sigma_4 = 4.56$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_convex5.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_convex6.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_convex7.png" width="100%" alt=""></td>
+</tr>
+<tr>
+<td>$\sigma_5 = 5.61$</td>
+<td>$\sigma_6 = 6.24$</td>
+<td>$\sigma_7 = 7.43$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_convex8.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_convex9.png" width="100%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_convex10.png" width="100%" alt=""></td>
+</tr>
+<tr>
+<td>$\sigma_8 = 7.99$</td>
+<td>$\sigma_9 = 9.15$</td>
+<td>$\sigma_{10} = 9.75$</td>
+</tr>
+</table>
+</center>
+
+<p>Below are some results concerning the optimization of some general functionals depending
+on the Steklov spectrum with area constraint.</p>
+
+<center>
+<table  align="center" width ="70%" style = "font-size:13px" "align:center">
+<tr>
+<td width = "30%"><img src="stekpics/stek_sum_1_2.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_sum_1_2_3.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_sum_1_2_3.png" width="70%" alt=""></td>
+</tr>
+<tr>
+<td>$\max \sigma_1+\sigma_2 = 3.75$</td>
+<td>$\max \sigma_1+\sigma_2+\sigma_3 = 4\sqrt{\pi}$</td>
+<td>$\max \sigma_1+...+\sigma_4 = 6\sqrt{\pi}$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_sum_1_5.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_sum_1__4.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_sum_1__6.png" width="70%" alt=""></td>
+</tr>
+<tr>
+<td>$\max \sigma_1+...+\sigma_5 = 9\sqrt{\pi}$</td>
+<td>$\max \sigma_1+\sigma_4 = 6.49$</td>
+<td>$\max \sigma_1+\sigma_6 = 8.93$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_sum_4__6.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_sum_5__6.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_sum_4__7.png" width="70%" alt=""></td>
+</tr>
+<tr>
+<td>$\max \sigma_4+\sigma_6 = 10.8$</td>
+<td>$\max \sigma_5+\sigma_6 = 12.99$</td>
+<td>$\max \sigma_4+\sigma_7 = 11.86$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_inv_1__4.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_inv_3__5.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_inv_5__11.png" width="70%" alt=""></td>
+</tr>
+<tr>
+<td>$\min \frac{1}{\sigma_1}+\frac{1}{\sigma_4} = 0.82$</td>
+<td>$\min \frac{1}{\sigma_3}+\frac{1}{\sigma_5} = 0.46$</td>
+<td>$\min \frac{1}{\sigma_5}+\frac{1}{\sigma_{11}} = 0.26$</td>
+</tr>
+<tr>
+<td width = "30%"><img src="stekpics/stek_inv_4_6_10.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_prod_2_3.png" width="70%" alt=""></td>
+<td width = "30%"><img src="stekpics/stek_prod_3_4.png" width="70%" alt=""></td>
+</tr>
+<tr>
+<td>$\min \frac{1}{\sigma_4}+\frac{1}{\sigma_6} +\frac{1}{\sigma_{10}}= 0.49$ </td>
+<td>$\max \sigma_2\cdot \sigma_3 =8.69$</td>
+<td>$\max \sigma_3\cdot \sigma_4 =17.18$</td>
+</tr>
+</table>
+</center>
+
+            <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:12px"> Created: Oct 2015</p>
+    </div>
+  </body>
+</html>

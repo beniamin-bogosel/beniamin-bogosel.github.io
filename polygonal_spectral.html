@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Spectral optimal partitions on some 2D regions</title>
+    <meta content="Beni Bogosel" name="author">
+
+  <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+     <h3>Spectral optimal partitions on some 2D regions</h3>
+
+     <p style="text-align: left;"> I present here some computations of the optimal partitions $(\Omega_i)$ of a
+     polygonal region $D$ associated to the problem
+     $$\min \lambda_1(\Omega_1)+\lambda_1(\Omega_2)+...+\lambda_1(\Omega_N).$$
+     This kind of problems were studied numerically in the case of a square region $D$ by D. Bucur, E. Oudet, B. Bourdin
+     (<a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Eigs_honeycomb/html/index_n.html">link</a>),
+     for large values of $N$. Similar problems (including the minimization of $\max \lambda_1(\Omega_i)$) were studied by
+     V. Bonnaillie-Noel, B. Helffer, G. Vial in different settings and on different regions $D$ (rectangles, polygons,
+     circle sectors, etc) (<a href="http://www.math.ens.fr/~bonnaillie/recherche.html?menu=rech#simul">link</a>).
+     The case of the circle has been studied by S.-M. Chang, C.-S. Lin, T.-C. Lin, W.-W. Lin.
+      </p>
+
+     <p style="text-align: left;"> I present below some computations for $2\leq N \leq 10$
+     in the case where $D$ is an equilateral triangle, a square, a regular pentagon, a regular hexagon, a circle.
+     The computations are mare using a finite element approach: we find a triangulation of the region, write the
+     rigidity and mass matrices, and use a density approach to represent the shapes. The eigenvalues are then computed
+     by reducing the problem to the case of a generalized eigenvalue computation. The approach should work on any domain,
+     although, there is a limit on the number of points we can take in the discretization, since solving large-scale
+     generalized eigenvalue problem can be very slow.
+     </p>
+
+
+   <div style="margin:0 auto" align = "center">
+
+     <table class = "thin" border="2" width = "80%" border="2" aligh="center"> <tr>
+     <td width = 20%  align = "center" >Equilateral triangle</td>
+     <td width = 20%  align = "center" >Square</td>
+     <td width = 20%  align = "center" >Regular pentagon</td>
+     <td width = 20%  align = "center" >Regular hexagon</td>
+     <td width = 20%  align = "center" >Disk</td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi2.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare2.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta2.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa2.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk2.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi3.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare3.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta3.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa3.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk3.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi4.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare4.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta4.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa4.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk4.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi5.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare5.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta5.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa5.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk5.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi6.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare6.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta6.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa6.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk6.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi7.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare7.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta7.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa7.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk7.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi8.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare8.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta8.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa8.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk8.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi9.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare9.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta9.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa9.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk9.png" width="100%"  alt=""></td>
+     </tr>
+
+<tr> <td width = "20%"><img src="spectral_polygons/sequi10.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/specsquare10.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/spenta10.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/shexa10.png" width="100%"  alt=""></td>
+     <td width = "20%"><img src="spectral_polygons/sdisk10.png" width="100%"  alt=""></td>
+     </tr>
+     </table>
+
+     </div>
+    <hr>
+    <p style = "font-size:8px"> Created: Apr 2015</p>
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+     </div>
+  </body>
+</html>

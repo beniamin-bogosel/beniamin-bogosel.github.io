@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "updated": "2026-08-23",
+  "projects": [
+    {
+      "slug": "steklov-diameter",
+      "title": "Steklov eigenvalues under a diameter constraint",
+      "source_page": "steklov_diameter.html",
+      "drive_file_id": "16xLOR_F2WJ5vcW-k5lZ6KpMaEsTA52Hv",
+      "drive_share_url": "https://drive.google.com/file/d/16xLOR_F2WJ5vcW-k5lZ6KpMaEsTA52Hv/view?usp=drive_link",
+      "size_bytes": 573427,
+      "sha256": "d0bb2367e5d49be40e55ec8b045b9d19cebd9f733910ad62b3a853ba4deec7f4",
+      "media_type": "application/pdf",
+      "legacy_paths_replaced": [
+        "pdfs/SteklovDiameter.pdf"
+      ]
+    },
+    {
+      "slug": "longest-shortest-fence",
+      "title": "Maximizing the minimal relative perimeter of a partition",
+      "source_page": "longest_shortest_fence.html",
+      "drive_file_id": "1XIyxrvIQPObnaVWqwaSBfiAZOFEAfodw",
+      "drive_share_url": "https://drive.google.com/file/d/1XIyxrvIQPObnaVWqwaSBfiAZOFEAfodw/view?usp=drive_link",
+      "size_bytes": 6244705,
+      "sha256": "814dd5a2c9893f93c34a3fc5db2c254d2edf77197ab7d35058e4ed6ad471c7ce",
+      "media_type": "application/pdf",
+      "legacy_paths_replaced": [
+        "pdfs/max_rel_per.pdf"
+      ]
+    },
+    {
+      "slug": "supports-v2",
+      "title": "Optimizing supports in additive manufacturing",
+      "source_page": "supportsv2.html",
+      "drive_file_id": "1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb",
+      "drive_share_url": "https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link",
+      "size_bytes": 28991913,
+      "sha256": "cd73d29fd5b09f96ccf16d1407e58321eed9e0dd2c16591582f5a1b214345061",
+      "media_type": "application/zip",
+      "legacy_paths_replaced": [
+        "Supports2019Data/Orientation/torus_mesh.mat",
+        "Supports2019Data/Orientation/mesh_Bolt.mat",
+        "Supports2019Data/Orientation/mesh_bunny2.mat",
+        "Supports2019Data/Orientation/mesh_Utube8.mat",
+        "Supports2019Data/UTube/UTubeSimple.mesh",
+        "Supports2019Data/UTube/Result_Good1/init.sol",
+        "Supports2019Data/UTube/Result_Good1/final.sol",
+        "Supports2019Data/UTube/Result_NoContact_Good/init.sol",
+        "Supports2019Data/UTube/Result_NoContact_Good/final.sol",
+        "Supports2019Data/ThreeTubes/ExtTubes3.mesh",
+        "Supports2019Data/ThreeTubes/Result_Good_Glue1/initBig.sol",
+        "Supports2019Data/ThreeTubes/Result_Good_Glue1/phiBig.sol",
+        "Supports2019Data/ThreeTubes/Result_NoContact_Init1/initBig.sol",
+        "Supports2019Data/ThreeTubes/Result_NoContact_Init1/phiBig.sol"
+      ]
+    },
+    {
+      "slug": "constant-width-3d",
+      "title": "Optimization under constant-width and diameter constraints",
+      "source_page": "CW3D.html",
+      "drive_file_id": "1DHQhs8lf4sFa9MY5gFRNJw0nXGQvSdVO",
+      "drive_share_url": "https://drive.google.com/file/d/1DHQhs8lf4sFa9MY5gFRNJw0nXGQvSdVO/view?usp=drive_link",
+      "size_bytes": 3269934,
+      "sha256": "1ff234bbcca85e8c9df8291f31f72959b79d583bf28eb930a07a1b26bd21e1d0",
+      "media_type": "application/pdf",
+      "legacy_paths_replaced": [
+        "pdfs/supportf_applications.pdf"
+      ]
+    },
+    {
+      "slug": "cheeger-packings",
+      "title": "Cheeger sets and circle/sphere packings",
+      "source_page": "cheeger.html",
+      "drive_file_id": "1nDQ_9VhTeO5-YpKTQwaePAYiXyFd_F_H",
+      "drive_share_url": "https://drive.google.com/file/d/1nDQ_9VhTeO5-YpKTQwaePAYiXyFd_F_H/view?usp=drive_link",
+      "size_bytes": 1479689,
+      "sha256": "c295ee9f75d218117674346a5ab2d3480e40f87f341b60728a32c99c8074d42e",
+      "media_type": "application/pdf",
+      "legacy_paths_replaced": [
+        "pdfs/Packing.pdf"
+      ]
+    },
+    {
+      "slug": "constant-width-eigenvalues",
+      "title": "Eigenvalue optimization under a constant-width constraint",
+      "source_page": "cwidth_eigs.html",
+      "drive_file_id": "1Wyp2WTYDUxLEgzwBgw-SX994E70jLKRt",
+      "drive_share_url": "https://drive.google.com/file/d/1Wyp2WTYDUxLEgzwBgw-SX994E70jLKRt/view?usp=drive_link",
+      "size_bytes": 483466,
+      "sha256": "e4be1ddbd24b80d6bca7a436548e7f69ced8103dab90c8be3b67137173b17461",
+      "media_type": "application/pdf",
+      "legacy_paths_replaced": [
+        "pdfs/Preprint-BHL_v2.pdf"
+      ]
+    },
+    {
+      "slug": "spectral-minmax",
+      "title": "Min-max optimal spectral partitions",
+      "source_page": "spectral_minmax.html",
+      "drive_file_id": "1eZpdJiAE5WzkLxlfQ8xP50_VO6YLSKCQ",
+      "drive_share_url": "https://drive.google.com/file/d/1eZpdJiAE5WzkLxlfQ8xP50_VO6YLSKCQ/view?usp=drive_link",
+      "size_bytes": 2548240,
+      "sha256": "03a39881b51f61373deae132533bd5c126f6d98db8a1fcbb3c7fd597e11be9ff",
+      "media_type": "application/pdf",
+      "legacy_paths_replaced": [
+        "pdfs/BBN16.compressed.pdf"
+      ]
+    },
+    {
+      "slug": "max-dirichlet-holes",
+      "title": "Dirichlet eigenvalue maximization on domains with holes",
+      "source_page": "max_dirichlhet_holes.html",
+      "drive_file_id": "18Vj-0_Allh5ithV66T5xOtN5H68BCjhk",
+      "drive_share_url": "https://drive.google.com/file/d/18Vj-0_Allh5ithV66T5xOtN5H68BCjhk/view?usp=drive_link",
+      "size_bytes": 3669,
+      "sha256": "85c6021f0f7e955dc62fd0fa873fbd3583ca9c0e304b98068662d8ec11b46a77",
+      "media_type": "application/octet-stream",
+      "legacy_paths_replaced": [
+        "codes/optimal_holes.edp"
+      ]
+    },
+    {
+      "slug": "spherical-spectral",
+      "title": "Optimal spectral partitions on the sphere",
+      "source_page": "spherical_spectral.html",
+      "drive_file_id": "1ghgizR3WHXTzy4cN7W45vcBeOO-rf--U",
+      "drive_share_url": "https://drive.google.com/file/d/1ghgizR3WHXTzy4cN7W45vcBeOO-rf--U/view?usp=drive_link",
+      "size_bytes": 1917181,
+      "sha256": "9e988cc2ccfe98553737ca16db3951d9610c511f519b873c727611aeb1b2ad6e",
+      "media_type": "application/pdf",
+      "legacy_paths_replaced": [
+        "pdfs/fsol_article.pdf"
+      ]
+    }
+  ]
+}

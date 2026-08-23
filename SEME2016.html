@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Detection of Carbon Nano-Tubes in images</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+  </head>
+  <body class="research-detail">
+        <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Automatic Detection of Carbon Nanotubes in images</h3>
+
+      <p>This study was performed at Grenoble during an event called <a href="http://semie.imag.fr/">Semaine d'Étude Maths-Info Entreprises</a>. I was in a team working on a subject proposed by <a href="http://www.pollen-metrology.com/en/">Pollen Metrology</a> on the analysis of images of nano-structures. The team was composed of myself, Debroux Noemie, Epequin Jesua and Leroy Vincent.</p>
+
+      <p style="text-align: left;">
+      We were presented with the a problem dealing with the automated measurement of carbon nanotubes present in images obtained by a electron microscope. Carbon nanotubes have many interesting applications, but to test the quality of the production results one has to know the quality of the results. Namely, the number of layers of graphene of the tubes is an important factor in the applications. As it turns out, these layers seem to have a constant width, so knowing the width of the walls can show us how many layers of graphene we have in our tubes.
+      </p>
+
+      <p><img src="carbon_nano/wiki2.jpg" width = 30% alt=" " align="right">  So the goal is that starting from an image like the one in the right we should be able to measure some of the tubes present in the image and measure the diameter of the walls. Using integration along lines one could find the diameters if we had a tube aligned with the boundaries of a rectangular box. So our objectives were to detect a tube (isolated if possible) and find its orientation so that we could put it in a nicely oriented box. There are some difficulties in tackling the problem:
+          <ul>
+           <li> The images are noisy and the noise is not gaussian so we can't eliminate it efficiently. </li>
+           <li> The color intensities vary along the image (some parts are brighter than others) so we can't just look for specific color ranges.</li>
+           <li> The nanotubes are not isolated so some parts of the image are crowded with overlapping tubes. Detecting tubes in these parts is hard and such tubes are not easy to measure.</li>
+         </ul>
+
+      <p> <img src="carbon_nano/acad_tube_s.jpg" width = 30% alt="" align="right"> So here our work begins. I concentrated on a rather simple approach which is to look at slices of the images and try to see a pattern corresponding to the tubes. Here's a simple (handmade) example of what nano-tubes might look like: two horizontal bands with same color, another color inside and the oudside section. Taking a vertical slice of this image shows that the signal given by the colors in that slice makes a W near the tube. Therefore one could look for such W shaped signals in order to try and locate the tube. It turns out that Matlab has a nice function 'normxcorr2' which does exactly that. The fact that it is a normalized correlation computation makes it detect more flat or deformed W as long as they are indeed in a W form. The result of the detection procedure is shown below for these 'academic' images. </p>
+
+     <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="carbon_nano/acad_sect4_s.jpg" width="100%"  alt=""></td>
+    <td><img src="carbon_nano/acad_box1_s.jpg" width="100%"  alt=""> </td>
+
+    <td><img src="carbon_nano/acad_box2_s.jpg" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> Signal on a slice</td>
+    <td align="center"> Box detection using W signal </td>
+    <td align="center"> Same thing on an ondulating tube </td>
+
+</tr>
+</table>
+     </center>
+
+     <p> Let's see now how this method works on real data. First we see that looking at just one slice does not show enough information in order to find the tube. This is due to the noisy image. In order to make things clearer, we consider a band of fixed width (let's say 100 pixels) and we average the signals on this band. This gives us a more precise image on the position of the tubes in this band.</p>
+
+      <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr> <td><img src="carbon_nano/detect_IM12_100_s.jpg" width="100%"  alt=""> </td>
+
+    <td><img src="carbon_nano/detect_IM12_100_box_s.jpg" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> Box detection using W signal </td>
+    <td align="center"> Location of the box in image </td>
+</tr>
+</table>
+     </center>
+
+<p>In order to find tubes throughout the image we could just slide the detection band along the image and apply the above detection over each band. This produces quite nice results and we can deduce a criterion for "nice looking tubes". If we detect tubes at similar heights in neighboring bands than we can have a high degree of certainty that a tube is there. Note that we can also study tubes which are not horizontal by sweeping rotated copies of the image with the above method.
+      </p>
+
+     <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "100%" border="2" >
+<tr><td><img src="carbon_nano/all_detect_IM12_100_s.jpg" width="100%"  alt=""></td>
+    <td><img src="carbon_nano/all_detect_IM14_100_s.jpg" width="100%"  alt=""> </td>
+
+    <td><img src="carbon_nano/all_detect_IM14r45_100_s.jpg" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> Sweep - 100 pixel band </td>
+    <td align="center"> Sweep - 100 pixel band </td>
+    <td align="center"> Sweep on rotated image </td>
+
+</tr>
+
+<tr><td><img src="carbon_nano/all_detect_IM30_100_s.jpg" width="100%"  alt=""> </td>
+    <td><img src="carbon_nano/all_detect_wiki1_s.jpg" width="100%"  alt=""></td>
+    <td><img src="carbon_nano/all_detect_wiki3_s.jpg" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> Sweep - 100 pixel band </td>
+    <td align="center"> Test on a <a href="https://en.wikipedia.org/wiki/Carbon_nanotube">Wikipedia picture</a> </td>
+    <td align="center"> Test on another picture found on the internet.  </td>
+
+</tr>
+</table>
+     </center>
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:10px"> Created: Nov 2016</p>
+      </div>
+  </body>
+</html>

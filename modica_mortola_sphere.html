@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+   <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Minimal perimeter partitions on manifolds</title>
+    <meta content="Beni Bogosel" name="author">
+
+
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class = "main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+     <h3>A $\Gamma$-
+     convergence method for optimal partitions on manifolds</h3>
+
+     <p>in collaboration with Edouard Oudet</p>
+
+     <p style="text-align: left;"> (Work in progress) Using an approximation
+     of the perimeter on the sphere, we compute numerically
+     the partitions into sets of equal area which minimize the sum
+     of the perimeters.</p>
+
+
+     <p>Hold your mouse over the picture to see an animated view (it may take a while to
+     load).</p>
+    <center>
+    <table class="thin" width = "50%" border="2" >
+<tr><td><img src="modica_sphere/modica12sph.png" onmouseover="this.src='modica_sphere/modica12.gif';"
+     onmouseout="this.src='modica_sphere/modica12sph.png';" width="100%"> </td>
+    <td><img src="modica_sphere/modica32sph.png" onmouseover="this.src='modica_sphere/modica32.gif';"
+     onmouseout="this.src='modica_sphere/modica32sph.png';" width="100%"> </td>
+<tr align = "center">
+    <td><p>$12$-sets partition</p>
+    </td>
+    <td><p>$32$-sets partition</p>
+    </td>
+</tr>
+</table>
+</center>
+
+The method works on arbitrary surfaces in three dimensions. Below you can see optimal perimeter
+minimizing partitions for the case of the Bonchoff-Chmutov surface of order $4$, which is the
+zero level set of the function $f(x,y,z)=T_4(x)+T_4(y)+T_4(z)$, where $T_4 = 8X^4-8X^2+1$ is
+the fourth order Chebychev polynomial of the first kind.
+
+    <center>
+    <table class="thin" width = "50%" border="2" >
+<tr><td><img src="modica_sphere/web_bc4.png" onmouseover="this.src='modica_sphere/web_bc4.gif';"
+     onmouseout="this.src='modica_sphere/web_bc4.png';" width="100%"> </td>
+    <td><img src="modica_sphere/web_bc8.png" onmouseover="this.src='modica_sphere/web_bc8.gif';"
+     onmouseout="this.src='modica_sphere/web_bc8.png';" width="100%"> </td></tr>
+<tr align = "center">
+    <td><p>$4$-sets partition</p>
+    </td>
+    <td><p>$8$-sets partition</p>
+    </td>
+</tr>
+</table>
+</center>
+
+
+Below are some numerical results concerning the perimeter minimizing partition on the torus with radii $1$ and $0.6$.
+To have a more precise idea on the topology of the optimal partition, in the right, the two dimensional projection
+of the partition is presented. The middle rectangle represents the torus, and the periodic continuations are presented
+for clarity.
+
+<center>
+<table class = "thin" width = "50%" border="2" >
+<tr><td width = "50%"><img src="modica_sphere/thorus2.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus2.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$2$ cells partition</td>
+    <td width = "20%">$2$ cylinders</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus3.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus3.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$3$ cells partition</td>
+    <td width = "20%">$3$ cylinders</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus4.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus4.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$4$ cells partition</td>
+    <td width = "20%">$4$ cylinders</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus5.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus5.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$5$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus6.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus6.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$6$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus7.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus7.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$7$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus8.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus8.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$8$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus9.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus9.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$9$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus10.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus10.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$10$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus11.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus11.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$11$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+
+    <tr><td width = "50%"><img src="modica_sphere/thorus13.png" width="100%"  alt=""> </td>
+    <td width = "50%"><img src="modica_sphere/flthorus13.png" width="100%"  alt=""></td></tr>
+<tr align = "center"><td width = "20%">$13$ cells partition</td>
+    <td width = "20%">various polygons</td>
+    </tr>
+</table>
+</center>
+
+<p>Below are a few optimal configurations on a double torus.</p>
+<center>
+<table class = "thin" width = "70%" border="2">
+<tr align = "center" ><td width = "33%"><img src="modica_sphere/dbtor2.png" width="100%"  alt=""> </td>
+    <td width = "33%"><img src="modica_sphere/dbtor4.png" width="100%"  alt=""></td>
+    <td width = "33%"><img src="modica_sphere/dbtor6.png" width="100%"  alt=""></td></tr>
+    <tr align = "center"> <td width = "33%"> $2$ sets partition   </td>
+         <td width = "33%"> $4$ sets partition   </td>
+         <td width = "33%"> $6$ sets partition   </td> </tr>
+</table>
+</center>
+
+            <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:8px"> Created: Mar 2015, Last modified: June 2015</p>
+   </div>
+  </body>
+</html>

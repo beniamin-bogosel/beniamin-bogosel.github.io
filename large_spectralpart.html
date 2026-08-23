@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Spectral optimal partitions on surfaces (continuation)</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Large spectral partitions</h3>
+
+      <p>In this numerical study we search for partitions minimizing the sum of their first Dirichlet Laplacian eigenvalues.
+      What I propose is a trick which allows us to study partitions with large cell numbers with low computational cost.
+      We recall that an initial study for large partitions was made by Bourdin, Bucur and Oudet
+      <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Eigs_honeycomb/html/index_n.php">here</a>.
+      Their computation for 512 cells was made using a super computer at the Texas Advanced Computing Center. The need
+      for such a computer was justified by the fact that even when looking at a small cell they still used a matrix
+      of the size of the whole domain to compute its eigenvalue.  </p>
+
+     <p style="text-align: left;">The idea I propose in the following is to reduce the size of the computation matrix
+     when the cells have emerged. Instead of using the whole grid to compute the eigenvalue, we could restrict our attention
+     to a rectangular neighborhood of the cell and use finite differences on that smaller grid in order to compute its eigenvalue.
+     This has an effect on the computational accuracy, since we do not search for information about the eigenvalues of a cell
+     when we are far away from that cell. There is also a huge speed improvement, since the size of the computation matrix
+     is equal to the number of points in the computation grid. Thus, with this improvement it is possible to perform the
+     computation for 512 cells on a $512 \times 512$ grid on a laptop computer in a reasonable amount of time. The computation for $512$ cells took about $5$ hours, while
+      for small cell numbers a few minutes suffice. In order to save time we initially use a coarse grid until the cells
+      emerge from the random initial data. Then we interpolate the data on a refined grid and re-optimize. </p>
+
+     <p> Below you can see some computations on various domains, with various numbers of cells.
+     </p>
+
+     <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="large_spectral/pent31.png" width="100%"  alt=""></td>
+    <td><img src="large_spectral/hex37.png" width="100%"  alt=""> </td>
+
+    <td><img src="large_spectral/spcircle37.png" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> $31$ cells </td>
+    <td align="center"> $37$ cells </td>
+    <td align="center"> $37$ cells </td>
+
+</tr>
+
+<tr><td><img src="large_spectral/equi45.png" width="100%"  alt=""> </td>
+    <td><img src="large_spectral/equi120.png" width="100%"  alt=""></td>
+    <td><img src="large_spectral/hex512.png" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> $45$ cells </td>
+    <td align="center"> $120$ cells </td>
+    <td align="center"> $512$ cells  </td>
+
+</tr>
+
+</table>
+     </center>
+
+     Below you can see an optimization example on the sphere, with a similar algorithm. Instead on computing
+     the eigenvalues on the whole triangulation, we find a neighborhood of each cell and use only those values
+     for the eigenvalue computation. This allows us to work with up to $40000$ points on the sphere, while
+     working with the whole domain took days of computatioin time only for $10000$ points. This new formulations performs in about
+     $10$ minutes on a regular computer for the case of $32$ cells presented below.
+     <center>
+     <iframe width="420" height="315" src="https://www.youtube.com/embed/TEhRZ0SLzUI?rel=0" frameborder="0"
+      allowfullscreen></iframe>
+
+     </center>
+
+In the following you can see some examples of computations for large numbers of cells on some 3D surfaces like the sphere
+a torus and a different surface (taken from the article of Elliott and Ranner). In general we see that for large number of cells
+we have many hexagons, which is natural in any configuration where we only have triple points. In the case of the sphere
+we note that we obtain $12$ pentagons and $n-12$ hexagons, while in the case of the torus we also have some heptagons in the
+configuration.
+
+     <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="large_spectral/beltrami72.png" width="100%"  alt=""></td>
+    <td><img src="large_spectral/beltrami90.png" width="100%"  alt=""> </td>
+
+    <td><img src="large_spectral/beltrami120.png" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> $72$ cells </td>
+    <td align="center"> $90$ cells </td>
+    <td align="center"> $120$ cells </td>
+
+</tr>
+
+<tr><td><img src="large_spectral/tor32.png" width="100%"  alt=""> </td>
+    <td><img src="large_spectral/tor64.png" width="100%"  alt=""></td>
+    <td><img src="large_spectral/tor128.png" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> $32$ cells </td>
+    <td align="center"> $64$ cells </td>
+    <td align="center"> $128$ cells  </td>
+
+</tr>
+<tr><td><img src="large_spectral/dziuk32.png" width="100%"  alt=""> </td>
+    <td><img src="large_spectral/dziuk48.png" width="100%"  alt=""></td>
+    <td><img src="large_spectral/dziuk64.png" width="100%"  alt=""></td>
+<tr >
+    <td align="center"> $32$ cells </td>
+    <td align="center"> $48$ cells </td>
+    <td align="center"> $64$ cells  </td>
+
+</tr>
+
+</table>
+     </center>
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:13px"> Created: Feb 2016</p>
+    </div>
+  </body>
+</html>

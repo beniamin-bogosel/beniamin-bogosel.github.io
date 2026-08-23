@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+   <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+    <title>Critical waves using a shape optimization formulation</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+  </head>
+  <body class="research-detail">
+    <div class = "main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Critical waves using shape optimization</h3>
+
+      <p>In collaboration with Dorin Bucur and Emilian Parau.</p>
+
+      <p>We consider the problem of minimizing the functional
+$$\mathcal{F}(\Omega) =\frac{\mu^2}{\int_\Omega |\nabla h|^2}+\int_\Omega gy +\alpha \text{Per}(\Gamma)  $$
+where $\Omega$ is a domain in $\Bbb{R}^2$ bounded by the lines $y = 0$, two vertical lines and the graph of a function which is
+denoted by $\Gamma$. We can easily see that this is a free boundary problem, the free part of the boundary being $\Gamma$.
+The function $h$ satisfies the PDE $\displaystyle \begin{cases}
+-\Delta h = 0 & \text{ in }\Omega \\
+h = 1 & \text{ on } y = 0\\
+h = 0 & \text{ on } \Gamma
+\end{cases}$. On the vertical boundaries we either consider periodic boundary condition or Neumann boundary conditions.
+      </p>
+
+      <p>First we provide some existence results of an optimal shape under area constraint. Using shape derivative arguments we may
+      observe that an optimal shape satisfies the Bernoulli condition on the free boundary $\Gamma$:
+      $c |\nabla h|^2 + gy+\alpha \kappa = \text{constant}$ </p>
+
+      <p>Below you can see some preliminary numerical results. The implementation is done in FreeFem. We consider situations with
+      flat or non-flat bottom.</p>
+
+
+     <center>
+<table class="thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="waves/wave1_flat.png" width="100%"  alt=""> </td>
+    <td><img src="waves/wave2_flat.png" width="100%"  alt=""></td>
+    <td><img src="waves/wave3_flat.png" width="100%"  alt=""></td>
+    </tr>
+
+<tr><td><img src="waves/wave1_0.29.png" width="100%"  alt=""> </td>
+    <td><img src="waves/wave2_0.30.png" width="100%"  alt=""></td>
+    <td><img src="waves/wave4_4.png" width="100%"  alt=""></td>
+    </tr>
+
+</table>
+</center>
+
+    <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:10px"> Created: Apr 2016</p>
+    </div>
+  </body>
+</html>

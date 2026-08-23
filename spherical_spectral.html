@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Spectral optimal partitions on surfaces</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Spectral optimal partitions on surfaces</h3>
+
+        <p>These computations are presented in my paper: "<a href="https://drive.google.com/file/d/1ghgizR3WHXTzy4cN7W45vcBeOO-rf--U/view?usp=drive_link">The method of fundamental solutions applied to boundary eigenvalue problems</a>". You can consult a set of results for other surfaces by clicking <a href="manifolds_spectral.html">here</a>.</p>
+
+     <p style="text-align: left;"> Here are some preliminary numerical results for a problem of optimal partitioning
+     on the sphere. We consider the problem
+      $$ \min \sum_{i=1}^n \lambda_1^{LB}(S_i)$$
+      where $(S_i)$ is a partition of the sphere into $n$ parts. The same problem was studied recently by Elliott
+      and Ranner (<a href="http://arxiv.org/abs/1408.2355">link</a>), using a different numerical method. </p>
+
+     <p style="text-align: left;"> The computations made below were made using a method based on fundamental solutions
+         (inspired from the one mentioned <a href="steklov_numeric.html">here</a>). The numerical optimization is made in two steps: </p>
+     <ul>First, a fictious domain method is used, in order to detect the structure of the partition (inspired from
+     the 2D computations made by Bourdin, Bucur, Oudet -
+     <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Eigs_honeycomb/html/index_n.html">link</a>)</ul>
+     <ul>Secondly, the structure is extracted, and the optimization is continued, using a mesh adapted to each set of the partition</ul>
+
+     <p>
+     Both of the above steps are based on the same method of fundamental solutions.
+     </p>
+
+     <p style="text-align: left;"> We present below the numerical results we obtained for $3 \leq n \leq 17$ and $n=32$ parts (the goal is
+     to make the computations for all $k \in [3,32]$. Our
+     results coincide with those of Elliott and Ranner, which made computations for
+     $n \in \{3,4,5,6,7,8,16,32\}$. The case $n=12$ was not considered in their article, but our result (the
+     pentagonal tiling) seems to be the expected optimal partition.
+     </p>
+
+     <p>
+     We note the striking resemblance (at least topologically)
+     between our results and the
+     one obtained by Cox and Flikkema (<a href="http://www.combinatorics.org/ojs/index.html/eljc/article/view/v17i1r45">link</a>)
+     in the case of equi-areal partitions which minimize the
+     total perimeter. This similarity was also seen in the 2D
+     computations. As seen
+     <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Eigs_honeycomb/html/index_n.html">here</a>,
+     asymptotically, the optimal 2D
+     spectral partition consists
+     (numerically) of a tiling of regular hexagons. This
+     was proved by <a href="http://arxiv.org/abs/math/9906042">
+     T. Hales</a> in the case of the plane equi-areal
+     partitions which minimize the total perimeter.
+     </p>
+
+     <p>The computations presented below were made using Matlab, and the
+     visualization was made in Matlab
+      using a code based on the package
+     <a href="http://www.mathworks.com/matlabcentral/fileexchange/24484-geom3d">geom3d</a>.
+     The results obtained using a density method are represented on a triangulation of the
+     sphere, using a nearest point interpolation; this is the reason that the boundaries are
+     a bit blurry.  </p>
+
+
+
+     <table class =  "thin" width = "100%" border="2"> <tr><td width = 80%
+     align = "center" >Refined
+     results</td>
+     <td width = 20% align = "center">A glimpse of the density results</td> </tr></table>
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=3$ : the optimal partition consists of three $120^\circ$ lens. This fact is not proven theoretically, and is a
+conjecture proposed by Bishop. The case of the problem $$\min \max_{i=1,2,3}
+\lambda_1^{LB}(S_i)$$ was solved by B. Helffer, T. Hoffmann-Ostenoff,
+S. Terracini. They found the same optimal partition. <p>The optimal
+value is $45/4$, as the eigenvalue of each slice is $15/4$.</p></td>
+    <td width = "20%"><img src="spectral_sphere/refined3.png" width="100%"
+ alt=""></td>
+    <td width = "20%"><img src="spectral_sphere/density3.png" width="100%"
+ alt=""></td>
+    </tr>
+     </table>
+
+    <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=4$ : the optimal partition consists of the
+tiling generated by a regular tetrahedron inscribed in the sphere.
+
+<p>The optimal energy value is equal to $20.635$ and the
+corresponding first eigenvalue of the one tetrahedral triangle
+is equal to $5.1588$. This is the same as the numerical value
+provided by Ratzkin and Treibergs in <a href="http://www.math.utah.edu/~treiberg/drunker">this article</a>. </p></td>
+    <td width = "20%"><img src="spectral_sphere/refined4.png" width="100%"
+ alt=""></td>
+    <td width = "20%"><img src="spectral_sphere/density4.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=5$ : the optimal partition consists of two
+equal equilateral triangles joined by three equal rectangles.
+
+<p>The optimal energy value is equal to $34.44$. The eigenvalue
+of the triangle is $7.26$ and the eigenvalue of the rectangle
+is $6.57$.</p></td>
+    <td width = "20%"><img src="spectral_sphere/refined5tri.png" width="100%"
+ alt=""></td><td width = "20%"><img src="spectral_sphere/refined5rect.png" width="100%"
+ alt=""></td>
+    <td width = "20%"><img src="spectral_sphere/density5.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=6$ : the optimal partition consists of the
+tiling generated by a cube inscribed in the sphere.
+
+<p>The optimal energy value is equal to $48.6$ and the
+corresponding first eigenvalue of one square
+is equal to $8.10$.</p></td>
+    <td width = "20%"><img src="spectral_sphere/refined6.png" width="100%"
+ alt=""></td>
+    <td width = "20%"><img src="spectral_sphere/density6.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+      <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=7$ : the optimal partition consists of two
+equal pentagons joined by five equal rectangles.
+
+<p>The optimal energy value is equal to $69$. The eigenvalue
+of the pentagon is $8.62$ and the eigenvalue of the rectangle
+is $10.35$.</p></td>
+    <td width = "20%"><img src="spectral_sphere/refined7penta.png" width="100%"
+ alt=""></td>
+    <td width = "20%"><img src="spectral_sphere/refined7rect.png" width="100%"
+ alt=""></td>
+    <td width = "20%"><img src="spectral_sphere/density7.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=8$ : the optimal partition consists a tiling
+formed of four pentagons and four quadrilaterals.
+
+<p>The optimal energy value is equal to $91.01$. The eigenvalue
+of the pentagon is $10.82$ and the eigenvalue of the quadrilateral
+is $11.93$.</p></td>
+    <td width = 20%><img src="spectral_sphere/refined8penta.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/refined8quad.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density8.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=9$ : the optimal partition consists of three
+equal quadrilaterals joined by six equal pentagons.
+
+<p>The optimal energy value is equal to $115.90$. The eigenvalue
+of the pentagon is $12.38$ and the eigenvalue of the rectangle
+is $13.64$.</p></td>
+    <td width = 20%><img src="spectral_sphere/refined9penta.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/refined9square.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density9.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=10$ : the optimal partition consists of two
+equal squares joined by eight equal pentagons.
+
+<p>The optimal energy value is equal to $142.33$. The eigenvalue
+of the pentagon is $13.95$ and the eigenvalue of the square
+is $15.85$.</p></td>
+    <td width = 20%><img src="spectral_sphere/refined10penta.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/refined10square.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density10.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=11$ : the optimal partition consists of one hexagon two
+equal quadrilaterals and eight pentagons of three types.
+
+<p>The optimal energy value is equal to $175.38$. The eigenvalue
+of the pentagon hexagon is $14.47$, the eigenvalue of the quadrilateral
+is $17.65$, and the three types of pentagons have eigenvalues in
+the set $\{15.36,15.77,15.83\}$.</p></td>
+    <td><img src="spectral_sphere/refined11hexs.png" width="100%"
+ alt=""></td><td><img src="spectral_sphere/refined11quad.png" width="100%"
+ alt=""></td>
+ <td><img src="spectral_sphere/refined11penta.png" width="100%"
+ alt=""></td>
+ <td width = 20%><img src="spectral_sphere/density11.png" width="100%"
+ alt=""></td> </tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=12$ : the optimal partition consists of
+the tiling of the sphere into $12$ equal pentagons (generated by
+a dodecahedron).
+
+<p>The optimal energy value is equal to $203.84$ and the
+corresponding first eigenvalue of one pentagon
+is equal to $16.99$.</p></td>
+    <td><img src="spectral_sphere/refined12.png" width="100%"
+ alt=""></td>
+     <td width = 20%><img src="spectral_sphere/density12.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=13$ : the optimal partition consists of one rectangle two
+equal hexagons and ten pentagons of three types.
+
+<p>The optimal energy value is equal to $245.55$. </p></td>
+    <td><img src="spectral_sphere/refined13hexa.png" width="100%"
+ alt=""></td><td><img src="spectral_sphere/refined13quad.png" width="100%"
+ alt=""></td>
+ <td><img src="spectral_sphere/refined13penta.png" width="100%"
+ alt=""></td>
+ <td width = 20%><img src="spectral_sphere/density13.png" width="100%"
+ alt=""></td> </tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=14$ : the optimal partition consists of two
+equal hexagons joined by $12$ equal pentagons.
+
+<p>The optimal energy value is equal to $283.93$. The eigenvalue
+of the pentagon is $20.75$ and the eigenvalue of the hexagon
+is $17.47$.</p></td>
+    <td><img src="spectral_sphere/refined14penta.png" width="100%"
+ alt=""></td><td><img src="spectral_sphere/refined14hexa.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density14.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 40%> $n=15$ : the optimal partition consists of three
+equal hexagons joined by $12$ pentagons of two types.
+
+<p>The optimal energy value is equal to $327.21$. </p></td>
+    <td width = 20%><img src="spectral_sphere/refined15penta.png" width="100%"
+ alt=""></td><td width = 20%><img src="spectral_sphere/refined15hexa.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density15.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=16$ : optimal structure consists of four regular hexagons
+  joined by $12$ equal pentagons.</td>
+    <td width = 20%><img src="spectral_sphere/refined16.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density16.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=17$ : The optimal partition consists
+of $5$ hexagons and $12$ pentagons. Among the hexagons, four are
+equal, and there are two pairs and two
+quadruples of equal pentagons. The optimal computed cost is
+$423.19$</td>
+    <td width = 20%><img src="spectral_sphere/refined17.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density17.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=18$ : The optimal partition consists
+of six equal hexagons (with eigenvalue $24.07$)
+ and two groups of six equal pentagons (with eigenvalues
+ $27.28$ and $27.90$). The optimal computed cost is $475.53$ </td>
+    <td width = 20%><img src="spectral_sphere/refined18.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density18.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=19$ : the optimal partition consists of
+$7$ hexagons (one plus three pairs of equal hexagons) and $12$
+pentagons (six pairs of equal pentagons). The optimal computed
+cost is $531.00$.</td>
+    <td width = 20%><img src="spectral_sphere/refined19.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density19.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=20$ : The optimal partition consists of
+$8$ hexagons (two groups of four equal hexagons) and $12$ pentagons
+(one group of four equal pentagons and another group of eight
+equal pentagons). The optimal computed cost is $586.63$. </td>
+    <td width = 20%><img src="spectral_sphere/refined20.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density20.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 80%> $n=21$ : refined results coming soon
+    <td width = 20%><img src="spectral_sphere/density21.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+     <table class =  "thin" width = "100%" border="2" >
+<tr><td width = 60%> $n=32$ : The optimal tiling has a $C_{60}$ fullerene
+   structure (similar to a soccer ball) consisting of $12$ equal regular pentagons and
+   $20$ equal regular hexagons. The pentagon eigenvalue is equal to $49.34$ and
+   the hexagon eigenvalue is equal to $45.72$. The optimal numerical sum of the
+   eigenvalues is $1506.61$.
+    <td width = 20%><img src="spectral_sphere/refined32.png" width="100%"
+ alt=""></td>
+    <td width = 20%><img src="spectral_sphere/density32.png" width="100%"
+ alt=""></td></tr>
+     </table>
+
+    <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:8px"> Created: Apr 2015</p>
+    </div>
+  </body>
+</html>

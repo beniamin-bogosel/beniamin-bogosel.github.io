@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Optimization the Steklov Eigenvalues - Diameter Constraint</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail" >
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Optimization of Steklov eigenvalues</h3>
+
+      <p>Collaboration with A. Al Sayed, A. Henrot, F. Nacry. Preprint available <a href="https://drive.google.com/file/d/16xLOR_F2WJ5vcW-k5lZ6KpMaEsTA52Hv/view?usp=drive_link">here</a>. </p>
+
+      <p> We look at optimal shapes for the Steklov eigenvalue problem under convexity and diameter constraint. The convexity helps us obtain theoretical results regarding existence.</p>
+
+     <p style="text-align: left;">The numerical simulations use the support function parametrization in the convex case. The simulations suggest that the diameter constraint is saturated at exactly two points. This implies that the more simple double graph parametrization should also work. This second parametrization allows us to find numerical candidates even without convexity constraint. All computations were done with FreeFEM and the optimization was handled by IPOPT. You can consult the paper for more detailed infos.</p>
+
+     <p>The minimizers in the class of convex sets with fixed diameter are shown below for the first seven eigenvalues. The minimizers seem to converge to a segment.</p>
+
+     <center>
+<table class = "thin" style ="table-layout: fixed; text-align: center; display: inline-block" "font-size:5px" width = "50%" border="2" >
+    <tr><td></td><td width="60%">maximizer</td></tr>
+
+<tr><td>$\sigma_1$</td>
+    <td><img src="SteklovDiam/SteklovDiam1.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_2$</td>
+    <td><img src="SteklovDiam/SteklovDiam2.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_3$</td>
+    <td><img src="SteklovDiam/SteklovDiam3.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_4$</td>
+    <td><img src="SteklovDiam/SteklovDiam4.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_5$</td>
+    <td><img src="SteklovDiam/SteklovDiam5.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_6$</td>
+    <td><img src="SteklovDiam/SteklovDiam6.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_7$</td>
+    <td><img src="SteklovDiam/SteklovDiam7.png" width="100%"  alt=""> </td></tr>
+</table>
+     </center>
+
+    <p>Some results obtained in the non-convex case are shown below.</p>
+
+    <center>
+    <table class = "thin" style ="table-layout: fixed; text-align: center; display: inline-block" "font-size:5px" width = "50%" border="2">
+   <tr><td></td><td width="60%">maximizer</td></tr>
+        <tr><td>$\sigma_1$</td>
+    <td><img src="SteklovDiam/NonConvex1.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_2$</td>
+    <td><img src="SteklovDiam/NonConvex2.png" width="100%"  alt=""> </td></tr>
+<tr><td>$\sigma_3$</td>
+    <td><img src="SteklovDiam/NonConvex3.png" width="100%"  alt=""> </td></tr>
+        </table>
+    </center>
+       <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+    <hr>
+    <p style = "font-size:10px"> Created: Mar 2020</p>
+    </div>
+  </body>
+</html>

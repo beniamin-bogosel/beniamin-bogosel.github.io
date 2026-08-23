@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+   <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Minimizing the largest eigenvalue in a partition</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Partition which minimize the largest fundamental eigenvalue</h3>
+
+      <p>In collaboration with Virginie Bonnaillie-Noel. You can see all the details in the following <a href="https://drive.google.com/file/d/1eZpdJiAE5WzkLxlfQ8xP50_VO6YLSKCQ/view?usp=drive_link">preprint</a>.</p>
+
+      <p>We consider partitions of a two dimensional domain $D$ which minimize the functional
+      $$ F((\omega_i))= \max_i \lambda_1(\omega_i)$$
+      where $\lambda_1(\omega)$ is the first eigenvalue of the Dirichlet-Laplace operator on $\omega$. Apart from
+      some cases where we know that the optimal partition is associated to a nodal function, there is not much
+      information we know about the structure of the optimal partition. We are thus motivated to perform
+      some numerical simulations in order to find candidates for these minimal partitions. The numerical
+      algorithm we use is inspired from the paper of Bourdin, Bucur and Oudet. I have other computations
+      made using this algorithm in the case of the sum of the eigenvalues: check <a href="polygonal_spectral.html">this link</a>.
+      The main idea is that instead of computing the eigenvalue of the shape $\omega$ we consider a function $\varphi$ which
+      approximates the characteristic function $\chi_\omega$ and we solve the problem
+      $$  -\Delta u +C(1-\varphi)u = \lambda u \text{ in }D$$
+      where $D$ is the bounding box or the computation domain and $C\gg 1$ is a penalization constant.
+      </p>
+
+      <p>We know that the maximum of a family of regular functions is not necessarely smooth and thus
+      trying to minimize the maximum directly does not lead to conclusive results. We take another approach
+      suggested in a paper of Bonnaillie-Noel and Lena which is to minimize a $p$-norm for large $p$:
+      $$    \left( \frac{\lambda_1(\omega_1)^p+...+\lambda_1(\omega_n)^p}{n}\right)^{1/p}.$$</p>
+
+      <p>Numerically we can go as high as $p=50$. What we expect is that the optimal candidate we obtain is
+      an equipartition (i.e. the first eigenvalue of every cell is the same). Our candidates are almost
+      equipartitions. In some cases, the results obtained with the relaxed formulation allow us to conjecture
+      that the optimal  partition has a certain particular configuration or some kind of symmetry. With these
+      assumptions we are able to improve the relaxed results.</p>
+
+        <p>The numerical study of the partitions goes as follows: </p>
+      <ul>
+      <li>First we perform the numerical optimization with the relaxed formulation for $p \in \{1,2,3,...,50\}$.</li>
+      <li>Then we extract the contours, by using, for example, Matlab's contour function.</li>
+      <li>For each contour we construct a mesh and we compute the first eigenvalue using finite elements.</li></ul>
+
+        <p>Below you can see some results. We have noted the following observations during our simulations:</p>
+
+      <ul><li>
+      If we want to obtain good results with the penalized formulations we need to have a penalization constant
+      $C$ as large as possible.</li>
+      <li>In order to acheive this it is useful to consider the improvement of the algorithm of Bourdin, Bucur and Oudet
+      using only points of the finite difference grid which are close to the cell whose eigenvalue we compute. More details
+      can be seen <a href="large_spectralpart.html">here</a>.</li></ul>
+
+
+<table align="center" class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="minmax/graph8_apres.png" width="100%"  alt=""> </td>
+    <td><img src="work/part8.png" width="100%"  alt=""></td>
+    </tr>
+<tr><td>The largest eigenvalue and the $p$-norm as a function of $p$</td>
+<td>The best candidate for partitioning the circle into $8$ parts</td></tr>
+</table>
+
+<p>Sometimes, if the partition has a particular structure we can express it as a nodal partition of a mixed spectral problem. In this way we may obtain better upper bounds for the maximal eigenvalue. See below some situations where this situations applies.</p>
+
+
+<p> We may ask ourselves when is a partition which is a candidate for the max can also be a candidate for the sum. It turns out that this does not happen very often and we may give answers by looking at the evolutions of $p$-norms as $p$ grows or use a $L^2$-norm criterion.</p>
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:13px"> Created: Apr 2016</p>
+    </div>
+  </body>
+</html>

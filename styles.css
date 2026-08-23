@@ -561,4 +561,56 @@ div.pubitemnew {
    background-color:#dae7f1;
    border-radius:10px;
    padding: 7px;       
-} 
+}
+
+.research-detail img {
+    max-width: 100%;
+    height: auto;
+}
+
+.research-detail .download-note {
+    margin: 22px 10px 12px;
+    padding: 10px;
+    background-color: #eef5fa;
+    border-left: 4px solid #4682b4;
+    border-radius: 4px;
+}
+
+.research-detail .back-to-research {
+    margin: 20px 10px 10px;
+    text-align: left;
+}
+
+.research-detail .missing-asset {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    color: #555;
+    background-color: #f3f3f3;
+    border: 1px dashed #999;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .research-detail {
+        margin: 0;
+    }
+
+    .research-detail .main {
+        border-radius: 0;
+        overflow-x: hidden;
+    }
+
+    .research-detail header nav ul li {
+        padding: 2px 5px;
+    }
+
+    .research-detail p {
+        text-align: left;
+    }
+
+    .research-detail table {
+        max-width: 100%;
+    }
+}

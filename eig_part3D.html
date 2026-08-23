@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Eigenvalue partitions in 3D</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+  </head>
+  <body class="research-detail">
+        <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Partitions minimizing the sum of eigenvalues in 3D</h3>
+
+      <p> The goal is to find numerically partitions which minimize the sum of the first eigenvalues of the Dirichlet Laplace operator:
+      $$ \min_{(\omega_i)} \lambda_1(\omega_1)+...+\lambda_1(\omega_n).$$
+      where $(\omega_i)$ is a partition of a three dimensional shape $D$. The objective is to apply the (already classical) penalization method used by Bourdin, Bucur and Oudet <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Eigs_honeycomb/html/index_n.php">here</a>. The main difficulty in the application of the same methods is the sheer size of the computations involved.</p>
+
+      <p> Things become more simple if we use an approach similar to the one presented here. Dealing with partitions is simpler if we keep a fixed grid. Then the eigenvalue of each cell is computed by solving a problem on the entire grid. This can be costly from a computational point of view. Instead of using the whole grid for every cell we may just localize the grid around each cell and ignore other points. This grid restriction algorithm was already used successfully in 2D and on surfaces in 3D <a href="large_spectralpart.html">here</a>.</p>
+
+      <p> This is a work in progress. I'll update the page as soon as new results or presentation updates appear. For now here are a few initial results.</p>
+
+      <p> If you keep the mouse on pictures you can see a <strong>detailed view of the rotating partition</strong>. Due to the size of the images it may take a while to load, so put the mouse on the image you want to see and wait a bit.</p>
+
+      <div id="imlist">
+      <ul>
+      <li><img class = "rounded" src="eig_part3D/test_cube3.png" onmouseover="this.src='eig_part3D/cube3.gif';"  onmouseout="this.src='eig_part3D/test_cube3.png';" style="width:100%" alt="">
+         <p>$3$-partition of the cube</p>   </li>
+        <li><img class = "rounded" src="eig_part3D/test_cube4.png" onmouseover="this.src='eig_part3D/cube4.gif';"  onmouseout="this.src='eig_part3D/test_cube4.png';" style="width:100%" alt="">
+         <p>$4$-partition of the cube</p>   </li>
+          <li><img class = "rounded" src="eig_part3D/test_cube5.png" onmouseover="this.src='eig_part3D/cube5.gif';"  onmouseout="this.src='eig_part3D/test_cube5.png';" style="width:100%" alt="">
+         <p>$5$-partition of the cube</p>   </li>
+         <li><img class = "rounded" src="eig_part3D/test_cube6.png" onmouseover="this.src='eig_part3D/cube6.gif';"  onmouseout="this.src='eig_part3D/test_cube6.png';" style="width:100%" alt="">
+         <p>$6$-partition of the cube</p>   </li>
+     <li><img class = "rounded" src="eig_part3D/test_cube8.png" onmouseover="this.src='eig_part3D/cube8.gif';"  onmouseout="this.src='eig_part3D/test_cube8.png';" style="width:100%" alt="">
+         <p>$8$-partition of the cube</p> </li>
+     <li><img class = "rounded" src="eig_part3D/test_cube9.png" onmouseover="this.src='eig_part3D/cube9.gif';"  onmouseout="this.src='eig_part3D/test_cube9.png';" style="width:100%" alt="">
+         <p>$9$-partition of the cube</p> </li>
+    <li><img class = "rounded" src="eig_part3D/test_cube14.png" onmouseover="this.src='eig_part3D/cube14.gif';"  onmouseout="this.src='eig_part3D/test_cube14.png';" style="width:100%" alt="">
+         <p>$14$-partition of the cube</p> </li>
+      </ul>
+
+    <p>And now some results in the periodic case. </p>
+
+      <ul>
+      <li><img class = "rounded" style="width:100%" src="eig_part3D/percube16.png" onmouseover="this.src='eig_part3D/cubeper16.gif';"  onmouseout="this.src='eig_part3D/percube16.png';"  alt="">
+         <p>$16$-partition of the cube. The Kelvin structure: truncated octahedra</p>   </li>
+          <li></li>
+          </ul>
+
+    <p> Below are some computations for the case of the sphere and the regular tetrahedron.</p>
+
+    <ul>
+       <li><img class = "rounded" src="eig_part3D/test_ball3.png" style="width:100%" onmouseover="this.src='eig_part3D/ball3.gif';"  onmouseout="this.src='eig_part3D/test_ball3.png';"  alt="">
+         <p>$3$-partition on the sphere.</p>   </li>
+        <li><img class = "rounded" src="eig_part3D/test_ball4.png" style="width:100%" onmouseover="this.src='eig_part3D/ball4.gif';"  onmouseout="this.src='eig_part3D/test_ball4.png';"  alt="">
+         <p>$4$-partition on the sphere.</p>   </li>
+        <li><img class = "rounded" src="eig_part3D/test_ball6.png" style="width:100%" onmouseover="this.src='eig_part3D/ball6.gif';"  onmouseout="this.src='eig_part3D/test_ball6.png';"  alt="">
+         <p>$6$-partition on the sphere.</p>   </li>
+        <li><img class = "rounded" src="eig_part3D/test_ball12.png" style="width:100%" onmouseover="this.src='eig_part3D/ball12.gif';"  onmouseout="this.src='eig_part3D/test_ball12.png';"  alt="">
+         <p>$12$-partition on the sphere.</p>   </li>
+        <li><img class = "rounded" src="eig_part3D/test_ball13.png" style="width:100%" onmouseover="this.src='eig_part3D/ball13.gif';"  onmouseout="this.src='eig_part3D/test_ball13.png';"  alt="">
+         <p>$13$-partition on the sphere.</p>   </li>
+          </ul>
+
+    <ul>
+        <li><img class = "rounded" src="eig_part3D/test_tetra2.png" style="width:100%" onmouseover="this.src='eig_part3D/tetra2.gif';"  onmouseout="this.src='eig_part3D/test_tetra2.png';"  alt="">
+         <p>$2$-partition on the tetrahedron.</p>   </li>
+       <li><img class = "rounded" src="eig_part3D/test_tetra4.png" style="width:100%" onmouseover="this.src='eig_part3D/tetra4.gif';"  onmouseout="this.src='eig_part3D/test_tetra4.png';"  alt="">
+         <p>$4$-partition on the tetrahedron.</p>   </li>
+        <li><img class = "rounded" src="eig_part3D/test_tetra10.png" style="width:100%" onmouseover="this.src='eig_part3D/tetra10.gif';"  onmouseout="this.src='eig_part3D/test_tetra10.png';"  alt="">
+         <p>$10$-partition on the tetrahedron.</p>   </li>
+        <li><img class = "rounded" src="eig_part3D/test_tetra20.png" style="width:100%" onmouseover="this.src='eig_part3D/tetra20.gif';"  onmouseout="this.src='eig_part3D/test_tetra20.png';"  alt="">
+         <p>$20$-partition on the tetrahedron.</p>   </li>
+
+          </ul>
+      </div>
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:10px"> Created: Nov 2016</p>
+      </div>
+  </body>
+</html>

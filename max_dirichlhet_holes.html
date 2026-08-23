@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+   <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Maximization of eigenvalue in terms of holes</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Maximization of the first eigenvalue - domains with holes</h3>
+
+      <p>This problem has been studied before by B. Maury and G. Billotey. You can find some infos
+      <a href="http://www.math.u-psud.fr/~maury/#Optimisation_sous_contraintes">here</a>.
+      I present briefly the problem below together with a FreeFem implementation.</p>
+
+     <p> Suppose we have a square and a number of circular holes in it. We wish to maximize the
+     first eigenvalue of the Laplace operator with Dirichlet boundary conditions in terms of the position
+     of the holes. As stated in the above reference, this corresponds to finding the optimal positions
+     for a set of coolers such that a the cooling process is optimized. </p>
+
+     <p> Since we want to optimize the position of the holes, we wish to know the gradient of the first eigenvalue
+     with respect to the coordinates of the centers of the holes. This can be done right away if we recall the
+     shape derivative formula for the eigenvalues of the Dirichlet Laplace operator with respect to a perturbation
+     $V$ of the boundary (see Henrot, Pierre, <em>Variation et optimisation de formes</em>)
+     $$ \frac{d\lambda}{dV} = -\int_{\partial \Omega} \left(\frac{\partial u}{\partial n}\right)^2 V. n \ d \sigma.$$
+     When looking at the variation with respect to the position of only one hole, we see that the vector field $V$
+     only acts on the boundary of that hole. In order to find the partial derivatives we take $V$ to be constant
+     equal to $(1,0)$ and $(0,1)$, respectively. We find that the partial derivatives with respect to the two coordinates
+     are given by
+     $$ \frac{d\lambda}{dx} = -\int_{\partial B} \left(\frac{\partial u}{\partial n}\right)^2 n_1 \ d \sigma,\
+     \frac{d\lambda}{dy} = -\int_{\partial B} \left(\frac{\partial u}{\partial n}\right)^2 n_2 \ d \sigma, $$
+     where $n_1,n_2$ are the components of the normal vector to the circular hole. Once we have these derivatives, it is straightforward
+     to write a gradient descent algorithm. FreeFem offers a good framework for the computation of the eigenvalues
+     and of the integrals needed in the gradient. Furthermore, the implementation is quite straightforward. Note that changing the
+     shape of the holes does not affect the expression of the gradient (if we decide that we only perform translations of the holes
+     in the course of the optimization). Below you can see some of the simulations made with FreeFem.
+     </p>
+
+     <p>Below you can see the optimal configurations we obtained for circles of radii $r=0.05$ in a square of sidelength $2$. You
+     can also visualize the evolution of the optimization algorithm in the corresponding movies. The FreeFem code for
+     the algorithm is available here: <a href="https://drive.google.com/file/d/18Vj-0_Allh5ithV66T5xOtN5H68BCjhk/view?usp=drive_link">optimal_holes.edp</a>.</p>
+
+
+<table align="center" class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="pics/holes1_0052.png" width="100%"  alt=""></td>
+    <td><img src="pics/holes2_0066.png" width="100%"  alt=""> </td>
+    <td><img src="pics/holes3_0052.png" width="100%"  alt=""> </td>
+    <td><img src="pics/holes4_0052.png" width="100%"  alt=""> </td>
+    <td><img src="pics/holes5_0063.png" width="100%"  alt=""> </td></tr>
+<tr >
+    <td><img src="pics/holes6_0099.png" width="100%"  alt=""></td>
+    <td><img src="pics/holes7_0099.png" width="100%"  alt=""> </td>
+    <td><img src="pics/holes8_0098.png" width="100%"  alt=""> </td>
+    <td><img src="pics/holes9_0084.png" width="100%"  alt=""> </td>
+    <td><img src="pics/holes10_0199.png" width="100%"  alt=""> </td>
+
+</tr>
+</table>
+
+ <p align="center">
+<iframe height="400" width="400" src="https://www.youtube.com/embed/nCMcuMGlO-k?rel=0" frameborder="0" allowfullscreen>   </iframe>
+ </p>
+
+<table align="center" class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><iframe height="200" width="200" src="https://www.youtube.com/embed/UKG9q3Hfquw?rel=0" frameborder="0" allowfullscreen></iframe> </td>
+    <td><iframe height="200" width="200" src="https://www.youtube.com/embed/yW9pbW77MVo?rel=0" frameborder="0" allowfullscreen></iframe></td>
+    <td><iframe height="200" width="200" src="https://www.youtube.com/embed/r8BzQ2D9M-M?rel=0"  frameborder="0" allowfullscreen></iframe></td>
+<tr><td><iframe height="200" width="200" src="https://www.youtube.com/embed/wNdWuLYg7Ns?rel=0" frameborder="0" allowfullscreen></iframe> </td>
+    <td><iframe height="200" width="200" src="https://www.youtube.com/embed/eRPF7OLZnW0?rel=0" frameborder="0" allowfullscreen></iframe></td>
+    <td><iframe height="200" width="200" src="https://www.youtube.com/embed/gC74fMEiQWc?rel=0" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+<tr><td><iframe height="200" width="200" src="https://www.youtube.com/embed/1GpQQMeuD60?rel=0" frameborder="0" allowfullscreen></iframe> </td>
+    <td><iframe height="200" width="200" src="https://www.youtube.com/embed/l_3s8_NkZ_E?rel=0" frameborder="0" allowfullscreen></iframe></td>
+    <td><iframe height="200" width="200" src="https://www.youtube.com/embed/JLEbl58H0Ug?rel=0" frameborder="0" allowfullscreen></iframe></td>
+
+</table>
+
+    <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:13px"> Created: Mar 2016</p>
+    </div>
+  </body>
+</html>

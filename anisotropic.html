@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Optimal partitions for an anisotropic perimeter</title>
+    <meta content="Beni Bogosel" name="author">
+
+
+<link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class = "main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+         <h3>Optimal partitions for an anisotropic perimeter using
+     $\Gamma$-convergence</h3>
+
+     <p style="text-align: left;">Recently, <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/">E. Oudet</a> has used a variation of
+     Modica-Mortola's theorem in
+     order to study numerically partitions of the
+     <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Kelvin/optimal_cutting_n.html">
+     2D</a> and <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Kelvin/kelvin_n.html">3D</a> objects into parts
+     of equal volume such that the sum of the perimeters is minimized. The
+     numerical results were interesting. In the 2D case, he obtains the expected
+     results, when they are known (for example, division of an equilateral triangle into
+     two regions of equal area with a minimal length curve). In the periodic
+     case, which is a simulation of a partition of the entire plane, he obtains
+     the famous hexagonal tiling, prescribed by the Honeycomb conjecture (now
+     a theorem, due to Hales)</p>
+
+     <p style="text-align: left;">For a sufficiently regular set $\Omega$, we can
+     define its perimeter by $$Per(\Omega) = \int_{\partial \Omega}1 d\sigma=
+     \int_{\partial \Omega}|\vec n|^2d\sigma,$$ where $\vec n$ is the unit normal
+     vector.
+     From this perspective, classical perimeter does not favor any particular
+     direction in the space. Given a norm $\varphi$ on $\Bbb{R}^N$, which is
+     equivalent to the Euclidean one, we can define an anisotropic perimeter
+     by $$ Per_\varphi(\Omega)=
+     \int_{\partial \Omega}\varphi(\vec n)^2d\sigma.$$
+     Note that this norm can favor certain directions. For example $\varphi(x)=
+     \sum_{i=1}^N |x_i|$ favors the directions which are collinear with the
+     coordinate axes. We can consider isoperimetric problems with respect
+     to the anisotropic perimeter. The shape which minimizes the anisotropic
+     perimeter corresponding to $\varphi$, under a volume equality constraint, is
+     called the associated
+     <a href="http://www.scholarpedia.org/article/Wulff_shape_of_crystals">
+     Wulff shape</a>. For the example of $\varphi$
+     given above, the corresponding Wulff shape is a cube.
+
+     <p style="text-align: left;">Since there are variants of Modica-Mortola's
+     theorem, which involve an anisotropic perimeter, we thought it would be
+     interesting to search numerically optimal partitions which minimize the
+     anisotropic perimeter with respect to different functionals $\varphi$. </p>
+
+     <p style="text-align: left;">The $\Gamma$-convergence result can be stated as
+     follows: </p>
+     <div style="background-color:#FAEBD7; color:black; margin:5px; padding:5px;"><strong>Theorem.
+        (Modica-Mortola)</strong> Consider $D$ a bounded, open set in
+      $\Bbb{R}^n$ and define the functionals $F_\varepsilon : (L^1(D))^n \to
+      [0,\infty]$ as follows: $$F_\varepsilon(u) =
+      \varepsilon \sum_{i=1}^n \left(\int_\Omega \varphi(\nabla u_i)^2 +
+      \frac{1}{\varepsilon}\int_\Omega
+      u_i^2(1-u_i)^2\right)$$ if $(u_i) \in H^1(D)^n,\ \int_D u_i
+       = \frac{|D|}{n}, \sum_{i=1}^n u_i = 1$. If thewe conditions are not fulfilled
+       we take $F_\varepsilon(u)=\infty$. In the same way we define
+      $$ F(u) =
+        \frac{1}{3}\sum_{i=1}^n Per_\varphi(\Omega_i)$$ if $ u_i \in BV(D,\{0,1\}),\ \Omega_i = u_i^{-1}(1),
+         \int_D u_i=\frac{|D|}{n}$. Note that this condition says that $u_i$ are
+         characteristic functions of a partition of $\Omega$ into sets of equal
+         volumes and finite perimeters. Again, if $u$ does not satisfy this we take
+         $F(u)=\infty$.
+      <p style="text-align: left;">Then $F_\varepsilon \stackrel{\Gamma}{\to} F$
+        for the $L^1(D)^n$ convergence.</p>
+    </div>
+
+     <p style="text-align: left;"> Like in other cases, we try to approach
+     minimizers of $F$(optimal partitions) by minimizers of $F_\varepsilon$. Below
+     we present some of the results we obtained. </p>
+
+
+     <p>In the pictures below you can see a comparison between the partitions
+     of a square in the isotropic case, and the anisotropic case
+     corresponding to horizontal and vertical directions. Since the anisotropic
+     partitions seem to be partitions in rectangles, we checked to see if
+     the partitions in rectangles we obtained are indeed optimal. It turns out
+     that the rectangle problem has been completely solved in the following
+     <a href="http://www.sciencedirect.com/science/article/pii/0166218X87900618">article</a>.
+     All of the rectangle partitions we obtained are optimal.</p>
+
+     <center>
+    <table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="partitions/anihv2.png" width="100%"  alt=""> </td>
+    <td><img src="partitions/anihv3.png" width="100%" alt=""></td>
+    <td><img src="partitions/anihv4.png" width="100%"  alt=""></td>
+    <td><img src="partitions/anihv5.png" width="100%"  alt=""></td>
+    <td><img src="partitions/anihv6.png" width="100%"  alt=""></td></tr>
+<tr align = "center">
+    <td><img src="partitions/piso2.png" width="100%"  alt=""> </td>
+    <td><img src="partitions/piso3.png" width="100%" alt=""></td>
+    <td><img src="partitions/piso4.png" width="100%"  alt=""></td>
+    <td><img src="partitions/piso5.png" width="100%"  alt=""></td>
+    <td><img src="partitions/piso6.png" width="100%"  alt=""></td>
+</tr>
+</table>
+
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "58%" border="2" >
+<tr><td><img src="partitions/anihv7.png" width="100%"  alt=""> </td>
+    <td><img src="partitions/anihv8.png" width="100%"  alt=""></td>
+    <td><img src="partitions/anihv9.png" width="100%"  alt=""></td>
+    <td><img src="partitions/anihv10.png" width="100%"  alt=""></td></tr>
+<tr >
+    <td><img src="partitions/piso7.png" width="100%"  alt=""> </td>
+    <td><img src="partitions/piso8.png" width="100%"  alt=""></td>
+    <td><img src="partitions/piso9.png" width="100%"  alt=""></td>
+    <td><img src="partitions/piso10.png" width="100%"  alt=""></td>
+</tr>
+</table>
+
+
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "58%" border="2" >
+<tr align = "center"><td width = 100%> Comparison between the isotropic case
+(down) and the anisotropic case (up)
+corresponding to $\varphi(x) = |x_1|+|x_2|$. This anisotropy favorizes
+the horizontal and vertical directions.</td></tr>
+</table>
+</center>
+
+Below you can find some other computations made in the anisotropic setting for
+various choices of directions and various domains.
+<center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "58%" border="2" >
+<tr><td><img src="partitions/ani1d4o.png" width="100%"  alt=""> </td>
+    <td><img src="partitions/ani1d4o_2.png" width="100%"  alt=""></td>
+    <td><img src="partitions/ani1d5v.png" width="100%"  alt=""></td>
+    <td><img src="partitions/ani12d3060.png" width="100%"  alt=""></td></tr>
+<tr >
+    <td><img src="partitions/aniso3dir8.png" width="100%"  alt=""> </td>
+    <td><img src="partitions/tri3.png" width="100%"  alt=""></td>
+    <td><img src="partitions/aniso_cir4.png" width="100%"  alt=""></td>
+    <td><img src="partitions/aniso_hex3.png" width="100%"  alt=""></td>
+</tr>
+</table>
+
+</center>
+
+            <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+  <hr>
+  <p style = "font-size:8px"> Created: Dec 2014</p>  </div>
+  </body>
+</html>

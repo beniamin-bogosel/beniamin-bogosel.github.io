@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Numerical computation of the Steklov spectrum</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+    <h3>Numerical computation of the Steklov spectrum</h3>
+
+    <p style="text-align: left;"> The Steklov eigenvalues are the eigenvalues of the
+    Dirichlet-to-Neumann operator. For a simply connected domain $\Omega$, the
+    Steklov eigenvalues satisfy the problem
+    $$ \begin{cases} -\Delta u =0 & \text{ in }\Omega \\
+    \frac{\partial u}{\partial n}= \sigma u & \text{ on }\partial \Omega
+    \end{cases}$$  </p>
+    <p>
+    The Steklov spectrum is denoted
+    $$ 0=\sigma_0(\Omega)\leq \sigma_1(\Omega)\leq  \sigma_2(\Omega)... \to \infty.$$
+    We can consider optimizing the Steklov eigenvalues with respect to the shape
+    of the domain $\Omega$ under perimeter or volume constraints.
+    Several such results are known in the literature. First, let's note that the
+    relevant optimization problems are those in which we need to maximize $\sigma_k$
+    under volume or perimeter constraint. Indeed, B. Colbois, A. Girouard and I.
+    Polterovich proved the following bound
+    $$ \sigma_k(\Omega) \leq c_d k^
+    {\frac{2}{d}}\frac{|\Omega|^{\frac{d-2}{d}}}{Per(\Omega)}.$$
+    This means that keeping constant volume and increasing the perimeter makes
+    the Steklov spectrum vanish in the limit.
+     Conversely, keeping constant perimeter and decreasing the volume has the same
+     effect.  </p>
+
+    <p style="text-align: left;"> The well known optimization results for the
+    Steklov spectrum are the following: </p>
+    <ol>
+	<li>Weinstock's inequality, which says that the disk maximizes $\sigma_1(\Omega)$
+	among simply connected sets with volume or perimeter constraint.</li>
+	<li>Hersch-Payhe-Schiffer inequalities: $\sigma_k(\Omega)Per(\Omega) \leq
+	2k\pi$. A. Girouard and I. Polterovich proved that the inequality is
+	sharp for $k=2$ and that the optimum is not in the class of simply connected sets.
+	</li>
+	<li>Another result due to Hersch-Payne-Schiffer:
+	$$\sum_{i=1}^n \frac{1}{\sigma_k(\Omega)} \geq  \sum_{i=1}^n \frac{1}{\sigma_k(B)}
+	,$$
+	where $B$ is the disk with the same volume or the same perimeter as $\Omega$.</li>
+</ol>
+
+    <p>In order to study more complicated problems involving higher Steklov eigenvalues
+    we would like to have a way of computing the Steklov spectrum with high accuracy,
+    in a reasonable amount of time. One way to do this is to use the method of
+    fundamental solution. This was successfully used by P. Antunes and P. Freitas
+    in the study of the optimization problems regarding the Dirichlet eigenvalues.
+    The idea is to choose some exterior points as centers of radial harmonic
+    functions, and then find a combination of them which satisfies the boundary
+    eigenvalue condition. Of course, all the parameters (like the position of the
+    exterior points and the evaluation points on the boundary) must be finely
+    tuned in order to obtain the expected results. </p>
+
+    <p>It turns out that the situation is even simpler than in the Dirichlet case,
+    since the fundamental solution do not depend on the eigenvalues. Thus, the
+    computations are fast and accurate. Further details will be provided in a
+    forthcoming article.</p>
+
+    <p>To illustrate the precision of the computation, I made a FreeFem++ program
+    which computes the Steklov eigenvalues using meshes. In the table presented below
+    you can see the comparison of the two methods in function of the number of
+    triangles used in the mesh. You can see that the values approach the ones computed
+    using our method.</p>
+
+   <div id="container1">
+   <div id="col4">
+    <table width = "100%">
+    <tr><td><img src="stekpics/steklov_comparison.png" width="100%" alt=""></td></tr>
+    <tr><td>The shape for which the eigenvalues presented in the table were computed</td></tr></table>
+   </div>
+   <div id="col3">
+   <table class="thin" align="center" border="1">
+    <tr> <td>$k$</td>    <td>MFS </td>
+    <td>$2096 \blacktriangle$</td>  <td>$33788 \blacktriangle$ </td>  <td>$134898 \blacktriangle$</td> <td>$211290 \blacktriangle$</td></tr>
+<tr>   <td>$1$</td>   <td>$0.712751$</td>  <td>$0.714888$</td>  <td>$0.712886$</td>  <td>$0.712785$</td>  <td>$0.712773$</td></tr>
+<tr>   <td>$2$</td>   <td>$0.940247$</td>  <td>$0.942837$</td>  <td>$0.940411$</td>  <td>$0.940288$</td>  <td>$0.940274$</td></tr>
+<tr>   <td>$3$</td>   <td>$1.381278$</td>  <td>$1.38874$ </td>  <td>$1.38175 $</td>  <td>$1.3814  $</td>  <td>$1.38135 $</td></tr>
+<tr>   <td>$4$</td>   <td>$1.443204$</td>  <td>$1.45137$ </td>  <td>$1.44372$ </td>  <td>$1.44333$ </td>  <td>$1.44329$ </td></tr>
+<tr>   <td>$5$</td>   <td>$3.146037$</td>  <td>$3.15592$</td>   <td>$3.14665$</td>   <td>$3.14619$</td>   <td>$3.14614$</td></tr>
+<tr>   <td>$6$</td>   <td>$3.443637$</td>  <td>$3.45562$</td>   <td>$3.44438$</td>   <td>$3.44382$</td>   <td>$3.44376$</td></tr>
+<tr>   <td>$7$</td>   <td>$3.757833$</td>  <td>$3.78642$</td>   <td>$3.75962$</td>   <td>$3.75828$</td>   <td>$3.75812$</td></tr>
+<tr>   <td>$8$</td>   <td>$3.922822$</td>  <td>$3.95461$</td>   <td>$3.92478$</td>   <td>$3.92331$</td>   <td>$3.92313$</td></tr>
+<tr>   <td>$9$</td>   <td>$4.274362$</td>  <td>$4.32906$</td>   <td>$4.27774$</td>   <td>$4.27521$</td>   <td>$4.2749$</td> </tr>
+<tr>   <td>$10$</td>  <td>$4.693207$</td>  <td>$4.75819$</td>   <td>$4.69723$</td>   <td>$4.69422$</td>   <td>$4.69385$</td></tr>
+    </table>
+    </div>
+    </div>
+
+    <p>Using this numerical algorithm and the shape derivative formula (see, for example
+    <a href="http://arxiv.org/abs/1401.7098">this article</a>),
+    we can study various optimization problems regarding the Steklov spectrum.</p>
+
+            <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:8px"> Created: Dec 2014</p>
+    </div>
+  </body>
+</html>

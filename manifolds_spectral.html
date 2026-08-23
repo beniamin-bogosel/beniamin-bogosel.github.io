@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Spectral optimal partitions on surfaces (continuation)</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+
+      <p><strong>Spectral optimal partitions on surfaces</strong></p>
+
+      <p>This is a continuation of the numerical study presented <a href="spherical_spectral.html">here</a>.</p>
+
+     <p style="text-align: left;"> The numerical results presented below concern
+     the problem partitioning a surface into pieces such that
+     the sum of the first Laplace-Beltrami eigenvalues of the parts is minimized.
+      We consider the problem
+      $$ \min \sum_{i=1}^n \lambda_1^{LB}(S_i)$$
+      where $(S_i)$ is a partition of a manifold into $n$ parts. The same problem was studied recently by Elliott
+      and Ranner (<a href="http://arxiv.org/abs/1408.2355">link</a>), using a different numerical method. </p>
+
+     <p> A fictious domain method is used, in order to detect the structure of the partition (inspired from
+     the 2D computations made by Bourdin, Bucur, Oudet -
+     <a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Eigs_honeycomb/html/index_n.html">link</a>)
+     </p>
+
+
+     <p>The computations presented below were made using Matlab, and the
+     visualization was made in Matlab. The first set of pictures represent
+     the results on a torus together with the corresponding two dimensional
+     flattenings (the central rectangle represents the torus, while the periodic
+     continuations are shown to give a clearer perspective on the structure
+     of the optimal partition.</p>
+
+     <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="spectral_sphere/beltor2.png" width="100%"  alt=""> </td>
+    <td><img src="spectral_sphere/beltor3.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/beltor4.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/beltor5.png" width="100%"  alt=""></td></tr>
+<tr >
+    <td><img src="spectral_sphere/flbeltor2.png" width="100%"  alt=""> </td>
+    <td><img src="spectral_sphere/flbeltor3.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/flbeltor4.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/flbeltor5.png" width="100%"  alt=""></td>
+</tr>
+<tr><td><img src="spectral_sphere/beltor6.png" width="100%"  alt=""> </td>
+    <td><img src="spectral_sphere/beltor7.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/beltor8.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/beltor9.png" width="100%"  alt=""></td></tr>
+<tr >
+    <td><img src="spectral_sphere/flbeltor6.png" width="100%"  alt=""> </td>
+    <td><img src="spectral_sphere/flbeltor7.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/flbeltor8.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/flbeltor9.png" width="100%"  alt=""></td>
+</tr>
+</table>
+
+<p> The last pictures concern a more complex surface:
+     the Banchoff-Chmutov surface of order $4$.</p>
+
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2">
+<tr><td><img src="spectral_sphere/belbc2.png" width="100%"  alt=""> </td>
+    <td><img src="spectral_sphere/belbc4.png" width="100%"  alt=""></td>
+    <td><img src="spectral_sphere/belbc8.png" width="100%"  alt=""></td>
+   </tr></table>
+
+     </center>
+    <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+    <hr>
+    <p style = "font-size:10px"> Created: Sept 2015</p>
+    </div>
+  </body>
+</html>

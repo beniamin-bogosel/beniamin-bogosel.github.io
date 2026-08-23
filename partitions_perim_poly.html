@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Minimal perimeter equal-area partitions of 2D regions</title>
+    <meta content="Beni Bogosel" name="author">
+
+
+
+
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+    <h3>Minimal perimeter equal-area partitions of 2D regions</h3>
+
+    <p> In order to numerically approximate equal-area partitions of 2D regions which minimize the perimeter
+    we use a $\Gamma$-convergence approximation. (See this <a href="gamma-convergence.html">link</a> for an introduction to
+    the use of Gamma-convergence methods in numerical computations. Related topics are:
+    <a href="gconv-perim.html">link1</a>, <a href="modica_mortola_sphere.html">link2</a> </p>
+
+    <p> I approximate the sum of the perimeter with a sum of corresponding Modica-Mortola
+    functionals. The proof of the $\Gamma$-convergence result is not straightforward and
+    not trivial, since the $\Gamma$-convergence is not stable for the sum. The numerical
+    approach consists of triangulating the domain, computing the rigidity and mass matrices
+    associated to the P1 finite elements, and then use these matrices to evaluate
+    every piece of the approximating functional.</p>
+
+    <p>I use the method proposed by E. Oudet (<a href="http://www-ljk.imag.fr/membres/Edouard.Oudet/research/Kelvin/optimal_cutting_n.html">link</a>) to non-rectangular domains
+    by using a finite elements approach. This approach gives better results. In
+    particular, I obtain similar configuration as the ones obtained by
+    Cox and Fikkema (<a href="http://www.combinatorics.org/ojs/index.html/eljc/article/view/v17i1r45">link</a>).</p>
+
+    <p>If instead considering equal areas, we impose different fixed area conditions,
+    we can study, for example, problems concerning bubble clusters.</p>
+
+    <center>
+    <table width = "70%" >
+<tr><td width = 20%><img src="modica_polygons/equi_per2.png" width="100%"  alt=""> </td>
+    <td width = 20%><img src="modica_polygons/equi_per3.png" width="100%"  alt=""></td>
+    <td width = 20%><img src="modica_polygons/equi_per4.png" width="100%" alt=""></td>
+    <td width = 20%><img src="modica_polygons/equi_per5.png" width="100%" alt=""></td>
+    <td width = 20%><img src="modica_polygons/equi_per6.png" width="100%" alt=""></td></tr>
+  </table>
+
+<table width = 80%>
+    <tr><td width = 16%><img src="modica_polygons/equi_per7.png" width="100%"  alt=""> </td>
+    <td width = 16%><img src="modica_polygons/equi_per8.png" width="100%"  alt=""></td>
+    <td width = 16%><img src="modica_polygons/equi_per9.png" width="100%" alt=""></td>
+    <td width = 16%><img src="modica_polygons/equi_per10.png" width="100%"  alt=""> </td>
+    <td width = 16%><img src="modica_polygons/equi_per15.png" width="100%"  alt=""></td>
+    <td width = 16%><img src="modica_polygons/equi_per21.png" width="100%" alt=""></td></tr>
+</table>
+<table width = 60%>
+
+</table>
+<table width = 60%>
+    <tr><td width = 20%><img src="modica_polygons/hex_per7.png" width="100%"  alt=""> </td>
+    <td width = 20%><img src="modica_polygons/pen_per6.png" width="100%"  alt=""></td>
+    <td width = 20%><img src="modica_polygons/pen_per16.png" width="100%" alt=""></td>
+</table>
+<table width = 80%>
+    <tr><td width = 20%><img src="modica_polygons/circle_per3.png" width="100%"  alt=""> </td>
+    <td width = 20%><img src="modica_polygons/circle_per4.png" width="100%"  alt=""></td>
+    <td width = 20%><img src="modica_polygons/circle_per5.png" width="100%" alt=""></td>
+    <td width = 20%><img src="modica_polygons/circle_per6.png" width="100%" alt=""></td>
+    <td width = 20%><img src="modica_polygons/circle_per7.png" width="100%" alt=""></td>
+    </tr>
+    <tr><td width = 20%><img src="modica_polygons/circle_per8.png" width="100%"  alt=""> </td>
+    <td width = 20%><img src="modica_polygons/circle_per9.png" width="100%"  alt=""></td>
+    <td width = 20%><img src="modica_polygons/circle_per10.png" width="100%" alt=""></td>
+    <td width = 20%><img src="modica_polygons/circle_per16.png" width="100%" alt=""></td>
+    <td width = 20%><img src="modica_polygons/circle_per24.png" width="100%" alt=""></td>
+    </tr>
+
+</table>
+
+<table width = 80%>
+    <tr><td width = 20%><img src="modica_polygons/bubble2.png" width="100%"  alt=""> </td>
+    <td width = 20%><img src="modica_polygons/bubble3.png" width="100%"  alt=""></td>
+    <td width = 20%><img src="modica_polygons/tri_bubble2.png" width="100%" alt=""></td>
+    <td width = 20%><img src="modica_polygons/tri_bubble.png" width="100%" alt=""></td>
+</table>
+
+    </center>
+
+    <hr>
+    <p style = "font-size:8px"> Created: Dec 2014</p>
+
+      </div>
+  </body>
+</html>

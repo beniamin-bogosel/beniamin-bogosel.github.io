@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+   <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <title>Contour optimization on meshes</title>
+    <meta content="Beni Bogosel" name="author">
+
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
+  </head>
+  <body class="research-detail">
+    <div class="main">
+    <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+      <h3>Contour optimization on meshes</h3>
+
+      <p>This is part of the study of minimal perimeter partitions on surfaces started
+      <a href="modica_mortola_sphere.html">here</a> (in collaboration with Edouard Oudet). The $\Gamma$-convergence
+      method gives a good approximation of the optimal partition. On the other hand, the optimal cost for the relaxed
+      functional does not give a satisfactory estimation of the total perimeter of the partition. Here we want
+      to compute more precisely this total perimeter.</p>
+
+     <p style="text-align: left;"> First, let's note that having the optimal densities allows us to extract the contours
+     of the partition (using, for example
+     <a href="https://svn.oss.deltares.nl/repos/openearthtools/websites/trunk/matlab/applications/delft3d_matlab/tricontour.m">
+     tricontour</a>). The problem with the extracted contours is that they follow the triangle boundaries and they are quite
+     zig-zagged. In order to make them smoother we decided to optimize the new contours, with the area constraints, on
+     the triangulated surface. The constrained optimization is made with Matlab's algorithm fmincon. The results obtained
+     are quite satisfactory and thus we obtain a good approximation of the length of the optimal total perimeter of the
+     partitions. </p>
+
+     <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="modica_sphere/Optimized-tor6.png" width="100%"  alt=""> </td>
+    <td><img src="modica_sphere/Optimized-sph6.png" width="100%"  alt=""></td>
+    <td><img src="modica_sphere/Optimized-dbtor6_mesh.png" width="100%"  alt=""></td>
+<tr >
+    <td align = "center"> Torus - $6$ cells </td>
+    <td align = "center"> Sphere - $6$ cells </td>
+    <td align = "center"> Double torus - $6$ cells </td>
+
+</tr>
+</table>
+
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="modica_sphere/Optimized-init_end.png" width="100%"  alt=""> </td>
+<tr >
+    <td align = "center"> Initial contours (blue) vs Optimized contours (red) </td>
+
+</tr>
+</table>
+
+
+     </center>
+
+     <p>
+     The stages in the optimization algorithm are illustrated below. As said above, initially
+     we perform the optimization in the relaxed formulation. Then we extract the contours of the cells.
+     We finalize by optimizing and smoothing the contours on the triangulated surface.
+     </p>
+     <center>
+<table class = "thin" style ="table-layout: fixed" "font-size:5px" width = "70%" border="2" >
+<tr><td><img src="modica_sphere/stage1.png" width="100%"  alt=""> </td>
+    <td><img src="modica_sphere/stage2.png" width="100%"  alt=""></td>
+    <td><img src="modica_sphere/stage3.png" width="100%"  alt=""></td>
+<tr >
+    <td align = "center"> Relaxed formulation by $\Gamma$-convergence </td>
+    <td align = "center"> Extraction of the contours of cells (note that they are not very regular) </td>
+    <td align = "center"> Optimization of the length under area constraint on the triangulated surface.
+    This provides a good approximation of the optimal length of the optimal partition. </td>
+
+</tr>
+</table>
+    </center>
+
+        <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+
+    <hr>
+    <p style = "font-size:10px"> Created: Feb 2016</p>
+    </div>
+  </body>
+</html>

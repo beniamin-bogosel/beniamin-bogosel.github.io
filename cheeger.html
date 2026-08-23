@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- Restored from the legacy website archive. -->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--<style> table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>-->
+   <link type="text/css" rel="stylesheet" href="styles.css">
+   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+    <title>Cheeger sets and clusters, optimal packing</title>
+    <meta content="Beni Bogosel" name="author">
+
+  </head>
+  <body class="research-detail" >
+        <div class="main">
+  <header>
+      <div id="header">
+      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
+      </div>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a class="but" href="index.html">Home</a></li>
+        <li><a class="but" href="research.html">Numerics</a></li>
+        <li><a class="but" href="about.html">CV</a></li>
+        <li><a class="but" href="publications.html">Publications</a></li>
+        <li><a class="but" href="software.html">Software</a></li>
+        <li><a class="but" href="enseignement.html">Teaching</a></li>
+      </ul>
+      </nav>
+    </header>
+
+
+     <h3>A $\Gamma$-
+         convergence method for the study of Cheeger sets and Optimal Packings</h3>
+
+    <p> Collaboration with Dorin Bucur and Ilaria Fragala.</p>
+
+     <p style="text-align: left;"> As you can see in some previous posts (<a href="gamma-convergence.html">link1</a>, <a href="modica_mortola_sphere.html">link2</a>) it is possible to approximate the perimeter using a $\Gamma$-convergence result of the Modica-Mortola type (see link1 above). This motivated us to search a similar formulation for the Cheeger set. Recall that the Cheeger set associated to a set $D$ is the set $\omega$ which is included in $D$ and which minimizes the ratio perimeter/volume: $|\partial \omega|/|\omega$.</p>
+
+     <p> The fact that we minimize a term containing the perimeter already suggests the use of the Modica-Mortola approximation for the perimeter term. You may think that the area term should not pose any problem since an integral representation should do. However, since we divide by the volume term, it turns out that the $L^1$ norm is not enough to assure us that we do not have degeneracies and a higher order norm needs to be applied for things to work.  </p>
+
+    <p> The details can be found in the following <a href="https://drive.google.com/file/d/1nDQ_9VhTeO5-YpKTQwaePAYiXyFd_F_H/view?usp=drive_link">article file</a>. I simply state the Gamma convergence result used in the numerics below.
+    <div style="background-color:#ffeecc;padding:10px;border-radius:10px;margin:10px">
+    For any fixed $\alpha > \frac{N-1}{N} $ and $p>1$, the functional
+$$F(\Omega_1, \dots, \Omega_k):=
+ \sum_{i=1}^k \Big (\frac{{\mathcal H}^{N-1}(\partial^* \Omega_i)}{|\Omega_i|^\alpha} \Big ) ^p $$
+is the $\Gamma$-limit as $\varepsilon \to 0$ in $L^1(D, \Bbb{R}^N)$ of
+the sequence
+$$
+F_\varepsilon (u_1, \dots, u_k):=  \sum_{i=1}^k \Big ( \frac{\varepsilon \int_D|\nabla u_i|^2 dx+  \frac{9} {\varepsilon}\int _D u_i^2 (1-u_i)^2}{\Big (\int_D |u_i|^\frac{2N}{N-1}dx \Big )^\alpha} \Big ) ^ p+ \frac 1\varepsilon \sum_{1 \le i < j \le k} \int_D u_i^2u_j^2dx $$
+if $u_i \in H_0^1(D)$,   $0\leq u_i \leq 1$  and $+\infty$ if not
+   </div>
+    We use a $p$-norm to be able to cover the sum minimization for $p=1$, as well as the minimization of the maximal Cheeger constant, for $p$ large. We choose to work with a penalized non-overlapping constraint which avoids some local minima consisting of constant densities.</p>
+
+     <p> A finite element variant of the algorithm can be found at: <a href="https://github.com/bbogo/Cheeger_patch" >https://github.com/bbogo/Cheeger_patch</a>. Together with this there is also an implementation of the Kawohl, Lachand-Robert algorithm for finding Cheeger sets for convex polygons using the very efficient Clipper toolbox. It can work with polygons with hundreds of vertices, so general convex sets can also be treated with no problem if you can obtain a polygonal approximation.</p>
+
+     <p> I start by showing the efficiency of the algorithm in computing the Cheeger set for a convex domain in the plane. In general when plotting the result using the $\Gamma$-convergence method and the one using the Kawohl, Lachand-Robert method, they are indistinguishable and the relative error between corresponding Cheeger constants is really low.</p>
+
+
+
+    <center>
+
+     <table  style = "text-align:center;font-size:15px" width = "90%" class="thin" >
+
+<tr><td class="thin" width="22%"><img src="cheeger/compar_equi2.png" width="100%"> </td>
+    <td class="thin" width="22%"><img src="cheeger/compar_square.png"  width="100%"></td>
+    <td class="thin" width="22%"><img src="cheeger/compar_general1.png" width="100%"></td>
+    <td class="thin" width="22%"><img src="cheeger/cheeger_reuleaux.png" width="100%"> </td>     </tr>
+<tr align = "center">
+    <td class="thin"><p>Cheeger set in equilateral triangle</p>
+    </td>
+    <td class="thin"><p>Cheeger set in square</p>
+    <td class="thin"><p>General Cheeger set</p>
+    <td class="thin"><p>Kawohl, Lachand-Robert algorithm - Reuleaux triangle. Approximation with a polygon with 402 vertices.</p></td>
+</tr>
+</table>
+            </center>
+
+    Generalization of the algorithm to multiple cells is straightforward. We can also go in 3D with no additional problem (aside slightly longer computational time)
+            <center>
+    <table style = "font-size:15px" width = "90%" class="thin" >
+
+<tr><td class="thin"><img src="cheeger/cheeger_tetra.png" width="100%"> </td>
+    <td class="thin"><img src="cheeger/cheeger8_per.png"  width="100%"></td>
+    <td class="thin"><img src="cheeger/cpack_equi15.png" width="100%"></td>
+    <td class="thin"><img src="cheeger/cpack_tetra20.png" width="100%"> </td>     </tr>
+<tr align = "center">
+    <td class="thin"><p>Cheeger set in a tetrahedron</p>
+    </td>
+    <td class="thin"><p>Periodic optimal Cheeger cluster</p>
+    <td class="thin"><p>Optimal packing of circles</p>
+    <td class="thin"><p>Optimal packing of $20$ spheres in a tetrahedron</p></td>
+</tr>
+</table>
+</center>
+
+    A local optimization algorithm can be devised in order to compare the results with those that can be found at <a href="http://www.packomania.com/">packomania.com</a>.
+
+             <center>
+    <table style = "font-size:15px" width = "90%" class="thin" >
+
+<tr><td class="thin"><img src="cheeger/cpackd18_ref.png" width="100%"> </td>
+    <td class="thin"><img src="cheeger/cpackd19_ref.png"  width="100%"></td>
+    <td class="thin"><img src="cheeger/cpacksq20_ref.png" width="100%"></td>
+    <td class="thin"><img src="cheeger/cpequi28_ref.png" width="100%"> </td>     </tr>
+<tr><td class="thin"><img src="cheeger/spack_tetra10_ref.png" width="100%"> </td>
+    <td class="thin"><img src="cheeger/spack_tetra20_ref.png"  width="100%"></td>
+    <td class="thin"><img src="cheeger/spack_cube14.png" width="100%"></td>
+    <td class="thin"><img src="cheeger/spack_ball13_ref.png" width="100%"> </td>     </tr>
+</table>
+</center>
+
+    <p class="back-to-research"><a href="research.html">← Back to numerical computations</a></p>
+
+    <hr>
+    <p style = "font-size:8px"> Created: March 2017, Last modified: March 2017</p>
+      </div>
+  </body>
+</html>
