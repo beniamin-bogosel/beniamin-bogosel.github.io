@@ -1,13 +1,13 @@
+---
+nav_section: numerics
+---
 <!DOCTYPE html>
 <!-- Restored from the legacy website archive. -->
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script type="text/javascript" async
+    {% include site-head.html %}
+<meta charset="UTF-8">
+<script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -16,29 +16,13 @@ MathJax.Hub.Config({
 </script>
     <title>Detection of Carbon Nano-Tubes in images</title>
     <meta content="Beni Bogosel" name="author">
-
-    <link type="text/css" rel="stylesheet" href="styles.css">
-
-  </head>
+</head>
   <body class="research-detail">
         <div class="main">
-    <header>
-      <div id="header">
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
-      </div>
-      <nav aria-label="Primary navigation">
-      <ul>
-        <li><a class="but" href="index.html">Home</a></li>
-        <li><a class="but" href="research.html">Numerics</a></li>
-        <li><a class="but" href="about.html">CV</a></li>
-        <li><a class="but" href="publications.html">Publications</a></li>
-        <li><a class="but" href="software.html">Software</a></li>
-        <li><a class="but" href="enseignement.html">Teaching</a></li>
-      </ul>
-      </nav>
-    </header>
+    {% include site-header.html %}
+    {% raw %}
 
-      <h3>Automatic Detection of Carbon Nanotubes in images</h3>
+<h3>Automatic Detection of Carbon Nanotubes in images</h3>
 
       <p>This study was performed at Grenoble during an event called <a href="http://semie.imag.fr/">Semaine d'Étude Maths-Info Entreprises</a>. I was in a team working on a subject proposed by <a href="http://www.pollen-metrology.com/en/">Pollen Metrology</a> on the analysis of images of nano-structures. The team was composed of myself, Debroux Noemie, Epequin Jesua and Leroy Vincent.</p>
 
@@ -118,5 +102,7 @@ MathJax.Hub.Config({
     <hr>
     <p style = "font-size:10px"> Created: Nov 2016</p>
       </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 </html>

@@ -1,17 +1,17 @@
+---
+nav_section: numerics
+---
 <!DOCTYPE html>
 <!-- Restored from the legacy website archive. -->
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!--<style> table, th, td {
+    {% include site-head.html %}
+<!--<style> table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
 </style>-->
-   <link type="text/css" rel="stylesheet" href="styles.css">
-   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <meta charset="UTF-8">
-    <script type="text/javascript" async
+<script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -25,22 +25,10 @@ MathJax.Hub.Config({
   </head>
   <body class="research-detail" >
         <div class="main">
-  <header>
-      <div id="header">
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
-      </div>
-      <nav aria-label="Primary navigation">
-      <ul>
-        <li><a class="but" href="index.html">Home</a></li>
-        <li><a class="but" href="research.html">Numerics</a></li>
-        <li><a class="but" href="about.html">CV</a></li>
-        <li><a class="but" href="publications.html">Publications</a></li>
-        <li><a class="but" href="software.html">Software</a></li>
-        <li><a class="but" href="enseignement.html">Teaching</a></li>
-      </ul>
-      </nav>
-    </header>
-    <p class="download-note"><strong>Numerical data:</strong> The mesh, solution, and MAT files linked on this page are collected in one verified archive. <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">Download the numerical data archive</a>.</p>
+    {% include site-header.html %}
+    {% raw %}
+
+<p class="download-note"><strong>Numerical data:</strong> The mesh, solution, and MAT files linked on this page are collected in one verified archive. <a href="https://drive.google.com/file/d/1cW1YAJvddiKgVcIOZx4fntO-_Zt1BpJb/view?usp=drive_link">Download the numerical data archive</a>.</p>
 
 
      <h3>Optimization of Supports in Additive Manufacturing</h3>
@@ -190,5 +178,7 @@ Remove all Dirichlet conditions from $\partial\omega$: the support may still tou
     <hr>
     <p style = "font-size:8px"> Created: Sept 2019, Last modified: Sept 2019</p>
       </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 </html>

@@ -50,8 +50,8 @@
       "path": "CW3D.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 2623,
-      "sha256": "ef5ef5a94808dc1ee40a06f086d73c66b80e78a85d5db5053a33b01f457f0367"
+      "size_bytes": 1870,
+      "sha256": "a4117692233badac6d1f91c91d92ae44adb692e0ee5bfcf7372ed984e8f30e25"
     },
     {
       "path": "CWidth3D/Meissner3D.png",
@@ -302,8 +302,8 @@
       "path": "SEME2016.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 7669,
-      "sha256": "244b472d3a2fadd5c9f935aaf12f555b8cc835dd212b0ba6a3e9c59779ab007e"
+      "size_bytes": 6908,
+      "sha256": "3513e0d38dd43ccaf5b7d71e9a890f62393af71a5f4a5a5349972be0e502a83a"
     },
     {
       "path": "SteklovDiam/NonConvex1.png",
@@ -477,8 +477,8 @@
       "path": "anisotropic.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 8974,
-      "sha256": "f8f11174a80e65c363fb54aa597abd56fc2b7a8c2357b2631a9a7127eda775af"
+      "size_bytes": 8215,
+      "sha256": "cc284bff4f1f5ac28b65004bdc91b185903f84e7f2dd4d8099184bfb8925e795"
     },
     {
       "path": "buttons/8rectangles.jpeg",
@@ -666,8 +666,8 @@
       "path": "cheeger.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 7724,
-      "sha256": "676c0a9f17e23e8a79bef4f1019937c694ec10a19d65a52d94a5c2462794bf52"
+      "size_bytes": 6971,
+      "sha256": "175dd6ebc173e21a73f9446e5410cc03192bdd648cda371fcc9283df640e464b"
     },
     {
       "path": "cheeger/cheeger8_per.png",
@@ -848,15 +848,15 @@
       "path": "cwidth_eigs.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 11414,
-      "sha256": "30eef8fee5f2bc63f9d2c7fafaa4a7cf4aa7bd1a1508a633de06640350d9ce39"
+      "size_bytes": 10656,
+      "sha256": "521ec33a93afe8e614b713c377492652ad67411b3154f466bf2fe32aebe305e0"
     },
     {
       "path": "eig_part3D.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 7807,
-      "sha256": "b6f85e5e393d183994bafd390455bbe750d7575b53e432cf8c82e412fbed96a2"
+      "size_bytes": 7049,
+      "sha256": "c3bcd60b864741303f9818294d272e303dc7d5a661b4e9edde6210a30a919d4f"
     },
     {
       "path": "eig_part3D/ball12.gif",
@@ -1107,8 +1107,8 @@
       "path": "faber_krahn_polygons.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 11524,
-      "sha256": "9878eccb0d531f45200ca1ca35b92c8e1e0ccc88f3d72536d5ce016b0824b8e4"
+      "size_bytes": 10767,
+      "sha256": "351d1a889fcca55ade26626a7eb77c3ea24e3195a10836f9b2ebf2a813e6713f"
     },
     {
       "path": "fkpoly/preg10.png",
@@ -1191,15 +1191,15 @@
       "path": "gamma-convergence.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 8045,
-      "sha256": "c36e2426f32ce24e387141b9577003a22e621c828677ca65be7d00557396b96f"
+      "size_bytes": 7287,
+      "sha256": "99f3a707df32a443bf2ffdde67f4e2655cb88dff2f3c969c44acf44838d3cb4b"
     },
     {
       "path": "gconv-perim.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 9652,
-      "sha256": "97c9e203a1dadfdcec0f1a8fca7c3689607109f935648c63eaf97ee5c6eda97f"
+      "size_bytes": 8895,
+      "sha256": "b2b59c52c7faeeef5dc430126a0dae39b8b674eca20d465ad790504769d04950"
     },
     {
       "path": "large_spectral/beltrami120.png",
@@ -1310,36 +1310,36 @@
       "path": "large_spectralpart.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 7010,
-      "sha256": "1956fa68cde1f33396ac97766dd461033a94a1831a3302f8cf5ad07a66998f8a"
+      "size_bytes": 6252,
+      "sha256": "5a7710175b29d2e942ff80e02aa18b656cf5d6ea5eb3f8207b984d97b6a4b6c8"
     },
     {
       "path": "longest_shortest_fence.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 9691,
-      "sha256": "c9cbd4ca51f6b3c07f1dd993d301520e3682b643bb3a7f4d6cd9af16fe5ee510"
+      "size_bytes": 8931,
+      "sha256": "1cf3c20be9192584cc2978e960f8909b9432a28d38652c04c3be912d1f36a751"
     },
     {
       "path": "manifolds_spectral.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 4889,
-      "sha256": "9cee07b12eaad27957c78666534c830419ab57d27f91aba87c63c3559c868a51"
+      "size_bytes": 4130,
+      "sha256": "b1ff230af060c68c3ef04b5ef7bb516c1b7a431a58661ecd4b2fbc4f3f546d93"
     },
     {
       "path": "max_dirichlhet_holes.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 6943,
-      "sha256": "e7c9045b869190490b292bc57d031e404de3d644acaefc19a7fd8db1d99d9982"
+      "size_bytes": 6186,
+      "sha256": "410727b2b66f00beb3995aab1645fff9d1b4aa9e354bbcfd127c2f24d4da9aaa"
     },
     {
       "path": "mesh_shoptim.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 4854,
-      "sha256": "6fcf9bc434abf774500f1a7feb2799502929909b7d6523986b8d1f96fccb4550"
+      "size_bytes": 4097,
+      "sha256": "5691bbefbc07c92b22255bfb9cfd2927ed06136538fd26df2fdb60f2dcf69809"
     },
     {
       "path": "minmax/graph8_apres.png",
@@ -1352,8 +1352,8 @@
       "path": "modica_mortola_sphere.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 7992,
-      "sha256": "894fdc81af0a67b45b5aa5f0ce042c280dc2a169ec967645e86acb7bb5e920c6"
+      "size_bytes": 7238,
+      "sha256": "a52727c4a9d53fb1a9f6b2023d223c410ffdef8f3042ba391fa7a3e128326590"
     },
     {
       "path": "modica_polygons/bubble2.png",
@@ -1842,8 +1842,8 @@
       "path": "multiphase.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 7825,
-      "sha256": "014fc881c30bb2f8266b78f7be69c49845c9cdfd457915c682e920d3817f6e53"
+      "size_bytes": 7065,
+      "sha256": "47a316cb96e5067e4e84395f21026f5db9c3dccb8bf6338213a31aca1380472f"
     },
     {
       "path": "multiphasepics/lambda_2.png",
@@ -2157,8 +2157,8 @@
       "path": "partitions_perim_poly.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 5893,
-      "sha256": "1cbbed4687ecdee7ac5e93f2bc4b32955074aeef6ce2e3da150f8abb92a11f4f"
+      "size_bytes": 5135,
+      "sha256": "8fe20d6c1a60b2aa2c21d2da96ada49586bb62f6f5451898d98d1e91f2a9bbec"
     },
     {
       "path": "perim2Dpics/lam1.jpg",
@@ -2780,22 +2780,22 @@
       "path": "polygonal_spectral.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 8075,
-      "sha256": "8a24a2e0469e3b5272abf43dd51413c101df91a4fe4a0401f2a70d3f1f7fa75c"
+      "size_bytes": 7321,
+      "sha256": "1c730888d596c71178ca431e4d2cf83e23fba4d56986f0bbbee4d7e857b820b6"
     },
     {
       "path": "spectral_minmax.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 6025,
-      "sha256": "cc7e81907aecd08f4799ebdacb4ba3dabe6cf2bad708e547087defc89f8147bf"
+      "size_bytes": 5268,
+      "sha256": "3fa67d482eba2334e2d4ce83abf4b4854a4f430aef023dfeff3fc0fdf09b5300"
     },
     {
       "path": "spectral_perim.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 13794,
-      "sha256": "8d81c0278c34919662b78ec9a40dac29c4ee8e19da1b8d543e2b20689cf29e0b"
+      "size_bytes": 13039,
+      "sha256": "35f78315b530e872d126c23cf32fa848af783ce43445beab6052302d5527bc0c"
     },
     {
       "path": "spectral_polygons/sdisk10.png",
@@ -3599,36 +3599,36 @@
       "path": "spectral_volume.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 8957,
-      "sha256": "2dd83ccff7517a6398fbafdd0cd8b6bc582c81df2d7dd8228259225b7ccf476a"
+      "size_bytes": 8204,
+      "sha256": "074532f707d7d2fe592f9ddabce922074097a1148a4798c326af42337b0325e2"
     },
     {
       "path": "spherical_spectral.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 16313,
-      "sha256": "8f9a17fd5fdd393f00ae0b218c39efc23e1d713160cba6a784c90a8c51b62ad5"
+      "size_bytes": 15555,
+      "sha256": "dd5646322ef8f45f3aa4d4d4199e3b6a25cfc8e90946257b990029aab30fcc2d"
     },
     {
       "path": "steklov_diameter.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 4394,
-      "sha256": "60e09ad166fd3e4b26558403e85a45ef1c63278ec30c7f06042c562f8ec446f0"
+      "size_bytes": 3636,
+      "sha256": "0810b775a590ebb3e50c166bf2e324c8c86c307898dddbe0c18bebbd1bdd7c34"
     },
     {
       "path": "steklov_numeric.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 7246,
-      "sha256": "22b8fda7ff0cbfc2887893953cbf873101cb22fce98a9cd93275698babfe69a3"
+      "size_bytes": 6490,
+      "sha256": "0d3dbf79f3c473df3bc7eb61ded4692458436a7a5003ee65056d8661323a38a9"
     },
     {
       "path": "steklov_opt.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 10664,
-      "sha256": "d3bf642fd0279a1fd950d5a0fa80a7d1e6260867ff54d415afc18e3768816d1e"
+      "size_bytes": 9908,
+      "sha256": "c821747672398a510795632b740d4d7a60c3a95477e96d8b27f9d7e81765c903"
     },
     {
       "path": "stekpics/stek_convex10.png",
@@ -3865,15 +3865,15 @@
       "path": "supports.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 2708,
-      "sha256": "b52310a39accccd9d05d2574902d00baf0856bfdf36eb7383e6c7a0162719f80"
+      "size_bytes": 1955,
+      "sha256": "a79da3ff113a5d6d156770f930b9a32033f31099f26f9471643830eae05c51ed"
     },
     {
       "path": "supportsv2.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 8443,
-      "sha256": "b65989f5dd43cfa42a349a1c2d579eb0cebd09685e08bfc13a4225872c299a77"
+      "size_bytes": 7693,
+      "sha256": "02e15e236b8e075d11db587264c560d95344f0ba0ab6ab79549c07254bef4429"
     },
     {
       "path": "volume2Dpics/lam10vol.png",
@@ -4040,8 +4040,8 @@
       "path": "waves_sho.html",
       "kind": "research_page",
       "state": "created",
-      "size_bytes": 3506,
-      "sha256": "727dadb63734d552b091dc5f7297a742e00ceef867749637b112bf1438922ef4"
+      "size_bytes": 2750,
+      "sha256": "b6573b51f7932f2cd363fa01c7caa23734eed7b18f335d3a48c8bc7f1bb2929a"
     },
     {
       "path": "work/part8.png",

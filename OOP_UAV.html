@@ -1,77 +1,61 @@
+---
+nav_section: teaching
+---
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">   
-   <link rel="icon" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">       
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    
-    <script type="text/javascript" async
+    {% include site-head.html %}
+<script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
-</script> 
+</script>
 
     <title>Object Oriented Programming</title>
-   
-  
-    
-    
-  </head>
-    
-    
-   
-  <body style="   max-width:900px; margin-left:auto ;margin-right:auto;">
-      
-    <div class="main">   
 
-   <header> 
-      <div id="header">     
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL </h1>
-      <!--<span style="margin-left:20px;color:white;border-style:solid;border-width:1px 0px 0px 0px"></span>-->
-      </div>    
-      <nav>
-      <ul>
-        <li><a class="but" href="index.html">Home</a> </li>
-        <li><a class = "but" href="research.html">Numerics</a></li>
-        <li> <a class = "but" href="about.html">CV</a> </li>  
-        <li> <a class = "but" href="publications.html">Publications</a></li>
-      <li> <a class = "but" href="software.html">Software</a></li>    
-      <li> <a class = "but" href="enseignement.html">Teaching</a></li>      
-      </ul>
-      </nav>    
-    </header>        
-    
-    <h2> Programare Orientata Obiect </h2>    
-        
-    <h3> Universitatea Aurel Vlaicu, Arad</h3>    
-        
-        
+
+
+
+  </head>
+
+
+
+  <body style="   max-width:900px; margin-left:auto ;margin-right:auto;">
+
+    <div class="main">
+    {% include site-header.html %}
+    {% raw %}
+
+<h2> Programare Orientata Obiect </h2>
+
+    <h3> Universitatea Aurel Vlaicu, Arad</h3>
+
+
     <hr>
-        
+
         <p>Este recomandat sa se instaleze Eclipse pentru a scrie programele si pentru a le executa usor. Vom discuta despre asta in prima sedinta. </p>
-    
-    <h4>Materiale pentru Curs si Laborator</h4>    
-          
+
+    <h4>Materiale pentru Curs si Laborator</h4>
+
     <ol>
     <li>Introducere in Java
     <ul>
-        <li>Slides Engleza <a href="OOP_UAV/OOP_part1.pdf">pdf</a> </li>   
+        <li>Slides Engleza <a href="OOP_UAV/OOP_part1.pdf">pdf</a> </li>
         <!-- <li>Slides Franceza <a href="OOP_UAV/Session_2_FR.pdf">pdf</a> </li> -->
         <li>Initiere Proiect Eclipse <a href="OOP_UAV/Initiere%20Proiect%20Java.pdf">pdf</a> </li>
         <li>Subiecte Laborator: <a href="OOP_UAV/TP_1.pdf">pdf</a> </li>
         <!-- <li>Fisier lucrat in curs: <a href="OOP_UAV/PrimaClasa.java">fisier .java</a> </li> -->
-     </ul>    
+     </ul>
     </li>
     <li>
     Introducere in Java: expresii, instructiuni
         <ul>
         <li>Subiecte Laborator: <a href="OOP_UAV/TP_2.pdf">pdf</a> </li>
         <li>Fisier lucrat in curs: <a href="OOP_UAV/TP2/Curs2.java">fisier .java</a> </li>
-        <li>Fahrenheit Lab2: <a href="OOP_UAV/TP2/Fahrenheit.java">fisier .java</a> </li> 
-        <li>Keyboard Input Lab2: <a href="OOP_UAV/TP2/KeyboardInput.java">fisier .java</a> </li>  
+        <li>Fahrenheit Lab2: <a href="OOP_UAV/TP2/Fahrenheit.java">fisier .java</a> </li>
+        <li>Keyboard Input Lab2: <a href="OOP_UAV/TP2/KeyboardInput.java">fisier .java</a> </li>
         </ul>
     </li>
     <li>Introducere in Java: instructiuni, bucle
@@ -81,31 +65,31 @@ MathJax.Hub.Config({
             <li><a href="/OOP_UAV/TP3/MachineEps.java">MachineEps</a></li>
             <li><a href="/OOP_UAV/TP3/DrawTrees.java">DrawTrees</a></li>
             <li><a href="/OOP_UAV/TP3/EmptyTree.java">EmptyTree</a></li>
-        </ul>    
+        </ul>
 
     </li>
     <li>
-    Programarea orientata Obiect:Intro    
-    </li> 
+    Programarea orientata Obiect:Intro
+    </li>
         <ul>
-            <li>Slides Engleza <a href="OOP_UAV/OOP_part2.pdf">pdf</a> </li>   
+            <li>Slides Engleza <a href="OOP_UAV/OOP_part2.pdf">pdf</a> </li>
         <!-- <li>Slides Franceza <a href="OOP_UAV/Session_3_FR.pdf">pdf</a> </li> -->
             <li>Subiecte Laborator (instructiuni de baza, continuare): <a href="OOP_UAV/TP_3.pdf">pdf</a> </li>
             <li><a href="/OOP_UAV/TP4/Box.java">Box.java</a></li>
             <li><a href="/OOP_UAV/TP4/WorkWithBoxes.java">WorkWithBoxes.java</a></li>
-    
+
         <!-- <li>
-            Coduri: 
+            Coduri:
         <ul>
         <li>
             Test tipuri booleene  <a href="OOP_UAV/TP3/BooleanTypes.java">fisier.java</a>
-        </li> 
+        </li>
         <li>
             Instructiunea If  <a href="OOP_UAV/TP3/TestIf.java">fisier.java</a>
         </li>
         <li>
             Instructiunea Switch  <a href="OOP_UAV/TP3/TestSwitch.java">fisier.java</a>
-        </li> 
+        </li>
         <li>
             Instructiunea ternara  <a href="OOP_UAV/TP3/TestTernary.java">fisier.java</a>
         </li>
@@ -120,8 +104,8 @@ MathJax.Hub.Config({
         </li>
         <li>
             Codul main pentru testarea clasei Box  <a href="OOP_UAV/TP3/WorkingWithObjects.java">fisier.java</a>
-        </li>    
-            </ul>    
+        </li>
+            </ul>
             </li>     -->
     </ul>
     <li>Programarea orientata Obiect: Intro (continuare)</li>
@@ -138,12 +122,12 @@ MathJax.Hub.Config({
         <li>
             <a href="/OOP_UAV/TP5/WorkBox.java">WorkTriangle</a>
         </li>
-    </ul>    
+    </ul>
 
-   
-    <li>Programarea orientata Obiect: Continuare</li>    
+
+    <li>Programarea orientata Obiect: Continuare</li>
     <ul>
-    <li>Slides: vezi cursul precedent</li>    
+    <li>Slides: vezi cursul precedent</li>
         <li>Subiecte Laborator (bucle): <a href="OOP_UAV/TP_4.pdf">pdf</a> </li>
          <li>Subiecte Laborator (bucle, continuare): <a href="OOP_UAV/TP_5.pdf">pdf</a> </li>
         </ul>
@@ -177,21 +161,23 @@ MathJax.Hub.Config({
                  </li>
                  <li>Atentie la diferite erori posibile: numele package-ului trebuie sa corespunda; adaugati "requires java.desktop;" in module-info.java</li>
             </ul>
-        </ul>    
-    </ol>  
-    <p>Lista Proiecte: <a href="OOP_UAV/Lista_Proiecte_OOP.pdf">fisier pdf</a></p>  
-        
-        
+        </ul>
+    </ol>
+    <p>Lista Proiecte: <a href="OOP_UAV/Lista_Proiecte_OOP.pdf">fisier pdf</a></p>
+
+
      <p>
     Exemplu Program gestiune Studenti:
-         </p> 
+         </p>
     <ul>
       <li>Clasa Student: <a href="OOP_UAV/STUDENT/Student.java">fisier java</a> </li>
       <li>Fisier Gestiune: <a href="OOP_UAV/STUDENT/StudentManagement.java">fisier java</a></li>
       </ul>
     -->
-    </div>  
     </div>
+    </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 
 </html>

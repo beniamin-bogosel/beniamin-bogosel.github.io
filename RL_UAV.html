@@ -1,70 +1,54 @@
+---
+nav_section: teaching
+---
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">   
-   <link rel="icon" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">       
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    
-    <script type="text/javascript" async
+    {% include site-head.html %}
+<script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
-</script> 
+</script>
 
     <title>Reinforcement Learning</title>
-   
-  
-    
-    
+
+
+
+
   </head>
-    
-    
-   
+
+
+
   <body style="   max-width:900px; margin-left:auto ;margin-right:auto;">
-      
-    <div class="main">   
 
-   <header> 
-      <div id="header">     
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL </h1>
-      <!--<span style="margin-left:20px;color:white;border-style:solid;border-width:1px 0px 0px 0px"></span>-->
-      </div>    
-      <nav>
-      <ul>
-        <li><a class="but" href="index.html">Home</a> </li>
-        <li><a class = "but" href="research.html">Numerics</a></li>
-        <li> <a class = "but" href="about.html">CV</a> </li>  
-        <li> <a class = "but" href="publications.html">Publications</a></li>
-      <li> <a class = "but" href="software.html">Software</a></li>    
-      <li> <a class = "but" href="enseignement.html">Teaching</a></li>      
-      </ul>
-      </nav>    
-    </header>        
+    <div class="main">
+    {% include site-header.html %}
+    {% raw %}
 
-   <h3> Reinforcement Learning </h3>    
-        
-   <p>In this course we will explore basic aspects in 
+<h3> Reinforcement Learning </h3>
+
+   <p>In this course we will explore basic aspects in
     Reinforcement Learning. The course is inspired from the folliwng Github repository: <a href="https://github.com/johnnycode8/gym_solutions">https://github.com/johnnycode8/gym_solutions</a>.
    </p>
 
-   
+
    <ul>
 
     <li><strong>Course 1:</strong> Frozen Lake environment in Gymnasiyum. Q-Learning basics. Notebook: <a href="./RL_UAV/FrozenLake.ipynb">file</a></li>
 
-    <li><strong>Course 2:</strong> Frozen Lake environment: enhanced. Q-Learning basics (continued) 
-      Python files: 
+    <li><strong>Course 2:</strong> Frozen Lake environment: enhanced. Q-Learning basics (continued)
+      Python files:
       <ul>
         <li><a href="./RL_UAV/Course2/frozen_lake_enhanced.py">frozen_lake_enhanced.py</a></li>
         <li>Main file to run: <a href="./RL_UAV/Course2/frozen_lake_qe.py">frozen_lake_qe.py</a></li>
 
       </ul>
 
-    <li><strong>Course 3-4:</strong> Q-learning continued: taxi environment, mountain car  
-   
+    <li><strong>Course 3-4:</strong> Q-learning continued: taxi environment, mountain car
+
     <li><strong>Course 5-6:</strong> Quick intro to Neural Networks with pytorch. See the following notebooks:
       <ul>
         <li>
@@ -78,7 +62,7 @@ MathJax.Hub.Config({
       <strong>Course 7</strong> Deep Q learning: <a href="/RL_UAV/DQL_Frozen_simple.py">python file</a>
     </li>
     <li>
-      <strong>Course 8</strong> Deep Q learning: 
+      <strong>Course 8</strong> Deep Q learning:
        <ul>
         <li><a href="/RL_UAV/DQL/mountain_car_q.py">Mountain Car - Q learning</a></li>
         <li><a href="/RL_UAV/DQL/DQL_Mountain_simple.py">Mountain Car - DQL Simple</a></li>
@@ -104,15 +88,17 @@ MathJax.Hub.Config({
         <li>Dueling Deep Q Networks: <a href="/RL_UAV/DeepQLFlappy/DuelingNetworks.md">Markdown file</a></li>
         <li>Codes: <a href="/RL_UAV/DeepQLFlappy/DeepQLFlappy.zip">DeepQLFlappy.zip</a></li>
         <li>Source: <a href="https://github.com/johnnycode8/dqn_pytorch">https://github.com/johnnycode8/dqn_pytorch</a></li>
-      </ul>  
+      </ul>
     </ul>
-    
-    
-    
 
-   
-    </div>       
+
+
+
+
+    </div>
       </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 
 </html>

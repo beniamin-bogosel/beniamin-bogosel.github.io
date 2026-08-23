@@ -1,10 +1,12 @@
+---
+nav_section: numerics
+---
 <!DOCTYPE html>
 <!-- Restored from the legacy website archive. -->
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <script type="text/javascript" async
+    {% include site-head.html %}
+<script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -13,33 +15,13 @@ MathJax.Hub.Config({
 </script>
     <title>Longest minimal length partitions</title>
     <meta content="Beni Bogosel" name="author">
-
-    <link type="text/css" rel="stylesheet" href="styles.css">
-
-      <link rel="icon" href="favicon.ico" type="image/x-icon">
-  </head>
+</head>
   <body class="research-detail">
     <div class = "main">
-    <header>
-      <div id="header">
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
-      </div>
-      <nav aria-label="Primary navigation">
-      <ul>
-        <li><a class="but" href="index.html">Home</a></li>
-        <li><a class="but" href="research.html">Numerics</a></li>
-        <li><a class="but" href="about.html">CV</a></li>
-        <li><a class="but" href="publications.html">Publications</a></li>
-        <li><a class="but" href="software.html">Software</a></li>
-        <li><a class="but" href="enseignement.html">Teaching</a></li>
-      </ul>
-      </nav>
-    </header>
+    {% include site-header.html %}
+    {% raw %}
 
-
-
-
-     <h3>Longest minimal length partitions</h3>
+<h3>Longest minimal length partitions</h3>
 
      <p>This page is related to the following <a href="https://drive.google.com/file/d/1XIyxrvIQPObnaVWqwaSBfiAZOFEAfodw/view?usp=drive_link">paper</a> written in collaboration with Edouard Oudet. This work was motivated by the following <a href="http://images.math.cnrs.fr/Dans-quelle-forme-la-plus-petite-paroi-enfermant-un-volume-donne-est-elle-la.html">article</a> on the CNRS Images des Mathematiques website. This note mentions <a href="https://arxiv.org/abs/1011.6248">an article</a> that shows that in dimension two the convex shape that maximizes the length of an area bisecting curve is the disk. Many questions can be asked regarding this problem:</p>
      <ul><li>the fact that the curve bisects the shape is really essential, or other volume ratios work just as well</li>
@@ -186,5 +168,7 @@ MathJax.Hub.Config({
     <hr>
     <p style = "font-size:8px"> Created: Feb 2021</p>
     </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 </html>

@@ -1,10 +1,12 @@
+---
+nav_section: numerics
+---
 <!DOCTYPE html>
 <!-- Restored from the legacy website archive. -->
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <script type="text/javascript" async
+    {% include site-head.html %}
+<script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -13,30 +15,13 @@ MathJax.Hub.Config({
 </script>
     <title>Spectral optimal partitions on surfaces</title>
     <meta content="Beni Bogosel" name="author">
-
-    <link type="text/css" rel="stylesheet" href="styles.css">
-
-      <link rel="icon" href="favicon.ico" type="image/x-icon">
-  </head>
+</head>
   <body class="research-detail">
     <div class="main">
-    <header>
-      <div id="header">
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL</h1>
-      </div>
-      <nav aria-label="Primary navigation">
-      <ul>
-        <li><a class="but" href="index.html">Home</a></li>
-        <li><a class="but" href="research.html">Numerics</a></li>
-        <li><a class="but" href="about.html">CV</a></li>
-        <li><a class="but" href="publications.html">Publications</a></li>
-        <li><a class="but" href="software.html">Software</a></li>
-        <li><a class="but" href="enseignement.html">Teaching</a></li>
-      </ul>
-      </nav>
-    </header>
+    {% include site-header.html %}
+    {% raw %}
 
-      <h3>Spectral optimal partitions on surfaces</h3>
+<h3>Spectral optimal partitions on surfaces</h3>
 
         <p>These computations are presented in my paper: "<a href="https://drive.google.com/file/d/1ghgizR3WHXTzy4cN7W45vcBeOO-rf--U/view?usp=drive_link">The method of fundamental solutions applied to boundary eigenvalue problems</a>". You can consult a set of results for other surfaces by clicking <a href="manifolds_spectral.html">here</a>.</p>
 
@@ -357,5 +342,7 @@ equal pentagons). The optimal computed cost is $586.63$. </td>
     <hr>
     <p style = "font-size:8px"> Created: Apr 2015</p>
     </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 </html>

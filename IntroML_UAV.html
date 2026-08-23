@@ -1,62 +1,46 @@
+---
+nav_section: teaching
+---
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">   
-   <link rel="icon" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">       
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    
-    <script type="text/javascript" async
+    {% include site-head.html %}
+<script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
-</script> 
+</script>
 
     <title>Introduction to Machine Learning</title>
-   
-  
-    
-    
+
+
+
+
   </head>
-    
-    
-   
+
+
+
   <body style="   max-width:900px; margin-left:auto ;margin-right:auto;">
-      
-    <div class="main">   
 
-   <header> 
-      <div id="header">     
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL </h1>
-      <!--<span style="margin-left:20px;color:white;border-style:solid;border-width:1px 0px 0px 0px"></span>-->
-      </div>    
-      <nav>
-      <ul>
-        <li><a class="but" href="index.html">Home</a> </li>
-        <li><a class = "but" href="research.html">Numerics</a></li>
-        <li> <a class = "but" href="about.html">CV</a> </li>  
-        <li> <a class = "but" href="publications.html">Publications</a></li>
-      <li> <a class = "but" href="software.html">Software</a></li>    
-      <li> <a class = "but" href="enseignement.html">Teaching</a></li>      
-      </ul>
-      </nav>    
-    </header>        
+    <div class="main">
+    {% include site-header.html %}
+    {% raw %}
 
-   <h3> Introduction to Machine Learning using PyTorch </h3>    
-        
-   <p>In this course we will explore facts about neural networks: definitions, characteristics, 
+<h3> Introduction to Machine Learning using PyTorch </h3>
+
+   <p>In this course we will explore facts about neural networks: definitions, characteristics,
    training, etc. The practical aspects will be done in Python using the PyTorch library.
-   </p> 
+   </p>
 
    <p>
-   Course materials are taken from <a href="https://github.com/mrdbourke/pytorch-deep-learning">https://github.com/mrdbourke/pytorch-deep-learning</a>. We will work directly using Jupyter Notebooks 
+   Course materials are taken from <a href="https://github.com/mrdbourke/pytorch-deep-learning">https://github.com/mrdbourke/pytorch-deep-learning</a>. We will work directly using Jupyter Notebooks
    exploring practical aspects regarding the workflow in PyTorch. </p>
     </p>
 
    <h3>Course Materials</h3>
-   
+
    <ol>
   <li><strong>Pytorch basics:</strong> Jupyter Notebook: <a href="./ML_UAV/00_pytorch_fundamentals.ipynb">file course 1</a>. Notes for first course: <a href="/ML_UAV/Course1.pdf">pdf file</a>.</li>
   <li><strong>Pytorch workflow, Linear Regression:</strong> Jupyter Notebook: <a href="./ML_UAV/01_pytorch_workflow.ipynb">file course 2</a>. Notes  course 2: <a href="/ML_UAV/Course2.pdf">pdf file</a>.</li>
@@ -64,10 +48,10 @@ MathJax.Hub.Config({
     Jupyter Notebook: <a href="./ML_UAV/02_pytorch_classification.ipynb">file course 3</a>. Notes  course 3: <a href="/ML_UAV/Course3.pdf">pdf file</a>.
     <p>Exercises: <a href="./ML_UAV/02_pytorch_classification_exercise_solutions.ipynb">file exercises</a></p>
    <p>Example 1D: <a href="./ML_UAV/Exercise_1D_function.ipynb">file exercises</a></p>
-  </li> 
+  </li>
   <li><strong>Computer Vision: convolutional networks</strong>
     Jupyter Notebook: <a href="./ML_UAV/03_pytorch_computer_vision.ipynb">file courses 4-5</a>. Notes Course 4: <a href="/ML_UAV/Course4.pdf">pdf file</a>.
-  
+
     <ul>
       <li>Exercise file: <a href="/ML_UAV/03_pytorch_computer_vision_exercises.ipynb">Notebook</a></li>
       <li>Solution file: <a href="/ML_UAV/03_pytorch_computer_vision_exercise_solutions.ipynb">Notebook</a></li>
@@ -82,18 +66,20 @@ MathJax.Hub.Config({
     </ul>
   <li><strong>Transfer learning:</strong> <a href="/ML_UAV/06_pytorch_transfer_learning.ipynb">Notebook</a>
   <p>Transfer learning exercise: <a href="/ML_UAV/06_pytorch_transfer_learning_exercise_solutions.ipynb">Notebook</a></p></li>
-  <li><strong>Experiment tracking:</strong> <a href="/ML_UAV/07_pytorch_experiment_tracking.ipynb">Notebook</a></li>  
+  <li><strong>Experiment tracking:</strong> <a href="/ML_UAV/07_pytorch_experiment_tracking.ipynb">Notebook</a></li>
   <p>Experiment tracking exercise: <a href="/ML_UAV/07_pytorch_experiment_tracking_exercise_solutions.ipynb">Notebook</a></p></li>
 
 </ol>
 
-<p><strong>Project Subjects</strong>: 
+<p><strong>Project Subjects</strong>:
 <a href = "ML_UAV/ProjectsPyTorch.pdf">pdf file</a></p>
-   
+
 <p>Notebook for generating 2D data sets: <a href="/ML_UAV/PointData2D.ipynb">Notebook</a>.</p>
-   
-    </div>       
+
+    </div>
       </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 
 </html>

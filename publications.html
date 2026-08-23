@@ -1,28 +1,28 @@
+---
+nav_section: publications
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />  
-    <script>
+    {% include site-head.html %}
+<script>
    function bascule(elem)
     {    etat=document.getElementById(elem).style.visibility;
      if(etat=="hidden"){document.getElementById(elem).style.visibility="visible";
      document.getElementById(elem).style.display='block';}
      else{document.getElementById(elem).style.visibility="hidden";
      document.getElementById(elem).style.display='none';}
-    }   
-   </script> 
-    
+    }
+   </script>
+
     <script async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script> 
+</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
-    </script> 
+    </script>
 
     <style>
     .abstract-box {
@@ -63,7 +63,7 @@ MathJax.Hub.Config({
           var DoiStr = pub.doi ? (` (<a href="`+pub.doi+`">Journal link</a>)`) : "";
           var Journal  = pub.journal ? pub.journal : "";
           div.innerHTML = `
-            [${counter}] <strong>${pub.title}</strong><br> 
+            [${counter}] <strong>${pub.title}</strong><br>
             <em>${pub.author}, </em><br>`+
             Journal+", "+pub.year+
             `<br>`+DoiStr
@@ -83,50 +83,34 @@ MathJax.Hub.Config({
   </script>
 
 
-    <title>Publications</title>    
+    <title>Publications</title>
   </head>
   <body>
-    <div class = "main">     
-    
-   <header> 
-      <div id="header">     
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL </h1>
-      <!--<span style="margin-left:20px;color:white;border-style:solid;border-width:1px 0px 0px 0px"></span>-->
-      </div>    
-      <nav>
-      <ul>
-        <li><a class="but" href="index.html">Home</a> </li>
-        <li><a class = "but" href="research.html">Numerics</a></li>
-        <li> <a class = "but" href="about.html">CV</a> </li>  
-        <li> <a class = "but" href="publications.html">Publications</a></li>
-      <li> <a class = "but" href="software.html">Software</a></li>    
-      <li> <a class = "but" href="enseignement.html">Teaching</a></li>      
-      </ul>
-      </nav>    
-    </header>     
+    <div class = "main">
+    {% include site-header.html %}
+    {% raw %}
 
-     
-    <h3>Publications</h3>
-        
- 
+<h3>Publications</h3>
+
+
     <div id="pub-list"></div>
 
     <h3>Expository mathematics</h3>
 
-<div class="publist" style="counter-reset: listNumber 4"> 
-    
-<div class="pubitem"> 
+<div class="publist" style="counter-reset: listNumber 4">
+
+<div class="pubitem">
     B. Bogosel, <a href="pdfs/DiscreteIsopShorter_Rev.pdf">A Geometric proof for the Polygonal Isoperimetric Inequality</a>, 2023, <br> (to appear in The Mathematical Intelligencer) (<a href="https://hal.science/hal-04273400">hal-04273400</a>)<br>
     <a  onclick="bascule('box_e3')" class="button_abstract">
       Abstract  </a>
-    <a  onclick="bascule('bibtex_e3')" class="button_abstract"> 
+    <a  onclick="bascule('bibtex_e3')" class="button_abstract">
      Bibtex</a>
-    
+
         <div id="box_e3" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">Gradients of the perimeter and area of a polygon have straightforward geometric interpretations. The use of optimality conditions for constrained problems and basic ideas in triangle geometry show that polygons with prescribed area minimizing the perimeter must be regular.
-</div>   
+</div>
     </div>
-    
+
     <div id="bibtex_e3" class="boxgrand" style="visibility: hidden;display: none">
 <div class="bibtex">
 <pre>
@@ -143,30 +127,30 @@ MathJax.Hub.Config({
 }
 </pre>
 </div></div>
-    
-        </div>       
-        
-<div class="pubitem"> 
+
+        </div>
+
+<div class="pubitem">
     B. Bogosel, <a href="pdfs/mardenthm.pdf">A geometric proof
     of the Siebeck-Marden theorem</a>, 2015, <br> (American Mathematical Monthly May 2017) (<a href="http://www.jstor.org/stable/10.4169/amer.math.monthly.124.5.459">Journal link</a>)
-    <br>    
-    <small>(for pdf file: Copyright 2017 Mathematical Association of America. All Rights Reserved.)</small>    
+    <br>
+    <small>(for pdf file: Copyright 2017 Mathematical Association of America. All Rights Reserved.)</small>
     <br>
     <a  onclick="bascule('box_e2')" class="button_abstract">
       Abstract  </a>
-    <a  onclick="bascule('bibtex_e2')" class="button_abstract"> 
+    <a  onclick="bascule('bibtex_e2')" class="button_abstract">
      Bibtex</a>
-    
+
         <div id="box_e2" class="boxgrand" style="visibility: hidden;display: none">
-<div class="decal">The Siebeck-Marden theorem relates the roots of a third 
-degree polynomial and the roots of its derivative in a geometrical way. 
+<div class="decal">The Siebeck-Marden theorem relates the roots of a third
+degree polynomial and the roots of its derivative in a geometrical way.
 A few geometric arguments imply that every inellipse for a triangle is uniquely
- related to a certain logarithmic potential via its focal points. 
- This fact provides a new direct proof of a general form of the result of 
+ related to a certain logarithmic potential via its focal points.
+ This fact provides a new direct proof of a general form of the result of
  Siebeck and Marden.
-</div>   
+</div>
     </div>
-    
+
     <div id="bibtex_e2" class="boxgrand" style="visibility: hidden;display: none">
 <div class="bibtex">
 <pre>
@@ -184,10 +168,10 @@ A few geometric arguments imply that every inellipse for a triangle is uniquely
 }
 </pre>
 </div></div>
-    
-        </div>    
-<div class="pubitem"> 
-    B. Bogosel, <a href="https://ssmr.ro/gazeta/gma/2012/gma1-2-2012-continut.pdf">Functions with the Intermediate Value Property</a>, 2012, <br> (Romanian Mathematical Gazette 2012) (<a href="https://ssmr.ro/gazeta/gma/2012/gma1-2-2012-continut.pdf">Journal link</a>)  
+
+        </div>
+<div class="pubitem">
+    B. Bogosel, <a href="https://ssmr.ro/gazeta/gma/2012/gma1-2-2012-continut.pdf">Functions with the Intermediate Value Property</a>, 2012, <br> (Romanian Mathematical Gazette 2012) (<a href="https://ssmr.ro/gazeta/gma/2012/gma1-2-2012-continut.pdf">Journal link</a>)
     <br>
     <a  onclick="bascule('box_e1')" class="button_abstract">
       Abstract  </a>
@@ -197,33 +181,33 @@ which have the intermediate value property and other interesting properties. A n
 functional equation which has the intermediate value property is presented
 in the second part, along with a theorem regarding the structure of the solutions of the same equation in terms of solutions with intermediate value
 property.
-</div></div>        
-</div> 
-    
+</div></div>
+</div>
+
         </div>
 
 
-    <h3>Proceedings, Chapters</h3>     
-        
+    <h3>Proceedings, Chapters</h3>
+
 <div class="publist" style="counter-reset: listNumber 3">
-    
+
 <div class="pubitem">
      B. Bogosel, <a href="pdfs/ICDEA2017proc.pdf">Discrete version of an optimal partitioning problem</a>
-      <br>      
+      <br>
       Difference equations, discrete dynamical systems and applications, 247-256, Springer, 2019
       <br>
       <a  onclick="bascule('box_pc1')" class="button_abstract">
-      Abstract</a>    
-      <a  onclick="bascule('bibtex_pc1')" class="button_abstract">Bibtex</a>  
-        
+      Abstract</a>
+      <a  onclick="bascule('bibtex_pc1')" class="button_abstract">Bibtex</a>
+
 <div id="box_pc1" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">In this paper we compare the candidates to be spectral minimal partitions for
 two criteria: the maximum and the average of the first eigenvalue on each subdomains of
 the partition. We analyze in detail the square, the disk and the equilateral triangle. Using
 numerical simulations, we propose candidates for the max, prove that most of them can
 not be optimal for the sum and then exhibit better candidates for the sum.
-</div></div>  
-    
+</div></div>
+
 <div id="bibtex_pc1" class="boxgrand" style="visibility: hidden;display: none">
 <div class="bibtex">
 <pre>
@@ -238,36 +222,36 @@ not be optimal for the sum and then exhibit better candidates for the sum.
   booktitle = {Difference Equations,  Discrete Dynamical Systems and Applications}
 }
 </pre>
-</div></div>    
-    
-    </div>     
-    
+</div></div>
+
+    </div>
+
     <div class="pubitem">
      B. Bogosel, V. Bonnaillie-Noël, <a href="pdfs/BBN17.pdf">Optimal partitions for the sum and the maximum of eigenvalues</a>, 2017
-      <br>      
+      <br>
       (Proceedings XIV-th International Conference Zaragoza-Pau 2016)
       <br>
       <a  onclick="bascule('box_pc2')" class="button_abstract">
-      Abstract</a>    
-      <a  onclick="bascule('box_npc2')" class="button_abstract">Numerics</a>  
-      <a  onclick="bascule('bibtex_pc2')" class="button_abstract">Bibtex</a>    
-        
+      Abstract</a>
+      <a  onclick="bascule('box_npc2')" class="button_abstract">Numerics</a>
+      <a  onclick="bascule('bibtex_pc2')" class="button_abstract">Bibtex</a>
+
 <div id="box_pc2" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">In this paper we compare the candidates to be spectral minimal partitions for
 two criteria: the maximum and the average of the first eigenvalue on each subdomains of
 the partition. We analyze in detail the square, the disk and the equilateral triangle. Using
 numerical simulations, we propose candidates for the max, prove that most of them can
 not be optimal for the sum and then exhibit better candidates for the sum.
-</div></div>  
-       
+</div></div>
+
 <div id="box_npc2" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
 <table><tr>
 <td style="width:10%"><a href="spectral_minmax.html"><img class = "rounded"  src="work/part8.png"    alt=""></a></td>
  <td style="text-align:center"> More details will come... </td></tr>
 </table>
-</div></div>    
-        
+</div></div>
+
 <div id="bibtex_pc2" class="boxgrand" style="visibility: hidden;display: none">
 <div class="bibtex">
 <pre>
@@ -285,50 +269,50 @@ not be optimal for the sum and then exhibit better candidates for the sum.
   MRNUMBER = {3792488},
 }
 </pre>
-</div></div>          
-        
-</div>   
-    
-   
+</div></div>
+
+</div>
+
+
         </div>
-    
+
     <h3> Preprints </h3>
-    
+
     <div class="ex">
       B. Bogosel, <a href="pdfs/anisop_article.pdf">
-     Partitions minimizing an anisotropic length</a>, (preprint)  
+     Partitions minimizing an anisotropic length</a>, (preprint)
      <br>
       <a  onclick="bascule('box_p1')" class="button_abstract">
       Abstract</a>
-      <a  onclick="bascule('box_np1')" class="button_abstract">Numerics</a>    
-        
+      <a  onclick="bascule('box_np1')" class="button_abstract">Numerics</a>
+
         <div id="box_p1" class="boxgrand" style="visibility: hidden;display: none">
-<div class="decal">We present a Gamma-convergence approximation 
-for the total anisotropic length of a partition. 
-This theoretical result gives rise to a numerical method which 
+<div class="decal">We present a Gamma-convergence approximation
+for the total anisotropic length of a partition.
+This theoretical result gives rise to a numerical method which
 allows the study of minimal partitions with respect to
- different anisotropies. We also give a numerical framework 
- for the study of isoperimetric problems with density. 
-</div></div>  
-       
+ different anisotropies. We also give a numerical framework
+ for the study of isoperimetric problems with density.
+</div></div>
+
      <div id="box_np1" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
 <table><tr>
-<td style="width:10%"><a href="anisotropic.html"><img class = "rounded" 
- src="partitions/anihv10.png" alt="" ></a></td> 
-<td style="text-align:center"> For details click on one of the pictures. </td></tr> 
+<td style="width:10%"><a href="anisotropic.html"><img class = "rounded"
+ src="partitions/anihv10.png" alt="" ></a></td>
+<td style="text-align:center"> For details click on one of the pictures. </td></tr>
 </table>
-</div></div> 
+</div></div>
      </div>
-        
+
 <div class="ex">
-     B. Bogosel, M. Foare, <a href="pdfs/Robin.pdf">Numerical implementation in 1D and 2D of a shape optimization problem with Robin boundary conditions</a>, 2017      
+     B. Bogosel, M. Foare, <a href="pdfs/Robin.pdf">Numerical implementation in 1D and 2D of a shape optimization problem with Robin boundary conditions</a>, 2017
       (preprint)
       <br>
       <a  onclick="bascule('box_12')" class="button_abstract">
-      Abstract</a>    
-      <a  onclick="bascule('box_n12')" class="button_abstract">Numerics</a>  
-        
+      Abstract</a>
+      <a  onclick="bascule('box_n12')" class="button_abstract">Numerics</a>
+
 <div id="box_12" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">In this paper, we study a shape optimization problem with Robin boundary conditions
 based on an optimal insulation problem. We prove the Γ-convergence of two approximations towards
@@ -337,197 +321,199 @@ finite differences discretization. In dimension two we provide a method of compu
 partial differential equation with Robin boundary condition with the aid of fundamental solutions. This
 leads to an optimization algorithm on which we observe the behavior of the optimal shape with respect
 to the geometry and the value of the source.
-</div></div>  
-       
+</div></div>
+
 <div id="box_n12" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
-<table>   
+<table>
 <tr><td style="text-align:center"> Coming soon... </td></tr>
 </table>
-</div></div>    
-</div>            
-  
-<h3>Miscellaneous</h3>   
-        
+</div></div>
+</div>
+
+<h3>Miscellaneous</h3>
+
 <div class="ex">
 Translation of the paper: <a href="./pdfs/Hadwiger_Finsler_translation.pdf">Some relations in the triangle</a> by H. Hadwiger and Paul Finsler. The original paper written in German can be found <a href="http://doi.org/10.5169/seals-11006">here</a>. <br>
-    
+
 <a  onclick="bascule('misc_1')" class="button_abstract">
-      Details</a>      
-    
+      Details</a>
+
 <div id="misc_1" class="boxgrand" style="visibility: hidden;display: none">
-<div class="decal">Notably, in this paper the well known Hadwiger-Finsler inequality is proved: If $a,b,c$ are the side lengths of a triangle and $S$ denotes its area then 
+<div class="decal">Notably, in this paper the well known Hadwiger-Finsler inequality is proved: If $a,b,c$ are the side lengths of a triangle and $S$ denotes its area then
 $$ a^2+b^2+c^2 \geq (a-b)^2+(b-c)^2+(c-a)^2+4\sqrt{3}S.$$
 In the paper, in addition to a very elengant proof of this fact using synthetic geometry arguments, various other statements are proved regarding configurations where similar triangles are attached to the sides of a triangle.<br>
-    
-One may note that the inequality written above provides a quantitative isoperimetric inequality for triangles. 
-</div> 
-    </div>     
+
+One may note that the inequality written above provides a quantitative isoperimetric inequality for triangles.
+</div>
+    </div>
         </div>
-        
+
 <div class="ex">
-A <a href="./pdfs/Sendov.pdf">short note</a> on a geometric proof of <a href="https://en.wikipedia.org/wiki/Sendov%27s_conjecture">Sendov's theorem</a> for cubic polynomials. 
-    </div>     
-             
-        
+A <a href="./pdfs/Sendov.pdf">short note</a> on a geometric proof of <a href="https://en.wikipedia.org/wiki/Sendov%27s_conjecture">Sendov's theorem</a> for cubic polynomials.
+    </div>
+
+
     <h3>PHD Thesis</h3>
-   <div class= "ex"> 
+   <div class= "ex">
     <span style="font-style: italic;font-size:25px;margin:5px" >Shape optimization and spectral problems</span>  <br>
     <a href="pdfs/PHD_thesis.pdf">(manuscript)</a>
     <a href="pdfs/soutenance_v2.pdf">(slides)</a>
     <a  onclick="bascule('box_t1')" class="button_abstract">
-      Summary  
-    </a>    
+      Summary
+    </a>
      <div id="box_t1" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
  <p> We study some shape optimization problems associated to spectral and
  geometric functionals from both theoretical and numerical points of view. One of the
-  main ideas is to provide $\Gamma$-convergence frameworks allowing the construction 
+  main ideas is to provide $\Gamma$-convergence frameworks allowing the construction
   of numerical approximation methods for the quantities we wish to optimize. In particular,
-   these numerical methods are applied to the study of the Dirichlet-Laplace eigenvalues 
-   under perimeter constraint in two and three dimensions and to optimization problems 
-   concerning multiphase configurations and partitions in the plane or on manifolds in $\Bbb{R}^3$. 
-   </p> 
+   these numerical methods are applied to the study of the Dirichlet-Laplace eigenvalues
+   under perimeter constraint in two and three dimensions and to optimization problems
+   concerning multiphase configurations and partitions in the plane or on manifolds in $\Bbb{R}^3$.
+   </p>
 <p>
-As well, we focus on the analysis of the Steklov spectrum in different geometric classes of domains. 
-Together with the study of existence of extremal domains and the spectral stability under 
+As well, we focus on the analysis of the Steklov spectrum in different geometric classes of domains.
+Together with the study of existence of extremal domains and the spectral stability under
 geometric perturbations, we develop methods based on fundamental solutions in order to
- compute numerically the spectrum. A detailed analysis of the numerical method shows 
- that we get an important precision, while the computation time is significantly decreased 
+ compute numerically the spectrum. A detailed analysis of the numerical method shows
+ that we get an important precision, while the computation time is significantly decreased
  compared to mesh-based methods. This approach is extended to the computation of Wentzell
   and Laplace-Beltrami eigenvalues.
   </p>
 </div></div>
-</div> 
-        
+</div>
+
     <h3>Habilitation Thesis</h3>
-        
-        
-<div class= "ex"> 
+
+
+<div class= "ex">
     <span style="font-style: italic;font-size:25px;margin:5px" >Shape optimization: theoretical, numerical and practical aspects</span>  <br>
     <a href="pdfs/Habilitation.pdf">(manuscript)</a>
     <a href="pdfs/SoutenanceHdR.pdf">(slides)</a>
     <a  onclick="bascule('box_t2')" class="button_abstract">
-      Summary  
-    </a>    
+      Summary
+    </a>
      <div id="box_t2" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
  <p> The habilitation thesis presents my work after the PhD thesis on topics related to theoretical, numerical and practical aspects of shape optimization. </p>
-     
+
      <p>It is structured in four chapters dealing with additive manufacturing, convex shapes, partitioning problems and the polygonal Faber-Krahn inequality.</p>
-     
+
      <p>I underline the role of numerics in various aspects of shape optimization problems. Numerics is obviously useful for practical applications, but it can also provide meaningful ideas concerning theoretical results. </p>
-     
+
      <p>Using validated numerics and interval arithmetic, numerical computations can also contribute to theoretical proofs. This aspect is underlined in the work related to the polygonal Faber-Krahn inequality.
-   </p> 
+   </p>
 </div></div>
-</div>         
-    
+</div>
+
   <h3>Posters</h3>
-        
+
     <ul>
-    <li> GdR Calva meeting - Nancy 2021 <a href="Posters/Nancy2021.pdf">view</a> </li>     
-    <li> Phd Students Day - Grenoble: <a href="Posters/poster_portrait.pdf">view</a> </li>  
+    <li> GdR Calva meeting - Nancy 2021 <a href="Posters/Nancy2021.pdf">view</a> </li>
+    <li> Phd Students Day - Grenoble: <a href="Posters/poster_portrait.pdf">view</a> </li>
     <li> PDE Normandie conference 2017: <a href="Posters/Bogosel-Normandie2017.pdf">view</a>
     </li>
     <li> JOFA 4: <a href="Posters/BogoselJOFA2019.pdf">view</a>
-        </li>    
-        </ul>    
-        
-   <section id="talks">    
-       
+        </li>
+        </ul>
+
+   <section id="talks">
+
 <h3> Talks </h3>
 <ul>
 <li>Phase field and mobile interfaces seminar, Ecole
 Nationale Superieure de Mines de Paris, December 2024</li>
-<li>NANMAT 2024 - Tiberiu Popovici Institute, Cluj-Napoca, Romania</li>  
-<li>Aurel Vlaicu University Arad, July 2024</li>       
-<li>Seminar Paris 1 - May 2024</li>    
+<li>NANMAT 2024 - Tiberiu Popovici Institute, Cluj-Napoca, Romania</li>
+<li>Aurel Vlaicu University Arad, July 2024</li>
+<li>Seminar Paris 1 - May 2024</li>
 <li>Seminar Avignon - May 2024</li>
 <li> M4S workshop Ecole Polytechnique - March 2024</li>
-<li>NANMAT 2023 - Tiberiu Popovici Institute, Cluj-Napoca, Romania</li>    
-<li>ANR SHAPO meeting April 2023</li>    
+<li>NANMAT 2023 - Tiberiu Popovici Institute, Cluj-Napoca, Romania</li>
+<li>ANR SHAPO meeting April 2023</li>
 <li>Maths en herbe seminar for 3rd year students, IHES,
-Bures-sur-Yvette, 2023</li>    
-<li>seminar Groupe de travail CalVa, Paris, October 2022</li>    
-<li> QuamProcs ANR meeting, Bordeaux, October 2022</li>    
+Bures-sur-Yvette, 2023</li>
+<li>seminar Groupe de travail CalVa, Paris, October 2022</li>
+<li> QuamProcs ANR meeting, Bordeaux, October 2022</li>
 <li>CMAP opening day,
-September 2022</li>    
+September 2022</li>
 <li>International conference on difference equations and
-applications, July 2022</li>    
+applications, July 2022</li>
 <li>Shape optimization, related topics and applications,
-Roscoff, France, June 2022</li>    
+Roscoff, France, June 2022</li>
 <li>Minisymposium ”Geometric Variational Problems and
-Their Applications”, SIAM Annual Meeting, July 2022</li>    
-<li>SFB Seminar, University of Bonn, May 2022</li>     
-<li>Spectral Geometry in the Clouds, May 2022</li>    
-<li>IP Paris Optimization meeting, April 2022</li>      
-<li>SHAPO ANR meeting Autrans (near Grenoble, France), April 2022</li>      
-<li>Online workshop on Numerical Methods in Bifurcation Theory - Madrid University</li>      
-<li>SHAPO ANR project seminar, June 2021</li>      
-<li>FreeFEM days 2020, Paris</li>    
+Their Applications”, SIAM Annual Meeting, July 2022</li>
+<li>SFB Seminar, University of Bonn, May 2022</li>
+<li>Spectral Geometry in the Clouds, May 2022</li>
+<li>IP Paris Optimization meeting, April 2022</li>
+<li>SHAPO ANR meeting Autrans (near Grenoble, France), April 2022</li>
+<li>Online workshop on Numerical Methods in Bifurcation Theory - Madrid University</li>
+<li>SHAPO ANR project seminar, June 2021</li>
+<li>FreeFEM days 2020, Paris</li>
 <li>Geometric and Computational Spectral Theory, Canadian Mathematical Society Winter Meeting, December 2020
-    </li>    
-<li>Workshop Additive Manufacturing - Arkema Chair at Ecole Polytechnique, November 2020</li>    
+    </li>
+<li>Workshop Additive Manufacturing - Arkema Chair at Ecole Polytechnique, November 2020</li>
 <li>Seminaire Parisien d'Optimisation: Institut Henri Poincaré, Paris, February 2020
-</li>     
-<li>Séminaire Fabrication Additive Paris-Saclay, February 2020</li>    
+</li>
+<li>Séminaire Fabrication Additive Paris-Saclay, February 2020</li>
 <li>Asymptotic analysis and Spectral theory: Orsay, October 2019
-</li>    
-<li>Workshop: New trends and challenges in the mathematics of optimal design, Isaac Newton Institute, 10-14 June 2019</li>    
+</li>
+<li>Workshop: New trends and challenges in the mathematics of optimal design, Isaac Newton Institute, 10-14 June 2019</li>
 <li>Rencontres Normandes sur les aspects théoriques et numériques des EDP, November 2018</li>
-<li>Computational and Data Science seminar at University of Luxembourg, 11 July 2018</li>    
+<li>Computational and Data Science seminar at University of Luxembourg, 11 July 2018</li>
 <li>
-Seminar CMAP, Ecole Polytechnique - 26 June 2018 
-</li>    
+Seminar CMAP, Ecole Polytechnique - 26 June 2018
+</li>
 <li> Europeean Conference on Computational Mechanics - Glasgow, 11-15 June 2018 </li>
-<li> <a href="https://indico.math.cnrs.fr/event/3199/page/0">Journées Optimisation de Formes et Applications</a> - Pau, 7-8 June 2018 </li>    
-<li> <a href="http://smai.emath.fr/canum2018/index.php">CANUM 2018</a>, 28/05-01/06 2018 </li>      
-<li> Séminaire de Mathématiques et de leurs Applications - Pau, January 2018 </li>     
-<li> Seminar Isaac Newton Institute, Cambridge, November 2017 </li>         
+<li> <a href="https://indico.math.cnrs.fr/event/3199/page/0">Journées Optimisation de Formes et Applications</a> - Pau, 7-8 June 2018 </li>
+<li> <a href="http://smai.emath.fr/canum2018/index.php">CANUM 2018</a>, 28/05-01/06 2018 </li>
+<li> Séminaire de Mathématiques et de leurs Applications - Pau, January 2018 </li>
+<li> Seminar Isaac Newton Institute, Cambridge, November 2017 </li>
 <li> ICDEA, Timisoara Romania - July 2017 </li> <li> Congres SMAI - June 2017 </li>
- <li>Seminar University of Tours - March 30 2017 
- </li>      
-<li>  <a href="http://www.iecl.univ-lorraine.fr/Les-Seminaires/EDP-Nancy/">Seminar Nancy</a> - March 21st 2017 
- </li>   
-<li> <a href="http://rech-math.sp2mi.univ-poitiers.fr/spip.php?article6">Seminar Poitiers</a> - March 9th 2017</li>    
-<li>  <a href="http://math.univ-lille1.fr/d7/sanedp">Seminar Lille</a> - March 2nd 2017 
- </li>     
-<li>  <a href="https://spectraltheory.wordpress.com/">Seminar Orsay</a> -  February 28th 2017 
- </li>     
-<li> <a href="https://www.ljll.math.upmc.fr/fr/seminaires/article/gdt-calcul-des-variations">Groupe de Travail CalVa</a> - LJLL Paris 6 - February 20th 2017 </li>     
-    
-<li> <i> Optimal partitions on surfaces - Numerical aspects  </i>, Meeting ANR Optiform-Geometrya - March 2016 
- </li> 
+ <li>Seminar University of Tours - March 30 2017
+ </li>
+<li>  <a href="http://www.iecl.univ-lorraine.fr/Les-Seminaires/EDP-Nancy/">Seminar Nancy</a> - March 21st 2017
+ </li>
+<li> <a href="http://rech-math.sp2mi.univ-poitiers.fr/spip.php?article6">Seminar Poitiers</a> - March 9th 2017</li>
+<li>  <a href="http://math.univ-lille1.fr/d7/sanedp">Seminar Lille</a> - March 2nd 2017
+ </li>
+<li>  <a href="https://spectraltheory.wordpress.com/">Seminar Orsay</a> -  February 28th 2017
+ </li>
+<li> <a href="https://www.ljll.math.upmc.fr/fr/seminaires/article/gdt-calcul-des-variations">Groupe de Travail CalVa</a> - LJLL Paris 6 - February 20th 2017 </li>
 
-<li> <i>  Optimization spectral quantities under perimeter constraint  </i>, Journées Jeunes EDPistes Français - March 2016 </li> 
+<li> <i> Optimal partitions on surfaces - Numerical aspects  </i>, Meeting ANR Optiform-Geometrya - March 2016
+ </li>
+
+<li> <i>  Optimization spectral quantities under perimeter constraint  </i>, Journées Jeunes EDPistes Français - March 2016 </li>
 <li> <i>  Partitions of minimal length on surfaces  </i>, PICOF - June 2016 </li>
-<li> <i>  Spectral optimization on variable domains  
-</i> </li> 
-Operator Theory Conference - June 2016, Timisoara, Romania 
-   <li> Reunion ANR Optiform - Geometrya, Paris, Mars 2016 
-   
-   <li> JERAA, November 2015 
-   
-   <li> Discussion group EDPs Lama, November 2015. 
-   
-   <li> Workshop on Calculus of Variations, September 2015. 
-   
-   <li> Reunion ANR Optiform Paris, June 2015. 
-   
+<li> <i>  Spectral optimization on variable domains
+</i> </li>
+Operator Theory Conference - June 2016, Timisoara, Romania
+   <li> Reunion ANR Optiform - Geometrya, Paris, Mars 2016
+
+   <li> JERAA, November 2015
+
+   <li> Discussion group EDPs Lama, November 2015.
+
+   <li> Workshop on Calculus of Variations, September 2015.
+
+   <li> Reunion ANR Optiform Paris, June 2015.
+
    <li> Colloque InterActions, Grenoble 2015.
-   
-   <li> Seminar Optimization team, Avignon 2015. 
-   
+
+   <li> Seminar Optimization team, Avignon 2015.
+
    <li> Reunion ANR Optiform Rennes, January 2015.
-       
-   <li> Discussion group EDPs Lama, May 2014. 
-      
-   <li> Seminar EDPs team LAMA, Universite de Savoie, July 2013. 
+
+   <li> Discussion group EDPs Lama, May 2014.
+
+   <li> Seminar EDPs team LAMA, Universite de Savoie, July 2013.
     </ul>
-       
-   </section>   
+
+   </section>
 
   </div>
- </body>
+    {% endraw %}
+    {% include site-footer.html %}
+  </body>
 </html>

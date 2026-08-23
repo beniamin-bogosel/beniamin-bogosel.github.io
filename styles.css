@@ -469,6 +469,36 @@ header nav ul li {
 
 #header {background:url(header_my.jpg) 0 0 no-repeat;height:90px;border-bottom:1px solid #A6A6A6;border-radius: 10px 10px 0px 0px}
 
+.site-title {
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+    text-align: left;
+    font-variant: small-caps;
+}
+
+.but.is-current,
+.but[aria-current="page"] {
+    background-color: white;
+    color: #4682b4;
+    border-color: #4682b4;
+}
+
+.site-footer {
+    box-sizing: border-box;
+    max-width: 900px;
+    margin: 10px auto 0;
+    padding: 8px 10px;
+    color: #33495d;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
 
 div.problem {
     background-color:#FFB6A7;
@@ -593,6 +623,10 @@ div.pubitemnew {
 }
 
 @media (max-width: 700px) {
+    .site-header nav ul li {
+        padding: 2px 5px;
+    }
+
     .research-detail {
         margin: 0;
     }

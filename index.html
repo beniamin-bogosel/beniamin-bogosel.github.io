@@ -1,18 +1,18 @@
+---
+nav_section: home
+---
 <!DOCTYPE html>
 <html lang="en">
-  <head>  
-   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  />      
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">       
-   <link rel="stylesheet" type="text/css" href="styles.css">
-   <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <script async
+  <head>
+    {% include site-head.html %}
+<script async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script> 
+</script>
     <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
-</script> 
+</script>
  <script>
    function bascule(elem)
     {    etat=document.getElementById(elem).style.visibility;
@@ -21,193 +21,181 @@ MathJax.Hub.Config({
      else{document.getElementById(elem).style.visibility="hidden";
      document.getElementById(elem).style.display='none';}
     }
-   </script> 
+   </script>
    <script>
       function toggleDiv(divId) {
-        $("#"+divId).toggle(); 
+        $("#"+divId).toggle();
       }
-    </script>     
+    </script>
       <script>
        function openList1() {
         $("div").toggle();
        }
 </script>
 
-    <title>Beniamin Bogosel</title>   
+    <title>Beniamin Bogosel</title>
   </head>
   <body>
-    
-      
-    <div class="main">   
-     <!--<div w3-include-html= "header2.html"></div>  
+
+
+    <div class="main">
+     <!--<div w3-include-html= "header2.html"></div>
       <script>
       w3IncludeHTML();
-      </script>--> 
-    <header> 
-      <div id="header">     
-      <h1 style="text-align:left;padding-top:20px;margin-bottom:0px;color:white;padding-left:20px;font-variant:small-caps">Beniamin BOGOSEL </h1>
-      <!--<span style="margin-left:20px;color:white;border-style:solid;border-width:1px 0px 0px 0px"></span>-->
-      </div>    
-      <nav>
-      <ul>
-        <li><a class="but" href="index.html">Home</a> </li>
-        <li><a class = "but" href="research.html">Numerics</a></li>
-        <li> <a class = "but" href="about.html">CV</a> </li>  
-        <li> <a class = "but" href="publications.html">Publications</a></li>
-      <li> <a class = "but" href="software.html">Software</a></li>    
-      <li> <a class = "but" href="enseignement.html">Teaching</a></li>      
-      </ul>
-      </nav>    
-    </header>  
-     
-    <section>  
+      </script>-->
+    {% include site-header.html %}
+    {% raw %}
+
+<section>
     <div id="container1">
     <div id="col1">
      <h3 style="margin-bottom: 15px;padding-left: 0px">Associate Professor</h3>
-    <p style="margin-left: 10px"> <a href="https://stiinteexacte.uav.ro/en/cadre-didactice/departament">Faculty of Exact Sciences</a> <br> Aurel Vlaicu University of Arad 
+    <p style="margin-left: 10px"> <a href="https://stiinteexacte.uav.ro/en/cadre-didactice/departament">Faculty of Exact Sciences</a> <br> Aurel Vlaicu University of Arad
     <br>
     Arad, Romania </p>
-    <p> <strong>Contact</strong><br>    
-    email:   <a href="mailto:beniamin.bogosel_at_uav.ro">beniamin.bogosel_at_uav.ro</a>  
+    <p> <strong>Contact</strong><br>
+    email:   <a href="mailto:beniamin.bogosel_at_uav.ro">beniamin.bogosel_at_uav.ro</a>
     </p>
     <p> <strong>Curriculum Vitae:</strong>  <a href="pdfs/CV-Beni-Bogosel.pdf">
-    English</a> 
+    English</a>
         <!--<a href="pdfs/CV-Beni-Bogosel-FR.pdf">
       French</a>--> (last updated June 2025)</p>
-    
-        
-    <p><strong>Teaching ressources:</strong> <a class="but3" href="enseignement.html">teaching</a> </p>    
-    
-    
+
+
+    <p><strong>Teaching ressources:</strong> <a class="but3" href="teaching.html">teaching</a> </p>
+
+
 
     <h3>Research Interests: </h3>
     <ul>
       <li>Calculus of variations, shape optimization </li>
       <li>Numerical shape optimization: $\Gamma$-convergence methods, relaxation, Level Set method  </li>
-      <li>Shape optimization for eigenvalue problems: Dirichlet Laplace eigenvalues, 
+      <li>Shape optimization for eigenvalue problems: Dirichlet Laplace eigenvalues,
       Steklov/Wentzell Eigenvalues</li>
       <li>Optimal design for additive manufacturing constraints </li>
       <li>Optimal partitioning problems, multiphase problems</li>
       <li>Meshless methods: fundamental solutions</li>
     </ul>
-      
-     </div>    
+
+     </div>
    <div id="col2" style="text-align: center;">
      <img src="beni.jpg" alt="my picture" style="width:100%;max-width:200px;margin:10px 0px 0px 0px">
-    
-    
-    <div style="text-align:center;margin-bottom:0px;margin-top:10px"> 
-    <h3 style="text-align: center; font-weight: bold;border:0px;margin:0px">Links</h3>    
+
+
+    <div style="text-align:center;margin-bottom:0px;margin-top:10px">
+    <h3 style="text-align: center; font-weight: bold;border:0px;margin:0px">Links</h3>
     <hr>
     <a class = "but2" href="https://scholar.google.com/citations?user=rWM3vFoAAAAJ&hl=en" target="_blank">
-  <img src="scholar.svg" 
-       alt="Google Scholar" 
+  <img src="scholar.svg"
+       alt="Google Scholar"
        style="width:20px;height:20px;vertical-align:text-bottom;">
   Scholar
 </a>
 <hr>
 <a class = "but2" href="https://www.researchgate.net/profile/Beniamin-Bogosel?ev=hdr_xprf" target="_blank">
-  <img src="RG.png" 
-       alt="Research Gate" 
+  <img src="RG.png"
+       alt="Research Gate"
        style="width:20px;height:20px;vertical-align:text-bottom;">
   RG
 </a>
 <hr>
 <a class = "but2" href="https://www.webofscience.com/wos/author/record/2151612" target="_blank">
-  <img src="wos.png" 
-       alt="Researcher ID" 
+  <img src="wos.png"
+       alt="Researcher ID"
        style="width:20px;height:20px;vertical-align:text-bottom;">
   WoS
 </a>
 <hr>
 <a class = "but2" href="https://orcid.org/0000-0001-7535-5197" target="_blank">
-  <img src="orcid.png" 
-       alt="Orcid" 
+  <img src="orcid.png"
+       alt="Orcid"
        style="width:20px;height:20px;vertical-align:text-bottom;">
   ORCID
 </a>
 <hr>
 <a class = "but2" href="https://github.com/beniamin-bogosel" target="_blank">
-  <img src="github-mark.svg" 
-       alt="Orcid" 
+  <img src="github-mark.svg"
+       alt="Orcid"
        style="width:20px;height:20px;vertical-align:text-bottom;">
   Github
 </a>
     <hr>
-    <a class="but2" href="https://mathproblems123.wordpress.com/">Visit my blog</a>      
-    <hr>    
-    <p style="text-align:center;margin-bottom:0px"><a class="but2" style="font-variant:normal" href="metapost.html">Metapost</a></p> 
+    <a class="but2" href="https://mathproblems123.wordpress.com/">Visit my blog</a>
+    <hr>
+    <p style="text-align:center;margin-bottom:0px"><a class="but2" style="font-variant:normal" href="metapost.html">Metapost</a></p>
     </div>
-    <hr>     
-    </div>   
-    </div> 
-  </section>       
-        
-<section>  
+    <hr>
+    </div>
+    </div>
+  </section>
+
+<section>
 <h3> Abilitation thesis: mathematics </h3>
-    
+
 <p>Defended on 30 May 2024 at Ecole Polytechnique</p>
-<p>Documents: <a href="pdfs/Habilitation.pdf">Manuscript</a>, <a href="pdfs/SoutenanceHdR.pdf">Slides</a></p>    
-    
-    
+<p>Documents: <a href="pdfs/Habilitation.pdf">Manuscript</a>, <a href="pdfs/SoutenanceHdR.pdf">Slides</a></p>
+
+
 <h3> Upcoming talks </h3>
-<ul>  
-    <li><a href="https://sites.google.com/view/so-smp-workshop/homepage">Shape Optimization & Spectral Minimal Partitions</a>, Workshop, Aveiro, Portugal, June 2026</li> 
+<ul>
+    <li><a href="https://sites.google.com/view/so-smp-workshop/homepage">Shape Optimization & Spectral Minimal Partitions</a>, Workshop, Aveiro, Portugal, June 2026</li>
     <li><a href= "https://www.newton.ac.uk/event/gstw07/">AI in Spectral Geometry, perspectives and directions</a>, Isaac Newton Institute, Cambridge, UK, April 2026 <a href="/pdfs/PolyaSzego_INI_2026.pdf">(slides)</a></li>
-    <li>Computational Mathematics Seminar -- Emory University, Atlanta, Georgia, USA, March 2026 <a href="/pdfs/PolyaSzego_2026.pdf">slides</a>.</li>   
+    <li>Computational Mathematics Seminar -- Emory University, Atlanta, Georgia, USA, March 2026 <a href="/pdfs/PolyaSzego_2026.pdf">slides</a>.</li>
     <li>ANR Stoiques Meeting - Pantheon Sorbonne University: November 2025: <a href="https://drive.google.com/file/d/1TMbP7j0Jxws0ChRkwZhym3CzoQZo_KND/view?usp=drive_link">slides</a></li>
     <li>NaNmAt - Tiberiu Popovici Institude Cluj Napoca (online): November 2025: <a href="https://drive.google.com/file/d/1DGkoBnbFTFm_vbXNSAWEvSVu8Rb7LuL_/view?usp=drive_link">slides</a></li>
   </ul>
 
-</section>             
-        
+</section>
+
  <section id="ongoing">
-     <h3> Recent results and ongoing work </h3> 
-     
+     <h3> Recent results and ongoing work </h3>
+
      <div class="ex">
      <strong>New preprint:</strong> in collaboration with D. Bucur, <a href="pdfs/Polya_MinLoc_v4.pdf">Polygonal Faber-Krahn inequality: Local minimality via validated computing.</a>, 2024 <br>
-         (submitted) (<a href=" https://hal.science/hal-04613443">hal-04613443</a>) 
+         (submitted) (<a href=" https://hal.science/hal-04613443">hal-04613443</a>)
       <br>
       <a  onclick="bascule('box_34')" class="button_abstract">
-     Abstract</a>      
-        
+     Abstract</a>
+
         <div id="box_34" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
    <p>The main result of the paper shows that the regular $n$-gon is a local minimizer for the first Dirichlet-Laplace eigenvalue among $n$-gons having fixed area for $n \in \{5,6\}$. The eigenvalue is seen as a function of the coordinates of the vertices in $\R^{2n}$. Relying on fine regularity results of the first eigenfunction in a convex polygon, an explicit a priori estimate is given for the eigenvalues of the Hessian matrix associated to the discrete problem, whose coefficients involve the solutions of some  Poisson equations with singular right hand sides. The a priori estimates, in conjunction with certified finite element approximations of these singular PDEs imply the local minimality for $n \in \{5,6\}$. All computations, including the finite element computations, are realized using interval arithmetic.</p>
 </div>
-</div>  
+</div>
      </div>
-     
+
      <div class="ex">
      <strong>New preprint:</strong> <a href="pdfs/Volume_Meissner.pdf">Volume computation for Meissner polyhedra and applications</a>, 2023 <br>
-         (submitted) (<a href=" https://hal.science/hal-04258055">hal-04258055</a>) 
+         (submitted) (<a href=" https://hal.science/hal-04258055">hal-04258055</a>)
       <br>
       <a  onclick="bascule('box_31')" class="button_abstract">
-     Abstract</a>      
-        
+     Abstract</a>
+
         <div id="box_31" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
    <p>The volume of a Meissner polyhedron is computed in terms of the lengths of its dual edges. This allows to reformulate the Meissner conjecture regarding constant width bodies with minimal volume as a series of explicit finite dimensional problems. A direct consequence is the minimality of the volume of Meissner tetrahedras among Meissner pyramids. </p>
 </div>
-</div>  
+</div>
      </div>
-     
+
      <div class="ex">
      <strong>New preprint:</strong> <a href="pdfs/Cheeger_BL.pdf">On the Blaschke-Lebesgue theorem for the Cheeger constant via areas and perimeters of inner parallel sets</a>, 2023 <br>
-         (submitted) (<a href=" https://hal.science/hal-04045140">hal-04045140</a>) 
+         (submitted) (<a href=" https://hal.science/hal-04045140">hal-04045140</a>)
       <br>
       <a  onclick="bascule('box_30')" class="button_abstract">
-     Abstract</a>      
-        
+     Abstract</a>
+
         <div id="box_30" class="boxgrand" style="visibility: hidden;display: none">
 <div class="decal">
    <p>The first main result presented in the paper shows that the perimeters of inner parallel sets of planar shapes having a given constant width are minimal for the Reuleaux triangles. This implies that the areas of inner parallel sets and, consequently, the inverse of the Cheeger constant are also minimal for the Reuleaux triangles. Proofs use elementary geometry arguments and are based on direct comparisons between general constant width shapes and the Reuleaux triangle.</p>
 </div>
-</div>  
-     </div>  
+</div>
+     </div>
 
  </section>
 
-    </div>    
+    </div>
+    {% endraw %}
+    {% include site-footer.html %}
   </body>
 </html>

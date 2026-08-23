@@ -1,0 +1,16 @@
+{% assign current_section = page.nav_section | default: '' %}
+<header class="site-header">
+  <div id="header">
+    <h1 class="site-title">Beniamin BOGOSEL</h1>
+  </div>
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a class="but{% if current_section == 'home' %} is-current{% endif %}" href="{{ '/index.html' | relative_url }}"{% if current_section == 'home' %} aria-current="page"{% endif %}>Home</a></li>
+      <li><a class="but{% if current_section == 'numerics' %} is-current{% endif %}" href="{{ '/research.html' | relative_url }}"{% if current_section == 'numerics' %} aria-current="page"{% endif %}>Numerics</a></li>
+      <li><a class="but{% if current_section == 'cv' %} is-current{% endif %}" href="{{ '/about.html' | relative_url }}"{% if current_section == 'cv' %} aria-current="page"{% endif %}>CV</a></li>
+      <li><a class="but{% if current_section == 'publications' %} is-current{% endif %}" href="{{ '/publications.html' | relative_url }}"{% if current_section == 'publications' %} aria-current="page"{% endif %}>Publications</a></li>
+      <li><a class="but{% if current_section == 'software' %} is-current{% endif %}" href="{{ '/software.html' | relative_url }}"{% if current_section == 'software' %} aria-current="page"{% endif %}>Software</a></li>
+      <li><a class="but{% if current_section == 'teaching' %} is-current{% endif %}" href="{{ '/teaching.html' | relative_url }}"{% if current_section == 'teaching' %} aria-current="page"{% endif %}>Teaching</a></li>
+    </ul>
+  </nav>
+</header>
