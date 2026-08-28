@@ -379,5 +379,14 @@
     "year": "2026",
     "abstract": "Meissner polyhedra are constant-width bodies obtained from extremal finite sets of unit diameter. Such a generating set may contain dangling points, namely points having exactly two diametric neighbors. This article studies whether these points can play an essential role in surface-area minimization. Given an extremal set we show that the smallest surface area among the Meissner polyhedra based on it cannot increase by deleting a dangling point. Adding a dangling point cannot decrease the smallest achievable surface area. This reduces the search for area-minimizing Meissner polyhedra to generating sets without dangling points.",
     "arxiv": "2608.19747"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "Isoperimetric problems related to extremal diameter graphs in 3D: theoretical and numerical aspects",
+    "tags": ["width constraints", "numerical shape optimization", "convex shapes"],
+    "journal": "submitted",
+    "year": "2026",
+    "abstract": "We study optimization problems for separable functionals of the Euclidean or spherical lengths of dual edge pairs in finite extremal unit-diameter configurations in three dimensions. For a fixed diameter graph, these problems lead to nonconvex constrained optimization of the vertex coordinates. We first prove that a convergent sequence of extremal configurations retains an extremal geometric core after coincident points are merged and vertices incident to at most one diameter are removed. A spherical Crofton argument then gives a sharp lower bound for additive concave functionals, attained by the regular tetrahedron. We also analyze the effect of inserting or deleting dangling vertices. For the sum of products of spherical dual-edge lengths, we obtain an exact supremal reformulation of the three-dimensional Blaschke–Lebesgue area problem. The numerical study uses all 10,644 available extremal configurations with at most 16 vertices. We combine direct evaluation with gradient-based local optimization on each fixed graph and reconstruct the intrinsic diameter graph and its dual pairs after vertex collisions. For every supplied graph, the selected verified endpoint contains a regular tetrahedron. These computations do not certify the global maximum for any fixed graph, but they motivate structural conjectures connecting tetrahedral containment with the Blaschke–Lebesgue problem.",
+    "arxiv": "2608.26395"
   }
 ]
