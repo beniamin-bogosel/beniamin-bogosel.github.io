@@ -356,7 +356,7 @@
   {
     "author": "B. Bogosel, D. Bucur",
     "title": "Polygonal Faber-Krahn inequality: Local minimality via validated computing",
-    "tags": ["polygonal problems", "numerical shape optimization", "convex shapes"],
+    "tags": ["polygonal problems", "numerical shape optimization", "convex shapes","validated computing"],
     "journal": "to appear in Communications in Contemporary Mathematics",
     "year": "2024",
     "abstract": "The main result of the paper shows that the regular n-gon is a local minimizer for the first Dirichlet-Laplace eigenvalue among n-gons having fixed area for n∈{5,6}. The eigenvalue is seen as a function of the coordinates of the vertices in $\\Bbb{R}^{2n}$. Relying on fine regularity results of the first eigenfunction in a convex polygon, an explicit a priori estimate is given for the eigenvalues of the Hessian matrix associated to the discrete problem, whose coefficients involve the solutions of some Poisson equations with singular right hand sides. The a priori estimates, in conjunction with certified finite element approximations of these singular PDEs imply the local minimality for n∈{5,6}. All computations, including the finite element computations, are realized using interval arithmetic.",
@@ -388,5 +388,14 @@
     "year": "2026",
     "abstract": "We study optimization problems for separable functionals of the Euclidean or spherical lengths of dual edge pairs in finite extremal unit-diameter configurations in three dimensions. For a fixed diameter graph, these problems lead to nonconvex constrained optimization of the vertex coordinates. We first prove that a convergent sequence of extremal configurations retains an extremal geometric core after coincident points are merged and vertices incident to at most one diameter are removed. A spherical Crofton argument then gives a sharp lower bound for additive concave functionals, attained by the regular tetrahedron. We also analyze the effect of inserting or deleting dangling vertices. For the sum of products of spherical dual-edge lengths, we obtain an exact supremal reformulation of the three-dimensional Blaschke–Lebesgue area problem. The numerical study uses all 10,644 available extremal configurations with at most 16 vertices. We combine direct evaluation with gradient-based local optimization on each fixed graph and reconstruct the intrinsic diameter graph and its dual pairs after vertex collisions. For every supplied graph, the selected verified endpoint contains a regular tetrahedron. These computations do not certify the global maximum for any fixed graph, but they motivate structural conjectures connecting tetrahedral containment with the Blaschke–Lebesgue problem.",
     "arxiv": "2608.26395"
+  },
+  {
+    "author": "B. Bogosel, D. Bucur, I. Fragala",
+    "title": "Symmetry breaking  in the polygonal Szego--Weinberger inequality  as $p\to 1^+$: the  longest shortest-fence quadrilateral",
+    "tags": ["polygonal problems","validated computing"],
+    "journal": "submitted",
+    "year": "2026",
+    "abstract": "We consider Pólya's problem of finding, among convex sets of prescribed area, the one with the longest shortest fence, in the polygonal setting, namely when the class of competitors is restricted to polygons with a prescribed number of sides. While it is straightforward to show that, among triangles, the optimal shape is the equilateral one, we prove that symmetry breaking occurs in the case of quadrilaterals: the optimal quadrilateral is not the square. More precisely, we identify it as a specific isosceles trapezium, which is uniquely determined, up to homotheties and rigid motions, by an elementary equation for its base angle. The proof combines analytical arguments and rigorous interval-arithmetic computations. ",
+    "arxiv": "2609.07929"
   }
 ]
