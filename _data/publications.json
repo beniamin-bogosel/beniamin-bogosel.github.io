@@ -414,6 +414,6 @@
     "journal": "preprint",
     "year": "2026",
     "abstract": "We prove the local version of the Pólya--Szegö conjecture for the torsional rigidity of polygons: for every $n \\geq 5$, the regular $n$-gon is a strict local maximizer of torsional rigidity among convex n-gons of prescribed area. Our proof is entirely analytic. It builds on a locally stable proportional triangular covering inspired by Solynin and Zalgaller and an associated weighted Voronoi-type partition, together with a quantitative asymptotic analysis of the loss produced by truncating the overlapping triangles to the partition cells. The result is then obtained by establishing two key ingredients: the optimality of isosceles triangles for mixed torsional rigidity at fixed area and vertex angle, and a strict concavity property of the mixed torsional rigidity of isosceles triangles.",
-    "arxiv": "2609.14785"
+    "arxiv": "2609.23051"
   }
 ]
