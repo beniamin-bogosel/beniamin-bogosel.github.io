@@ -8,5 +8,21 @@
     "pdf": "https://github.com/beniamin-bogosel/GPT_Math/raw/refs/heads/master/Results/QuantitativeIsoperimetric/sharp_polygonal_finsler_hadwiger.pdf",
     "repository": "https://github.com/beniamin-bogosel/GPT_Math/tree/master/Results/QuantitativeIsoperimetric",
     "abstract": "This note determines the optimal coefficient of the side-length defect in a refinement of the polygonal isoperimetric inequality. It includes the known triangle and quadrilateral cases and gives an elementary proof for every number of sides. Combined with the classical radial-variance inequality and the established convexification reduction, it also recovers the main stability estimates of Indrei and Nurbekyan with explicit constants."
+  },
+  {
+    "author": "Beniamin Bogosel",
+    "year": "2026",
+    "title": "Progress on the Meissner conjecture",
+    "pdf": "https://github.com/beniamin-bogosel/GPT_Math/raw/refs/heads/master/Results/MeissnerConjecture/MeissnerConjectureWork.pdf",
+    "repository": "",
+    "references_note": "References and verification details in the PDF"
+  },
+  {
+    "author": "Beniamin Bogosel",
+    "year": "2026",
+    "title": "Area-minimizing polygons with a regular difference body",
+    "pdf": "https://github.com/beniamin-bogosel/GPT_Math/raw/refs/heads/master/Results/RegularDifferenceBody/discrete_area_m3n.pdf",
+    "repository": "",
+    "references_note": "References and complete proof in the PDF"
   }
 ]

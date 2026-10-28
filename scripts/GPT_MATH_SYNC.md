@@ -22,17 +22,20 @@ To check without writing, add `--check` (exit status 1 means changes or an error
 For an offline check, use `--readme /path/to/README.md`; `--output` selects a
 different JSON destination.
 
-The upstream table controls titles, PDF links, result-directory links, and entry
-order. Entries removed from a valid, nonempty table are removed from the JSON.
+The upstream table controls titles, PDF links, result-directory links, reference
+notes, and entry order. Entries removed from a valid, nonempty table are removed from the JSON.
 Existing authors, years, abstracts, revision dates, and AI credits remain editable
-in JSON and are preserved when either the PDF or result-directory link matches.
+in JSON and are preserved when either the PDF or a nonempty result-directory link matches.
 New entries default to Beniamin Bogosel and the current UTC year; edit the year
 for older notes and add optional metadata as needed. If both links change at
 once, the row is treated as a new entry. No abstract is invented for a new row.
 
 Keep the README's three-column table format: **Result | Paper | References and
-verification**, with a PDF link in the second column and a result-directory link
-in the third. Missing, empty, duplicate, or malformed tables and failed downloads
+verification**, with a PDF link in the second column. The third column may contain
+a result-directory link, plain text such as "References in the PDF", or nothing.
+Plain text is saved as `references_note` and displayed below the paper links;
+entries without a directory link have an empty `repository` field.
+Missing, empty, duplicate, or malformed tables and failed downloads
 leave the existing JSON intact and fail the workflow. Intentional removal of all
 entries requires editing the JSON directly.
 

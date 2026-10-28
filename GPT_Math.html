@@ -41,8 +41,11 @@ mathjax: true
                 <div class="publication-metadata">Unsubmitted research note{% if result.revised %} · Revised {{ result.revised | date: '%-d %B %Y' }}{% endif %}</div>
                 <div class="publication-links">
                   <a href="{{ result.pdf | escape }}">PDF</a>
-                  {% if result.repository %} · <a href="{{ result.repository | escape }}">References and supporting materials</a>{% endif %}
+                  {% if result.repository and result.repository != '' %} · <a href="{{ result.repository | escape }}">References and supporting materials</a>{% endif %}
                 </div>
+                {% if result.references_note %}
+                  <div class="publication-metadata">{{ result.references_note | escape }}</div>
+                {% endif %}
                 {% if result.abstract %}
                   <details class="publication-abstract-wrapper">
                     <summary class="publication-toggle">Abstract</summary>

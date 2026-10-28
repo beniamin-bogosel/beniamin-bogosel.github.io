@@ -57,15 +57,19 @@ def parse_results(markdown: str) -> list[dict[str, str]]:
             values = cells(row)
             if len(values) != 3 or not values[0]:
                 raise ValueError(f"Malformed results-table row: {row!r}")
-            results.append({
+            result = {
                 "title": LINK.sub(r"\1", values[0]).strip(),
                 "pdf": result_link(values[1], pdf=True),
-                "repository": result_link(values[2]),
-            })
+                "repository": result_link(values[2]) if LINK.search(values[2]) else "",
+            }
+            if values[2] and not result["repository"]:
+                result["references_note"] = values[2]
+            results.append(result)
         if not results:
             raise ValueError("Results table is empty; refusing to clear existing entries.")
         for field in ("pdf", "repository"):
-            if len({result[field] for result in results}) != len(results):
+            links = [result[field] for result in results if result[field]]
+            if len(set(links)) != len(links):
                 raise ValueError(f"Duplicate {field} links in results table.")
         return results
     raise ValueError("Could not find the Result / Paper / References results table.")
@@ -76,7 +80,8 @@ def merge_results(results: list[dict[str, str]], existing: list[dict]) -> list[d
     merged = []
     for result in results:
         matches = [entry for entry in existing if (
-            entry.get("repository") == result["repository"] or entry.get("pdf") == result["pdf"]
+            (result["repository"] and entry.get("repository") == result["repository"])
+            or entry.get("pdf") == result["pdf"]
         )]
         if len(matches) > 1:
             raise ValueError(f"Ambiguous existing entries for {result['title']!r}.")
@@ -84,6 +89,7 @@ def merge_results(results: list[dict[str, str]], existing: list[dict]) -> list[d
             "author": "Beniamin Bogosel",
             "year": str(datetime.now(timezone.utc).year),
         }
+        entry.pop("references_note", None)
         entry.update(result)
         merged.append(entry)
     return merged

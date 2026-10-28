@@ -60,6 +60,32 @@ class SyncTests(unittest.TestCase):
         table = "\n".join(line.strip().strip("|") for line in TABLE.splitlines())
         self.assertEqual(parse_results(table), parse_results(TABLE))
 
+    def test_multiple_text_only_reference_cells_sync_without_ambiguous_matches(self):
+        note = "References and verification details in the PDF"
+        table = (TABLE + SECOND).replace("[Result directory](Results/First)", note).replace(
+            "[Result directory](Results/Second)", "References and complete proof in the PDF")
+        results = parse_results(table)
+        self.assertEqual([result["repository"] for result in results], ["", ""])
+        self.assertEqual(results[0]["references_note"], note)
+        existing = [dict(result, abstract=result["title"]) for result in results]
+        self.assertEqual(merge_results(results, existing), existing)
+
+    def test_reference_links_can_be_replaced_with_notes_and_restored(self):
+        result = parse_results(TABLE)[0]
+        existing = [dict(result, abstract="Keep this abstract")]
+        table = TABLE.replace("[Result directory](Results/First)", "Details in the PDF")
+        merged = merge_results(parse_results(table), existing)
+        self.assertEqual(merged[0]["repository"], "")
+        self.assertEqual(merged[0]["references_note"], "Details in the PDF")
+        self.assertEqual(merged[0]["abstract"], "Keep this abstract")
+        restored = merge_results(parse_results(TABLE), merged)
+        self.assertEqual(restored, existing)
+
+    def test_empty_reference_cell_is_allowed(self):
+        result = parse_results(TABLE.replace("[Result directory](Results/First)", ""))[0]
+        self.assertEqual(result["repository"], "")
+        self.assertNotIn("references_note", result)
+
     def test_malformed_empty_and_duplicate_tables_are_rejected(self):
         for table in ("No table", TABLE.rsplit("| First note", 1)[0], TABLE + TABLE.splitlines()[-1], TABLE + SECOND.replace("[PDF]", "PDF")):
             with self.subTest(table=table), self.assertRaises(ValueError):
