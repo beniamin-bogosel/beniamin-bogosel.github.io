@@ -1,0 +1,50 @@
+name: Sync GPT Math
+
+on:
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+# Serialize against Pages builds so a sync cannot publish an older checkout.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Check sync behavior
+        run: python3 -B -m unittest discover -s scripts -p 'test_*.py'
+      - name: Refresh GPT Math data
+        id: sync
+        run: |
+          python3 scripts/sync_gpt_math.py
+          if git diff --quiet -- _data/gpt_math.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit refreshed data
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- _data/gpt_math.json
+          git commit -m "Update GPT Math entries from the results repository"
+          git push origin HEAD:main
+      # A push made with GITHUB_TOKEN does not trigger the Pages push workflow.
+      - name: Rebuild and deploy the updated site
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main

@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - name: Check GPT Math sync behavior
+        run: python3 -B -m unittest discover -s scripts -p 'test_*.py'
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
@@ -37,7 +39,7 @@ jobs:
           path: ./_site
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
