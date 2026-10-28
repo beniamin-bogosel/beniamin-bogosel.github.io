@@ -1,0 +1,12 @@
+[
+  {
+    "author": "Beniamin Bogosel",
+    "title": "A sharp polygonal Finsler–Hadwiger inequality",
+    "year": "2026",
+    "revised": "2026-10-28",
+    "ai_assistance": "GPT-5.6 Sol (OpenAI)",
+    "pdf": "https://github.com/beniamin-bogosel/GPT_Math/raw/refs/heads/master/Results/QuantitativeIsoperimetric/sharp_polygonal_finsler_hadwiger.pdf",
+    "repository": "https://github.com/beniamin-bogosel/GPT_Math/tree/master/Results/QuantitativeIsoperimetric",
+    "abstract": "This note determines the optimal coefficient of the side-length defect in a refinement of the polygonal isoperimetric inequality. It includes the known triangle and quadrilateral cases and gives an elementary proof for every number of sides. Combined with the classical radial-variance inequality and the established convexification reduction, it also recovers the main stability estimates of Indrei and Nurbekyan with explicit constants."
+  }
+]

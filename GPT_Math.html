@@ -1,0 +1,63 @@
+---
+nav_section: gpt_math
+mathjax: true
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include site-head.html %}
+    <title>GPT Math — Beniamin Bogosel</title>
+  </head>
+  <body class="publications-page gpt-math-page">
+    <div class="main">
+      {% include site-header.html %}
+      <h2 class="page-heading">GPT Math</h2>
+
+      <div class="gpt-math-introduction">
+        <p>Mathematical manuscripts developed with the help of AI. These notes have not been submitted to journals, arXiv, or other preprint archives.</p>
+        <p><strong>Work in progress.</strong> Entries and manuscripts may be revised as the work develops.</p>
+        <p>Papers and supporting materials are hosted in the <a href="https://github.com/beniamin-bogosel/GPT_Math">GPT_Math repository</a>.</p>
+      </div>
+
+      <div class="publication-year-groups">
+        {% assign result_groups = site.data.gpt_math | group_by: 'year' | sort: 'name' | reverse %}
+        {% assign result_total = site.data.gpt_math | size %}
+        {% assign displayed_results = 0 %}
+        {% for group in result_groups %}
+          <section class="publication-year-section" aria-labelledby="gpt-math-year-{{ group.name }}">
+            <h3 class="publication-year" id="gpt-math-year-{{ group.name }}"><span>{{ group.name }}</span></h3>
+            {% assign year_results = group.items | reverse %}
+            {% for result in year_results %}
+              {% assign result_number = result_total | minus: displayed_results %}
+              <article class="pubitemnew publication-card">
+                <h4 class="publication-title">
+                  <span class="publication-number">[{{ result_number }}] </span>
+                  <strong><a href="{{ result.pdf | escape }}">{{ result.title | escape }}</a></strong>
+                </h4>
+                <div class="publication-authors"><em>{{ result.author | escape }}</em></div>
+                {% if result.ai_assistance %}
+                  <div class="publication-metadata">AI assistance: {{ result.ai_assistance | escape }}</div>
+                {% endif %}
+                <div class="publication-metadata">Unsubmitted research note{% if result.revised %} · Revised {{ result.revised | date: '%-d %B %Y' }}{% endif %}</div>
+                <div class="publication-links">
+                  <a href="{{ result.pdf | escape }}">PDF</a>
+                  {% if result.repository %} · <a href="{{ result.repository | escape }}">References and supporting materials</a>{% endif %}
+                </div>
+                {% if result.abstract %}
+                  <details class="publication-abstract-wrapper">
+                    <summary class="publication-toggle">Abstract</summary>
+                    <div class="publication-abstract is-open"><p>{{ result.abstract | escape }}</p></div>
+                  </details>
+                {% endif %}
+              </article>
+              {% assign displayed_results = displayed_results | plus: 1 %}
+            {% endfor %}
+          </section>
+        {% else %}
+          <p class="gpt-math-introduction">Research notes will be added here as the work develops.</p>
+        {% endfor %}
+      </div>
+    </div>
+    {% include site-footer.html %}
+  </body>
+</html>
