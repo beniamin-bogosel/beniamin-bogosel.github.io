@@ -434,5 +434,14 @@
     "year": "2026",
     "abstract": "In this paper we study shape optimization problems for planar convex sets with prescribed minimal width or constant width. We prove that the Reuleaux triangle minimizes torsional rigidity among sets of constant width. We also show that the first Dirichlet-Laplace eigenvalue is maximized by the equilateral triangle under a minimal width constraint and by the Reuleaux triangle under a constant width constraint. The proofs use subsets consisting of a disk and three straight or circular caps. Reflection arguments reduce the study to equilateral configurations, which contain a polygon or a disk polygon depending on one parameter. The same cap constructions give a common proof of the known area, Cheeger and inner parallel area inequalities, and yield sharp bounds for all positive moments of the distance to the boundary. We also prove sharp inequalities for concentric disk intersections and decreasing radial integrals, and compare interaction energies for kernels close to a positive constant. This includes a nonempty interval of positive Riesz exponents. Finally, we investigate whether inclusion monotonicity and Minkowski concavity suffice to obtain these comparisons for other functionals.",
     "arxiv": "2610.36382"
+  },
+  {
+    "author": "B. Bogosel, D. Bucur and I. Fragalà",
+    "title": "Proof of the polygonal Saint-Venant inequality conjectured by Pólya–Szegö",
+    "tags": ["polygonal problems"],
+    "journal": "preprint",
+    "year": "2026",
+    "abstract": "For each $n \\geq 3$, the regular $n$-gon is the unique maximizer of torsional rigidity among polygons with fixed area and at most $n$ sides, including nonconvex polygons. The proof extends the authors’ local result by partitioning the polygon into cells whose areas are proportional to their angles. A sharp comparison of mixed torsional rigidity on these cells and a concavity inequality for isosceles triangles yield the global bound.",
+    "arxiv": "2611.24573"
   }
 ]
