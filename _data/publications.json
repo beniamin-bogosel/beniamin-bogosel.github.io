@@ -443,5 +443,14 @@
     "year": "2026",
     "abstract": "For each $n \\geq 3$, the regular $n$-gon is the unique maximizer of torsional rigidity among polygons with fixed area and at most $n$ sides, including nonconvex polygons. The proof extends the authors’ local result by partitioning the polygon into cells whose areas are proportional to their angles. A sharp comparison of mixed torsional rigidity on these cells and a concavity inequality for isosceles triangles yield the global bound.",
     "arxiv": "2611.24573"
+  },
+  {
+    "author": "B. Bogosel",
+    "title": "A sharp polygonal Finsler-Hadwiger inequality",
+    "tags": ["polygonal problems"],
+    "journal": "preprint",
+    "year": "2026",
+    "abstract": "We refine the polygonal isoperimetric inequality by determining the largest coefficient of the side-length defect $\\sum_{i<j}(a_i-a_j)^2$. For simple $n$-gons, the coefficient is $1-\\tan(\\pi/n)/\\tan(\\pi/(n-1))$ for $n\\geq 4$ and $1$ for triangles. Equality occurs only for regular polygons. Sharpness is witnessed by cyclic polygons with one vanishing side and the remaining sides tending to those of a regular $(n-1)$-gon, with a doubled segment as the triangle limit. The paper also determines the optimal coefficient near regular polygons and shows that the best constant in the joint stability estimate for side lengths and vertex radii grows on the order of $n^2$.",
+    "arxiv": "2611.32244"
   }
 ]

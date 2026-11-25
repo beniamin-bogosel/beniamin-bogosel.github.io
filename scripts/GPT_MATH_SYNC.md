@@ -30,9 +30,10 @@ New entries default to Beniamin Bogosel and the current UTC year; edit the year
 for older notes and add optional metadata as needed. If both links change at
 once, the row is treated as a new entry. No abstract is invented for a new row.
 
-Keep the README's three-column table format: **Result | Paper | References and
-verification**, with a PDF link in the second column. The third column may contain
-a result-directory link, plain text such as "References in the PDF", or nothing.
+Keep the README's table columns **Result | Paper | References and verification**,
+with an optional leading **No.** column and a PDF link in **Paper**. The references
+column may contain a result-directory link, plain text such as "References in the
+PDF", or nothing.
 Plain text is saved as `references_note` and displayed below the paper links;
 entries without a directory link have an empty `repository` field.
 Missing, empty, duplicate, or malformed tables and failed downloads

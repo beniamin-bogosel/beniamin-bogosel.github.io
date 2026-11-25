@@ -45,25 +45,27 @@ def parse_results(markdown: str) -> list[dict[str, str]]:
         if "|" not in line:
             continue
         header = [cell.lower() for cell in cells(line)]
-        if header[:2] != ["result", "paper"] or len(header) != 3:
+        result_column = 1 if header[:1] == ["no."] else 0
+        if len(header) != result_column + 3 or header[result_column : result_column + 2] != ["result", "paper"]:
             continue
         separator = cells(lines[index + 1])
-        if len(separator) != 3 or not all(re.fullmatch(r":?-{3,}:?", cell) for cell in separator):
+        if len(separator) != len(header) or not all(re.fullmatch(r":?-{3,}:?", cell) for cell in separator):
             continue
         results = []
         for row in lines[index + 2:]:
             if not row.strip() or "|" not in row:
                 break
             values = cells(row)
-            if len(values) != 3 or not values[0]:
+            if len(values) != len(header) or not values[result_column]:
                 raise ValueError(f"Malformed results-table row: {row!r}")
+            title, paper, references = values[result_column:]
             result = {
-                "title": LINK.sub(r"\1", values[0]).strip(),
-                "pdf": result_link(values[1], pdf=True),
-                "repository": result_link(values[2]) if LINK.search(values[2]) else "",
+                "title": LINK.sub(r"\1", title).strip(),
+                "pdf": result_link(paper, pdf=True),
+                "repository": result_link(references) if LINK.search(references) else "",
             }
-            if values[2] and not result["repository"]:
-                result["references_note"] = values[2]
+            if references and not result["repository"]:
+                result["references_note"] = references
             results.append(result)
         if not results:
             raise ValueError("Results table is empty; refusing to clear existing entries.")

@@ -60,6 +60,13 @@ class SyncTests(unittest.TestCase):
         table = "\n".join(line.strip().strip("|") for line in TABLE.splitlines())
         self.assertEqual(parse_results(table), parse_results(TABLE))
 
+    def test_numbered_results_table_ignores_number_column(self):
+        table = """| No. | Result | Paper | References and verification |
+| --- | --- | --- | --- |
+| 1 | First note | [PDF](Results/First/paper.pdf) | [Result directory](Results/First) |
+"""
+        self.assertEqual(parse_results(table), parse_results(TABLE))
+
     def test_multiple_text_only_reference_cells_sync_without_ambiguous_matches(self):
         note = "References and verification details in the PDF"
         table = (TABLE + SECOND).replace("[Result directory](Results/First)", note).replace(
